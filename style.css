@@ -89,6 +89,7 @@ section#teacher h2{color:#fff;background:var(--navy);border-radius:16px;padding:
 [hidden]{display:none!important}
 @media(max-width:640px){.grid.rows{grid-template-columns:1fr}.row{padding:10px}}
 
+.labblock{border:3px dashed var(--gold);border-radius:16px;padding:4px 14px 10px;margin:12px 0;background:#fffdf5}.labblock h4 small{font-weight:600;color:#4a5876}
 /* inclusion course pages */
 .unitlist{list-style:none;padding:0;margin:.4em 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:8px}
 .unitlist li{background:#fff;border:2px solid var(--bb);border-radius:14px;padding:8px 12px;font-size:17px}

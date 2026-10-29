@@ -94,3 +94,6 @@ section#teacher h2{color:#fff;background:var(--navy);border-radius:16px;padding:
 .unitlist li{background:#fff;border:2px solid var(--bb);border-radius:14px;padding:8px 12px;font-size:17px}
 .unitlist li.soon{opacity:.72;border-style:dashed}.unitlist .un{font-weight:800;color:#4a5b80;font-size:14px;text-transform:uppercase;letter-spacing:.04em}
 .dtxt .sub{font-size:15px;margin:.1em 0 .5em}
+.lvgroup{border:3px solid var(--bb);border-radius:18px;padding:6px 14px 10px;margin:.7em 0;background:#fff}
+.lvgroup.lv1{border-color:var(--blue)}.lvgroup.lv2{border-color:var(--gold)}
+.lvh{font-size:21px;margin:.4em 0}h4.unit{font-size:18px;margin:.6em 0 .3em}

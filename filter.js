@@ -1,5 +1,5 @@
 (function(){var q=document.getElementById('q');if(!q)return;var items=[].slice.call(document.querySelectorAll('.item'));
-var cats=[].slice.call(document.querySelectorAll('section.cat'));var none=document.getElementById('none'),qn=document.getElementById('qn');
+var cats=[].slice.call(document.querySelectorAll('section.cat, .lesson'));var none=document.getElementById('none'),qn=document.getElementById('qn');
 function run(){var t=q.value.trim().toLowerCase().split(/\s+/).filter(Boolean),shown=0;
 items.forEach(function(el){var s=el.getAttribute('data-q')||'';var ok=t.every(function(w){return s.indexOf(w)>-1});el.hidden=!ok;if(ok)shown++;});
 function lvok(el){var g=el.closest?el.closest('.lvonly'):null;return !g||getComputedStyle(g).display!=='none';}

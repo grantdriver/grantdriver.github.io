@@ -114,3 +114,19 @@ section#teacher h2{color:#fff;background:var(--navy);border-radius:16px;padding:
 .tline{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px;padding:8px 10px;border-radius:12px;background:#f3f6fc}
 .tline .tl{font-weight:800;color:var(--navy)}
 .pill.now{background:var(--gold);color:var(--navy)}.pill.lab{background:#fff3e0;color:#8a4b00;border:2px solid #e0a526}
+/* unit tabs (2026-10-31) */
+.utabs{display:flex;flex-wrap:wrap;gap:10px;margin:.5em 0 .2em;padding:0;list-style:none}
+.utab{flex:0 1 auto;min-width:150px;max-width:260px;min-height:64px;display:flex;flex-direction:column;justify-content:center;gap:1px;padding:8px 16px;border-radius:18px;border:3px solid var(--blue);background:#fff;color:var(--navy);text-decoration:none;font-weight:800;line-height:1.15;box-shadow:0 4px 0 var(--blue);cursor:pointer}
+.utab .un{font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:inherit;opacity:.85}.utab .ut{font-size:19px}.utab .ust{font-size:13px;font-weight:700}
+.utab:hover{transform:translateY(-2px)}.utab:focus-visible{outline:4px solid var(--navy);outline-offset:3px}
+.utab.on{background:var(--blue);color:#fff;border-color:var(--navy);box-shadow:0 4px 0 var(--navy)}.utab.on .ut::after{content:" ✓"}
+.utab.now:not(.on){border-color:var(--gold);box-shadow:0 4px 0 var(--gold)}
+.utab.soon{opacity:.7;border-style:dashed;box-shadow:none;cursor:default;font-weight:700}
+html.tabs-on:not(.searching) .unitpane:not(.on){display:none}
+html:not(.tabs-on) .utabhint{display:none}
+.paneend{margin:.3em 0 1.2em}.uanchor{display:block;position:relative;top:-10px}
+.totop{position:fixed;right:16px;bottom:16px;z-index:50;min-height:52px;display:flex;align-items:center;padding:8px 18px;border-radius:999px;background:var(--navy);color:#fff;font-weight:800;font-size:18px;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.25)}
+.totop:focus-visible{outline:4px solid var(--gold);outline-offset:3px}
+@media(max-width:640px){.utab{flex:1 1 140px;min-width:0;padding:8px 12px}.utab .ut{font-size:17px}.totop{right:10px;bottom:10px;font-size:16px;min-height:46px}}
+@media(max-width:640px){.searchbar input{flex:1 1 100%;min-width:0;width:100%;box-sizing:border-box}}
+@media print{.utabs,.totop,.paneend{display:none}html.tabs-on .unitpane{display:block!important}}

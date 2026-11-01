@@ -1,0 +1,1128 @@
+#!/usr/bin/env python3
+"""Rebuild the public class website in /workspace/school/site/  (v2: everything relevant to teaching).
+
+Collects, from /workspace/school/: slide decks, daily lesson plans + sub plans (plans/*.pdf), worksheets/printables/cards,
+teacher keys, games, curriculum docs, calendars, portfolio kits, cooking, newsletters, family handouts, the SEL check-in how-to,
+and a few markdown docs rendered to PDF into /workspace/school/site-build/.
+There is NO content scan (Grant, 2026-10-27: nothing we make has real identifiable student information). Only path exclusions apply. Nothing is uploaded by this script;
+templates/publish_site.sh pushes the result. Run:  python3 update_site.py [--zip]
+Rules (Grant, 2026-10-27): publish all teaching material, teacher keys go in "Teacher resources" sections, student 2-letter codes are fine.
+Skipped by path only: staff handbook, gemini notes, internal files (INTERNAL_SKIP), team-ideas/, data/ (except the SEL check-in how-to),
+ahead/ (build-ahead drafts), cards-build/, superseded versions (-v1), cover option files, exact duplicate files.
+Inclusion courses (gen ed classes with modified Level 2 materials for SLE students): one folder per course in
+/workspace/school/inclusion/<slug>/ with a course.json -> site page inclusion/<slug>.html. A course is built only when
+course.json has "publish": true, or when run with --preview-inclusion (review copy; the daily routine never passes it).
+See /workspace/school/templates/README-site.md and README-inclusion.md.
+"""
+import sys, re, json, html, shutil, hashlib, subprocess, datetime, zipfile, os
+from pathlib import Path
+
+SCHOOL = Path("/workspace/school")
+SITE = SCHOOL / "site"
+PLANS = SCHOOL / "plans"
+GAMES = SCHOOL / "games"
+BUILD = SCHOOL / "site-build"                  # rendered markdown -> PDF cache (private, not published directly)
+REPORT = SCHOOL / "site-report.md"             # private report, NOT inside the public site
+ZIP = SCHOOL / "site.zip"
+INCL = SCHOOL / "inclusion"                    # inclusion courses: <slug>/course.json + <unit folder>/*.pdf
+TODAY = datetime.date.today().isoformat()
+
+CLASSES = [  # slug, short name, full name, level, emoji
+    ("transitions-l1", "Transitions L1", "Transitions · Level 1", 1, "🧭"),
+    ("transitions-l2", "Transitions L2", "Transitions · Level 2", 2, "🚀"),
+    ("sel-l1", "SEL L1", "SEL · Level 1", 1, "💛"),
+    ("sel-l2", "SEL L2", "SEL · Level 2", 2, "🌟"),
+]
+CLASS_INFO = {
+    "transitions-l1": "Life skills for after high school: my plan, my voice, my space. Short words and lots of pictures.",
+    "transitions-l2": "Life skills for after high school: rights, boundaries, and leading my own plan.",
+    "sel-l1": "Social emotional learning (SEL): feelings, calm-down tools, and goals. Short words and lots of pictures.",
+    "sel-l2": "Social emotional learning (SEL): reset plans, toolkits, and goals in action.",
+}
+# One page per class with a Level 1 / Level 2 switch (2026-10-29). Old per-level URLs become redirect pages.
+GROUPS = [  # slug, tab name, full name, emoji, {level: class slug}, tile text
+    ("transitions", "Transitions", "Transitions", "🧭", {1: "transitions-l1", 2: "transitions-l2"},
+     "Life skills for after high school: my plan, my voice, my space, rights, boundaries, and leading my own plan. Level 1 and Level 2."),
+    ("sel", "SEL", "SEL", "💛", {1: "sel-l1", 2: "sel-l2"},
+     "Social emotional learning (SEL): feelings, calm-down tools, reset plans, toolkits, and goals. Level 1 and Level 2."),
+]
+GROUP_OF = {cs: g[0] for g in GROUPS for cs in g[4].values()}
+# ---- Units in teaching order (2026-10-30, Grant: class pages unit by unit like Culinary / Ag Science).
+# Source: curriculum-calendar.md + curriculum-summary-2026-10-18.md (GRANT-CONFIRMED dates; SEL blocks 6-11 are working titles).
+# Each class level has its own start date per unit. A lesson (file date) goes in the last unit that started on or before its date.
+# Dates before the first unit or after YEAR_END (or no date) go to "Other / extras" and are listed in site-report.md.
+# To move one file by hand, add its file stem (without the date) or "<slug>:<date>" to UNIT_OVERRIDE.
+# NEXT SCHOOL YEAR: add the new start dates (or a new plan) here; until then new files land in "Other / extras".
+YEAR_START, YEAR_END = "2026-08-15", "2027-06-30"
+UNIT_PLAN = {  # family -> [(unit no, emoji, title, {slug: first class day}, words that mark a whole-unit game)]
+    "transitions": [
+        (1, "🗣️", "Self-Advocacy", {"transitions-l1": YEAR_START, "transitions-l2": YEAR_START}, ["self-advocacy"]),
+        (2, "🏠", "Independent Living", {"transitions-l1": "2026-10-30", "transitions-l2": "2026-11-02"}, ["independent-living"]),
+        (3, "🧼", "Health, Wellness & Relationships", {"transitions-l1": "2027-01-05", "transitions-l2": "2027-01-04"}, ["health"]),
+        (4, "💼", "Employment & Career Exploration", {"transitions-l1": "2027-02-17", "transitions-l2": "2027-02-16"}, ["employment"]),
+        (5, "💵", "Financial Literacy & Money", {"transitions-l1": "2027-03-29", "transitions-l2": "2027-03-30"}, ["financial", "money"]),
+        (6, "🚌", "Community Navigation & Mobility", {"transitions-l1": "2027-05-11", "transitions-l2": "2027-05-10"}, ["community"]),
+    ],
+    "sel": [
+        (1, "🤝", "Foundations & Community", {"sel-l1": YEAR_START, "sel-l2": YEAR_START}, ["foundations"]),
+        (2, "🪞", "Self-Awareness: Who Am I?", {"sel-l1": "2026-09-16", "sel-l2": "2026-09-17"}, ["self-awareness"]),
+        (3, "🧰", "Self-Management: My Calm-Down Toolkit", {"sel-l1": "2026-10-08", "sel-l2": "2026-10-09"}, ["self-management"]),
+        (4, "🕵️", "Social Awareness: Feelings Detective", {"sel-l1": "2026-10-30", "sel-l2": "2026-11-02"}, ["social-awareness"]),
+        (5, "💬", "Relationship Skills", {"sel-l1": "2026-11-24", "sel-l2": "2026-11-25"}, ["relationship-skills"]),
+        (6, "🛑", "Stop, Think, Choose", {"sel-l1": "2027-01-05", "sel-l2": "2027-01-04"}, ["decision"]),
+        (7, "🌱", "I Can Grow", {"sel-l1": "2027-02-05", "sel-l2": "2027-02-04"}, ["grow"]),
+        (8, "🎯", "My Game Plan: Goals & Routines", {"sel-l1": "2027-03-03", "sel-l2": "2027-03-02"}, ["game-plan"]),
+        (9, "👀", "Reading the Room", {"sel-l1": "2027-03-25", "sel-l2": "2027-03-24"}, ["reading-the-room"]),
+        (10, "🧩", "Team Up & Work It Out", {"sel-l1": "2027-04-23", "sel-l2": "2027-04-22"}, ["team-up"]),
+        (11, "🏆", "My SEL Showcase", {"sel-l1": "2027-05-17", "sel-l2": "2027-05-14"}, ["showcase"]),
+    ],
+}
+GROUP_TAB = {  # level-tab subtitles on the class pages (reading levels: Grant 10/29 + 10/30)
+    "transitions": {"1": "2nd-grade reading · pictures", "2": "3rd-grade reading · word banks"},
+    "sel": {"1": "3rd-grade reading · emoji & pictures", "2": "3rd-grade reading · word banks"},
+}
+UNIT_WORD = {"transitions": "Unit", "sel": "Unit"}
+UNIT_OVERRIDE = {}   # file stem (no date) or "slug:YYYY-MM-DD" -> unit number, or 0 for Other / extras
+UNPLACED = []        # (class slug, title, reason) filled while building class pages -> site-report.md
+TITLES = {
+    "sel-l2-reset-plan-deck": "My Reset Plan",
+    "transitions-l2-rights-deck": "Understanding My Rights",
+    "sel-l2-toolkit-binder-deck": "Build My Toolkit",
+    "transitions-l2-boundaries-deck": "Respect Their Boundaries",
+    "sel-l1-goal-deck": "Make My Goal",
+    "transitions-l1-space-bubble-deck": "My Space Bubble",
+    "sel-l2-calm-down-goal-deck": "Set My Calm-Down Goal",
+    "sel-l1-goal-practice-deck": "Practice My Goal",
+    "transitions-l1-one-page-profile-deck": "All About Me: My One-Page Profile",
+    "sel-l2-goal-in-action-deck": "Goal in Action",
+    "transitions-l2-student-led-iep-prep-deck": "Lead My IEP",
+    "transitions-l2-independent-living-deck": "Start Unit 2: Independent Living",
+    "transitions-l1-jobs-at-home-deck": "Jobs at Home",
+    "transitions-l2-utensil-sorting-deck": "Sort Utensils by Category",
+    "transitions-l1-sort-utensils-deck": "Sort Forks, Spoons, Knives",
+    "sel-l2-face-clues-deck": "Feelings Detective: Face Clues",
+    "sel-l2-body-clues-deck": "Feelings Detective: Body Clues",
+    "sel-l2-voice-place-clues-deck": "Feelings Detective: Voice + Place Clues",
+    "sel-l1-body-clues-deck": "Feelings Detective: Body Clues",
+    "sel-l1-voice-place-clues-deck": "Feelings Detective: Voice + Place Clues",
+    "rights-cards": "“Right or Not a Right?” Sort Cards",
+    "rights-cards-key": "“Right or Not a Right?” Answer Key",
+    "sel-l1-stress-comic": "My Stress Comic",
+    "cards": "“Did It Work?” Tool Cards",
+}
+# class tags for printables whose file names do not say the class: file stem (without date) -> slugs
+MANUAL_CLASS = {
+    "rights-cards": ["transitions-l2"], "rights-cards-key": ["transitions-l2"],
+    "boundaries-exit-ticket": ["transitions-l2"], "boundaries-sort-cards": ["transitions-l2"],
+    "my-tool-page": ["sel-l2"], "toolkit-binder-cover-divider": ["sel-l2"],
+    "cards": ["sel-l1"], "sel-l1-stress-comic": ["sel-l1"],
+}
+
+# ---------------------------------------------------------------- what is never published
+INTERNAL_SKIP = {  # path (relative to /workspace/school) or stem -> reason
+    "FHS-staff-handbook-2026-27.pdf": "district staff handbook (copyrighted, not ours)",
+    "gemini-notebooks-raw.md": "Gemini raw notes (internal)", "gemini-original-plan-reference.md": "Gemini notes (internal)",
+    "team-brief.md": "internal team brief", "iep-eval-calendar-2026-27.md": "IEP/eval calendar (internal, student dates)",
+    "canva-folder-plan.md": "internal Canva folder plan", "class-materials-review.md": "internal review notes",
+    "grant-master-guide.pdf": "internal master guide", "grant-master-guide.md": "internal master guide",
+    "cooking-log.md": "internal log", "taught-log.md": "internal log", "site-allow.txt": "site config", "site-blocklist.txt": "site config",
+    "team-ideas/team-ideas-2026-10-14.pdf": "internal ideas packet (staff/IEP content, street addresses)",
+    "team-ideas/tpep-focus.md": "teacher evaluation (TPEP) notes, not teaching material",
+    "team-ideas/data.md": "internal data ideas", "team-ideas/research.md": "internal research", "team-ideas/scheduling.md": "internal scheduling",
+    "team-ideas/family.md": "internal family-outreach ideas",
+}
+SUPERSEDED_RE = re.compile(r"(?:^|[-_])v\d+(?:[-_][a-z0-9]+)*(?:$|[-_.])|\d+slides|pre-\d{4}|-original-old|superseded", re.I)
+SKIP_DIRS = {"__pycache__", "node_modules", "cards-build", "superseded", "src", "build", "previews", "specs", "emotion-faces"}  # emotion-faces: CC BY-SA photos, need attribution, not for the site
+ALL4_SLUGS = ["transitions-l1", "transitions-l2", "sel-l1", "sel-l2"]
+
+def pdftext(p):
+    return subprocess.run(["pdftotext", "-layout", str(p), "-"], capture_output=True, text=True).stdout
+
+def pdfpages(p):
+    info = subprocess.run(["pdfinfo", str(p)], capture_output=True, text=True).stdout
+    return int((re.search(r"Pages:\s+(\d+)", info) or [0, 0])[1] or 0), info
+
+def read_game(p):
+    t = p.read_text(encoding="utf-8")
+    m = re.search(r"const G = (\{.*\});\s*$", t, re.M)
+    return t, (json.loads(m.group(1)) if m else {})
+
+# ---------------------------------------------------------------- helpers
+def esc(s): return html.escape(str(s), quote=True)
+CLASSNAME = {s: n for s, n, *_ in CLASSES}
+CLASSLV = {s: lv for s, _, _, lv, _ in CLASSES}
+
+def class_of(name):
+    n = name.lower()
+    for slug, *_ in CLASSES:
+        fam, lv = slug.split("-")
+        if n.startswith(slug) or (fam in n and re.search(r"(^|[-_])" + lv + r"([-_.]|$)", n)):
+            return slug
+    return None
+
+def date_of(*names):
+    for n in names:
+        m = re.search(r"\d{4}-\d\d-\d\d", n)
+        if m: return m.group(0)
+    return None
+
+def unit_of(slug, date, stem=""):
+    """Unit number for a class level + date (0 = Other / extras). Overrides first, then the date windows in UNIT_PLAN."""
+    for k in (stem, f"{slug}:{date}"):
+        if k and k in UNIT_OVERRIDE: return UNIT_OVERRIDE[k]
+    if not date or date < YEAR_START or date > YEAR_END: return 0
+    best = 0
+    for n, _e, _t, starts, _k in UNIT_PLAN[slug.split("-")[0]]:
+        if starts.get(slug) and date >= starts[slug]: best = n
+    return best
+
+WORDFIX = {"Iep": "IEP", "Sel": "SEL", "Pdf": "PDF", "Tr": "Transitions", "L1": "L1", "L2": "L2", "Fhs": "FHS", "Abc": "ABC"}
+def nice_title(stem, drop_deck=True):
+    base = re.sub(r"^\d{4}-\d\d-\d\d-?", "", stem)
+    if base in TITLES: return TITLES[base]
+    base = re.sub(r"^(transitions|sel)-l[12]-", "", base)
+    if drop_deck: base = re.sub(r"-deck$", "", base)
+    t = base.replace("-", " ").replace("_", " ").title()
+    return " ".join(WORDFIX.get(w, w) for w in t.split())
+
+def human_date(d):
+    dt = datetime.date.fromisoformat(d)
+    return dt.strftime("%a, %b ") + str(dt.day)
+
+def size_label(p):
+    mb = p.stat().st_size / 1e6
+    return f"{mb:.1f} MB" if mb >= 1 else f"{max(1, round(p.stat().st_size / 1e3))} KB"
+
+def video_titles():
+    out = {}
+    for md in list(PLANS.glob("*.md")) + list((PLANS / "ahead").rglob("*.md")):
+        for m in re.finditer(r"\[([^\]]+)\]\((https://www\.youtube\.com/watch\?v=[\w-]+)[^)]*\)", md.read_text(errors="ignore")):
+            title = re.sub(r"\s*\(for students in Special Education\)", "", m.group(1)).strip()
+            out.setdefault(m.group(2), title)
+    return out
+
+LESSON_RE = re.compile(r"(?m)^\W*Lesson\s+\d+:\s*(Transitions|SEL)\s+Level\s*([12])")
+def classes_from_text(txt):
+    """Class slugs a daily plan / key covers, from its 'Lesson N: Transitions Level 2' headings (fallback: mentions)."""
+    found = []
+    for m in LESSON_RE.finditer(txt):
+        s = f"{m.group(1).lower()}-l{m.group(2)}"
+        if s not in found: found.append(s)
+    if not found:
+        head = txt[:6000]
+        for fam, FAM in (("transitions", "Transitions"), ("sel", "SEL")):
+            for lv in "12":
+                if re.search(rf"\b{FAM}\s+(Level\s*|L){lv}\b", head) and f"{fam}-l{lv}" not in found:
+                    found.append(f"{fam}-l{lv}")
+    return found
+
+def topics_from_text(txt):
+    """class slug -> topic line, from the 'Lesson N: <class>' sections."""
+    out = {}
+    parts = LESSON_RE.split(txt)
+    # split gives [pre, fam, lv, body, fam, lv, body ...]
+    for i in range(1, len(parts) - 2, 3):
+        slug = f"{parts[i].lower()}-l{parts[i+1]}"
+        m = re.search(r"Topic:\s*(.+?)(?:\n\s*\n|\n\s*•|\n\s*-\s)", parts[i + 2], re.S)
+        if m and slug not in out:
+            out[slug] = re.sub(r"\s+", " ", m.group(1)).strip(" *")[:120]
+    return out
+
+# ---------------------------------------------------------------- markdown -> PDF (build-ahead plans, recipe, proposals)
+MD_CSS = '''
+@page { size: Letter; margin: 14mm 14mm 16mm 14mm;
+  @bottom-center { content: "Room 113 · Ferndale High School Inclusion · Page " counter(page) " of " counter(pages); font-size: 8pt; color: #777; } }
+body { font-family: "DejaVu Sans", sans-serif; font-size: 9.6pt; line-height: 1.4; color: #222; }
+h1 { color: #7a5c00; font-size: 17pt; border-bottom: 2px solid #e0b000; padding-bottom: 3px; margin: 10px 0 6px; }
+h2 { color: #1f3a5f; font-size: 12.5pt; margin: 12px 0 5px; } h3 { color: #1f3a5f; font-size: 11pt; margin: 10px 0 4px; }
+table { border-collapse: collapse; width: 100%; margin: 6px 0 8px; }
+th { background: #fff2b3; border: 1px solid #d9b94a; padding: 4px 6px; text-align: left; font-size: 9pt; }
+td { border: 1px solid #d9b94a; padding: 4px 6px; vertical-align: top; font-size: 9pt; } tr { page-break-inside: avoid; }
+hr { border: 0; border-top: 1px dashed #bbb; margin: 12px 0; } code { font-family: "DejaVu Sans Mono"; font-size: 8.5pt; background: #f4f4f4; padding: 0 2px; }
+p { margin: 4px 0 6px; } li { margin-bottom: 3px; } blockquote { border-left: 3px solid #e0b000; margin: 6px 0; padding: 2px 10px; background: #fffaf0; }
+'''
+def render_md(md):
+    """Render md to BUILD/<name>.pdf (cached by mtime). Returns the pdf path."""
+    BUILD.mkdir(exist_ok=True)
+    out = BUILD / (md.stem + ".pdf")
+    if out.exists() and out.stat().st_mtime >= md.stat().st_mtime: return out
+    import markdown, weasyprint
+    h = markdown.markdown(md.read_text(errors="ignore"), extensions=["tables", "sane_lists"])
+    weasyprint.HTML(string="<html><body>" + h + "</body></html>").write_pdf(str(out), stylesheets=[weasyprint.CSS(string=MD_CSS)])
+    return out
+
+# ---------------------------------------------------------------- collect
+def collect():
+    """Return items (list of dicts), games, skipped [(rel, reason)]. Path exclusions only; no content scan."""
+    items, games, skipped, seen = [], [], [], {}
+
+    def add(src, kind, title, classes, date=None, sub="", pdf=None, rel=None):
+        rel = rel or str(src.relative_to(SCHOOL))
+        f = pdf or src
+        if f.suffix.lower() == ".pdf":
+            pages_n, _ = pdfpages(f); txt = pdftext(f)
+        else:
+            pages_n, txt = 1, ""
+        digest = hashlib.md5(f.read_bytes()).hexdigest()
+        if digest in seen:
+            skipped.append((rel, f"exact duplicate of {seen[digest]}")); return None
+        seen[digest] = rel
+        it = dict(src=f, orig=src, kind=kind, title=title, classes=list(classes), date=date, sub=sub, pages=pages_n, txt=txt, rel=rel)
+        items.append(it); return it
+
+    def skip_reason(rel_path):
+        rel = str(rel_path)
+        return INTERNAL_SKIP.get(rel) or INTERNAL_SKIP.get(rel_path.name)
+
+    # ---- plans/ folder (decks, daily plans, keys, printables); ahead/ cards-build/ superseded/ src/ are skipped by path
+    for p in sorted(PLANS.rglob("*.pdf")):
+        rel = p.relative_to(PLANS); relS = str(p.relative_to(SCHOOL))
+        if set(rel.parts[:-1]) & (SKIP_DIRS | {"ahead"}):
+            skipped.append((relS, "build-ahead draft / old build folder (ahead/, cards-build/, superseded/)")); continue
+        if SUPERSEDED_RE.search(p.stem):
+            skipped.append((relS, "older version (v1 / superseded)")); continue
+        date = date_of(rel.parts[0] if len(rel.parts) > 1 else "", p.name)
+        stem = re.sub(r"^\d{4}-\d\d-\d\d-?", "", p.stem)
+        if not date:
+            skipped.append((relS, "no date in name")); continue
+        txt = pdftext(p)
+        if p.name.endswith("-deck.pdf"):
+            slug = class_of(p.name)
+            if not slug: skipped.append((relS, "deck: could not tell which class")); continue
+            it = add(p, "deck", nice_title(p.stem), [slug], date)
+            if it: it["urls"] = sorted(set(re.findall(r"https://www\.youtube\.com/watch\?v=[\w-]+", txt)))
+        elif p.stem.endswith("-key"):
+            cl = [class_of(p.name)] if class_of(p.name) else (MANUAL_CLASS.get(stem) or classes_from_text(txt))
+            add(p, "key", "Teacher key" if stem == "teacher-key" else nice_title(p.stem), [c for c in cl if c], date,
+                sub="Answer key and teacher notes for the day's lessons" if stem == "teacher-key" else "")
+        elif p.stem.endswith("simple-plan"):
+            add(p, "simple", "Simple plan (sub-ready)", classes_from_text(txt), date, sub="Plan with every period's times, ready for a sub")
+        elif re.search(r"(^|-)plans$|-sel2$|-revised$", p.stem) and len(rel.parts) == 1:
+            cl = [class_of(p.name)] if class_of(p.name) else classes_from_text(txt)
+            title = "Daily lesson plans" if p.stem.endswith("plans") else ("SEL Level 2 lesson plan" if p.stem.endswith("sel2") else "SEL Level 1 revised lesson plan")
+            it = add(p, "plan", title, cl, date)
+            if it: it["topics"] = topics_from_text(txt)
+        else:
+            cl = [class_of(p.name)] if class_of(p.name) else (MANUAL_CLASS.get(stem) or classes_from_text(txt))
+            add(p, "printable", nice_title(p.stem, drop_deck=False), [c for c in cl if c], date)
+
+    # simple plans / keys cover "the day": borrow the classes of that day's lesson plan when the text does not name them
+    plan_cl = {}
+    for i in items:
+        if i["kind"] == "plan" and i["date"] and i["classes"]: plan_cl.setdefault(i["date"], [])[:0] = [c for c in i["classes"] if c not in plan_cl.get(i["date"], [])]
+    for i in items:
+        if i["kind"] in ("simple", "key") and not i["classes"]:
+            i["classes"] = plan_cl.get(i["date"], ALL4_SLUGS[:])
+
+    # ---- curriculum docs, calendars, portfolio, cooking, newsletters, family, how-to
+    def res(path, kind, title, classes=(), sub="", date=None):
+        if not path.exists(): return
+        reason = skip_reason(path.relative_to(SCHOOL))
+        if reason: skipped.append((str(path.relative_to(SCHOOL)), reason)); return
+        add(path, kind, title, classes, date, sub=sub)
+    T, S = ["transitions-l1", "transitions-l2"], ["sel-l1", "sel-l2"]
+    ALL4 = T + S
+    C = SCHOOL / "curriculum"
+    res(C / "two-year-spiral-plan.pdf", "curriculum", "Two-year spiral plan (all 4 classes)", ALL4, "Year A / Year B topics for Transitions and SEL")
+    res(C / "two-year-spiral-mockup.pdf", "curriculum", "Two-year spiral: one-page mockup", ALL4)
+    res(C / "transitions-two-year-infographic.pdf", "curriculum", "Transitions two-year infographic", T, "One-page picture of the two-year Transitions plan")
+    res(C / "unit-2-independent-living.pdf", "curriculum", "Unit 2: Independent Living (unit plan)", T, "Weeks, topics and skills for Unit 2")
+    res(C / "unit-2-teacher-key.pdf", "key", "Unit 2 teacher key", T, "Answers for the Unit 2 unit plan")
+    res(C / "transition-abilities-video-map.pdf", "curriculum", "Transition Abilities video map", T, "Which verified videos go with which lessons")
+    md = C / "sel-cycle-a-b-proposal.md"
+    if md.exists(): add(md, "curriculum", "SEL Cycle A / Cycle B plan", S, None, pdf=render_md(md), sub="Two-year SEL topic cycle")
+    res(SCHOOL / "curriculum-summary-2026-10-18.pdf", "curriculum", "Curriculum summary (Oct 18)", ALL4, "Short summary of the year's units")
+    res(SCHOOL / "curriculum-calendar.pdf", "calendar", "Curriculum calendar 2026-27", ALL4, "Day-by-day calendar for all four classes")
+    res(SCHOOL / "fhs-events-2026-27-updated-1023.pdf", "calendar", "FHS events calendar 2026-27", (), "School events (updated Oct 23)")
+    for f, t in (("blue-gold-calendar-2026-27.png", "Blue/Gold day calendar 2026-27"), ("alt-bell-schedules.png", "Alternate bell schedules"),
+                 ("extended-eagle-time-schedule.jpg", "Extended Eagle Time (Club Days) schedule")):
+        res(SCHOOL / f, "calendar", t)
+    for f in sorted((SCHOOL / "weekly-preview").glob("*-week-preview.pdf")):
+        d = date_of(f.name)
+        add(f, "calendar", "Week preview", classes_from_text(pdftext(f)) or ALL4, d, sub="Look-ahead at the week's lessons")
+    P = SCHOOL / "portfolio"
+    for lv in ("1", "2"):
+        res(P / f"Transitions-Portfolio-Level{lv}-ALL.pdf", "portfolio", f"Transitions Portfolio Level {lv}: ALL pages (print the whole kit)", [f"transitions-l{lv}"])
+        for f in sorted((P / f"Level{lv}").glob("*.pdf")):
+            res(f, "portfolio", nice_title(f.stem, drop_deck=False).replace(f" L{lv}", ""), [f"transitions-l{lv}"], f"Level {lv} portfolio piece")
+    tl = {"07-monthly-update-checklist": "Monthly update checklist", "08-binder-setup-instructions": "Binder setup instructions", "09-tab-labels-1x4": "Tab labels (print on label sheets)"}
+    for f in sorted((P / "Teacher").glob("*.pdf")):
+        res(f, "portfolio", tl.get(f.stem, nice_title(f.stem)), T, "Portfolio · teacher page")
+    res(SCHOOL / "cooking" / "pizza-in-a-mug-original.pdf", "cooking", "Microwave Mug Pizza: picture recipe card", T, "The original recipe card")
+    for md, t, sub in ((SCHOOL / "cooking" / "pizza-in-a-mug.md", "Microwave Pizza Bowl: our version", "Made in a bowl, 1 min 15 sec"),
+                       (SCHOOL / "cooking" / "recipe-bank.md", "Friday cooking lab: recipe bank", "Recipes by challenge level")):
+        if md.exists(): add(md, "cooking", t, T, None, sub=sub, pdf=render_md(md))
+    res(SCHOOL / "newsletters" / "Room113-SEL-Newsletter-TEMPLATE.pdf", "newsletter", "SEL newsletter template", S)
+    res(SCHOOL / "newsletters" / "Room113-Transitions-Newsletter-TEMPLATE.pdf", "newsletter", "Transitions newsletter template", T)
+    res(SCHOOL / "family" / "guardianship-handout-whatcom.pdf", "family", "Planning for age 18: guardianship & other options (Whatcom County)", T, "Family handout")
+    res(SCHOOL / "data" / "sel-checkin" / "how-to-set-up.pdf", "key", "SEL weekly check-in: how to set up the forms", S, "Step-by-step setup for the teacher")
+
+    # ---- games
+    for p in sorted(GAMES.glob("*.html")):
+        slug = class_of(p.name)
+        if not slug: skipped.append((f"games/{p.name}", "could not tell which class")); continue
+        t, g = read_game(p)
+        games.append(dict(src=p, class_slug=slug, title=g.get("title", p.stem), sub=g.get("subtitle", ""),
+                          icon=g.get("icon", "🎮"), level=g.get("level"), badge=g.get("badge", ""),
+                          date=datetime.date.fromtimestamp(p.stat().st_mtime).isoformat()))
+    return items, games, skipped
+
+# ---------------------------------------------------------------- html
+NAV_INCL = []   # (slug, tab name, emoji) for published inclusion courses; filled in main() before any page is written
+NAV_TINT = {}   # slug -> ' style="..."' for courses with a course.json "theme" (added 2026-10-30 for Ag Science); others untouched
+
+def theme_css(c):
+    """Per-course colors (course.json "theme": {navy, blue, gold, gold2, cream, gb, bb, green}) as a :root override for that course page only."""
+    th = c.get("theme") or {}
+    if not th: return ""
+    v = ";".join(f"--{k}:{th[k]}" for k in ("navy", "gold", "gold2", "blue", "cream", "gb", "bb", "green") if th.get(k))
+    extra = th.get("css", "")
+    return f"<style>:root{{{v}}}{extra}</style>"
+
+def tile_style(c):
+    th = c.get("theme") or {}
+    if not th.get("blue"): return "", ""
+    return (f' style="border-color:{th["blue"]};box-shadow:0 6px 0 {th.get("navy", th["blue"])}"',
+            f' style="background:{th["blue"]}"')
+
+def page(title, body, active="", desc="", root=""):
+    nav = "".join(
+        f'<a class="navbtn{" on" if active == s else ""}" href="{root}{s}.html"><span aria-hidden="true">{e}</span> {esc(n)}</a>'
+        for s, n, _, e, _, _ in GROUPS)
+    nav += "".join(
+        f'<a class="navbtn{" on" if active == "incl-" + s else ""}" href="{root}inclusion/{s}.html"{NAV_TINT.get(s, "") if active != "incl-" + s else ""}><span aria-hidden="true">{e}</span> {esc(n)}</a>'
+        for s, n, e in NAV_INCL)
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>{esc(title)}</title>
+<meta name="description" content="{esc(desc or "Slides, lesson plans, printables and review games for Ferndale High School Inclusion.")}">
+<link rel="stylesheet" href="{root}style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap topin">
+    <a class="brand" href="{root}index.html"><span class="logo" aria-hidden="true">🏫</span><span><b>Ferndale High School Inclusion</b><small>Levels 1 &amp; 2</small></span></a>
+    <nav class="nav" aria-label="Classes"><a class="navbtn{" on" if active == "home" else ""}" href="{root}index.html"><span aria-hidden="true">🏠</span> Home</a>{nav}<a class="navbtn{" on" if active == "resources" else ""}" href="{root}resources.html"><span aria-hidden="true">📁</span> More</a><a class="navbtn{" on" if active == "teacher" else ""}" href="{root}teacher.html"><span aria-hidden="true">👩‍🏫</span> Teacher</a></nav>
+  </div>
+  <div class="stripe"></div>
+</header>
+<main id="main" class="wrap">
+{body}
+</main>
+<footer class="foot"><div class="wrap">Ferndale High School Inclusion</div></footer>
+<script src="{root}filter.js"></script>
+</body>
+</html>
+"""
+
+def pills(classes):
+    return "".join(f'<span class="pill {"lv1" if CLASSLV[c] == 1 else "lv2"}">{esc(CLASSNAME[c])}</span> ' for c in classes)
+
+def game_card(g):
+    cname = CLASSNAME[g["class_slug"]]
+    lv = "lv1" if g["level"] == 1 else "lv2"
+    return f"""<article class="card game item" data-q="{esc((g['title'] + ' ' + g['sub'] + ' game ' + cname).lower())}">
+  <div class="gicon" aria-hidden="true">{esc(g['icon'])}</div>
+  <div class="gtxt"><span class="pill {lv}">{esc(cname)}</span>
+  <h3>{esc(g['title'])}</h3><p>{esc(g['sub'])}</p>
+  <a class="btn gold" href="games/{esc(g['src'].name)}" target="_blank" rel="noopener">▶ Play</a></div>
+</article>"""
+
+def q_of(it):
+    return esc((it["title"] + " " + it.get("sub", "") + " " + it["kind"] + " " + " ".join(CLASSNAME[c] for c in it["classes"]) + " " + (it["date"] or "")).lower())
+
+def deck_card(d):
+    return f"""<article class="card deck item" data-q="{q_of(d)} slides">
+  <a class="thumb" href="{esc(d['href'])}" target="_blank" rel="noopener" aria-label="Open slides: {esc(d['title'])}"><img src="{esc(d['thumbhref'])}" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="date">{human_date(d['date'])}</span><h4>{esc(d['title'])}</h4>
+  <p class="meta">{d['pages']} slides · PDF · {size_label(d['out'])}</p>
+  <div class="btns"><a class="btn blue" href="{esc(d['href'])}" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="{esc(d['href'])}" download>⬇ Download</a></div></div>
+</article>"""
+
+KIND_LABEL = {"plan": "Lesson plan", "simple": "Sub plan", "printable": "Printable", "key": "Teacher", "curriculum": "Curriculum",
+              "calendar": "Calendar", "portfolio": "Portfolio", "cooking": "Cooking", "newsletter": "Newsletter", "family": "Family", "deck": "Slides"}
+def item_card(it, show_classes=True, topic_for=None):
+    sub = it.get("sub", "")
+    if topic_for and it.get("topics", {}).get(topic_for): sub = "Today: " + it["topics"][topic_for]
+    badge = ' <span class="pill draft">Draft, coming up</span>' if it.get("draft") else ""
+    unit = "page" if it["pages"] == 1 else "pages"
+    meta = f"{it['pages']} {unit} · {it['ext'].upper()}{' + PowerPoint' if it.get('pptx_href') else ''} · {size_label(it['out'])}" if it["ext"] == "pdf" else f"Picture · {it['ext'].upper()} · {size_label(it['out'])}"
+    dt = f'<span class="date">{human_date(it["date"])}</span> ' if it["date"] else ""
+    return f"""<article class="card item row" data-q="{q_of(it)}">
+  <a class="thumb2" href="{esc(it['href'])}" target="_blank" rel="noopener" aria-label="Open: {esc(it['title'])}"><img src="{esc(it['thumbhref'])}" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt">{dt}<span class="kind">{esc(KIND_LABEL.get(it['kind'], ''))}</span>{badge}
+  <h4>{esc(it['title'])}</h4>
+  <p class="meta">{(pills(it['classes']) if show_classes else '')}{esc(meta)}</p>{f'<p class="sub">{esc(sub)}</p>' if sub else ''}
+  <div class="btns"><a class="btn blue sm" href="{esc(it['href'])}" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="{esc(it['href'])}" download>⬇ Download</a>{f' <a class="btn gold sm" href="{esc(it["pptx_href"])}" download type="application/vnd.openxmlformats-officedocument.presentationml.presentation">🖥️ Get the slideshow (.pptx)</a>' if it.get('pptx_href') else ''}</div></div>
+</article>"""
+
+def video_card(v):
+    return f"""<article class="card video item" data-q="{esc((v['title'] + ' video ' + v['deck']).lower())}">
+  <div class="gicon" aria-hidden="true">🎬</div>
+  <div class="gtxt"><span class="date">{human_date(v['date'])} · {esc(v['deck'])}</span><h4>{esc(v['title'])}</h4>
+  <p class="meta">Transition Abilities · opens YouTube · turn captions on</p>
+  <a class="btn blue" href="{esc(v['url'])}" target="_blank" rel="noopener">▶ Watch video</a></div>
+</article>"""
+
+def section(id_, icon, title, inner, note=""):
+    if not inner: return ""
+    return f'<section class="cat" id="{id_}" aria-labelledby="h-{id_}"><h2 id="h-{id_}">{icon} {esc(title)}</h2>{f"<p class=note>{note}</p>" if note else ""}{inner}</section>'
+
+def by_date(items):
+    return sorted(items, key=lambda i: (i["date"] or "0000", i["title"]), reverse=True)
+
+def plan_groups(items, topic_for=None):
+    cur = [i for i in items if not i.get("draft")]; fut = [i for i in items if i.get("draft")]
+    out = ""
+    if cur: out += '<div class="grid rows">' + "".join(item_card(i, topic_for=topic_for, show_classes=topic_for is None) for i in by_date(cur)) + "</div>"
+    if fut:
+        out += '<h3 class="unit">🗓️ Coming up: build-ahead drafts (Unit 2)</h3><div class="grid rows">' + "".join(item_card(i, show_classes=topic_for is None) for i in sorted(fut, key=lambda i: (i["date"], i["title"]))) + "</div>"
+    return out
+
+def search_box():
+    return '<div class="searchbar"><label for="q">🔎 Find something:</label><input id="q" type="search" placeholder="Type a word, like goal, rights, key, 10/26…" autocomplete="off"><span id="qn" class="note"></span></div>'
+
+TEACHER_NOTE = "👩‍🏫 <b>For teachers.</b> Answer keys, sub-ready notes and setup guides. Students: please stay in the sections above."
+
+# ---------------------------------------------------------------- class pages, unit by unit (2026-10-30)
+CLASS_STATS = {}   # slug -> [(unit label, lessons, decks, games)] for site-report.md
+_STOP = {"sel", "transitions", "l1", "l2", "deck", "the", "a", "at", "of", "and", "to", "in", "my", "game", "cooking", "match", "steps", "printables", "printable"}
+def _toks(stem):
+    t = re.sub(r"^\d{4}-\d\d-\d\d-?", "", stem.lower()); t = re.sub(r"unit\d+", " ", t)
+    out = set()
+    for w in re.split(r"[-_ ]+", t):
+        if not w or w in _STOP: continue
+        out.add(re.sub(r"(ing|s)$", "", w) if len(w) > 4 else w)
+    return out
+
+def _place_game(g, slug, lessons):
+    """-> (unit no, lesson date or None). Whole-unit games (name is only the unit, like 'transitions-unit1-self-advocacy') go to the unit;
+    topic games go with the lesson whose deck/printable names share the most words; last fallback is the game file's date."""
+    stem = g["src"].stem.lower(); fam = slug.split("-")[0]
+    unit, rest = None, stem
+    m = re.search(r"unit(\d+)", stem)
+    if m: unit = int(m.group(1))
+    for n, _e, _t, _s, keys in UNIT_PLAN[fam]:
+        for k in keys:
+            if k in stem and unit in (None, n): unit, rest = n, rest.replace(k, " ")
+    tk = _toks(rest)
+    cand = [(len(tk & lt), d) for (u, d), lt in lessons.items() if unit in (None, u)]
+    cand = [c for c in cand if c[0] > 0]
+    if tk and cand:
+        best = max(cand); d = best[1]
+        return unit_of(slug, d) if unit is None else unit, d
+    if unit is not None: return unit, None
+    return unit_of(slug, g["date"]), None
+
+def _tline(its, slug):
+    lab = {"plan": "📝 Lesson plan", "simple": "🧾 Sub plan", "key": "🔑 Teacher key"}
+    btns = " ".join(f'<a class="btn ghost sm" href="{esc(i["href"])}" target="_blank" rel="noopener">{lab.get(i["kind"], "📄") if i["title"] in ("Teacher key", "Daily lesson plans", "Simple plan (sub-ready)") else (lab.get(i["kind"], "📄").split(" ")[0] + " " + esc(i["title"]))}</a>'
+                    for i in sorted(its, key=lambda i: ({"plan": 0, "simple": 1, "key": 2}.get(i["kind"], 3), i["title"])))
+    q = esc(" ".join(i["title"] + " " + i["kind"] + " " + (i["date"] or "") for i in its).lower() + " teacher plan key")
+    return f'<div class="tline item" data-q="{q}"><span class="tl">👩‍🏫 For teachers:</span> {btns}</div>'
+
+def _short(t, n=72):
+    t = re.sub(r"[^\w\s:;,.&'’“”\"!?/+()-]", "", t); t = re.sub(r"\s+", " ", t).strip(" :-·*")
+    t = re.split(r",\s+as (?:on|in) ", t)[0]
+    if len(t) <= n: return t
+    for cut in (" (", ": ", " — ", ", "):
+        k = t.find(cut)
+        if 12 <= k <= n: return t[:k]
+    return t[:n].rsplit(" ", 1)[0] + "…"
+
+def lesson_topic(slug, teach, date):
+    """Title for a lesson day that has no slide deck: Topic / Focus line of that class's section in the day's plan."""
+    fam, lv = slug.split("-"); FAM = "Transitions" if fam == "transitions" else "SEL"
+    for it in sorted(teach, key=lambda i: {"plan": 0, "key": 1, "simple": 2}.get(i["kind"], 3)):
+        txt = it.get("txt") or ""
+        if it.get("topics", {}).get(slug): return _short(it["topics"][slug])
+        secs = re.split(r"(?m)^\W*Lesson\s+\d+:", txt)
+        sec = next((x for x in secs[1:] if re.match(rf"\s*{FAM}\s+Level\s*{lv[1]}", x)), txt if len(secs) == 1 else "")
+        if not sec: continue
+        if re.search(r"Cooking lab|Friday Cooking", sec[:400], re.I): return "Cooking lab / outing (Mr. Driver's)"
+        m = re.search(r"(?:Today's Focus|Focus|Topic):\s*(.+?)(?:\n\s*\n|\n\s*•)", sec, re.S)
+        if m: return _short(m.group(1))
+        m = re.search(rf"{FAM} Level {lv[1]}:\s*(.+)", sec)
+        if m: return _short(m.group(1))
+    if fam == "transitions" and datetime.date.fromisoformat(date).weekday() == 4: return "Friday cooking lab / outing (Mr. Driver's)"
+    return "Daily lesson plan"
+
+def class_level_block(slug, lv, decks, items, games, videos):
+    fam = slug.split("-")[0]; sx = f"-l{lv}"
+    plan_units = UNIT_PLAN[fam]
+    lessons = {}   # (unit, date) -> dict(decks, prints, teach, games, videos)
+    unit_docs, unit_games, other = {}, {}, []
+    def L(u, d): return lessons.setdefault((u, d), dict(decks=[], prints=[], teach=[], games=[], videos=[]))
+    mine = [i for i in items if slug in i["classes"] and i["kind"] in ("deck", "printable", "plan", "simple", "key")]
+    mine += [i for i in items if slug in i["classes"] and i["kind"] == "curriculum" and re.search(r"\bUnit (\d+)\b", i["title"])]
+    for it in mine:
+        stem = re.sub(r"^\d{4}-\d\d-\d\d-?", "", it["src"].stem)
+        if not it["date"]:
+            m = re.search(r"\bUnit (\d+)\b", it["title"])
+            if m and fam == "transitions": unit_docs.setdefault(int(m.group(1)), []).append(it)
+            else: other.append(it); UNPLACED.append((slug, it["title"], "no date and no unit in its name"))
+            continue
+        u = unit_of(slug, it["date"], stem)
+        if not u: other.append(it); UNPLACED.append((slug, f'{it["title"]} ({it["date"]})', "date is outside this year's unit plan")); continue
+        k = {"deck": "decks", "printable": "prints"}.get(it["kind"], "teach")
+        L(u, it["date"])[k].append(it)
+    for v in videos:
+        if v["class_slug"] != slug: continue
+        u = unit_of(slug, v["date"])
+        if u: L(u, v["date"])["videos"].append(v)
+        else: other.append(dict(video=v)); UNPLACED.append((slug, v["title"], "video date outside unit plan"))
+    # lesson word sets for game matching (only lessons that have slides or printables)
+    lw = {}
+    for key, x in lessons.items():
+        ws = set()
+        for i in x["decks"] + x["prints"]: ws |= _toks(i["src"].stem)
+        if ws: lw[key] = ws
+    for g in [g for g in games if g["class_slug"] == slug]:
+        u, d = _place_game(g, slug, lw)
+        if not u: other.append(dict(game=g)); UNPLACED.append((slug, g["title"] + " (game)", "could not match a unit or lesson")); continue
+        if d: lessons[(u, d)]["games"].append(g)
+        else: unit_games.setdefault(u, []).append(g)
+    today_u = unit_of(slug, TODAY)
+    ready = {u for (u, _d) in lessons} | set(unit_docs) | set(unit_games)
+    stats = []
+    ulist = "".join(
+        f'<li class="{"ready" if n in ready else "soon"}"><span class="un">Unit {n}</span> <span aria-hidden="true">{em}</span> '
+        + (f'<a href="#u{n}{sx}"><b>{esc(t)}</b></a> <span class="pill lv2">Ready</span>' if n in ready else
+           f'<b>{esc(t)}</b> <span class="pill draft">{"Taught before this site" if n < today_u else "Coming soon"}</span>')
+        + (' <span class="pill now">📍 Now</span>' if n == today_u else "") + "</li>" for n, em, t, _s, _k in plan_units)
+    usecs = ""
+    for n, em, t, starts, _k in plan_units:
+        if n not in ready: continue
+        ls = sorted([(d, x) for (u, d), x in lessons.items() if u == n])
+        inner = ""
+        if unit_docs.get(n) or unit_games.get(n):
+            inner += '<div class="lesson unitwide"><h4 class="lessonh">🗂️ For the whole unit</h4>'
+            if unit_games.get(n): inner += '<div class="grid">' + "".join(game_card(g) for g in sorted(unit_games[n], key=lambda g: g["title"])) + "</div>"
+            if unit_docs.get(n): inner += '<div class="grid rows">' + "".join(item_card(i, show_classes=False) for i in unit_docs[n]) + "</div>"
+            inner += "</div>"
+        nd = ng = 0
+        for d, x in ls:
+            nd += len(x["decks"]); ng += len(x["games"])
+            title = " + ".join(dict.fromkeys(i["title"] for i in x["decks"]))
+            if not title:
+                title = x["prints"][0]["title"] if x["prints"] else lesson_topic(slug, x["teach"], d)
+            title = _short(title, 80)
+            labb = ' <span class="pill lab">🍳 Cooking lab</span>' if (any(re.search(r"recipe-card|cooking", i["src"].stem) for i in x["prints"] + x["decks"]) or re.search(r"cooking|parfait", title, re.I)) else ""
+            soon = ' <span class="pill draft">Coming up</span>' if d > TODAY else ""
+            inner += f'<div class="lesson" id="lesson-{d}{sx}"><h4 class="lessonh"><span class="date">{human_date(d)}</span> {esc(title)}{labb}{soon}</h4>'
+            cards = "".join(deck_card(i) for i in x["decks"]) + "".join(game_card(g) for g in x["games"]) + "".join(video_card(v) for v in x["videos"])
+            if cards: inner += '<div class="grid">' + cards + "</div>"
+            if x["prints"]: inner += '<div class="grid rows">' + "".join(item_card(i, show_classes=False) for i in sorted(x["prints"], key=lambda i: i["title"])) + "</div>"
+            if x["teach"]: inner += _tline(x["teach"], slug)
+            inner += "</div>"
+        nd += 0; ng += len(unit_games.get(n, []))
+        stats.append((f"Unit {n}: {t}", len(ls), nd, ng))
+        note = f'{len(ls)} lesson{"s" if len(ls) != 1 else ""} in teaching order, oldest first. Each lesson keeps its slides, printables, game and teacher files together.'
+        usecs += section(f"u{n}{sx}", em, f"Unit {n}: {t}" + (" 📍" if n == today_u else ""), inner, note)
+    if other:
+        oi = ""
+        its = [o for o in other if "src" in o]; gs = [o["game"] for o in other if "game" in o]; vs = [o["video"] for o in other if "video" in o]
+        if gs or vs: oi += '<div class="grid">' + "".join(game_card(g) for g in gs) + "".join(video_card(v) for v in vs) + "</div>"
+        stud = [i for i in its if i["kind"] != "key"]; keys = [i for i in its if i["kind"] == "key"]
+        if stud: oi += '<div class="grid rows">' + "".join(item_card(i, show_classes=False) for i in stud) + "</div>"
+        if keys: oi += '<div class="grid rows">' + "".join(item_card(i, show_classes=False) for i in keys) + "</div>"
+        usecs += section(f"other{sx}", "🧺", "Other / extras", oi, "Files that are not tied to one unit.")
+        stats.append(("Other / extras", len(other), 0, len(gs)))
+    CLASS_STATS[slug] = stats
+    teach = [i for i in items if i["kind"] == "key" and slug in i["classes"]]
+    legacy = "".join(f'<span id="{h}{sx}"></span>' for h in ("slides", "plans", "prints", "games", "videos"))
+    jumps = (f'<a class="btn blue" href="#units{sx}">🗂️ Units</a> ' + " ".join(f'<a class="btn {"gold" if n == today_u else "blue"}" href="#u{n}{sx}">{em} Unit {n}</a>' for n, em, *_ in plan_units if n in ready)
+             + (f' <a class="btn blue" href="#other{sx}">🧺 Other</a>' if other else "") + (f' <a class="btn ghost" href="#teacher{sx}">👩‍🏫 Teacher resources</a>' if teach else ""))
+    body = f"""<p class="lead lvlead">{esc(CLASS_INFO[slug])}</p>{legacy}
+{section('units' + sx, '🗂️', f'Level {lv} units in teaching order', '<ol class="unitlist">' + ulist + '</ol>', f'{len(ready & {p[0] for p in plan_units})} of {len(plan_units)} units have materials. 📍 marks the unit we are in now.')}
+{usecs}
+{section('teacher' + sx, '👩‍🏫', f'Level {lv} teacher resources', plan_groups(teach, topic_for=slug), TEACHER_NOTE + ' <a href="teacher.html">All teacher resources</a>')}"""
+    return jumps, body
+
+def build_pages(decks, items, games, videos, incl=()):
+    by_kind = lambda k, cl=None: [i for i in items if i["kind"] == k and (cl is None or cl in i["classes"])]
+    # ---------------- home
+    tiles = "".join(
+        f"""<a class="tile {gs}" href="{gs}.html"><span class="ti" aria-hidden="true">{e}</span>
+<span class="tt">{esc(full)}</span><span class="td">{esc(info)}</span><span class="go">Go ▶</span></a>"""
+        for gs, n, full, e, lv_map, info in GROUPS)
+    tiles += "".join(
+        f"""<a class="tile incl lv2" href="inclusion/{esc(c['slug'])}.html"{tile_style(c)[0]}><span class="ti" aria-hidden="true"{tile_style(c)[1]}>{c['emoji']}</span>
+<span class="tt">{esc(c['name'])} (inclusion)</span><span class="td">{esc(c.get('tile', c['about']))}</span><span class="go">Go ▶</span></a>""" for c in incl)
+    gsec = "".join(game_card(g) for g in sorted(games, key=lambda g: (g["class_slug"], g["title"])))
+    latest = []
+    for slug, n, full, lv, e in CLASSES:
+        ds = sorted([d for d in decks if slug in d["classes"]], key=lambda d: d["date"], reverse=True)
+        if ds: latest.append((n, slug, ds[0]))
+    new = "".join(f'<li><span class="pill {"lv1" if CLASSLV[s] == 1 else "lv2"}">{esc(n)}</span> <a href="{esc(d["href"])}" target="_blank" rel="noopener">{esc(d["title"])}</a> <span class="date">{human_date(d["date"])}</span></li>' for n, s, d in latest)
+    counts = "".join(f'<li>{label}: <b>{n}</b></li>' for label, n in (
+        ("Slide decks", len(decks)), ("Lesson plans and sub plans", len(by_kind("plan")) + len(by_kind("simple"))),
+        ("Worksheets and printables", len(by_kind("printable"))), ("Review games", len(games))))
+    body = f"""<section class="hero">
+  <h1>Welcome! 👋</h1>
+  <p class="lead">Pick your class. Find slides, lesson plans, worksheets, printables and review games.</p>
+  <p class="jump"><a class="btn gold" href="resources.html">📁 More resources</a></p>
+</section>
+<section aria-labelledby="h-class"><h2 id="h-class">Pick my class</h2><div class="tiles">{tiles}</div></section>
+<section aria-labelledby="h-games"><h2 id="h-games">🎮 Review games</h2>
+<p class="note">Play after a lesson or any time you want to practice. No sign-in. Nothing is saved.</p>
+<div class="grid">{gsec or '<p class="note">Games are coming soon.</p>'}</div></section>
+{('<section aria-labelledby="h-new"><h2 id="h-new">🆕 Newest slides</h2><ul class="newlist">' + new + '</ul></section>') if new else ''}
+<section aria-labelledby="h-all"><h2 id="h-all">📊 On this site</h2><ul class="newlist counts">{counts}</ul></section>"""
+    (SITE / "index.html").write_text(page("Ferndale High School Inclusion", body, active="home"), encoding="utf-8")
+    # ---------------- class pages: one page per GROUP, one .lvonly block per level, unit by unit (2026-10-30)
+    parts = {}
+    for slug, n, full, lv, e in CLASSES:
+        parts[slug] = (lv,) + class_level_block(slug, lv, decks, items, games, videos)
+    for gs, n, full, e, lv_map, info in GROUPS:
+        lvs = sorted(lv_map)
+        blocks = "".join(f'<div class="lvonly lv{lv}">{parts[lv_map[lv]][2]}</div>' for lv in lvs)
+        jbar = "".join(f'<p class="jump lvonly lv{lv}">{parts[lv_map[lv]][1]}</p>' for lv in lvs)
+        body = f"""<section class="hero small {gs}">
+  <p class="crumb"><a href="index.html">🏠 Home</a> · <a href="resources.html">📁 More resources</a></p>
+  <h1><span aria-hidden="true">{e}</span> {esc(full)} · Level 1 & 2</h1>
+  {level_tabs(gs, lvs, GROUP_TAB.get(gs))}
+  {jbar}
+  {search_box()}
+</section>
+{blocks}
+<p class="note" id="none" hidden>Nothing matches that. Try a shorter word.</p>
+<p class="jump"><a class="btn ghost" href="resources.html">📁 More resources (curriculum, calendars, portfolio, cooking…)</a></p>"""
+        (SITE / f"{gs}.html").write_text(page(f"{full} · Ferndale High School Inclusion", body, active=gs), encoding="utf-8")
+        for lv, cs in lv_map.items():   # old per-level URLs (bookmarks) -> redirect to the matching level
+            t = f"{gs}.html#level{lv}"
+            (SITE / f"{cs}.html").write_text(f"""<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex">
+<meta http-equiv="refresh" content="0; url={t}"><link rel="canonical" href="{t}">
+<title>Moved: {esc(full)} · Level {lv}</title><script>location.replace("{t}");</script></head>
+<body style="font-family:sans-serif;padding:2em"><p>This page moved. <a href="{t}">Go to {esc(full)} · Level {lv}</a>.</p></body></html>
+""", encoding="utf-8")
+    # ---------------- resources page
+    def grid(its, show=True): return '<div class="grid rows">' + "".join(item_card(i, show_classes=show) for i in its) + "</div>"
+    cur = sorted(by_kind("curriculum"), key=lambda i: i["title"]); cal = sorted(by_kind("calendar"), key=lambda i: i["title"])
+    port = sorted(by_kind("portfolio"), key=lambda i: (i["classes"], i["src"].name))
+    plans_all = [i for i in items if i["kind"] in ("plan", "simple")]
+    teach_all = [i for i in items if i["kind"] == "key"]
+    prints_all = [i for i in items if i["kind"] == "printable"]
+    jumpdefs = [("plans", "📝 Lesson plans", plans_all), ("prints", "🖨️ Printables", prints_all), ("curr", "📚 Curriculum", cur), ("cal", "🗓️ Calendars", cal),
+                ("port", "🎓 Portfolio", port), ("cook", "🍳 Cooking", by_kind("cooking")), ("news", "📰 Newsletters", by_kind("newsletter")),
+                ("fam", "👪 Family", by_kind("family")), ("teacher", "👩‍🏫 Teacher resources", teach_all)]
+    jumps = " ".join(f'<a class="btn blue" href="#{h}">{t}</a>' for h, t, l in jumpdefs if l)
+    body = f"""<section class="hero small">
+  <p class="crumb"><a href="index.html">🏠 Home</a></p>
+  <h1><span aria-hidden="true">📁</span> More resources</h1>
+  <p class="lead">Everything else for the classes: every lesson plan and printable in one place, plus the curriculum, calendars, portfolio kits, cooking and newsletters.</p>
+  <p class="jump">{jumps}</p>
+  {search_box()}
+</section>
+{section('plans', '📝', 'Lesson plans (all classes, by date)', plan_groups(plans_all), 'Each plan shows which class it is for. Sub-ready “simple plans” are included.')}
+{section('prints', '🖨️', 'Worksheets & printables (all classes)', grid(by_date(prints_all)), 'Cards, charts, exit tickets and pages to print. Student pages have a blank Name line.')}
+{section('curr', '📚', 'Curriculum documents', grid(cur))}
+{section('cal', '🗓️', 'Calendars', grid(cal))}
+{section('port', '🎓', 'Portfolio kits', grid(port), 'Print the whole ALL kit for a Level, or pick single pieces. Teacher pages (binder setup, tab labels, monthly checklist) are included.')}
+{section('cook', '🍳', 'Cooking', grid(by_kind("cooking")))}
+{section('news', '📰', 'Newsletter templates', grid(by_kind("newsletter")))}
+{section('fam', '👪', 'Family handouts', grid(by_kind("family")))}
+{section('teacher', '👩‍🏫', 'Teacher resources', grid(by_date(teach_all)), TEACHER_NOTE)}
+<p class="note" id="none" hidden>Nothing matches that. Try a shorter word.</p>"""
+    (SITE / "resources.html").write_text(page("More resources · Ferndale High School Inclusion", body, active="resources"), encoding="utf-8")
+
+
+def build_teacher_page(items, incl=()):
+    keys = [i for i in items if i["kind"] == "key"]
+    cals = [i for i in items if i["kind"] == "calendar"]
+    def grid(its, show=True): return '<div class="grid rows">' + "".join(item_card(i, show_classes=show) for i in its) + "</div>"
+    secs = ""
+    for slug, n, full, lv, e in CLASSES:
+        ks = [i for i in keys if slug in i["classes"]]
+        secs += section("t-" + slug, e, f"{full}: keys and teacher notes", grid(by_date(ks), show=False))
+    for c in incl:   # inclusion courses: staff guides + answer keys, in unit order
+        ks = [i for u in c["units"] for i in u["items"] if i["kind"] == "key"]
+        secs += section("t-incl-" + c["slug"], c["emoji"], f"{c['name']} (inclusion, {levels_label(c)}): staff guides and keys",
+                        grid(ks, show=False), f'<a href="inclusion/{esc(c["slug"])}.html">Open the {esc(c["name"])} page</a>')
+    jumps = " ".join(f'<a class="btn blue" href="#t-{s}">{e} {esc(n)}</a>' for s, n, _, _, e in CLASSES)
+    jumps += "".join(f' <a class="btn blue" href="#t-incl-{esc(c["slug"])}">{c["emoji"]} {esc(c["name"])}</a>' for c in incl)
+    body = f"""<section class="hero small">
+  <p class="crumb"><a href="index.html">🏠 Home</a></p>
+  <h1><span aria-hidden="true">👩‍🏫</span> Teacher resources</h1>
+  <p class="lead">Answer keys, teacher notes and setup guides for each class. {len(keys)} files.</p>
+  <p class="jump">{jumps}</p>
+  {search_box()}
+</section>
+<section class="cat" id="all" aria-labelledby="h-all"><h2 id="h-all">🗂️ All keys and teacher notes, newest first</h2><p class="note">{TEACHER_NOTE}</p>{grid(by_date(keys))}</section>
+{secs}
+<p class="note" id="none" hidden>Nothing matches that. Try a shorter word.</p>"""
+    (SITE / "teacher.html").write_text(page("Teacher resources · Ferndale High School Inclusion", body, active="teacher"), encoding="utf-8")
+
+# ---------------------------------------------------------------- inclusion courses (repeatable pattern)
+INCL_KIND = (("deck", re.compile(r"-deck$")), ("key", re.compile(r"(-key|staff-guide)$")))
+def incl_kind(stem):
+    for k, rx in INCL_KIND:
+        if rx.search(stem): return k
+    return "printable"
+
+def collect_inclusion(preview=False):
+    """Read /workspace/school/inclusion/<slug>/course.json. Returns (courses, skipped). Units keep course order.
+    Files in a unit folder: *-deck.pdf -> Slides, *-key.pdf and *staff-guide*.pdf -> Teacher resources, other PDFs -> Worksheets."""
+    courses, skipped = [], []
+    if not INCL.exists(): return courses, skipped
+    for cj in sorted(INCL.glob("*/course.json")):
+        c = json.loads(cj.read_text(encoding="utf-8"))
+        if not (c.get("publish") or preview):
+            skipped.append((str(cj.parent.relative_to(SCHOOL)) + "/", "inclusion course not approved yet (publish=false); use --preview-inclusion")); continue
+        c["preview"] = not c.get("publish")
+        for u in c["units"]:
+            u["items"] = []
+            folder = cj.parent / u["folder"]
+            labs = c.get("labs", {})
+            def lab_of(stem):
+                for ls, lm in labs.items():
+                    if re.match(r"^" + re.escape(c["slug"]) + r"-l\d-" + re.escape(lm.get("prefix", ls + "-lab")), stem): return ls
+                return None
+            for f in sorted(folder.glob("*-game.html")) if folder.exists() else []:   # clickable lab games (inclusion labs)
+                lab = lab_of(f.stem)
+                if not lab and not c.get("unit_games"): continue
+                _, g = read_game(f)
+                _uc = (c.get("construction") or {}).get(f.stem)   # 🚧 badge (Biology A, 2026-10-31); other courses have no "construction" key
+                u["items"].append(dict(src=f, orig=f, kind="game", title=("🚧 " if _uc else "") + g.get("title", f.stem), sub=(f"🚧 Under construction: {_uc} " if _uc else "") + g.get("subtitle", ""), icon=g.get("icon", "🎮"),
+                                       classes=[], date=None, pages=0, txt="", rel=str(f.relative_to(SCHOOL)), ext="html", lab=lab,
+                                       lv=1 if re.search(r"-l1-", f.stem) else 2))
+            for f in sorted(folder.glob("*.pdf")) if folder.exists() else []:
+                if SUPERSEDED_RE.search(f.stem): skipped.append((str(f.relative_to(SCHOOL)), "older version")); continue
+                k = incl_kind(f.stem)
+                title = c.get("titles", {}).get(f.stem) or nice_title(f.stem, drop_deck=(k == "deck"))
+                n, _ = pdfpages(f)
+                _uc = (c.get("construction") or {}).get(f.stem)   # 🚧 badge (Biology A, 2026-10-31)
+                if _uc: title = "🚧 " + title
+                u["items"].append(dict(src=f, orig=f, kind=k, title=title, sub=(f"🚧 Under construction: {_uc} " if _uc else "") + c.get("subs", {}).get(f.stem, ""), classes=[], date=None,
+                                       pages=n, txt="", rel=str(f.relative_to(SCHOOL)), ext="pdf", lab=lab_of(f.stem),
+                                       lv=1 if re.search(r"-l1-", f.stem) else 2,
+                                       pptx=f.with_suffix(".pptx") if f.with_suffix(".pptx").exists() else None))   # editable slideshow beside its PDF preview (2026-10-30)
+            order = {"deck": 0, "printable": 1, "key": 2, "game": 3}
+            u["items"].sort(key=lambda i: (i["lv"], order[i["kind"]], "staff-guide" not in i["src"].stem, i["title"]))
+            u["ready"] = bool(u["items"])
+        courses.append(c)
+    return courses, skipped
+
+def build_inclusion(courses):
+    """Copy files to inclusion/<slug>/<unit>/, make thumbs, write inclusion/<slug>.html. Hrefs on items are site-root relative."""
+    for c in courses:
+        base = SITE / "inclusion" / c["slug"]
+        for u in c["units"]:
+            for it in u["items"]:
+                d = base / u["folder"]; d.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(it["src"], d / it["src"].name)
+                it["out"] = d / it["src"].name
+                it["href"] = f"inclusion/{c['slug']}/{u['folder']}/{it['src'].name}"
+                if it.get("pptx"):
+                    shutil.copy2(it["pptx"], d / it["pptx"].name); it["pptx_href"] = f"inclusion/{c['slug']}/{u['folder']}/{it['pptx'].name}"
+                if it["kind"] == "game": it["thumbhref"] = ""; continue
+                tb = f"incl-{c['slug']}-{it['src'].stem}"
+                thumb_pdf(it["src"], SITE / "thumbs" / tb, 320 if it["kind"] == "deck" else 192, 180 if it["kind"] == "deck" else 0, it["kind"] == "deck")
+                it["thumbhref"] = f"thumbs/{tb}.jpg"
+                it["sub"] = it["sub"] or f"{c['name']} · Unit {u['n']}: {u['title']}"
+        _incl_page(c)
+
+def _sub(it, up="../"):
+    """Copy of an item with hrefs relative to the inclusion/ folder."""
+    j = dict(it); j["href"] = it["href"][len("inclusion/"):]; j["thumbhref"] = up + it["thumbhref"]
+    if it.get("pptx_href"): j["pptx_href"] = it["pptx_href"][len("inclusion/"):]
+    return j
+
+def _incl_deck_card(d):
+    return f"""<article class="card deck item" data-q="{esc((d['title'] + ' ' + d['sub'] + ' slides').lower())}">
+  <a class="thumb" href="{esc(d['href'])}" target="_blank" rel="noopener" aria-label="Open slides: {esc(d['title'])}"><img src="{esc(d['thumbhref'])}" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><h4>{esc(d['title'])}</h4>
+  <p class="meta">{d['pages']} slides · PDF · {size_label(d['out'])}</p>{f'<p class="sub">{esc(d["sub"])}</p>' if d.get('sub') else ''}
+  <div class="btns"><a class="btn blue" href="{esc(d['href'])}" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="{esc(d['href'])}" download>⬇ Download</a>{f' <a class="btn gold" href="{esc(d["pptx_href"])}" download>🖥️ PowerPoint (.pptx)</a>' if d.get('pptx_href') else ''}</div></div>
+</article>"""
+
+def _incl_game_card(g, text=None):
+    return f"""<article class="card game item" data-q="{esc((g['title'] + ' ' + g['sub'] + ' game lab').lower())}">
+  <div class="gicon" aria-hidden="true">{esc(g['icon'])}</div>
+  <div class="gtxt"><span class="pill lv{g['lv']}">Level {g['lv']} game</span>
+  <h3>{esc(g['title'])}</h3><p>{esc(text or 'Put the steps in order, match the tools, safe or not safe.')}</p>
+  <a class="btn gold" href="{esc(g['href'])}" target="_blank" rel="noopener">▶ Play</a></div>
+</article>"""
+
+def _incl_labs(c, labitems, lv):
+    """'Labs' block inside one unit + level: one sub-block per lab (course.json "labs"), in gen ed teaching order."""
+    if not labitems: return ""
+    meta = c.get("labs", {})
+    out = (f'<h4 class="unit">{esc(c["lab_label"]) if c.get("lab_label") else "🧑‍🍳 Labs"}</h4><p class="note">' + (esc(c["lab_note"]).replace("{lv}", str(lv)).replace("{grade}", "2nd" if lv == 1 else "3rd") if c.get("lab_note") else
+           f'Lab packets: picture recipe card (Mrs. Dyches\' recipe), prep sheet, demo slides, reflection, and a game. Level {lv} labs are written at about {"2nd" if lv == 1 else "3rd"}-grade reading. Staff guides are in Teacher resources.') + '</p>')
+    for ls in sorted({i["lab"] for i in labitems}, key=lambda x: meta.get(x, {}).get("order", 0)):
+        m = meta.get(ls, {}); its = [_sub(i) for i in labitems if i["lab"] == ls]
+        out += f'<div class="labblock"><h4 class="unit"><span aria-hidden="true">{m.get("emoji", "🧑‍🍳")}</span> {esc(m.get("title", ls))}{(" <small>· gen ed: " + esc(m["dates"]) + "</small>") if m.get("dates") else ""}</h4>'
+        dk = [i for i in its if i["kind"] == "deck"]; pr = sorted([i for i in its if i["kind"] == "printable"], key=lambda i: next((k for k, x in enumerate(("-card", "-idea-menu", "-slides-template", "-prep", "-reflection")) if i["src"].stem.endswith(x)), 9)); gm = [i for i in its if i["kind"] == "game"]
+        if dk or gm: out += '<div class="grid">' + "".join(_incl_deck_card(d) for d in dk) + "".join(_incl_game_card(g, c.get("lab_game_text")) for g in gm) + "</div>"
+        if pr: out += '<div class="grid rows">' + "".join(item_card(i, show_classes=False) for i in pr) + "</div>"
+        out += "</div>"
+    return out
+
+def _incl_page(c):
+    ready = [u for u in c["units"] if u["ready"]]
+    unit_list = "".join(
+        f'<li class="{"ready" if u["ready"] else "soon"}"><span class="un">Unit {u["n"]}</span> <span aria-hidden="true">{u["emoji"]}</span> '
+        + (f'<a href="#u{u["n"]}"><b>{esc(u["title"])}</b></a> <span class="pill lv2">Ready</span>' if u["ready"] else
+           (f'<a href="#u{u["n"]}"><b>{esc(u["title"])}</b></a> <span class="pill uc">🚧 Under construction</span>' if c.get("soon_sections") else f'<b>{esc(u["title"])}</b> <span class="pill draft">Coming soon</span>'))
+        + "</li>" for u in c["units"])
+    units = ""
+    for u in c["units"]:
+        if not u["ready"]:
+            if c.get("soon_sections"):   # course.json "soon_sections" (Biology A, 2026-10-31): a visible 🚧 section for units not built yet
+                msg = (c.get("unit_construction") or {}).get(str(u["n"]), "🚧 Under construction, coming soon.")
+                units += section(f"u{u['n']}", u["emoji"], f"Unit {u['n']}: {u['title']}", f'<p class="note">{esc(u["summary"])} <br><small>Goes with the class Canvas module: “{esc(u["gened"])}”.</small></p><p class="ucnote">{esc(msg)}</p>')
+            continue
+        inner = f'<p class="note">{esc(u["summary"])} <br><small>Goes with the class Canvas module: “{esc(u["gened"])}”.</small></p>'
+        for lv in (1, 2):
+            its_all = [i for i in u["items"] if i["lv"] == lv]
+            if not its_all: continue
+            its = [i for i in its_all if not i.get("lab")]
+            dk = [_sub(i) for i in its if i["kind"] == "deck"]
+            pr = [_sub(i) for i in its if i["kind"] == "printable"]
+            nk = sum(1 for i in its if i["kind"] == "key")
+            gm = [_sub(i) for i in its if i["kind"] == "game"]
+            inner += (f'<div class="lvgroup lvonly lv{lv}"><h3 class="lvh"><span class="pill lv{lv}">Level {lv}</span> {esc((c.get("lv_desc") or {}).get(str(lv), LV_DESC[lv]))}</h3>')
+            if dk: inner += '<h4 class="unit">📖 Slides</h4><div class="grid">' + "".join(_incl_deck_card(d) for d in dk) + "</div>"
+            if gm: inner += '<h4 class="unit">🎮 Games</h4><div class="grid">' + "".join(_incl_game_card(g, g.get("sub") or "Match and put in order.") for g in gm) + "</div>"
+            if pr: inner += f'<h4 class="unit">{esc(c["print_label"]) if c.get("print_label") else "🖨️ Worksheets, quizzes & recipe cards"}</h4><div class="grid rows">' + "".join(item_card(i, show_classes=False) for i in pr) + "</div>"
+            if nk: inner += f'<p class="note">👩‍🏫 Level {lv} answer keys and staff guide ({nk}): see <a href="#teacher">Teacher resources</a>.</p>'
+            inner += _incl_labs(c, [i for i in its_all if i.get("lab")], lv)
+            inner += "</div>"
+        units += section(f"u{u['n']}", u["emoji"], f"Unit {u['n']}: {u['title']}", inner)
+    tgrid = ""
+    for lv in (1, 2):
+        ks = [_sub(i) for u in c["units"] for i in u["items"] if i["kind"] == "key" and i["lv"] == lv]
+        if ks: tgrid += f'<div class="lvonly lv{lv}"><h3 class="lvh"><span class="pill lv{lv}">Level {lv}</span> keys and staff guides</h3><div class="grid rows">' + "".join(item_card(i, show_classes=False) for i in ks) + "</div></div>"
+    lvs = sorted({i["lv"] for u in c["units"] for i in u["items"]})
+    tabs = level_tabs(c["slug"], lvs, c.get("lv_tab"))
+    banner = '<p class="note"><span class="pill draft">Preview for review</span> Not published yet.</p>' if c.get("preview") else ""
+    body = theme_css(c) + f"""<section class="hero small">
+  <p class="crumb"><a href="../index.html">🏠 Home</a> · <a href="../teacher.html">👩‍🏫 Teacher resources</a></p>
+  <h1><span aria-hidden="true">{c['emoji']}</span> {esc(c['name'])} · {levels_label(c)} (inclusion)</h1>
+  {tabs}
+  <p class="lead">{esc(c['about'])}</p>{banner}
+  <p class="jump"><a class="btn blue" href="#units">🗂️ Units</a>{''.join(f' <a class="btn blue" href="#u{u["n"]}">{u["emoji"]} Unit {u["n"]}</a>' for u in (c["units"] if c.get("soon_sections") else ready))} <a class="btn ghost" href="#teacher">👩‍🏫 Teacher resources</a></p>
+  {search_box()}
+</section>
+{section('units', '🗂️', 'Units in course order', '<ol class="unitlist">' + unit_list + '</ol>', f'Same units and order as the gen ed class. {len(ready)} of {len(c["units"])} ready.')}
+{units}
+{section('teacher', '👩‍🏫', 'Teacher resources', tgrid, TEACHER_NOTE + ' Staff guides show how each Level 1 and Level 2 piece lines up with the gen ed lesson and what to grade.')}
+<p class="note" id="none" hidden>Nothing matches that. Try a shorter word.</p>"""
+    (SITE / "inclusion").mkdir(exist_ok=True)
+    (SITE / "inclusion" / f"{c['slug']}.html").write_text(page(f"{c['name']} (inclusion) · Ferndale High School Inclusion", body, active="incl-" + c["slug"], root="../"), encoding="utf-8")
+
+LV_DESC = {1: "2nd-grade reading: pictures, one idea at a time", 2: "5th-grade reading: short lines, word banks"}
+LV_TAB = {1: ("🔵", "2nd-grade reading · pictures"), 2: ("🟡", "5th-grade reading · word banks")}
+def level_tabs(slug, lvs, tab_desc=None):
+    """Level switch for an inclusion course page (only when it has 2+ levels). Shows one level at a time.
+    Choice: #levelN hash > last choice (localStorage) > lowest level. Without JS every level shows."""
+    if len(lvs) < 2: return ""
+    btns = "".join(f'<a class="lvtab lv{lv}" role="tab" data-lv="{lv}" href="#level{lv}" aria-selected="false">'
+                   f'<span><span aria-hidden="true">{LV_TAB.get(lv, ("📘", ""))[0]}</span> Level {lv}</span><small>{esc((tab_desc or {}).get(str(lv)) or LV_TAB.get(lv, ("", ""))[1])}</small></a>' for lv in lvs)
+    css = "".join(f'html[data-lv="{lv}"] .lvonly:not(.lv{lv}){{display:none}}' for lv in lvs)
+    js = ("(function(){var K='lv-" + slug + "',L=" + json.dumps([str(x) for x in lvs]) + ",r=document.documentElement;"
+          "function set(v,save){r.setAttribute('data-lv',v);var t=document.querySelectorAll('.lvtab');for(var i=0;i<t.length;i++){var on=t[i].getAttribute('data-lv')===v;"
+          "t[i].setAttribute('aria-selected',on?'true':'false');if(on){t[i].classList.add('on')}else{t[i].classList.remove('on')}}"
+          "var w=document.getElementById('lvnow');if(w)w.textContent='Level '+v;"
+          "if(save){try{localStorage.setItem(K,v)}catch(e){}}var q=document.getElementById('q');if(q&&q.value){q.dispatchEvent(new Event('input'))}}"
+          "function fromHash(){var m=/^#level(\\d+)$/.exec(location.hash)||/^#[\\w-]+-l(\\d)$/.exec(location.hash);return m&&L.indexOf(m[1])>-1?m[1]:null}"
+          "var h=fromHash(),s=null;try{s=localStorage.getItem(K)}catch(e){}"
+          "set(h||(s&&L.indexOf(s)>-1?s:L[0]),!!h);"
+          "window.addEventListener('hashchange',function(){var v=fromHash();if(v)set(v,true)});})();")
+    return (f'<style>{css}</style><div class="lvtabs" role="tablist" aria-label="Choose a level">{btns}</div>'
+            f'<p class="note lvshow">Showing <b id="lvnow">all levels</b>. Tap a button to switch.</p><script>{js}</script>')
+
+def levels_label(c):
+    lv = sorted(c.get("levels") or [c.get("level", 2)])
+    return "Level " + " & ".join(str(x) for x in lv)
+
+def inclusion_home(incl):
+    if not incl: return ""
+    tiles = "".join(
+        f"""<a class="tile incl lv2" href="inclusion/{esc(c['slug'])}.html"><span class="ti" aria-hidden="true">{c['emoji']}</span>
+<span class="tt">{esc(c['name'])} · Level {c['level']}</span><span class="td">{esc(c['about'])}</span><span class="go">Go ▶</span></a>""" for c in incl)
+    return f"""
+<section aria-labelledby="h-incl"><h2 id="h-incl">🤝 Inclusion classes</h2>
+<p class="note">Gen ed classes with modified Level 2 materials. Students use these next to the class lesson.</p><div class="tiles">{tiles}</div></section>"""
+
+FILTER_JS = """(function(){var q=document.getElementById('q');if(!q)return;var items=[].slice.call(document.querySelectorAll('.item'));
+var cats=[].slice.call(document.querySelectorAll('section.cat, .lesson'));var none=document.getElementById('none'),qn=document.getElementById('qn');
+function run(){var t=q.value.trim().toLowerCase().split(/\\s+/).filter(Boolean),shown=0;
+items.forEach(function(el){var s=el.getAttribute('data-q')||'';var ok=t.every(function(w){return s.indexOf(w)>-1});el.hidden=!ok;if(ok)shown++;});
+function lvok(el){var g=el.closest?el.closest('.lvonly'):null;return !g||getComputedStyle(g).display!=='none';}
+cats.forEach(function(c){var v=[].filter.call(c.querySelectorAll('.item:not([hidden])'),lvok).length;c.hidden=t.length>0&&v===0;});
+shown=items.filter(function(el){return !el.hidden&&lvok(el);}).length;
+if(none)none.hidden=!(t.length&&shown===0);if(qn)qn.textContent=t.length?shown+' found':'';}
+q.addEventListener('input',run);})();
+"""
+
+CSS_ADD = """
+/* v2 additions */
+.btn.sm{min-height:42px;padding:7px 16px;font-size:16px}
+.pill.draft{background:#fff;color:var(--navy);border:2px dashed var(--navy)}
+.kind{display:inline-block;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:#4a5b80;margin-left:6px}
+.grid.rows{grid-template-columns:repeat(auto-fill,minmax(360px,1fr))}
+.row{display:flex;gap:14px;padding:12px}
+.thumb2{flex:none;width:96px;height:124px;background:var(--bb);border-radius:12px;overflow:hidden;line-height:0;border:2px solid var(--bb)}
+.thumb2 img{width:96px;height:124px;object-fit:contain;background:#fff}
+.itxt{flex:1;min-width:0}.itxt h4{font-size:19px}.itxt .sub{margin:.1em 0 .5em;font-size:15px}.itxt .meta{margin-bottom:.4em}
+.searchbar{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin:.6em 0}
+.searchbar label{font-weight:800}.searchbar input{flex:1 1 260px;max-width:520px;min-height:48px;padding:8px 16px;border-radius:999px;border:3px solid var(--navy);font-size:18px;font-family:inherit;background:#fff;color:var(--navy)}
+section#teacher .card{border-color:var(--navy);background:#f3f6fc}
+section#teacher h2{color:#fff;background:var(--navy);border-radius:16px;padding:8px 16px}section#teacher h2::after{display:none}
+.counts li b{color:var(--blue)}
+[hidden]{display:none!important}
+@media(max-width:640px){.grid.rows{grid-template-columns:1fr}.row{padding:10px}}
+"""
+
+INCL_CSS = """
+.labblock{border:3px dashed var(--gold);border-radius:16px;padding:4px 14px 10px;margin:12px 0;background:#fffdf5}.labblock h4 small{font-weight:600;color:#4a5876}
+/* inclusion course pages */
+.unitlist{list-style:none;padding:0;margin:.4em 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:8px}
+.unitlist li{background:#fff;border:2px solid var(--bb);border-radius:14px;padding:8px 12px;font-size:17px}
+.unitlist li.soon{opacity:.72;border-style:dashed}.unitlist .un{font-weight:800;color:#4a5b80;font-size:14px;text-transform:uppercase;letter-spacing:.04em}
+.dtxt .sub{font-size:15px;margin:.1em 0 .5em}
+.lvgroup{border:3px solid var(--bb);border-radius:18px;padding:6px 14px 10px;margin:.7em 0;background:#fff}
+.lvgroup.lv1{border-color:var(--blue)}.lvgroup.lv2{border-color:var(--gold)}
+.lvh{font-size:21px;margin:.4em 0}
+.lvtabs{display:flex;flex-wrap:wrap;gap:14px;margin:.5em 0 .3em}
+.lvtab{flex:1 1 260px;display:flex;flex-direction:column;gap:2px;min-height:72px;padding:12px 22px;border-radius:22px;border:4px solid var(--navy);background:#fff;color:var(--navy);text-decoration:none;font-weight:800;font-size:26px;line-height:1.15;box-shadow:0 5px 0 var(--navy);cursor:pointer}
+.lvtab small{font-size:16px;font-weight:600}
+.lvtab.lv1{border-color:var(--blue);box-shadow:0 5px 0 var(--blue)}.lvtab.lv2{border-color:var(--gold);box-shadow:0 5px 0 var(--gold)}
+.lvtab.lv1.on{background:var(--blue);color:#fff}.lvtab.lv2.on{background:var(--gold);color:var(--navy)}
+.lvtab:hover{transform:translateY(-2px)}.lvtab:focus-visible{outline:4px solid var(--navy);outline-offset:4px}
+.lvtab.on::after{content:"✓ Showing";font-size:15px;font-weight:800}
+.lvshow{margin:.2em 0 .6em}h4.unit{font-size:18px;margin:.6em 0 .3em}
+/* class pages unit by unit (2026-10-30) */
+.lesson{border:3px solid var(--bb);border-radius:18px;padding:6px 14px 12px;margin:.8em 0;background:#fff}
+.lvonly.lv1 .lesson{border-color:var(--blue)}.lvonly.lv2 .lesson{border-color:var(--gold)}
+.lesson.unitwide{border-style:dashed;background:#fffdf5}
+.lessonh{font-size:21px;margin:.4em 0 .5em}.lessonh .date{margin-right:6px}
+.tline{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px;padding:8px 10px;border-radius:12px;background:#f3f6fc}
+.tline .tl{font-weight:800;color:var(--navy)}
+.pill.now{background:var(--gold);color:var(--navy)}.pill.lab{background:#fff3e0;color:#8a4b00;border:2px solid #e0a526}
+"""
+
+# ---------------------------------------------------------------- main
+def outname(it):
+    s = it["orig"].stem if it["orig"].suffix == ".md" else it["src"].stem
+    s = re.sub(r"[^A-Za-z0-9._-]+", "-", s)
+    d = it["date"]
+    if d and not s.startswith(d): s = f"{d}-{s}"
+    ext = it["src"].suffix.lower()
+    return s + ext
+
+def thumb_pdf(src, dest_base, w, h, crop):
+    if crop:
+        subprocess.run(["pdftoppm", "-jpeg", "-jpegopt", "quality=78", "-r", "30", "-f", "1", "-l", "1", "-scale-to-x", str(w), "-scale-to-y", str(h),
+                        "-singlefile", str(src), str(dest_base)], check=True)
+    else:
+        subprocess.run(["pdftoppm", "-jpeg", "-jpegopt", "quality=75", "-f", "1", "-l", "1", "-scale-to-x", str(w), "-scale-to-y", "-1",
+                        "-singlefile", str(src), str(dest_base)], check=True)
+
+def main():
+    items, games, skipped = collect()
+    shutil.rmtree(SITE / "inclusion", ignore_errors=True)   # rebuilt below only for approved (or previewed) courses
+    for sub in ("decks", "games", "thumbs", "plans", "printables", "teacher", "resources"):
+        shutil.rmtree(SITE / sub, ignore_errors=True); (SITE / sub).mkdir(parents=True)
+    for f in SITE.glob("*.html"): f.unlink()
+    shutil.rmtree(SITE / "files", ignore_errors=True)
+    used = set()
+    DIR = {"deck": "decks", "plan": "plans", "simple": "plans", "printable": "printables", "key": "teacher"}
+    from PIL import Image
+    for it in items:
+        sub = DIR.get(it["kind"], "resources")
+        fn = outname(it)
+        while (sub, fn) in used: fn = "x-" + fn
+        used.add((sub, fn))
+        it["ext"] = it["src"].suffix.lstrip(".").lower()
+        shutil.copy2(it["src"], SITE / sub / fn)
+        it["file"] = fn; it["out"] = SITE / sub / fn; it["href"] = f"{sub}/{fn}"
+        tb = Path(fn).stem + ".jpg"; it["thumbhref"] = f"thumbs/{tb}"
+        if it["ext"] == "pdf":
+            thumb_pdf(it["src"], SITE / "thumbs" / Path(tb).stem, 320 if it["kind"] == "deck" else 192, 180 if it["kind"] == "deck" else 0, it["kind"] == "deck")
+        else:
+            im = Image.open(it["src"]).convert("RGB"); im.thumbnail((192, 248)); im.save(SITE / "thumbs" / tb, quality=75)
+        if it["kind"] == "deck":
+            it["thumb"] = tb
+    decks = [i for i in items if i["kind"] == "deck"]
+    non_deck = items
+    hide = "<style>#teachBtn,#teacher{display:none!important}</style>"
+    for g in games:
+        t = g["src"].read_text(encoding="utf-8").replace("</head>", hide + "\n</head>", 1)
+        (SITE / "games" / g["src"].name).write_text(t, encoding="utf-8")
+    vt = video_titles(); videos = []; seen_v = set()
+    for d in sorted(decks, key=lambda d: d["date"]):
+        for u in d.get("urls", []):
+            for c in d["classes"]:
+                if (u, c) in seen_v: continue
+                seen_v.add((u, c))
+                videos.append(dict(url=u, title=vt.get(u, "Lesson video"), class_slug=c, date=d["date"], deck=d["title"]))
+    for it in []:   # (build-ahead plans are not published)
+        if it.get("draft") and it["kind"] == "plan":
+            for m in re.finditer(r"\[([^\]]+)\]\((https://www\.youtube\.com/watch\?v=[\w-]+)", it["orig"].read_text(errors="ignore")):
+                u = m.group(2)
+                if (u, it["classes"][0]) in seen_v: continue
+                seen_v.add((u, it["classes"][0]))
+                videos.append(dict(url=u, title=re.sub(r"\s*\(for students.*?\)", "", m.group(1)).strip(), class_slug=it["classes"][0], date=it["date"], deck="Coming up: " + it["title"]))
+    incl, incl_skipped = collect_inclusion(preview="--preview-inclusion" in sys.argv)
+    NAV_INCL[:] = [(c["slug"], c.get("nav", c["name"]), c["emoji"]) for c in incl]
+    NAV_TINT.clear(); NAV_TINT.update({c["slug"]: f' style="background:{c["theme"]["blue"]}"' for c in incl if (c.get("theme") or {}).get("blue")})
+    skipped += incl_skipped
+    build_inclusion(incl)
+    build_pages(decks, items, games, videos, incl)
+    build_teacher_page(items, incl)
+    (SITE / "filter.js").write_text(FILTER_JS, encoding="utf-8")
+    (SITE / "style.css").write_text((SCHOOL / "templates" / "style-base.css").read_text() + CSS_ADD + INCL_CSS)
+    for k, why in INTERNAL_SKIP.items():
+        if (SCHOOL / k).exists(): skipped.append((k, why))
+    for d, why in (("team-ideas", "internal team ideas folder"), ("data", "internal data folder (only the SEL check-in how-to is published)"),
+                   ("plans/ahead", "build-ahead drafts (Unit 2 plans and keys, goal-setting drafts)"), ("portfolio/covers", "cover option / old-cover design files"),
+                   ("templates", "build scripts"), ("curriculum-build", "build scripts")):
+        if (SCHOOL / d).exists(): skipped.append((d + "/", why))
+    # ---- private report
+    kinds = {}
+    for it in items: kinds.setdefault(it["kind"], []).append(it)
+    L = [f"# Site report ({datetime.datetime.now():%Y-%m-%d %H:%M})", "", "## Counts (files published)"]
+    for k, v in sorted(kinds.items()): L.append(f"- {k}: {len(v)}")
+    L.append(f"- games: {len(games)}"); L.append(f"- videos linked: {len(videos)}"); L.append("")
+    L.append("## Per class page (items shown)")
+    for slug, n, *_ in CLASSES:
+        c = lambda k: len([i for i in items if i['kind'] in k and slug in i['classes']])
+        L.append(f"- {n}: slides {c(('deck',))}, lesson plans {c(('plan','simple'))}, printables {c(('printable',))}, teacher {c(('key',))}, games {len([g for g in games if g['class_slug']==slug])}, videos {len([v for v in videos if v['class_slug']==slug])}")
+    L += ["", "## Class pages by unit (lessons / slide decks / games)"]
+    for slug, st in CLASS_STATS.items():
+        L.append(f"- {CLASSNAME[slug]}: " + "; ".join(f"{u} {a}/{b}/{c}" for u, a, b, c in st))
+    L += ["", "## Not placed in a unit (shown in Other / extras)"] + ([f"- {CLASSNAME[s_]}: {t} ({r})" for s_, t, r in UNPLACED] or ["- none"])
+    L += ["", "## Published files"]
+    for it in sorted(items, key=lambda i: (i["kind"], i["date"] or "", i["title"])):
+        L.append(f"- [{it['kind']}] {it['date'] or '-'} · {it['title']} · {','.join(it['classes']) or 'all/general'} <- {it['rel']}")
+    for c in incl:
+        L.append(f"- inclusion {c['slug']}{' (PREVIEW, not approved)' if c.get('preview') else ''}: " + ", ".join(f"unit {u['n']} {len(u['items'])} files" for u in c['units'] if u['items']))
+    L += ["", "## Games"] + [f"- {g['class_slug']} · {g['title']} <- {g['src'].name}" for g in games]
+    L += ["", "## Videos"] + [f"- {v['class_slug']} · {v['title']} · {v['url']}" for v in videos]
+    L += ["", "## Skipped (not published)"] + [f"- {a}: {b}" for a, b in skipped]
+    REPORT.write_text("\n".join(L) + "\n")
+    print(f"Site rebuilt: {len(decks)} decks, {len(items)-len(decks)} other files, {len(games)} games, {len(videos)} videos, {len(skipped)} skipped. Report: {REPORT}")
+    for a, b in skipped:
+        pass
+    if "--zip" in sys.argv:
+        ZIP.unlink(missing_ok=True)
+        with zipfile.ZipFile(ZIP, "w", zipfile.ZIP_DEFLATED) as z:
+            for f in sorted(SITE.rglob("*")):
+                if f.is_file() and f.name != "update_site.py" and "__pycache__" not in f.parts:
+                    z.write(f, f.relative_to(SITE))
+        print("Zip:", ZIP)
+
+if __name__ == "__main__":
+    main()

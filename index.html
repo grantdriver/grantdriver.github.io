@@ -1,34 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="ldhtml">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Ferndale High School Inclusion</title>
 <meta name="description" content="Slides, lesson plans, printables and review games for Ferndale High School Inclusion.">
+<script>document.documentElement.classList.add('js')</script>
 <link rel="stylesheet" href="style.css">
+<style>
+.ld *{box-sizing:border-box}html.ldhtml{scroll-behavior:smooth}body.ldbody{margin:0;background:#fbf7ef}
+.ld-hero{position:sticky;top:0;height:100vh;overflow:hidden;z-index:0}
+.ld-hero .ld-img{position:absolute;inset:0;background:url(assets/school-drawing.jpg) center 62%/cover no-repeat;transform:scale(calc(1 + var(--p,0)*.12));filter:blur(calc(var(--p,0)*4px)) saturate(calc(1 - var(--p,0)*.3))}
+.ld-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,31,79,.10) 0%,rgba(13,31,79,0) 35%,rgba(13,31,79,.55) 100%);opacity:calc(.6 + var(--p,0))}
+.ld-brand{position:absolute;top:22px;left:28px;z-index:2;display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.85);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:8px 16px 8px 8px;border-radius:999px;font-weight:800;font-size:17px;color:#0d1f4f;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.ld-brand .ld-lg{width:38px;height:38px;border-radius:50%;background:#0d1f4f;display:grid;place-items:center;font-size:20px;border:3px solid #f2b705}
+.ld-welcome{position:absolute;left:50%;bottom:20vh;background:rgba(13,31,79,.62);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);border-radius:32px;padding:26px 30px 30px;box-shadow:0 12px 40px rgba(13,31,79,.35);transform:translate(-50%,calc(var(--p,0)*-60px));opacity:calc(1 - var(--p,0)*1.6);z-index:2;width:min(820px,92vw);text-align:center;color:#fff}
+.ld-welcome .ld-kick{display:inline-block;background:#f2b705;color:#0d1f4f;font-weight:800;padding:6px 16px;border-radius:999px;font-size:16px;letter-spacing:.04em;text-transform:uppercase;animation:ldpop .8s .2s both}
+.ld-welcome h1{margin:14px 0 8px;font-size:clamp(34px,5.6vw,68px);line-height:1.05;color:#fff;text-shadow:0 4px 24px rgba(13,31,79,.55);animation:ldrise 1s .35s both}
+.ld-welcome p{margin:0 auto;max-width:640px;font-size:clamp(17px,2vw,22px);font-weight:500;text-shadow:0 2px 12px rgba(13,31,79,.7);animation:ldrise 1s .55s both}
+.ld-cue{position:absolute;left:50%;bottom:4vh;transform:translateX(-50%);z-index:2;color:#fff;text-decoration:none;font-weight:700;display:flex;flex-direction:column;align-items:center;gap:4px;opacity:calc(1 - var(--p,0)*3)}
+.ld-cue span{width:46px;height:46px;border-radius:50%;border:3px solid #fff;display:grid;place-items:center;font-size:22px;animation:ldbob 1.6s infinite}
+.ld-panel{position:relative;z-index:1;margin-top:-14vh;background:#fbf7ef;border-radius:40px 40px 0 0;box-shadow:0 -14px 40px rgba(13,31,79,.25);padding:44px 24px 80px;min-height:100vh;color:#0d1f4f}
+.ld-panel::before{content:"";display:block;width:64px;height:7px;border-radius:9px;background:#f2b705;margin:-18px auto 26px}
+.ld-wrap{max-width:1100px;margin:0 auto}
+.ld-panel h2.ld-h{font-size:clamp(28px,3.4vw,40px);margin:0 0 6px;text-align:center}.ld-panel h2.ld-h::after{display:none}
+.ld-panel .ld-sub{text-align:center;margin:0 0 30px;font-size:19px;color:#3a4670}
+.ld-tabs{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:20px}
+.ld-tab{--c:#2b5cb8;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:26px 16px 22px;border-radius:28px;background:#fff;border:4px solid var(--c);box-shadow:0 8px 0 var(--c);color:#0d1f4f;text-decoration:none;font-weight:800;font-size:22px;transition:transform .25s,box-shadow .25s}
+.js .ld-tab{opacity:0;transform:translateY(40px) scale(.96)}
+.js .ld-tab.in{animation:ldslide .7s cubic-bezier(.2,.8,.2,1.2) forwards}
+.ld-tab:hover{transform:translateY(-6px)!important;box-shadow:0 14px 0 var(--c)}.ld-tab:focus-visible{outline:4px solid #0d1f4f;outline-offset:4px}
+.ld-tab .ld-ic{width:84px;height:84px;border-radius:50%;background:var(--c);display:grid;place-items:center;font-size:44px;box-shadow:inset 0 -6px 0 rgba(0,0,0,.15)}
+.ld-tab small{font-weight:600;font-size:15px;color:#4a5578}
+.ld-tab .ld-go{margin-top:6px;background:var(--c);color:#fff;border-radius:999px;padding:6px 18px;font-size:16px}
+.ld-sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.ld-extra{display:flex;justify-content:center;gap:14px;margin-top:34px;flex-wrap:wrap}
+.ld-extra a{background:#0d1f4f;color:#fff;text-decoration:none;font-weight:700;padding:12px 22px;border-radius:999px}
+.ld-extra a:focus-visible{outline:4px solid #f2b705;outline-offset:3px}
+.ld-more{margin-top:46px}.ld-more>section{margin:1.6em 0}
+.ld-allnav{margin-top:40px;padding:16px;border-radius:22px;background:#0d1f4f}.ld-allnav h2{color:#fff;font-size:20px;margin:0 0 10px}.ld-allnav h2::after{display:none}
+.ld-allnav .nav{display:flex;flex-wrap:wrap;gap:8px}
+@keyframes ldrise{from{opacity:0;transform:translateY(30px)}}@keyframes ldpop{from{opacity:0;transform:scale(.6)}}
+@keyframes ldbob{50%{transform:translateY(8px)}}@keyframes ldslide{to{opacity:1;transform:none}}
+@media(max-width:600px){.ld-hero .ld-img{background-position:68% 62%;background-size:cover}.ld-welcome{padding:18px 16px 22px}.ld-brand{font-size:14px;left:14px;top:14px}.ld-welcome{bottom:20vh}.ld-panel{border-radius:28px 28px 0 0;padding:36px 16px 60px}.ld-tabs{grid-template-columns:1fr 1fr;gap:14px}.ld-tab{font-size:18px;padding:18px 10px}.ld-tab .ld-ic{width:64px;height:64px;font-size:34px}.ld-tab small{display:none}}
+@media(prefers-reduced-motion:reduce){html.ldhtml{scroll-behavior:auto}*{animation:none!important}.js .ld-tab{opacity:1;transform:none}.ld-hero .ld-img{transform:none;filter:none}}
+</style>
 </head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
-<header class="top" id="top">
-  <div class="wrap topin">
-    <a class="brand" href="index.html"><span class="logo" aria-hidden="true">🏫</span><span><b>Ferndale High School Inclusion</b><small>Levels 1 &amp; 2</small></span></a>
-    <nav class="nav" aria-label="Classes"><a class="navbtn on" href="index.html"><span aria-hidden="true">🏠</span> Home</a><a class="navbtn" href="transitions.html"><span aria-hidden="true">🧭</span> Transitions</a><a class="navbtn" href="sel.html"><span aria-hidden="true">💛</span> SEL</a><a class="navbtn" href="inclusion/ag-science-1.html" style="background:#3f7d3a"><span aria-hidden="true">🌾</span> Ag Science</a><a class="navbtn" href="inclusion/biology-a.html" style="background:#5e4b9c"><span aria-hidden="true">🧬</span> Biology</a><a class="navbtn" href="inclusion/culinary-1.html"><span aria-hidden="true">🍳</span> Culinary 1</a><a class="navbtn" href="resources.html"><span aria-hidden="true">📁</span> More</a><a class="navbtn" href="teacher.html"><span aria-hidden="true">👩‍🏫</span> Teacher</a></nav>
+<body class="ldbody ld">
+<a class="skip" href="#classes">Skip to the classes</a>
+<section class="ld-hero" id="top">
+  <div class="ld-img" role="img" aria-label="Drawing of Ferndale High School"></div>
+  <a class="ld-brand" href="index.html"><span class="ld-lg" aria-hidden="true">🏫</span>Ferndale High School Inclusion</a>
+  <div class="ld-welcome">
+    <span class="ld-kick">Go Golden Eagles 🦅</span>
+    <h1>Welcome to Ferndale High School Inclusion</h1>
+    <p>Inclusive classes and materials for every learner. Slides, printables and games, all in one place.</p>
   </div>
-  <div class="stripe"></div>
-</header>
-<main id="main" class="wrap">
+  <a class="ld-cue" href="#classes"><span aria-hidden="true">⌄</span>Pick your class</a>
+</section>
+<main class="ld-panel" id="classes"><div class="ld-wrap">
+  <h2 class="ld-h">Pick your class 👇</h2>
+  <p class="ld-sub">Tap a class to see its units, slides, printables and games.</p>
+  <div class="ld-tabs"><a class="ld-tab" style="--c:#2b5cb8" href="transitions.html" title="Life skills for after high school: my plan, my voice, my space, rights, boundaries, and leading my own plan. Level 1 and Level 2."><span class="ld-ic" aria-hidden="true">🧭</span>Transitions<small>Life skills for after high school</small><span class="ld-sr">Life skills for after high school: my plan, my voice, my space, rights, boundaries, and leading my own plan. Level 1 and Level 2.</span><span class="ld-go" aria-hidden="true">Go ▶</span></a><a class="ld-tab" style="--c:#e0a300" href="sel.html" title="Social emotional learning (SEL): feelings, calm-down tools, reset plans, toolkits, and goals. Level 1 and Level 2."><span class="ld-ic" aria-hidden="true">💛</span>SEL<small>Feelings, calm-down tools and goals</small><span class="ld-sr">Social emotional learning (SEL): feelings, calm-down tools, reset plans, toolkits, and goals. Level 1 and Level 2.</span><span class="ld-go" aria-hidden="true">Go ▶</span></a><a class="ld-tab" style="--c:#3f7d3a" href="inclusion/ag-science-1.html" title="Inclusion class: Level 1 and Level 2 slides, notes, quizzes, vocabulary cards, games, and lab and project packets for every unit."><span class="ld-ic" aria-hidden="true">🌾</span>Ag Science 1<small>Inclusion class</small><span class="ld-sr">Inclusion class: Level 1 and Level 2 slides, notes, quizzes, vocabulary cards, games, and lab and project packets for every unit.</span><span class="ld-go" aria-hidden="true">Go ▶</span></a><a class="ld-tab" style="--c:#5e4b9c" href="inclusion/biology-a.html" title="Inclusion class: Level 1 and Level 2 slides, notes, quizzes, vocabulary cards, games, and lab and project packets for every unit."><span class="ld-ic" aria-hidden="true">🧬</span>Biology A<small>Inclusion class</small><span class="ld-sr">Inclusion class: Level 1 and Level 2 slides, notes, quizzes, vocabulary cards, games, and lab and project packets for every unit.</span><span class="ld-go" aria-hidden="true">Go ▶</span></a><a class="ld-tab" style="--c:#d0573a" href="inclusion/culinary-1.html" title="Inclusion class: Level 1 and Level 2 slides, notes, quizzes and picture recipe cards for every unit."><span class="ld-ic" aria-hidden="true">🍳</span>Culinary 1<small>Inclusion class</small><span class="ld-sr">Inclusion class: Level 1 and Level 2 slides, notes, quizzes and picture recipe cards for every unit.</span><span class="ld-go" aria-hidden="true">Go ▶</span></a></div>
+  <div class="ld-extra"><a href="#h-games">🎮 Review games</a><a href="resources.html">📁 More resources</a><a href="teacher.html">👩‍🏫 Teacher</a></div>
+  <div class="ld-more" id="main">
 <section class="hero">
-  <h1>Welcome! 👋</h1>
+  <h2>Welcome! 👋</h2>
   <p class="lead">Pick your class. Find slides, lesson plans, worksheets, printables and review games.</p>
   <p class="jump"><a class="btn gold" href="resources.html">📁 More resources</a></p>
 </section>
-<section aria-labelledby="h-class"><h2 id="h-class">Pick my class</h2><div class="tiles"><a class="tile transitions" href="transitions.html"><span class="ti" aria-hidden="true">🧭</span>
-<span class="tt">Transitions</span><span class="td">Life skills for after high school: my plan, my voice, my space, rights, boundaries, and leading my own plan. Level 1 and Level 2.</span><span class="go">Go ▶</span></a><a class="tile sel" href="sel.html"><span class="ti" aria-hidden="true">💛</span>
-<span class="tt">SEL</span><span class="td">Social emotional learning (SEL): feelings, calm-down tools, reset plans, toolkits, and goals. Level 1 and Level 2.</span><span class="go">Go ▶</span></a><a class="tile incl lv2" href="inclusion/ag-science-1.html" style="border-color:#3f7d3a;box-shadow:0 6px 0 #23402a"><span class="ti" aria-hidden="true" style="background:#3f7d3a">🌾</span>
-<span class="tt">Ag Science 1 (inclusion)</span><span class="td">Inclusion class: Level 1 and Level 2 slides, notes, quizzes, vocabulary cards, games, and lab and project packets for every unit.</span><span class="go">Go ▶</span></a><a class="tile incl lv2" href="inclusion/biology-a.html" style="border-color:#5e4b9c;box-shadow:0 6px 0 #2a2346"><span class="ti" aria-hidden="true" style="background:#5e4b9c">🧬</span>
-<span class="tt">Biology A (inclusion)</span><span class="td">Inclusion class: Level 1 and Level 2 slides, notes, quizzes, vocabulary cards, games, and lab and project packets for every unit.</span><span class="go">Go ▶</span></a><a class="tile incl lv2" href="inclusion/culinary-1.html"><span class="ti" aria-hidden="true">🍳</span>
-<span class="tt">Culinary 1 (inclusion)</span><span class="td">Inclusion class: Level 1 and Level 2 slides, notes, quizzes and picture recipe cards for every unit.</span><span class="go">Go ▶</span></a></div></section>
 <section aria-labelledby="h-games"><h2 id="h-games">🎮 Review games</h2>
 <p class="note">Play after a lesson or any time you want to practice. No sign-in. Nothing is saved.</p>
 <div class="grid"><article class="card game item" data-q="body clues feelings detective: look at the body and find the clue! game sel l1">
@@ -114,8 +155,17 @@
 </article></div></section>
 <section aria-labelledby="h-new"><h2 id="h-new">🆕 Newest slides</h2><ul class="newlist"><li><span class="pill lv1">Transitions L1</span> <a href="decks/2026-11-20-transitions-l1-sort-utensils-deck.pdf" target="_blank" rel="noopener">Sort Forks, Spoons, Knives</a> <span class="date">Fri, Nov 20</span></li><li><span class="pill lv2">Transitions L2</span> <a href="decks/2026-11-04-transitions-l2-utensil-sorting-deck.pdf" target="_blank" rel="noopener">Sort Utensils by Category</a> <span class="date">Wed, Nov 4</span></li><li><span class="pill lv1">SEL L1</span> <a href="decks/2026-11-05-sel-l1-voice-place-clues-deck.pdf" target="_blank" rel="noopener">Feelings Detective: Voice + Place Clues</a> <span class="date">Thu, Nov 5</span></li><li><span class="pill lv2">SEL L2</span> <a href="decks/2026-11-06-sel-l2-voice-place-clues-deck.pdf" target="_blank" rel="noopener">Feelings Detective: Voice + Place Clues</a> <span class="date">Fri, Nov 6</span></li></ul></section>
 <section aria-labelledby="h-all"><h2 id="h-all">📊 On this site</h2><ul class="newlist counts"><li>Slide decks: <b>26</b></li><li>Lesson plans and sub plans: <b>33</b></li><li>Worksheets and printables: <b>34</b></li><li>Review games: <b>16</b></li></ul></section>
-</main>
+  </div>
+  <nav class="ld-allnav" aria-label="All pages"><h2>🗺️ All pages</h2><div class="nav"><a class="navbtn on" href="index.html"><span aria-hidden="true">🏠</span> Home</a><a class="navbtn" href="transitions.html"><span aria-hidden="true">🧭</span> Transitions</a><a class="navbtn" href="sel.html"><span aria-hidden="true">💛</span> SEL</a><a class="navbtn" href="inclusion/ag-science-1.html" style="background:#3f7d3a"><span aria-hidden="true">🌾</span> Ag Science</a><a class="navbtn" href="inclusion/biology-a.html" style="background:#5e4b9c"><span aria-hidden="true">🧬</span> Biology</a><a class="navbtn" href="inclusion/culinary-1.html"><span aria-hidden="true">🍳</span> Culinary 1</a><a class="navbtn" href="resources.html"><span aria-hidden="true">📁</span> More</a><a class="navbtn" href="teacher.html"><span aria-hidden="true">👩‍🏫</span> Teacher</a></div></nav>
+</div></main>
 <footer class="foot"><div class="wrap">Ferndale High School Inclusion</div></footer>
 <script src="filter.js"></script>
+<script>(function(){var h=document.querySelector('.ld-hero');if(!h)return;
+function upd(){var p=Math.min(1,Math.max(0,scrollY/innerHeight));h.style.setProperty('--p',p.toFixed(3));}
+addEventListener('scroll',upd,{passive:true});upd();
+var tabs=[].slice.call(document.querySelectorAll('.ld-tab'));
+if(!('IntersectionObserver' in window)){tabs.forEach(function(t){t.classList.add('in')});return;}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var i=tabs.indexOf(e.target);e.target.style.animationDelay=(i*90)+'ms';e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.2});
+tabs.forEach(function(t){io.observe(t)});})();</script>
 </body>
 </html>

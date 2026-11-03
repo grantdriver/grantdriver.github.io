@@ -20,9 +20,9 @@
 <main id="main" class="wrap">
 <section class="hero small transitions">
   <p class="crumb"><a href="index.html">🏠 Home</a> · <a href="resources.html">📁 More resources</a></p>
-  <h1><span aria-hidden="true">🧭</span> Transitions · Level 1 & 2</h1>
-  <style>html[data-lv="1"] .lvonly:not(.lv1){display:none}html[data-lv="2"] .lvonly:not(.lv2){display:none}</style><div class="lvtabs" role="tablist" aria-label="Choose a level"><a class="lvtab lv1" role="tab" data-lv="1" href="#level1" aria-selected="false"><span><span aria-hidden="true">🔵</span> Level 1</span><small>2nd-grade reading · pictures</small></a><a class="lvtab lv2" role="tab" data-lv="2" href="#level2" aria-selected="false"><span><span aria-hidden="true">🟡</span> Level 2</span><small>3rd-grade reading · word banks</small></a></div><p class="note lvshow">Showing <b id="lvnow">all levels</b>. Tap a button to switch.</p><script>(function(){var K='lv-transitions',L=["1", "2"],r=document.documentElement;function set(v,save){r.setAttribute('data-lv',v);var t=document.querySelectorAll('.lvtab');for(var i=0;i<t.length;i++){var on=t[i].getAttribute('data-lv')===v;t[i].setAttribute('aria-selected',on?'true':'false');if(on){t[i].classList.add('on')}else{t[i].classList.remove('on')}}var w=document.getElementById('lvnow');if(w)w.textContent='Level '+v;if(save){try{localStorage.setItem(K,v)}catch(e){}}var q=document.getElementById('q');if(q&&q.value){q.dispatchEvent(new Event('input'))}}function fromHash(){var m=/^#level(\d+)$/.exec(location.hash)||/^#[\w-]+-l(\d)$/.exec(location.hash);return m&&L.indexOf(m[1])>-1?m[1]:null}var h=fromHash(),s=null;try{s=localStorage.getItem(K)}catch(e){}set(h||(s&&L.indexOf(s)>-1?s:L[0]),!!h);window.addEventListener('hashchange',function(){var v=fromHash();if(v)set(v,true)});})();</script>
-  <p class="jump lvonly lv1"><a class="btn blue" href="#units-l1">🗂️ Units</a> <a class="btn ghost" href="#teacher-l1">👩‍🏫 Teacher resources</a></p><p class="jump lvonly lv2"><a class="btn blue" href="#units-l2">🗂️ Units</a> <a class="btn ghost" href="#teacher-l2">👩‍🏫 Teacher resources</a></p>
+  <h1><span aria-hidden="true">🧭</span> Transitions · Levels 1, 2 & 3</h1>
+  <style>html[data-lv="1"] .lvonly:not(.lv1){display:none}html[data-lv="2"] .lvonly:not(.lv2){display:none}html[data-lv="3"] .lvonly:not(.lv3){display:none}</style><div class="lvtabs" role="tablist" aria-label="Choose a level"><a class="lvtab lv1" role="tab" data-lv="1" href="#level1" aria-selected="false"><span><span aria-hidden="true">🔵</span> Level 1</span><small>2nd-grade reading · pictures</small></a><a class="lvtab lv2" role="tab" data-lv="2" href="#level2" aria-selected="false"><span><span aria-hidden="true">🟡</span> Level 2</span><small>3rd-grade reading · word banks</small></a><a class="lvtab lv3" role="tab" data-lv="3" href="#level3" aria-selected="false"><span><span aria-hidden="true">🟢</span> Level 3</span><small>Close to class · guided notes</small></a></div><p class="note lvshow">Showing <b id="lvnow">all levels</b>. Tap a button to switch.</p><script>(function(){var K='lv-transitions',L=["1", "2", "3"],r=document.documentElement;function set(v,save){r.setAttribute('data-lv',v);var t=document.querySelectorAll('.lvtab');for(var i=0;i<t.length;i++){var on=t[i].getAttribute('data-lv')===v;t[i].setAttribute('aria-selected',on?'true':'false');if(on){t[i].classList.add('on')}else{t[i].classList.remove('on')}}var w=document.getElementById('lvnow');if(w)w.textContent='Level '+v;if(save){try{localStorage.setItem(K,v)}catch(e){}}var q=document.getElementById('q');if(q&&q.value){q.dispatchEvent(new Event('input'))}}function fromHash(){var m=/^#level(\d+)$/.exec(location.hash)||/^#[\w-]+-l(\d)$/.exec(location.hash);return m&&L.indexOf(m[1])>-1?m[1]:null}var h=fromHash(),s=null;try{s=localStorage.getItem(K)}catch(e){}set(h||(s&&L.indexOf(s)>-1?s:L[0]),!!h);window.addEventListener('hashchange',function(){var v=fromHash();if(v)set(v,true)});})();</script>
+  <p class="jump lvonly lv1"><a class="btn blue" href="#units-l1">🗂️ Units</a> <a class="btn ghost" href="#teacher-l1">👩‍🏫 Teacher resources</a></p><p class="jump lvonly lv2"><a class="btn blue" href="#units-l2">🗂️ Units</a> <a class="btn ghost" href="#teacher-l2">👩‍🏫 Teacher resources</a></p><p class="jump lvonly lv3"><a class="btn blue" href="#units-l3">🗂️ Units</a> <a class="btn ghost" href="#teacher-l3">👩‍🏫 Teacher resources</a></p>
   <div class="searchbar"><label for="q">🔎 Find something:</label><input id="q" type="search" placeholder="Type a word, like goal, rights, key, 10/26…" autocomplete="off"><span id="qn" class="note"></span></div>
 </section>
 <div class="lvonly lv1"><p class="lead lvlead">Life skills for after high school: my plan, my voice, my space. Short words and lots of pictures.</p><span id="slides-l1"></span><span id="plans-l1"></span><span id="prints-l1"></span><span id="games-l1"></span><span id="videos-l1"></span>
@@ -36,13 +36,13 @@
   <div class="dtxt"><span class="date">Thu, Oct 22</span><h4>My Space Bubble</h4>
   <p class="meta">29 slides · PDF · 338 KB</p>
   <div class="btns"><a class="btn blue" href="decks/2026-10-22-transitions-l1-space-bubble-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
-  <a class="btn ghost" href="decks/2026-10-22-transitions-l1-space-bubble-deck.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost" href="decks/2026-10-22-transitions-l1-space-bubble-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="decks/2026-10-22-transitions-l1-space-bubble-deck-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="tline item" data-q="daily lesson plans plan 2026-10-22 simple plan (sub-ready) simple 2026-10-22 teacher key key 2026-10-22 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="plans/2026-10-22-plans.pdf" target="_blank" rel="noopener">📝 Lesson plan</a> <a class="btn ghost sm" href="plans/2026-10-22-simple-plan.pdf" target="_blank" rel="noopener">🧾 Sub plan</a> <a class="btn ghost sm" href="teacher/2026-10-22-teacher-key.pdf" target="_blank" rel="noopener">🔑 Teacher key</a></div></div><div class="lesson" id="lesson-2026-10-26-l1"><h4 class="lessonh"><span class="date">Mon, Oct 26</span> All About Me: My One-Page Profile</h4><div class="grid"><article class="card deck item" data-q="all about me: my one-page profile  deck transitions l1 2026-10-26 slides">
   <a class="thumb" href="decks/2026-10-26-transitions-l1-one-page-profile-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: All About Me: My One-Page Profile"><img src="thumbs/2026-10-26-transitions-l1-one-page-profile-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
   <div class="dtxt"><span class="date">Mon, Oct 26</span><h4>All About Me: My One-Page Profile</h4>
   <p class="meta">29 slides · PDF · 463 KB</p>
   <div class="btns"><a class="btn blue" href="decks/2026-10-26-transitions-l1-one-page-profile-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
-  <a class="btn ghost" href="decks/2026-10-26-transitions-l1-one-page-profile-deck.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost" href="decks/2026-10-26-transitions-l1-one-page-profile-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="decks/2026-10-26-transitions-l1-one-page-profile-deck-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article><article class="card video item" data-q="what is my iep meeting? social narrative video all about me: my one-page profile">
   <div class="gicon" aria-hidden="true">🎬</div>
   <div class="gtxt"><span class="date">Mon, Oct 26 · All About Me: My One-Page Profile</span><h4>What is my IEP Meeting? Social Narrative</h4>
@@ -54,20 +54,20 @@
   <h4>One Page Profile Printables</h4>
   <p class="meta">8 pages · PDF · 285 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-10-26-transitions-l1-one-page-profile-printables.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-10-26-transitions-l1-one-page-profile-printables.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-10-26-transitions-l1-one-page-profile-printables.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-26-transitions-l1-one-page-profile-printables-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="tline item" data-q="daily lesson plans plan 2026-10-26 simple plan (sub-ready) simple 2026-10-26 teacher key key 2026-10-26 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="plans/2026-10-26-plans.pdf" target="_blank" rel="noopener">📝 Lesson plan</a> <a class="btn ghost sm" href="plans/2026-10-26-simple-plan.pdf" target="_blank" rel="noopener">🧾 Sub plan</a> <a class="btn ghost sm" href="teacher/2026-10-26-teacher-key.pdf" target="_blank" rel="noopener">🔑 Teacher key</a></div></div><div class="lesson" id="lesson-2026-10-28-l1"><h4 class="lessonh"><span class="date">Wed, Oct 28</span> Goal Board</h4><div class="grid"><article class="card deck item" data-q="goal board  deck transitions l1 2026-10-28 slides">
   <a class="thumb" href="decks/2026-10-28-transitions-l1-goal-board-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Goal Board"><img src="thumbs/2026-10-28-transitions-l1-goal-board-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
   <div class="dtxt"><span class="date">Wed, Oct 28</span><h4>Goal Board</h4>
   <p class="meta">26 slides · PDF · 1.4 MB</p>
   <div class="btns"><a class="btn blue" href="decks/2026-10-28-transitions-l1-goal-board-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
-  <a class="btn ghost" href="decks/2026-10-28-transitions-l1-goal-board-deck.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost" href="decks/2026-10-28-transitions-l1-goal-board-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="decks/2026-10-28-transitions-l1-goal-board-deck-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="grid rows"><article class="card item row" data-q="goal board printables  printable transitions l1 2026-10-28">
   <a class="thumb2" href="printables/2026-10-28-transitions-l1-goal-board-printables.pdf" target="_blank" rel="noopener" aria-label="Open: Goal Board Printables"><img src="thumbs/2026-10-28-transitions-l1-goal-board-printables.jpg" alt="" loading="lazy" width="96" height="124"></a>
   <div class="itxt"><span class="date">Wed, Oct 28</span> <span class="kind">Printable</span>
   <h4>Goal Board Printables</h4>
   <p class="meta">7 pages · PDF · 256 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-10-28-transitions-l1-goal-board-printables.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-10-28-transitions-l1-goal-board-printables.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-10-28-transitions-l1-goal-board-printables.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-28-transitions-l1-goal-board-printables-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="tline item" data-q="daily lesson plans plan 2026-10-28 simple plan (sub-ready) simple 2026-10-28 teacher key key 2026-10-28 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="plans/2026-10-28-plans.pdf" target="_blank" rel="noopener">📝 Lesson plan</a> <a class="btn ghost sm" href="plans/2026-10-28-simple-plan.pdf" target="_blank" rel="noopener">🧾 Sub plan</a> <a class="btn ghost sm" href="teacher/2026-10-28-teacher-key.pdf" target="_blank" rel="noopener">🔑 Teacher key</a></div></div></section><p class="paneend"><a class="btn ghost sm" href="#top">⬆️ Back to top</a></p></div><div class="unitpane" data-unit="2"><span class="uanchor" id="unit-2"></span><section class="cat" id="u2-l1" aria-labelledby="h-u2-l1"><h2 id="h-u2-l1">🏠 Unit 2: Independent Living 📍</h2><p class=note>4 lessons in teaching order, oldest first. Each lesson keeps its slides, printables, game and teacher files together.</p><div class="lesson unitwide"><h4 class="lessonh">🗂️ For the whole unit</h4><div class="grid rows"><article class="card item row" data-q="unit 2 teacher key answers for the unit 2 unit plan key transitions l1 transitions l2 ">
   <a class="thumb2" href="teacher/unit-2-teacher-key.pdf" target="_blank" rel="noopener" aria-label="Open: Unit 2 teacher key"><img src="thumbs/unit-2-teacher-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
   <div class="itxt"><span class="kind">Teacher</span>
@@ -87,7 +87,7 @@
   <div class="dtxt"><span class="date">Tue, Nov 3</span><h4>Jobs at Home</h4>
   <p class="meta">22 slides · PDF · 1.1 MB</p>
   <div class="btns"><a class="btn blue" href="decks/2026-11-03-transitions-l1-jobs-at-home-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
-  <a class="btn ghost" href="decks/2026-11-03-transitions-l1-jobs-at-home-deck.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost" href="decks/2026-11-03-transitions-l1-jobs-at-home-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="decks/2026-11-03-transitions-l1-jobs-at-home-deck-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article><article class="card game item" data-q="home jobs jobs at home: job or not a job? match the 5 jobs. game transitions l1">
   <div class="gicon" aria-hidden="true">🏠</div>
   <div class="gtxt"><span class="pill lv1">Transitions L1</span>
@@ -104,13 +104,13 @@
   <h4>Jobs At Home Printables</h4>
   <p class="meta">7 pages · PDF · 163 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-11-03-transitions-l1-jobs-at-home-printables.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-11-03-transitions-l1-jobs-at-home-printables.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-11-03-transitions-l1-jobs-at-home-printables.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-11-03-transitions-l1-jobs-at-home-printables-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="tline item" data-q="daily lesson plans plan 2026-11-03 simple plan (sub-ready) simple 2026-11-03 teacher key key 2026-11-03 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="plans/2026-11-03-plans.pdf" target="_blank" rel="noopener">📝 Lesson plan</a> <a class="btn ghost sm" href="plans/2026-11-03-simple-plan.pdf" target="_blank" rel="noopener">🧾 Sub plan</a> <a class="btn ghost sm" href="teacher/2026-11-03-teacher-key.pdf" target="_blank" rel="noopener">🔑 Teacher key</a></div></div><div class="lesson" id="lesson-2026-11-05-l1"><h4 class="lessonh"><span class="date">Thu, Nov 5</span> Hot Ham Cheese <span class="pill lab">🍳 Cooking lab</span> <span class="pill draft">Coming up</span></h4><div class="grid"><article class="card deck item" data-q="hot ham cheese  deck transitions l1 2026-11-05 slides">
   <a class="thumb" href="decks/2026-11-05-transitions-l1-hot-ham-cheese-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Hot Ham Cheese"><img src="thumbs/2026-11-05-transitions-l1-hot-ham-cheese-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
   <div class="dtxt"><span class="date">Thu, Nov 5</span><h4>Hot Ham Cheese</h4>
   <p class="meta">25 slides · PDF · 1.1 MB</p>
   <div class="btns"><a class="btn blue" href="decks/2026-11-05-transitions-l1-hot-ham-cheese-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
-  <a class="btn ghost" href="decks/2026-11-05-transitions-l1-hot-ham-cheese-deck.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost" href="decks/2026-11-05-transitions-l1-hot-ham-cheese-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="decks/2026-11-05-transitions-l1-hot-ham-cheese-deck-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article><article class="card game item" data-q="food and tools match the food and the tools for our sandwich! game transitions l1">
   <div class="gicon" aria-hidden="true">🧰</div>
   <div class="gtxt"><span class="pill lv1">Transitions L1</span>
@@ -127,34 +127,34 @@
   <h4>Hot Ham Cheese Prep Sheet</h4>
   <p class="meta">2 pages · PDF · 230 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-11-05-transitions-l1-hot-ham-cheese-prep-sheet.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-11-05-transitions-l1-hot-ham-cheese-prep-sheet.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-11-05-transitions-l1-hot-ham-cheese-prep-sheet.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-11-05-transitions-l1-hot-ham-cheese-prep-sheet-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article><article class="card item row" data-q="hot ham cheese recipe card  printable transitions l1 2026-11-05">
   <a class="thumb2" href="printables/2026-11-05-transitions-l1-hot-ham-cheese-recipe-card.pdf" target="_blank" rel="noopener" aria-label="Open: Hot Ham Cheese Recipe Card"><img src="thumbs/2026-11-05-transitions-l1-hot-ham-cheese-recipe-card.jpg" alt="" loading="lazy" width="96" height="124"></a>
   <div class="itxt"><span class="date">Thu, Nov 5</span> <span class="kind">Printable</span>
   <h4>Hot Ham Cheese Recipe Card</h4>
   <p class="meta">2 pages · PDF · 218 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-11-05-transitions-l1-hot-ham-cheese-recipe-card.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-11-05-transitions-l1-hot-ham-cheese-recipe-card.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-11-05-transitions-l1-hot-ham-cheese-recipe-card.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-11-05-transitions-l1-hot-ham-cheese-recipe-card-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article><article class="card item row" data-q="hot ham cheese reflection  printable transitions l1 2026-11-05">
   <a class="thumb2" href="printables/2026-11-05-transitions-l1-hot-ham-cheese-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Hot Ham Cheese Reflection"><img src="thumbs/2026-11-05-transitions-l1-hot-ham-cheese-reflection.jpg" alt="" loading="lazy" width="96" height="124"></a>
   <div class="itxt"><span class="date">Thu, Nov 5</span> <span class="kind">Printable</span>
   <h4>Hot Ham Cheese Reflection</h4>
   <p class="meta">1 page · PDF · 152 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-11-05-transitions-l1-hot-ham-cheese-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-11-05-transitions-l1-hot-ham-cheese-reflection.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-11-05-transitions-l1-hot-ham-cheese-reflection.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-11-05-transitions-l1-hot-ham-cheese-reflection-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article><article class="card item row" data-q="hot ham cheese shopping list  printable transitions l1 2026-11-05">
   <a class="thumb2" href="printables/2026-11-05-transitions-l1-hot-ham-cheese-shopping-list.pdf" target="_blank" rel="noopener" aria-label="Open: Hot Ham Cheese Shopping List"><img src="thumbs/2026-11-05-transitions-l1-hot-ham-cheese-shopping-list.jpg" alt="" loading="lazy" width="96" height="124"></a>
   <div class="itxt"><span class="date">Thu, Nov 5</span> <span class="kind">Printable</span>
   <h4>Hot Ham Cheese Shopping List</h4>
   <p class="meta">1 page · PDF · 160 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-11-05-transitions-l1-hot-ham-cheese-shopping-list.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-11-05-transitions-l1-hot-ham-cheese-shopping-list.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-11-05-transitions-l1-hot-ham-cheese-shopping-list.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-11-05-transitions-l1-hot-ham-cheese-shopping-list-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="tline item" data-q="daily lesson plans plan 2026-11-05 simple plan (sub-ready) simple 2026-11-05 teacher key key 2026-11-05 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="plans/2026-11-05-plans.pdf" target="_blank" rel="noopener">📝 Lesson plan</a> <a class="btn ghost sm" href="plans/2026-11-05-simple-plan.pdf" target="_blank" rel="noopener">🧾 Sub plan</a> <a class="btn ghost sm" href="teacher/2026-11-05-teacher-key.pdf" target="_blank" rel="noopener">🔑 Teacher key</a></div></div><div class="lesson" id="lesson-2026-11-20-l1"><h4 class="lessonh"><span class="date">Fri, Nov 20</span> Sort Forks, Spoons, Knives <span class="pill draft">Coming up</span></h4><div class="grid"><article class="card deck item" data-q="sort forks, spoons, knives  deck transitions l1 2026-11-20 slides">
   <a class="thumb" href="decks/2026-11-20-transitions-l1-sort-utensils-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Sort Forks, Spoons, Knives"><img src="thumbs/2026-11-20-transitions-l1-sort-utensils-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
   <div class="dtxt"><span class="date">Fri, Nov 20</span><h4>Sort Forks, Spoons, Knives</h4>
   <p class="meta">16 slides · PDF · 1.0 MB</p>
   <div class="btns"><a class="btn blue" href="decks/2026-11-20-transitions-l1-sort-utensils-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
-  <a class="btn ghost" href="decks/2026-11-20-transitions-l1-sort-utensils-deck.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost" href="decks/2026-11-20-transitions-l1-sort-utensils-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="decks/2026-11-20-transitions-l1-sort-utensils-deck-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article><article class="card game item" data-q="sort the drawer forks, spoons, and knives. put them in the right slot! game transitions l1">
   <div class="gicon" aria-hidden="true">🍴</div>
   <div class="gtxt"><span class="pill lv1">Transitions L1</span>
@@ -166,7 +166,7 @@
   <h4>Sort Utensils Printables</h4>
   <p class="meta">5 pages · PDF · 151 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-11-20-transitions-l1-sort-utensils-printables.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-11-20-transitions-l1-sort-utensils-printables.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-11-20-transitions-l1-sort-utensils-printables.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-11-20-transitions-l1-sort-utensils-printables-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div></div></section><p class="paneend"><a class="btn ghost sm" href="#top">⬆️ Back to top</a></p></div></div>
 
 <section class="cat" id="teacher-l1" aria-labelledby="h-teacher-l1"><h2 id="h-teacher-l1">👩‍🏫 Level 1 teacher resources</h2><p class=note>👩‍🏫 <b>For teachers.</b> Answer keys, sub-ready notes and setup guides. Students: please stay in the sections above. <a href="teacher.html">All teacher resources</a></p><div class="grid rows"><article class="card item row" data-q="teacher key answer key and teacher notes for the day&#x27;s lessons key transitions l1 sel l1 2026-11-05">
@@ -243,40 +243,40 @@
   <div class="dtxt"><span class="date">Mon, Oct 19</span><h4>Understanding My Rights</h4>
   <p class="meta">19 slides · PDF · 9.2 MB</p>
   <div class="btns"><a class="btn blue" href="decks/2026-10-19-transitions-l2-rights-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
-  <a class="btn ghost" href="decks/2026-10-19-transitions-l2-rights-deck.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost" href="decks/2026-10-19-transitions-l2-rights-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="decks/2026-10-19-transitions-l2-rights-deck-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="grid rows"><article class="card item row" data-q="“right or not a right?” sort cards  printable transitions l2 2026-10-19">
   <a class="thumb2" href="printables/2026-10-19-rights-cards.pdf" target="_blank" rel="noopener" aria-label="Open: “Right or Not a Right?” Sort Cards"><img src="thumbs/2026-10-19-rights-cards.jpg" alt="" loading="lazy" width="96" height="124"></a>
   <div class="itxt"><span class="date">Mon, Oct 19</span> <span class="kind">Printable</span>
   <h4>“Right or Not a Right?” Sort Cards</h4>
   <p class="meta">3 pages · PDF · 87 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-10-19-rights-cards.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-10-19-rights-cards.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-10-19-rights-cards.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-19-rights-cards-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="tline item" data-q="daily lesson plans plan 2026-10-19 “right or not a right?” answer key key 2026-10-19 teacher key key 2026-10-19 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="plans/2026-10-19-plans.pdf" target="_blank" rel="noopener">📝 Lesson plan</a> <a class="btn ghost sm" href="teacher/2026-10-19-teacher-key.pdf" target="_blank" rel="noopener">🔑 Teacher key</a> <a class="btn ghost sm" href="teacher/2026-10-19-rights-cards-key.pdf" target="_blank" rel="noopener">🔑 “Right or Not a Right?” Answer Key</a></div></div><div class="lesson" id="lesson-2026-10-21-l2"><h4 class="lessonh"><span class="date">Wed, Oct 21</span> Respect Their Boundaries</h4><div class="grid"><article class="card deck item" data-q="respect their boundaries  deck transitions l2 2026-10-21 slides">
   <a class="thumb" href="decks/2026-10-21-transitions-l2-boundaries-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Respect Their Boundaries"><img src="thumbs/2026-10-21-transitions-l2-boundaries-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
   <div class="dtxt"><span class="date">Wed, Oct 21</span><h4>Respect Their Boundaries</h4>
   <p class="meta">28 slides · PDF · 555 KB</p>
   <div class="btns"><a class="btn blue" href="decks/2026-10-21-transitions-l2-boundaries-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
-  <a class="btn ghost" href="decks/2026-10-21-transitions-l2-boundaries-deck.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost" href="decks/2026-10-21-transitions-l2-boundaries-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="decks/2026-10-21-transitions-l2-boundaries-deck-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="grid rows"><article class="card item row" data-q="boundaries exit ticket  printable transitions l2 2026-10-21">
   <a class="thumb2" href="printables/2026-10-21-boundaries-exit-ticket.pdf" target="_blank" rel="noopener" aria-label="Open: Boundaries Exit Ticket"><img src="thumbs/2026-10-21-boundaries-exit-ticket.jpg" alt="" loading="lazy" width="96" height="124"></a>
   <div class="itxt"><span class="date">Wed, Oct 21</span> <span class="kind">Printable</span>
   <h4>Boundaries Exit Ticket</h4>
   <p class="meta">1 page · PDF · 53 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-10-21-boundaries-exit-ticket.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-10-21-boundaries-exit-ticket.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-10-21-boundaries-exit-ticket.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-21-boundaries-exit-ticket-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article><article class="card item row" data-q="boundaries sort cards  printable transitions l2 2026-10-21">
   <a class="thumb2" href="printables/2026-10-21-boundaries-sort-cards.pdf" target="_blank" rel="noopener" aria-label="Open: Boundaries Sort Cards"><img src="thumbs/2026-10-21-boundaries-sort-cards.jpg" alt="" loading="lazy" width="96" height="124"></a>
   <div class="itxt"><span class="date">Wed, Oct 21</span> <span class="kind">Printable</span>
   <h4>Boundaries Sort Cards</h4>
   <p class="meta">8 pages · PDF · 187 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-10-21-boundaries-sort-cards.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-10-21-boundaries-sort-cards.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-10-21-boundaries-sort-cards.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-21-boundaries-sort-cards-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="tline item" data-q="daily lesson plans plan 2026-10-21 simple plan (sub-ready) simple 2026-10-21 teacher key key 2026-10-21 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="plans/2026-10-21-plans.pdf" target="_blank" rel="noopener">📝 Lesson plan</a> <a class="btn ghost sm" href="plans/2026-10-21-simple-plan.pdf" target="_blank" rel="noopener">🧾 Sub plan</a> <a class="btn ghost sm" href="teacher/2026-10-21-teacher-key.pdf" target="_blank" rel="noopener">🔑 Teacher key</a></div></div><div class="lesson" id="lesson-2026-10-23-l2"><h4 class="lessonh"><span class="date">Fri, Oct 23</span> Friday cooking lab / outing (Mr. Driver&#x27;s) <span class="pill lab">🍳 Cooking lab</span></h4><div class="tline item" data-q="teacher key key 2026-10-23 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="teacher/2026-10-23-teacher-key.pdf" target="_blank" rel="noopener">🔑 Teacher key</a></div></div><div class="lesson" id="lesson-2026-10-27-l2"><h4 class="lessonh"><span class="date">Tue, Oct 27</span> Lead My IEP</h4><div class="grid"><article class="card deck item" data-q="lead my iep  deck transitions l2 2026-10-27 slides">
   <a class="thumb" href="decks/2026-10-27-transitions-l2-student-led-iep-prep-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Lead My IEP"><img src="thumbs/2026-10-27-transitions-l2-student-led-iep-prep-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
   <div class="dtxt"><span class="date">Tue, Oct 27</span><h4>Lead My IEP</h4>
   <p class="meta">29 slides · PDF · 1.6 MB</p>
   <div class="btns"><a class="btn blue" href="decks/2026-10-27-transitions-l2-student-led-iep-prep-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
-  <a class="btn ghost" href="decks/2026-10-27-transitions-l2-student-led-iep-prep-deck.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost" href="decks/2026-10-27-transitions-l2-student-led-iep-prep-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="decks/2026-10-27-transitions-l2-student-led-iep-prep-deck-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article><article class="card video item" data-q="what is my iep meeting? social narrative video lead my iep">
   <div class="gicon" aria-hidden="true">🎬</div>
   <div class="gtxt"><span class="date">Tue, Oct 27 · Lead My IEP</span><h4>What is my IEP Meeting? Social Narrative</h4>
@@ -288,13 +288,13 @@
   <h4>IEP Prep Printables</h4>
   <p class="meta">8 pages · PDF · 215 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-10-27-transitions-l2-iep-prep-printables.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-10-27-transitions-l2-iep-prep-printables.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-10-27-transitions-l2-iep-prep-printables.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-27-transitions-l2-iep-prep-printables-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="tline item" data-q="daily lesson plans plan 2026-10-27 simple plan (sub-ready) simple 2026-10-27 teacher key key 2026-10-27 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="plans/2026-10-27-plans.pdf" target="_blank" rel="noopener">📝 Lesson plan</a> <a class="btn ghost sm" href="plans/2026-10-27-simple-plan.pdf" target="_blank" rel="noopener">🧾 Sub plan</a> <a class="btn ghost sm" href="teacher/2026-10-27-teacher-key.pdf" target="_blank" rel="noopener">🔑 Teacher key</a></div></div><div class="lesson" id="lesson-2026-10-29-l2"><h4 class="lessonh"><span class="date">Thu, Oct 29</span> Self Advocacy Role Play</h4><div class="grid"><article class="card deck item" data-q="self advocacy role play  deck transitions l2 2026-10-29 slides">
   <a class="thumb" href="decks/2026-10-29-transitions-l2-self-advocacy-role-play-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Self Advocacy Role Play"><img src="thumbs/2026-10-29-transitions-l2-self-advocacy-role-play-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
   <div class="dtxt"><span class="date">Thu, Oct 29</span><h4>Self Advocacy Role Play</h4>
   <p class="meta">21 slides · PDF · 1.2 MB</p>
   <div class="btns"><a class="btn blue" href="decks/2026-10-29-transitions-l2-self-advocacy-role-play-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
-  <a class="btn ghost" href="decks/2026-10-29-transitions-l2-self-advocacy-role-play-deck.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost" href="decks/2026-10-29-transitions-l2-self-advocacy-role-play-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="decks/2026-10-29-transitions-l2-self-advocacy-role-play-deck-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article><article class="card video item" data-q="self advocacy video self advocacy role play">
   <div class="gicon" aria-hidden="true">🎬</div>
   <div class="gtxt"><span class="date">Thu, Oct 29 · Self Advocacy Role Play</span><h4>Self Advocacy</h4>
@@ -306,7 +306,7 @@
   <h4>Role Play Printables</h4>
   <p class="meta">7 pages · PDF · 231 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-10-29-transitions-l2-role-play-printables.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-10-29-transitions-l2-role-play-printables.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-10-29-transitions-l2-role-play-printables.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-29-transitions-l2-role-play-printables-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="tline item" data-q="daily lesson plans plan 2026-10-29 simple plan (sub-ready) simple 2026-10-29 teacher key key 2026-10-29 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="plans/2026-10-29-plans.pdf" target="_blank" rel="noopener">📝 Lesson plan</a> <a class="btn ghost sm" href="plans/2026-10-29-simple-plan.pdf" target="_blank" rel="noopener">🧾 Sub plan</a> <a class="btn ghost sm" href="teacher/2026-10-29-teacher-key.pdf" target="_blank" rel="noopener">🔑 Teacher key</a></div></div></section><p class="paneend"><a class="btn ghost sm" href="#top">⬆️ Back to top</a></p></div><div class="unitpane" data-unit="2"><section class="cat" id="u2-l2" aria-labelledby="h-u2-l2"><h2 id="h-u2-l2">🏠 Unit 2: Independent Living 📍</h2><p class=note>2 lessons in teaching order, oldest first. Each lesson keeps its slides, printables, game and teacher files together.</p><div class="lesson unitwide"><h4 class="lessonh">🗂️ For the whole unit</h4><div class="grid"><article class="card game item" data-q="which skill? unit 2 launch: the 5 home skills, chore words, and steps. game transitions l2">
   <div class="gicon" aria-hidden="true">🏠</div>
   <div class="gtxt"><span class="pill lv2">Transitions L2</span>
@@ -331,7 +331,7 @@
   <div class="dtxt"><span class="date">Mon, Nov 2</span><h4>Start Unit 2: Independent Living</h4>
   <p class="meta">24 slides · PDF · 1.5 MB</p>
   <div class="btns"><a class="btn blue" href="decks/2026-11-02-transitions-l2-independent-living-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
-  <a class="btn ghost" href="decks/2026-11-02-transitions-l2-independent-living-deck.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost" href="decks/2026-11-02-transitions-l2-independent-living-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="decks/2026-11-02-transitions-l2-independent-living-deck-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article><article class="card video item" data-q="what are household chores - independent living &amp; life skills - kids and teens video start unit 2: independent living">
   <div class="gicon" aria-hidden="true">🎬</div>
   <div class="gtxt"><span class="date">Mon, Nov 2 · Start Unit 2: Independent Living</span><h4>What are Household Chores - Independent Living &amp; Life Skills - Kids and Teens</h4>
@@ -343,13 +343,13 @@
   <h4>Independent Living Printables</h4>
   <p class="meta">8 pages · PDF · 234 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-11-02-transitions-l2-independent-living-printables.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-11-02-transitions-l2-independent-living-printables.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-11-02-transitions-l2-independent-living-printables.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-11-02-transitions-l2-independent-living-printables-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="tline item" data-q="daily lesson plans plan 2026-11-02 simple plan (sub-ready) simple 2026-11-02 teacher key key 2026-11-02 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="plans/2026-11-02-plans.pdf" target="_blank" rel="noopener">📝 Lesson plan</a> <a class="btn ghost sm" href="plans/2026-11-02-simple-plan.pdf" target="_blank" rel="noopener">🧾 Sub plan</a> <a class="btn ghost sm" href="teacher/2026-11-02-teacher-key.pdf" target="_blank" rel="noopener">🔑 Teacher key</a></div></div><div class="lesson" id="lesson-2026-11-04-l2"><h4 class="lessonh"><span class="date">Wed, Nov 4</span> Sort Utensils by Category <span class="pill draft">Coming up</span></h4><div class="grid"><article class="card deck item" data-q="sort utensils by category  deck transitions l2 2026-11-04 slides">
   <a class="thumb" href="decks/2026-11-04-transitions-l2-utensil-sorting-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Sort Utensils by Category"><img src="thumbs/2026-11-04-transitions-l2-utensil-sorting-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
   <div class="dtxt"><span class="date">Wed, Nov 4</span><h4>Sort Utensils by Category</h4>
   <p class="meta">22 slides · PDF · 1.3 MB</p>
   <div class="btns"><a class="btn blue" href="decks/2026-11-04-transitions-l2-utensil-sorting-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
-  <a class="btn ghost" href="decks/2026-11-04-transitions-l2-utensil-sorting-deck.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost" href="decks/2026-11-04-transitions-l2-utensil-sorting-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="decks/2026-11-04-transitions-l2-utensil-sorting-deck-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article><article class="card game item" data-q="sort the drawer eating, serving, or cooking? match tools to jobs. order the steps. game transitions l2">
   <div class="gicon" aria-hidden="true">🍴</div>
   <div class="gtxt"><span class="pill lv2">Transitions L2</span>
@@ -361,7 +361,7 @@
   <h4>Utensil Sorting Printables</h4>
   <p class="meta">7 pages · PDF · 172 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-11-04-transitions-l2-utensil-sorting-printables.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-11-04-transitions-l2-utensil-sorting-printables.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-11-04-transitions-l2-utensil-sorting-printables.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-11-04-transitions-l2-utensil-sorting-printables-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="tline item" data-q="daily lesson plans plan 2026-11-04 simple plan (sub-ready) simple 2026-11-04 teacher key key 2026-11-04 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="plans/2026-11-04-plans.pdf" target="_blank" rel="noopener">📝 Lesson plan</a> <a class="btn ghost sm" href="plans/2026-11-04-simple-plan.pdf" target="_blank" rel="noopener">🧾 Sub plan</a> <a class="btn ghost sm" href="teacher/2026-11-04-teacher-key.pdf" target="_blank" rel="noopener">🔑 Teacher key</a></div></div></section><p class="paneend"><a class="btn ghost sm" href="#top">⬆️ Back to top</a></p></div></div>
 
 <section class="cat" id="teacher-l2" aria-labelledby="h-teacher-l2"><h2 id="h-teacher-l2">👩‍🏫 Level 2 teacher resources</h2><p class=note>👩‍🏫 <b>For teachers.</b> Answer keys, sub-ready notes and setup guides. Students: please stay in the sections above. <a href="teacher.html">All teacher resources</a></p><div class="grid rows"><article class="card item row" data-q="teacher key answer key and teacher notes for the day&#x27;s lessons key transitions l2 sel l2 2026-11-04">
@@ -434,9 +434,416 @@
   <p class="meta">2 pages · PDF · 72 KB</p><p class="sub">Answers for the Unit 2 unit plan</p>
   <div class="btns"><a class="btn blue sm" href="teacher/unit-2-teacher-key.pdf" target="_blank" rel="noopener">📄 Open</a>
   <a class="btn ghost sm" href="teacher/unit-2-teacher-key.pdf" download>⬇ Download</a></div></div>
+</article></div></section></div><div class="lvonly lv3"><p class="lead lvlead">Life skills for after high school, closer to the regular class work: readings, guided notes and quick checks, with read aloud.</p><span id="slides-l3"></span><span id="plans-l3"></span><span id="prints-l3"></span><span id="games-l3"></span><span id="videos-l3"></span>
+<div class="utabgroup" data-default="2"><section class="cat" id="units-l3" aria-labelledby="h-units-l3"><h2 id="h-units-l3">🗂️ Level 3 units in teaching order</h2><p class=note>2 of 6 units have materials. 📍 marks the unit we are in now. <span class="utabhint">Tap a unit to show it below.</span></p><div class="utabs" role="tablist" aria-label="Units"><a class="utab" role="tab" href="#unit-1" data-unit="1" aria-selected="false" title="Unit 1: Self-Advocacy"><span class="un">Unit 1</span><span class="ut"><span aria-hidden="true">🗣️</span> Self-Advocacy</span></a><a class="utab now" role="tab" href="#unit-2" data-unit="2" aria-selected="false" title="Unit 2: Independent Living"><span class="un">Unit 2</span><span class="ut"><span aria-hidden="true">🏠</span> Independent Living</span><small class="ust">📍 Now</small></a><span class="utab soon" title="Health, Wellness &amp; Relationships"><span class="un">Unit 3</span><span class="ut"><span aria-hidden="true">🧼</span> Health, Wellness &amp; Relationships</span><small class="ust">Coming soon</small></span><span class="utab soon" title="Employment &amp; Career Exploration"><span class="un">Unit 4</span><span class="ut"><span aria-hidden="true">💼</span> Employment &amp; Career Exploration</span><small class="ust">Coming soon</small></span><span class="utab soon" title="Financial Literacy &amp; Money"><span class="un">Unit 5</span><span class="ut"><span aria-hidden="true">💵</span> Financial Literacy &amp; Money</span><small class="ust">Coming soon</small></span><span class="utab soon" title="Community Navigation &amp; Mobility"><span class="un">Unit 6</span><span class="ut"><span aria-hidden="true">🚌</span> Community Navigation &amp; Mobility</span><small class="ust">Coming soon</small></span></div></section><div class="unitpane" data-unit="1"><section class="cat" id="u1-l3" aria-labelledby="h-u1-l3"><h2 id="h-u1-l3">🗣️ Unit 1: Self-Advocacy</h2><p class=note>4 lessons in teaching order, oldest first. Each lesson keeps its slides, printables, game and teacher files together.</p><div class="lesson unitwide"><h4 class="lessonh">🗂️ For the whole unit</h4><div class="grid"><article class="card game item" data-q="self-advocacy: review 10 questions from the whole unit. game transitions l3">
+  <div class="gicon" aria-hidden="true">🗣️</div>
+  <div class="gtxt"><span class="pill lv3">Transitions L3</span>
+  <h3>Self-Advocacy: Review</h3><p>10 questions from the whole unit.</p>
+  <a class="btn gold" href="games/transitions-unit1-self-advocacy-L3-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div></div><div class="lesson" id="lesson-2026-10-19-l3"><h4 class="lessonh"><span class="date">Mon, Oct 19</span> Understanding My Rights</h4><div class="grid rows"><article class="card item row" data-q="understanding my rights: level 3 guided notes  printable transitions l3 2026-10-19">
+  <a class="thumb2" href="printables/2026-10-19-transitions-l3-rights-guided-notes.pdf" target="_blank" rel="noopener" aria-label="Open: Understanding My Rights: Level 3 guided notes"><img src="thumbs/2026-10-19-transitions-l3-rights-guided-notes.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Mon, Oct 19</span> <span class="kind">Printable</span>
+  <h4>Understanding My Rights: Level 3 guided notes</h4>
+  <p class="meta">1 page · PDF · 65 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-10-19-transitions-l3-rights-guided-notes.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-10-19-transitions-l3-rights-guided-notes.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-19-transitions-l3-rights-guided-notes-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
+</article><article class="card item row" data-q="understanding my rights: level 3 quick check  printable transitions l3 2026-10-19">
+  <a class="thumb2" href="printables/2026-10-19-transitions-l3-rights-quiz.pdf" target="_blank" rel="noopener" aria-label="Open: Understanding My Rights: Level 3 quick check"><img src="thumbs/2026-10-19-transitions-l3-rights-quiz.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Mon, Oct 19</span> <span class="kind">Printable</span>
+  <h4>Understanding My Rights: Level 3 quick check</h4>
+  <p class="meta">1 page · PDF · 53 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-10-19-transitions-l3-rights-quiz.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-10-19-transitions-l3-rights-quiz.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="understanding my rights: level 3 reading  printable transitions l3 2026-10-19">
+  <a class="thumb2" href="printables/2026-10-19-transitions-l3-rights-reading.pdf" target="_blank" rel="noopener" aria-label="Open: Understanding My Rights: Level 3 reading"><img src="thumbs/2026-10-19-transitions-l3-rights-reading.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Mon, Oct 19</span> <span class="kind">Printable</span>
+  <h4>Understanding My Rights: Level 3 reading</h4>
+  <p class="meta">1 page · PDF · 48 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-10-19-transitions-l3-rights-reading.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-10-19-transitions-l3-rights-reading.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-19-transitions-l3-rights-reading-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
+</article></div><div class="tline item" data-q="understanding my rights: level 3 notes key key 2026-10-19 understanding my rights: level 3 quick check key key 2026-10-19 understanding my rights: level 3 reading key key 2026-10-19 understanding my rights: level 3 staff guide key 2026-10-19 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="teacher/2026-10-19-transitions-l3-rights-guided-notes-key.pdf" target="_blank" rel="noopener">🔑 Understanding My Rights: Level 3 notes key</a> <a class="btn ghost sm" href="teacher/2026-10-19-transitions-l3-rights-quiz-key.pdf" target="_blank" rel="noopener">🔑 Understanding My Rights: Level 3 quick check key</a> <a class="btn ghost sm" href="teacher/2026-10-19-transitions-l3-rights-reading-key.pdf" target="_blank" rel="noopener">🔑 Understanding My Rights: Level 3 reading key</a> <a class="btn ghost sm" href="teacher/2026-10-19-transitions-l3-rights-staff-guide.pdf" target="_blank" rel="noopener">🔑 Understanding My Rights: Level 3 staff guide</a></div></div><div class="lesson" id="lesson-2026-10-21-l3"><h4 class="lessonh"><span class="date">Wed, Oct 21</span> Respect Their Boundaries</h4><div class="grid rows"><article class="card item row" data-q="respect their boundaries: level 3 guided notes  printable transitions l3 2026-10-21">
+  <a class="thumb2" href="printables/2026-10-21-transitions-l3-boundaries-guided-notes.pdf" target="_blank" rel="noopener" aria-label="Open: Respect Their Boundaries: Level 3 guided notes"><img src="thumbs/2026-10-21-transitions-l3-boundaries-guided-notes.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Wed, Oct 21</span> <span class="kind">Printable</span>
+  <h4>Respect Their Boundaries: Level 3 guided notes</h4>
+  <p class="meta">1 page · PDF · 59 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-10-21-transitions-l3-boundaries-guided-notes.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-10-21-transitions-l3-boundaries-guided-notes.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-21-transitions-l3-boundaries-guided-notes-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
+</article><article class="card item row" data-q="respect their boundaries: level 3 quick check  printable transitions l3 2026-10-21">
+  <a class="thumb2" href="printables/2026-10-21-transitions-l3-boundaries-quiz.pdf" target="_blank" rel="noopener" aria-label="Open: Respect Their Boundaries: Level 3 quick check"><img src="thumbs/2026-10-21-transitions-l3-boundaries-quiz.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Wed, Oct 21</span> <span class="kind">Printable</span>
+  <h4>Respect Their Boundaries: Level 3 quick check</h4>
+  <p class="meta">1 page · PDF · 48 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-10-21-transitions-l3-boundaries-quiz.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-10-21-transitions-l3-boundaries-quiz.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="respect their boundaries: level 3 reading  printable transitions l3 2026-10-21">
+  <a class="thumb2" href="printables/2026-10-21-transitions-l3-boundaries-reading.pdf" target="_blank" rel="noopener" aria-label="Open: Respect Their Boundaries: Level 3 reading"><img src="thumbs/2026-10-21-transitions-l3-boundaries-reading.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Wed, Oct 21</span> <span class="kind">Printable</span>
+  <h4>Respect Their Boundaries: Level 3 reading</h4>
+  <p class="meta">1 page · PDF · 44 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-10-21-transitions-l3-boundaries-reading.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-10-21-transitions-l3-boundaries-reading.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-21-transitions-l3-boundaries-reading-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
+</article></div><div class="tline item" data-q="respect their boundaries: level 3 notes key key 2026-10-21 respect their boundaries: level 3 quick check key key 2026-10-21 respect their boundaries: level 3 reading key key 2026-10-21 respect their boundaries: level 3 staff guide key 2026-10-21 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="teacher/2026-10-21-transitions-l3-boundaries-guided-notes-key.pdf" target="_blank" rel="noopener">🔑 Respect Their Boundaries: Level 3 notes key</a> <a class="btn ghost sm" href="teacher/2026-10-21-transitions-l3-boundaries-quiz-key.pdf" target="_blank" rel="noopener">🔑 Respect Their Boundaries: Level 3 quick check key</a> <a class="btn ghost sm" href="teacher/2026-10-21-transitions-l3-boundaries-reading-key.pdf" target="_blank" rel="noopener">🔑 Respect Their Boundaries: Level 3 reading key</a> <a class="btn ghost sm" href="teacher/2026-10-21-transitions-l3-boundaries-staff-guide.pdf" target="_blank" rel="noopener">🔑 Respect Their Boundaries: Level 3 staff guide</a></div></div><div class="lesson" id="lesson-2026-10-27-l3"><h4 class="lessonh"><span class="date">Tue, Oct 27</span> Lead My IEP</h4><div class="grid rows"><article class="card item row" data-q="lead my iep: level 3 guided notes  printable transitions l3 2026-10-27">
+  <a class="thumb2" href="printables/2026-10-27-transitions-l3-iep-prep-guided-notes.pdf" target="_blank" rel="noopener" aria-label="Open: Lead My IEP: Level 3 guided notes"><img src="thumbs/2026-10-27-transitions-l3-iep-prep-guided-notes.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Tue, Oct 27</span> <span class="kind">Printable</span>
+  <h4>Lead My IEP: Level 3 guided notes</h4>
+  <p class="meta">1 page · PDF · 61 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-10-27-transitions-l3-iep-prep-guided-notes.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-10-27-transitions-l3-iep-prep-guided-notes.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-27-transitions-l3-iep-prep-guided-notes-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
+</article><article class="card item row" data-q="lead my iep: level 3 quick check  printable transitions l3 2026-10-27">
+  <a class="thumb2" href="printables/2026-10-27-transitions-l3-iep-prep-quiz.pdf" target="_blank" rel="noopener" aria-label="Open: Lead My IEP: Level 3 quick check"><img src="thumbs/2026-10-27-transitions-l3-iep-prep-quiz.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Tue, Oct 27</span> <span class="kind">Printable</span>
+  <h4>Lead My IEP: Level 3 quick check</h4>
+  <p class="meta">1 page · PDF · 49 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-10-27-transitions-l3-iep-prep-quiz.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-10-27-transitions-l3-iep-prep-quiz.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="lead my iep: level 3 reading  printable transitions l3 2026-10-27">
+  <a class="thumb2" href="printables/2026-10-27-transitions-l3-iep-prep-reading.pdf" target="_blank" rel="noopener" aria-label="Open: Lead My IEP: Level 3 reading"><img src="thumbs/2026-10-27-transitions-l3-iep-prep-reading.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Tue, Oct 27</span> <span class="kind">Printable</span>
+  <h4>Lead My IEP: Level 3 reading</h4>
+  <p class="meta">1 page · PDF · 45 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-10-27-transitions-l3-iep-prep-reading.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-10-27-transitions-l3-iep-prep-reading.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-27-transitions-l3-iep-prep-reading-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
+</article></div><div class="tline item" data-q="lead my iep: level 3 notes key key 2026-10-27 lead my iep: level 3 quick check key key 2026-10-27 lead my iep: level 3 reading key key 2026-10-27 lead my iep: level 3 staff guide key 2026-10-27 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="teacher/2026-10-27-transitions-l3-iep-prep-guided-notes-key.pdf" target="_blank" rel="noopener">🔑 Lead My IEP: Level 3 notes key</a> <a class="btn ghost sm" href="teacher/2026-10-27-transitions-l3-iep-prep-quiz-key.pdf" target="_blank" rel="noopener">🔑 Lead My IEP: Level 3 quick check key</a> <a class="btn ghost sm" href="teacher/2026-10-27-transitions-l3-iep-prep-reading-key.pdf" target="_blank" rel="noopener">🔑 Lead My IEP: Level 3 reading key</a> <a class="btn ghost sm" href="teacher/2026-10-27-transitions-l3-iep-prep-staff-guide.pdf" target="_blank" rel="noopener">🔑 Lead My IEP: Level 3 staff guide</a></div></div><div class="lesson" id="lesson-2026-10-29-l3"><h4 class="lessonh"><span class="date">Thu, Oct 29</span> Speak Up for Me</h4><div class="grid rows"><article class="card item row" data-q="speak up for me: level 3 guided notes  printable transitions l3 2026-10-29">
+  <a class="thumb2" href="printables/2026-10-29-transitions-l3-self-advocacy-role-play-guided-notes.pdf" target="_blank" rel="noopener" aria-label="Open: Speak Up for Me: Level 3 guided notes"><img src="thumbs/2026-10-29-transitions-l3-self-advocacy-role-play-guided-notes.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Thu, Oct 29</span> <span class="kind">Printable</span>
+  <h4>Speak Up for Me: Level 3 guided notes</h4>
+  <p class="meta">1 page · PDF · 62 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-10-29-transitions-l3-self-advocacy-role-play-guided-notes.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-10-29-transitions-l3-self-advocacy-role-play-guided-notes.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-29-transitions-l3-self-advocacy-role-play-guided-notes-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
+</article><article class="card item row" data-q="speak up for me: level 3 quick check  printable transitions l3 2026-10-29">
+  <a class="thumb2" href="printables/2026-10-29-transitions-l3-self-advocacy-role-play-quiz.pdf" target="_blank" rel="noopener" aria-label="Open: Speak Up for Me: Level 3 quick check"><img src="thumbs/2026-10-29-transitions-l3-self-advocacy-role-play-quiz.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Thu, Oct 29</span> <span class="kind">Printable</span>
+  <h4>Speak Up for Me: Level 3 quick check</h4>
+  <p class="meta">1 page · PDF · 53 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-10-29-transitions-l3-self-advocacy-role-play-quiz.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-10-29-transitions-l3-self-advocacy-role-play-quiz.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="speak up for me: level 3 reading  printable transitions l3 2026-10-29">
+  <a class="thumb2" href="printables/2026-10-29-transitions-l3-self-advocacy-role-play-reading.pdf" target="_blank" rel="noopener" aria-label="Open: Speak Up for Me: Level 3 reading"><img src="thumbs/2026-10-29-transitions-l3-self-advocacy-role-play-reading.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Thu, Oct 29</span> <span class="kind">Printable</span>
+  <h4>Speak Up for Me: Level 3 reading</h4>
+  <p class="meta">1 page · PDF · 48 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-10-29-transitions-l3-self-advocacy-role-play-reading.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-10-29-transitions-l3-self-advocacy-role-play-reading.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-29-transitions-l3-self-advocacy-role-play-reading-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
+</article></div><div class="tline item" data-q="speak up for me: level 3 notes key key 2026-10-29 speak up for me: level 3 quick check key key 2026-10-29 speak up for me: level 3 reading key key 2026-10-29 speak up for me: level 3 staff guide key 2026-10-29 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="teacher/2026-10-29-transitions-l3-self-advocacy-role-play-guided-notes-key.pdf" target="_blank" rel="noopener">🔑 Speak Up for Me: Level 3 notes key</a> <a class="btn ghost sm" href="teacher/2026-10-29-transitions-l3-self-advocacy-role-play-quiz-key.pdf" target="_blank" rel="noopener">🔑 Speak Up for Me: Level 3 quick check key</a> <a class="btn ghost sm" href="teacher/2026-10-29-transitions-l3-self-advocacy-role-play-reading-key.pdf" target="_blank" rel="noopener">🔑 Speak Up for Me: Level 3 reading key</a> <a class="btn ghost sm" href="teacher/2026-10-29-transitions-l3-self-advocacy-role-play-staff-guide.pdf" target="_blank" rel="noopener">🔑 Speak Up for Me: Level 3 staff guide</a></div></div></section><p class="paneend"><a class="btn ghost sm" href="#top">⬆️ Back to top</a></p></div><div class="unitpane" data-unit="2"><section class="cat" id="u2-l3" aria-labelledby="h-u2-l3"><h2 id="h-u2-l3">🏠 Unit 2: Independent Living 📍</h2><p class=note>2 lessons in teaching order, oldest first. Each lesson keeps its slides, printables, game and teacher files together.</p><div class="lesson unitwide"><h4 class="lessonh">🗂️ For the whole unit</h4><div class="grid"><article class="card game item" data-q="independent living: review 10 questions from the whole unit. game transitions l3">
+  <div class="gicon" aria-hidden="true">🏠</div>
+  <div class="gtxt"><span class="pill lv3">Transitions L3</span>
+  <h3>Independent Living: Review</h3><p>10 questions from the whole unit.</p>
+  <a class="btn gold" href="games/transitions-unit2-independent-living-L3-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div></div><div class="lesson" id="lesson-2026-11-02-l3"><h4 class="lessonh"><span class="date">Mon, Nov 2</span> Independent Living</h4><div class="grid rows"><article class="card item row" data-q="independent living: level 3 guided notes  printable transitions l3 2026-11-02">
+  <a class="thumb2" href="printables/2026-11-02-transitions-l3-independent-living-guided-notes.pdf" target="_blank" rel="noopener" aria-label="Open: Independent Living: Level 3 guided notes"><img src="thumbs/2026-11-02-transitions-l3-independent-living-guided-notes.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Mon, Nov 2</span> <span class="kind">Printable</span>
+  <h4>Independent Living: Level 3 guided notes</h4>
+  <p class="meta">1 page · PDF · 62 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-11-02-transitions-l3-independent-living-guided-notes.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-11-02-transitions-l3-independent-living-guided-notes.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-11-02-transitions-l3-independent-living-guided-notes-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
+</article><article class="card item row" data-q="independent living: level 3 quick check  printable transitions l3 2026-11-02">
+  <a class="thumb2" href="printables/2026-11-02-transitions-l3-independent-living-quiz.pdf" target="_blank" rel="noopener" aria-label="Open: Independent Living: Level 3 quick check"><img src="thumbs/2026-11-02-transitions-l3-independent-living-quiz.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Mon, Nov 2</span> <span class="kind">Printable</span>
+  <h4>Independent Living: Level 3 quick check</h4>
+  <p class="meta">1 page · PDF · 51 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-11-02-transitions-l3-independent-living-quiz.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-11-02-transitions-l3-independent-living-quiz.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="independent living: level 3 reading  printable transitions l3 2026-11-02">
+  <a class="thumb2" href="printables/2026-11-02-transitions-l3-independent-living-reading.pdf" target="_blank" rel="noopener" aria-label="Open: Independent Living: Level 3 reading"><img src="thumbs/2026-11-02-transitions-l3-independent-living-reading.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Mon, Nov 2</span> <span class="kind">Printable</span>
+  <h4>Independent Living: Level 3 reading</h4>
+  <p class="meta">1 page · PDF · 46 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-11-02-transitions-l3-independent-living-reading.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-11-02-transitions-l3-independent-living-reading.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-11-02-transitions-l3-independent-living-reading-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
+</article></div><div class="tline item" data-q="independent living: level 3 notes key key 2026-11-02 independent living: level 3 quick check key key 2026-11-02 independent living: level 3 reading key key 2026-11-02 independent living: level 3 staff guide key 2026-11-02 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="teacher/2026-11-02-transitions-l3-independent-living-guided-notes-key.pdf" target="_blank" rel="noopener">🔑 Independent Living: Level 3 notes key</a> <a class="btn ghost sm" href="teacher/2026-11-02-transitions-l3-independent-living-quiz-key.pdf" target="_blank" rel="noopener">🔑 Independent Living: Level 3 quick check key</a> <a class="btn ghost sm" href="teacher/2026-11-02-transitions-l3-independent-living-reading-key.pdf" target="_blank" rel="noopener">🔑 Independent Living: Level 3 reading key</a> <a class="btn ghost sm" href="teacher/2026-11-02-transitions-l3-independent-living-staff-guide.pdf" target="_blank" rel="noopener">🔑 Independent Living: Level 3 staff guide</a></div></div><div class="lesson" id="lesson-2026-11-04-l3"><h4 class="lessonh"><span class="date">Wed, Nov 4</span> Sort Utensils by Category <span class="pill draft">Coming up</span></h4><div class="grid rows"><article class="card item row" data-q="sort utensils by category: level 3 guided notes  printable transitions l3 2026-11-04">
+  <a class="thumb2" href="printables/2026-11-04-transitions-l3-utensil-sorting-guided-notes.pdf" target="_blank" rel="noopener" aria-label="Open: Sort Utensils by Category: Level 3 guided notes"><img src="thumbs/2026-11-04-transitions-l3-utensil-sorting-guided-notes.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Wed, Nov 4</span> <span class="kind">Printable</span>
+  <h4>Sort Utensils by Category: Level 3 guided notes</h4>
+  <p class="meta">1 page · PDF · 61 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-11-04-transitions-l3-utensil-sorting-guided-notes.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-11-04-transitions-l3-utensil-sorting-guided-notes.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-11-04-transitions-l3-utensil-sorting-guided-notes-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
+</article><article class="card item row" data-q="sort utensils by category: level 3 quick check  printable transitions l3 2026-11-04">
+  <a class="thumb2" href="printables/2026-11-04-transitions-l3-utensil-sorting-quiz.pdf" target="_blank" rel="noopener" aria-label="Open: Sort Utensils by Category: Level 3 quick check"><img src="thumbs/2026-11-04-transitions-l3-utensil-sorting-quiz.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Wed, Nov 4</span> <span class="kind">Printable</span>
+  <h4>Sort Utensils by Category: Level 3 quick check</h4>
+  <p class="meta">1 page · PDF · 48 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-11-04-transitions-l3-utensil-sorting-quiz.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-11-04-transitions-l3-utensil-sorting-quiz.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="sort utensils by category: level 3 reading  printable transitions l3 2026-11-04">
+  <a class="thumb2" href="printables/2026-11-04-transitions-l3-utensil-sorting-reading.pdf" target="_blank" rel="noopener" aria-label="Open: Sort Utensils by Category: Level 3 reading"><img src="thumbs/2026-11-04-transitions-l3-utensil-sorting-reading.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Wed, Nov 4</span> <span class="kind">Printable</span>
+  <h4>Sort Utensils by Category: Level 3 reading</h4>
+  <p class="meta">1 page · PDF · 45 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-11-04-transitions-l3-utensil-sorting-reading.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-11-04-transitions-l3-utensil-sorting-reading.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-11-04-transitions-l3-utensil-sorting-reading-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
+</article></div><div class="tline item" data-q="sort utensils by category: level 3 notes key key 2026-11-04 sort utensils by category: level 3 quick check key key 2026-11-04 sort utensils by category: level 3 reading key key 2026-11-04 sort utensils by category: level 3 staff guide key 2026-11-04 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="teacher/2026-11-04-transitions-l3-utensil-sorting-guided-notes-key.pdf" target="_blank" rel="noopener">🔑 Sort Utensils by Category: Level 3 notes key</a> <a class="btn ghost sm" href="teacher/2026-11-04-transitions-l3-utensil-sorting-quiz-key.pdf" target="_blank" rel="noopener">🔑 Sort Utensils by Category: Level 3 quick check key</a> <a class="btn ghost sm" href="teacher/2026-11-04-transitions-l3-utensil-sorting-reading-key.pdf" target="_blank" rel="noopener">🔑 Sort Utensils by Category: Level 3 reading key</a> <a class="btn ghost sm" href="teacher/2026-11-04-transitions-l3-utensil-sorting-staff-guide.pdf" target="_blank" rel="noopener">🔑 Sort Utensils by Category: Level 3 staff guide</a></div></div></section><p class="paneend"><a class="btn ghost sm" href="#top">⬆️ Back to top</a></p></div></div>
+
+<section class="cat" id="teacher-l3" aria-labelledby="h-teacher-l3"><h2 id="h-teacher-l3">👩‍🏫 Level 3 teacher resources</h2><p class=note>👩‍🏫 <b>For teachers.</b> Answer keys, sub-ready notes and setup guides. Students: please stay in the sections above. <a href="teacher.html">All teacher resources</a></p><div class="grid rows"><article class="card item row" data-q="sort utensils by category: level 3 staff guide  key transitions l3 2026-11-04">
+  <a class="thumb2" href="teacher/2026-11-04-transitions-l3-utensil-sorting-staff-guide.pdf" target="_blank" rel="noopener" aria-label="Open: Sort Utensils by Category: Level 3 staff guide"><img src="thumbs/2026-11-04-transitions-l3-utensil-sorting-staff-guide.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Wed, Nov 4</span> <span class="kind">Teacher</span>
+  <h4>Sort Utensils by Category: Level 3 staff guide</h4>
+  <p class="meta">1 page · PDF · 56 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-11-04-transitions-l3-utensil-sorting-staff-guide.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-11-04-transitions-l3-utensil-sorting-staff-guide.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="sort utensils by category: level 3 reading key  key transitions l3 2026-11-04">
+  <a class="thumb2" href="teacher/2026-11-04-transitions-l3-utensil-sorting-reading-key.pdf" target="_blank" rel="noopener" aria-label="Open: Sort Utensils by Category: Level 3 reading key"><img src="thumbs/2026-11-04-transitions-l3-utensil-sorting-reading-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Wed, Nov 4</span> <span class="kind">Teacher</span>
+  <h4>Sort Utensils by Category: Level 3 reading key</h4>
+  <p class="meta">1 page · PDF · 47 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-11-04-transitions-l3-utensil-sorting-reading-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-11-04-transitions-l3-utensil-sorting-reading-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="sort utensils by category: level 3 quick check key  key transitions l3 2026-11-04">
+  <a class="thumb2" href="teacher/2026-11-04-transitions-l3-utensil-sorting-quiz-key.pdf" target="_blank" rel="noopener" aria-label="Open: Sort Utensils by Category: Level 3 quick check key"><img src="thumbs/2026-11-04-transitions-l3-utensil-sorting-quiz-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Wed, Nov 4</span> <span class="kind">Teacher</span>
+  <h4>Sort Utensils by Category: Level 3 quick check key</h4>
+  <p class="meta">1 page · PDF · 60 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-11-04-transitions-l3-utensil-sorting-quiz-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-11-04-transitions-l3-utensil-sorting-quiz-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="sort utensils by category: level 3 notes key  key transitions l3 2026-11-04">
+  <a class="thumb2" href="teacher/2026-11-04-transitions-l3-utensil-sorting-guided-notes-key.pdf" target="_blank" rel="noopener" aria-label="Open: Sort Utensils by Category: Level 3 notes key"><img src="thumbs/2026-11-04-transitions-l3-utensil-sorting-guided-notes-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Wed, Nov 4</span> <span class="kind">Teacher</span>
+  <h4>Sort Utensils by Category: Level 3 notes key</h4>
+  <p class="meta">1 page · PDF · 73 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-11-04-transitions-l3-utensil-sorting-guided-notes-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-11-04-transitions-l3-utensil-sorting-guided-notes-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="independent living: level 3 staff guide  key transitions l3 2026-11-02">
+  <a class="thumb2" href="teacher/2026-11-02-transitions-l3-independent-living-staff-guide.pdf" target="_blank" rel="noopener" aria-label="Open: Independent Living: Level 3 staff guide"><img src="thumbs/2026-11-02-transitions-l3-independent-living-staff-guide.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Mon, Nov 2</span> <span class="kind">Teacher</span>
+  <h4>Independent Living: Level 3 staff guide</h4>
+  <p class="meta">1 page · PDF · 55 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-11-02-transitions-l3-independent-living-staff-guide.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-11-02-transitions-l3-independent-living-staff-guide.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="independent living: level 3 reading key  key transitions l3 2026-11-02">
+  <a class="thumb2" href="teacher/2026-11-02-transitions-l3-independent-living-reading-key.pdf" target="_blank" rel="noopener" aria-label="Open: Independent Living: Level 3 reading key"><img src="thumbs/2026-11-02-transitions-l3-independent-living-reading-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Mon, Nov 2</span> <span class="kind">Teacher</span>
+  <h4>Independent Living: Level 3 reading key</h4>
+  <p class="meta">1 page · PDF · 49 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-11-02-transitions-l3-independent-living-reading-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-11-02-transitions-l3-independent-living-reading-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="independent living: level 3 quick check key  key transitions l3 2026-11-02">
+  <a class="thumb2" href="teacher/2026-11-02-transitions-l3-independent-living-quiz-key.pdf" target="_blank" rel="noopener" aria-label="Open: Independent Living: Level 3 quick check key"><img src="thumbs/2026-11-02-transitions-l3-independent-living-quiz-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Mon, Nov 2</span> <span class="kind">Teacher</span>
+  <h4>Independent Living: Level 3 quick check key</h4>
+  <p class="meta">1 page · PDF · 63 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-11-02-transitions-l3-independent-living-quiz-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-11-02-transitions-l3-independent-living-quiz-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="independent living: level 3 notes key  key transitions l3 2026-11-02">
+  <a class="thumb2" href="teacher/2026-11-02-transitions-l3-independent-living-guided-notes-key.pdf" target="_blank" rel="noopener" aria-label="Open: Independent Living: Level 3 notes key"><img src="thumbs/2026-11-02-transitions-l3-independent-living-guided-notes-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Mon, Nov 2</span> <span class="kind">Teacher</span>
+  <h4>Independent Living: Level 3 notes key</h4>
+  <p class="meta">1 page · PDF · 73 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-11-02-transitions-l3-independent-living-guided-notes-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-11-02-transitions-l3-independent-living-guided-notes-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="speak up for me: level 3 staff guide  key transitions l3 2026-10-29">
+  <a class="thumb2" href="teacher/2026-10-29-transitions-l3-self-advocacy-role-play-staff-guide.pdf" target="_blank" rel="noopener" aria-label="Open: Speak Up for Me: Level 3 staff guide"><img src="thumbs/2026-10-29-transitions-l3-self-advocacy-role-play-staff-guide.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Thu, Oct 29</span> <span class="kind">Teacher</span>
+  <h4>Speak Up for Me: Level 3 staff guide</h4>
+  <p class="meta">1 page · PDF · 56 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-29-transitions-l3-self-advocacy-role-play-staff-guide.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-29-transitions-l3-self-advocacy-role-play-staff-guide.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="speak up for me: level 3 reading key  key transitions l3 2026-10-29">
+  <a class="thumb2" href="teacher/2026-10-29-transitions-l3-self-advocacy-role-play-reading-key.pdf" target="_blank" rel="noopener" aria-label="Open: Speak Up for Me: Level 3 reading key"><img src="thumbs/2026-10-29-transitions-l3-self-advocacy-role-play-reading-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Thu, Oct 29</span> <span class="kind">Teacher</span>
+  <h4>Speak Up for Me: Level 3 reading key</h4>
+  <p class="meta">1 page · PDF · 50 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-29-transitions-l3-self-advocacy-role-play-reading-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-29-transitions-l3-self-advocacy-role-play-reading-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="speak up for me: level 3 quick check key  key transitions l3 2026-10-29">
+  <a class="thumb2" href="teacher/2026-10-29-transitions-l3-self-advocacy-role-play-quiz-key.pdf" target="_blank" rel="noopener" aria-label="Open: Speak Up for Me: Level 3 quick check key"><img src="thumbs/2026-10-29-transitions-l3-self-advocacy-role-play-quiz-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Thu, Oct 29</span> <span class="kind">Teacher</span>
+  <h4>Speak Up for Me: Level 3 quick check key</h4>
+  <p class="meta">1 page · PDF · 65 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-29-transitions-l3-self-advocacy-role-play-quiz-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-29-transitions-l3-self-advocacy-role-play-quiz-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="speak up for me: level 3 notes key  key transitions l3 2026-10-29">
+  <a class="thumb2" href="teacher/2026-10-29-transitions-l3-self-advocacy-role-play-guided-notes-key.pdf" target="_blank" rel="noopener" aria-label="Open: Speak Up for Me: Level 3 notes key"><img src="thumbs/2026-10-29-transitions-l3-self-advocacy-role-play-guided-notes-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Thu, Oct 29</span> <span class="kind">Teacher</span>
+  <h4>Speak Up for Me: Level 3 notes key</h4>
+  <p class="meta">1 page · PDF · 73 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-29-transitions-l3-self-advocacy-role-play-guided-notes-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-29-transitions-l3-self-advocacy-role-play-guided-notes-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="lead my iep: level 3 staff guide  key transitions l3 2026-10-27">
+  <a class="thumb2" href="teacher/2026-10-27-transitions-l3-iep-prep-staff-guide.pdf" target="_blank" rel="noopener" aria-label="Open: Lead My IEP: Level 3 staff guide"><img src="thumbs/2026-10-27-transitions-l3-iep-prep-staff-guide.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Tue, Oct 27</span> <span class="kind">Teacher</span>
+  <h4>Lead My IEP: Level 3 staff guide</h4>
+  <p class="meta">1 page · PDF · 56 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-27-transitions-l3-iep-prep-staff-guide.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-27-transitions-l3-iep-prep-staff-guide.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="lead my iep: level 3 reading key  key transitions l3 2026-10-27">
+  <a class="thumb2" href="teacher/2026-10-27-transitions-l3-iep-prep-reading-key.pdf" target="_blank" rel="noopener" aria-label="Open: Lead My IEP: Level 3 reading key"><img src="thumbs/2026-10-27-transitions-l3-iep-prep-reading-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Tue, Oct 27</span> <span class="kind">Teacher</span>
+  <h4>Lead My IEP: Level 3 reading key</h4>
+  <p class="meta">1 page · PDF · 47 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-27-transitions-l3-iep-prep-reading-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-27-transitions-l3-iep-prep-reading-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="lead my iep: level 3 quick check key  key transitions l3 2026-10-27">
+  <a class="thumb2" href="teacher/2026-10-27-transitions-l3-iep-prep-quiz-key.pdf" target="_blank" rel="noopener" aria-label="Open: Lead My IEP: Level 3 quick check key"><img src="thumbs/2026-10-27-transitions-l3-iep-prep-quiz-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Tue, Oct 27</span> <span class="kind">Teacher</span>
+  <h4>Lead My IEP: Level 3 quick check key</h4>
+  <p class="meta">1 page · PDF · 61 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-27-transitions-l3-iep-prep-quiz-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-27-transitions-l3-iep-prep-quiz-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="lead my iep: level 3 notes key  key transitions l3 2026-10-27">
+  <a class="thumb2" href="teacher/2026-10-27-transitions-l3-iep-prep-guided-notes-key.pdf" target="_blank" rel="noopener" aria-label="Open: Lead My IEP: Level 3 notes key"><img src="thumbs/2026-10-27-transitions-l3-iep-prep-guided-notes-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Tue, Oct 27</span> <span class="kind">Teacher</span>
+  <h4>Lead My IEP: Level 3 notes key</h4>
+  <p class="meta">1 page · PDF · 71 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-27-transitions-l3-iep-prep-guided-notes-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-27-transitions-l3-iep-prep-guided-notes-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="respect their boundaries: level 3 staff guide  key transitions l3 2026-10-21">
+  <a class="thumb2" href="teacher/2026-10-21-transitions-l3-boundaries-staff-guide.pdf" target="_blank" rel="noopener" aria-label="Open: Respect Their Boundaries: Level 3 staff guide"><img src="thumbs/2026-10-21-transitions-l3-boundaries-staff-guide.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Wed, Oct 21</span> <span class="kind">Teacher</span>
+  <h4>Respect Their Boundaries: Level 3 staff guide</h4>
+  <p class="meta">1 page · PDF · 56 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-21-transitions-l3-boundaries-staff-guide.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-21-transitions-l3-boundaries-staff-guide.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="respect their boundaries: level 3 reading key  key transitions l3 2026-10-21">
+  <a class="thumb2" href="teacher/2026-10-21-transitions-l3-boundaries-reading-key.pdf" target="_blank" rel="noopener" aria-label="Open: Respect Their Boundaries: Level 3 reading key"><img src="thumbs/2026-10-21-transitions-l3-boundaries-reading-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Wed, Oct 21</span> <span class="kind">Teacher</span>
+  <h4>Respect Their Boundaries: Level 3 reading key</h4>
+  <p class="meta">1 page · PDF · 47 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-21-transitions-l3-boundaries-reading-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-21-transitions-l3-boundaries-reading-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="respect their boundaries: level 3 quick check key  key transitions l3 2026-10-21">
+  <a class="thumb2" href="teacher/2026-10-21-transitions-l3-boundaries-quiz-key.pdf" target="_blank" rel="noopener" aria-label="Open: Respect Their Boundaries: Level 3 quick check key"><img src="thumbs/2026-10-21-transitions-l3-boundaries-quiz-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Wed, Oct 21</span> <span class="kind">Teacher</span>
+  <h4>Respect Their Boundaries: Level 3 quick check key</h4>
+  <p class="meta">1 page · PDF · 60 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-21-transitions-l3-boundaries-quiz-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-21-transitions-l3-boundaries-quiz-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="respect their boundaries: level 3 notes key  key transitions l3 2026-10-21">
+  <a class="thumb2" href="teacher/2026-10-21-transitions-l3-boundaries-guided-notes-key.pdf" target="_blank" rel="noopener" aria-label="Open: Respect Their Boundaries: Level 3 notes key"><img src="thumbs/2026-10-21-transitions-l3-boundaries-guided-notes-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Wed, Oct 21</span> <span class="kind">Teacher</span>
+  <h4>Respect Their Boundaries: Level 3 notes key</h4>
+  <p class="meta">1 page · PDF · 71 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-21-transitions-l3-boundaries-guided-notes-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-21-transitions-l3-boundaries-guided-notes-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="understanding my rights: level 3 staff guide  key transitions l3 2026-10-19">
+  <a class="thumb2" href="teacher/2026-10-19-transitions-l3-rights-staff-guide.pdf" target="_blank" rel="noopener" aria-label="Open: Understanding My Rights: Level 3 staff guide"><img src="thumbs/2026-10-19-transitions-l3-rights-staff-guide.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Mon, Oct 19</span> <span class="kind">Teacher</span>
+  <h4>Understanding My Rights: Level 3 staff guide</h4>
+  <p class="meta">1 page · PDF · 56 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-19-transitions-l3-rights-staff-guide.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-19-transitions-l3-rights-staff-guide.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="understanding my rights: level 3 reading key  key transitions l3 2026-10-19">
+  <a class="thumb2" href="teacher/2026-10-19-transitions-l3-rights-reading-key.pdf" target="_blank" rel="noopener" aria-label="Open: Understanding My Rights: Level 3 reading key"><img src="thumbs/2026-10-19-transitions-l3-rights-reading-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Mon, Oct 19</span> <span class="kind">Teacher</span>
+  <h4>Understanding My Rights: Level 3 reading key</h4>
+  <p class="meta">1 page · PDF · 50 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-19-transitions-l3-rights-reading-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-19-transitions-l3-rights-reading-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="understanding my rights: level 3 quick check key  key transitions l3 2026-10-19">
+  <a class="thumb2" href="teacher/2026-10-19-transitions-l3-rights-quiz-key.pdf" target="_blank" rel="noopener" aria-label="Open: Understanding My Rights: Level 3 quick check key"><img src="thumbs/2026-10-19-transitions-l3-rights-quiz-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Mon, Oct 19</span> <span class="kind">Teacher</span>
+  <h4>Understanding My Rights: Level 3 quick check key</h4>
+  <p class="meta">1 page · PDF · 65 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-19-transitions-l3-rights-quiz-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-19-transitions-l3-rights-quiz-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="understanding my rights: level 3 notes key  key transitions l3 2026-10-19">
+  <a class="thumb2" href="teacher/2026-10-19-transitions-l3-rights-guided-notes-key.pdf" target="_blank" rel="noopener" aria-label="Open: Understanding My Rights: Level 3 notes key"><img src="thumbs/2026-10-19-transitions-l3-rights-guided-notes-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Mon, Oct 19</span> <span class="kind">Teacher</span>
+  <h4>Understanding My Rights: Level 3 notes key</h4>
+  <p class="meta">1 page · PDF · 77 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-19-transitions-l3-rights-guided-notes-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-19-transitions-l3-rights-guided-notes-key.pdf" download>⬇ Download</a></div></div>
 </article></div></section></div>
 <p class="note" id="none" hidden>Nothing matches that. Try a shorter word.</p>
-<p class="jump"><a class="btn ghost" href="resources.html">📁 More resources (curriculum, calendars, portfolio, cooking…)</a></p><a class="totop" href="#top" aria-label="Back to the top of the page">⬆️ Top</a>
+<p class="jump"><a class="btn ghost" href="resources.html">📁 More resources (curriculum, calendars, portfolio, cooking…)</a></p><a class="totop" href="#top" aria-label="Back to the top of the page">⬆️ Top</a><script>window.READ_ALOUD={"left": true, "sel": "h1,h2,h3,h4,.lead,.note,.card h3,.card h4,.card p.sub", "root": "main"};</script><script>/* Ferndale "Read aloud" button (reusable). Browser text-to-speech (Web Speech API): nothing to install; works in Chrome on Chromebooks.
+   Add once per page with a script tag pointing at read_aloud.js, or inline it (read_aloud.py script_tag()).  Options (set before the script):
+     window.READ_ALOUD = {sel: "CSS selector of the parts to read", root: "CSS selector of the area to read", rate: 0.9}
+   Reads each part in order, highlights the part (and the word, when the voice reports word positions), scrolls along.
+   Play / Pause / Stop, slower-faster, and tap any part while reading to jump there. Emoji are skipped; blanks are read as "blank". */
+(function () {
+  if (window.__readAloud) return; window.__readAloud = 1;
+  var O = window.READ_ALOUD || {}, synth = window.speechSynthesis;
+  var SEL = O.sel || "h1,h2,h3,h4,p,li,td,th,.q,.f1,.cq,.qt,.ch,.cc,.circ,.wb,.pb1,.tr,.sub,.hint,.rd,.ra,.l3q,.ex,.nm,.nm1";
+  var css = ".ra-bar{position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:6px;align-items:center;background:#0b1f4d;color:#fff;border-radius:999px;padding:6px 8px;box-shadow:0 4px 14px rgba(0,0,0,.3);font:600 16px system-ui,sans-serif}" +
+    ".ra-bar button,.ra-bar select{font:inherit;border:0;border-radius:999px;padding:8px 14px;cursor:pointer;background:#f2b705;color:#0b1f4d;min-height:40px}" +
+    ".ra-bar button.ra-sec{background:#fff}.ra-bar select{padding:8px 6px;background:#dbe5f5}.ra-bar [hidden]{display:none}" +
+    ".ra-on{background:#fff4b3 !important;outline:3px solid #f2b705;border-radius:6px;scroll-margin:120px}" +
+    "::highlight(ra-word){background:#1d4fa3;color:#fff}" +
+    ".ra-msg{font-size:13px;opacity:.85;padding:0 6px}@media print{.ra-bar{display:none}.ra-on{background:none !important;outline:0}}";
+  var st = document.createElement("style"); st.textContent = css; document.head.appendChild(st);
+  var bar = document.createElement("div"); bar.className = "ra-bar"; bar.setAttribute("role", "toolbar"); bar.setAttribute("aria-label", "Read aloud");
+  bar.innerHTML = '<button type="button" class="ra-play" aria-label="Read aloud">🔊 Read aloud</button>' +
+    '<button type="button" class="ra-sec ra-stop" aria-label="Stop reading" hidden>⏹ Stop</button>' +
+    '<select class="ra-rate" aria-label="Reading speed"><option value="0.75">🐢 Slow</option><option value="0.9">Normal</option><option value="1.1">🐇 Fast</option></select>';
+  if (O.left) { bar.style.right = "auto"; bar.style.left = "14px"; }
+  var play = bar.querySelector(".ra-play"), stop = bar.querySelector(".ra-stop"), rate = bar.querySelector(".ra-rate");
+  rate.value = String(O.rate || 0.9); try { var sr = localStorage.getItem("ra-rate"); if (sr) rate.value = sr; } catch (e) {}
+  if (!synth || !window.SpeechSynthesisUtterance) { play.disabled = true; play.textContent = "🔇 Read aloud not available in this browser"; }
+  function ready() { document.body.appendChild(bar); }
+  if (document.body) ready(); else document.addEventListener("DOMContentLoaded", ready);
+
+  var EMO = /[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{2B00}-\u{2BFF}\u{FE0F}\u{200D}\u{20E3}\u{1F1E6}-\u{1F1FF}\u{E0020}-\u{E007F}\u{2190}-\u{21FF}\u{2300}-\u{23FF}\u{25A0}-\u{25FF}]/u;
+  function blocks() {
+    var root = (O.root && document.querySelector(O.root)) || document.body;
+    var all = [].slice.call(root.querySelectorAll(SEL)).filter(function (el) {
+      if (el.closest(".ra-bar,[data-ra-skip],script,style,nav,footer")) return false;
+      if (!el.offsetParent && getComputedStyle(el).position !== "fixed") return false;   // hidden (other level, closed tab)
+      return /[A-Za-z0-9]/.test(el.textContent);
+    });
+    return all.filter(function (el) { return !all.some(function (o) { return o !== el && el.contains(o); }); }); // innermost only
+  }
+  function speakable(el) {          // text to say + map from each spoken char back to [textNode, offset]
+    var out = "", map = [], w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null), n, blank = false;
+    while ((n = w.nextNode())) {
+      if (n.parentElement && n.parentElement.closest("[data-ra-skip],script,style")) continue;
+      var s = n.nodeValue, cps = Array.from(s), off = 0;
+      for (var i = 0; i < cps.length; i++) {
+        var ch = cps[i];
+        if (ch === "_" || ch === "\u00a0" && n.parentElement.classList.contains("bl")) { if (!blank) { out += " blank "; for (var k = 0; k < 7; k++) map.push([n, off]); blank = true; } }
+        else if (EMO.test(ch) || ch === "☐") { out += " "; map.push([n, off]); }
+        else { blank = false; out += ch; for (var k2 = 0; k2 < ch.length; k2++) map.push([n, off + k2]); }
+        off += ch.length;
+      }
+      out += " "; map.push([n, off]);
+    }
+    if (el.querySelector(".bl") && !/blank/.test(out) && /^\s*$/.test(el.querySelector(".bl").textContent.replace(/\u00a0/g, ""))) out += " blank";
+    return { text: out.replace(/\s+/g, " ").trim() ? out : "", map: map };
+  }
+  var list = [], idx = 0, on = false, cur = null, HL = window.CSS && CSS.highlights && window.Highlight;
+  function voice() {
+    var v = synth.getVoices().filter(function (x) { return /^en(-|_)US/i.test(x.lang); });
+    return v.filter(function (x) { return x.localService; })[0] || v[0] || null;   // local voices report word positions
+  }
+  function mark(el) {
+    [].forEach.call(document.querySelectorAll(".ra-on"), function (x) { x.classList.remove("ra-on"); });
+    if (HL) CSS.highlights.delete("ra-word");
+    if (el) { el.classList.add("ra-on"); el.scrollIntoView({ block: "center", behavior: "smooth" }); }
+  }
+  function next() {
+    if (!on) return;
+    if (idx >= list.length) { end(); return; }
+    var el = list[idx], sp = speakable(el);
+    if (!sp.text.trim()) { idx++; next(); return; }
+    mark(el); var u = new SpeechSynthesisUtterance(sp.text.replace(/\s+/g, " ")); cur = u;
+    // spoken text had runs of spaces collapsed: rebuild index map for the collapsed string
+    var raw = sp.text, cmap = [], last = false;
+    for (var i = 0; i < raw.length; i++) { var sp_ = /\s/.test(raw[i]); if (sp_ && last) continue; cmap.push(sp.map[i]); last = sp_; }
+    var lead = 0;
+    u.rate = parseFloat(rate.value) || 0.9; var vv = voice(); if (vv) { u.voice = vv; u.lang = vv.lang; } else u.lang = "en-US";
+    u.onboundary = function (ev) {
+      if (!HL || ev.name && ev.name !== "word") return;
+      var a = cmap[ev.charIndex + lead], len = ev.charLength || (u.text.slice(ev.charIndex).match(/^\S+/) || [""])[0].length,
+          b = cmap[ev.charIndex + lead + len - 1];
+      if (!a || !b) return;
+      try { var r = new Range(); r.setStart(a[0], a[1]); r.setEnd(b[0], Math.min(b[1] + 1, b[0].length)); CSS.highlights.set("ra-word", new Highlight(r)); } catch (e) {}
+    };
+    u.onend = function () { if (cur === u && on) { idx++; next(); } };
+    u.onerror = function (e) { if (cur === u && on && e.error !== "interrupted" && e.error !== "canceled") { idx++; next(); } };
+    synth.speak(u);
+  }
+  function start(from) { synth.cancel(); list = blocks(); idx = from || 0; on = true; play.textContent = "⏸ Pause"; play.setAttribute("aria-label", "Pause reading"); stop.hidden = false; next(); }
+  function pause() { on = false; cur = null; synth.cancel(); play.textContent = "▶ Resume"; play.setAttribute("aria-label", "Resume reading"); } // cancel + restart the part: Chrome's pause() is unreliable
+  function end() { on = false; cur = null; synth.cancel(); mark(null); idx = 0; list = []; play.textContent = "🔊 Read aloud"; play.setAttribute("aria-label", "Read aloud"); stop.hidden = true; }
+  play.addEventListener("click", function () { if (on) pause(); else if (list.length) { on = true; play.textContent = "⏸ Pause"; next(); } else start(0); });
+  stop.addEventListener("click", end);
+  rate.addEventListener("change", function () { try { localStorage.setItem("ra-rate", rate.value); } catch (e) {} if (on) { synth.cancel(); next(); } });
+  document.addEventListener("click", function (ev) {      // while reading, tap a part to jump there
+    if (!list.length || ev.target.closest(".ra-bar,a,button,input,select,textarea")) return;
+    for (var i = 0; i < list.length; i++) if (list[i].contains(ev.target)) { cur = null; synth.cancel(); idx = i; on = true; play.textContent = "⏸ Pause"; stop.hidden = false; next(); return; }
+  });
+  window.addEventListener("beforeunload", function () { synth && synth.cancel(); });
+  if (synth && synth.getVoices().length === 0) synth.addEventListener && synth.addEventListener("voiceschanged", function () {});
+  window.readAloud = { start: start, stop: end };
+})();
+</script>
 </main>
 <footer class="foot"><div class="wrap">Ferndale High School Inclusion</div></footer>
 <script src="filter.js"></script>

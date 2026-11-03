@@ -108,7 +108,7 @@ section#teacher h2{color:#fff;background:var(--navy);border-radius:16px;padding:
 .lvshow{margin:.2em 0 .6em}h4.unit{font-size:18px;margin:.6em 0 .3em}
 /* class pages unit by unit (2026-10-30) */
 .lesson{border:3px solid var(--bb);border-radius:18px;padding:6px 14px 12px;margin:.8em 0;background:#fff}
-.lvonly.lv1 .lesson{border-color:var(--blue)}.lvonly.lv2 .lesson{border-color:var(--gold)}
+.lvonly.lv1 .lesson{border-color:var(--blue)}.lvonly.lv2 .lesson{border-color:var(--gold)}.lvonly.lv3 .lesson{border-color:#2e9d5b}
 .lesson.unitwide{border-style:dashed;background:#fffdf5}
 .lessonh{font-size:21px;margin:.4em 0 .5em}.lessonh .date{margin-right:6px}
 .tline{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px;padding:8px 10px;border-radius:12px;background:#f3f6fc}

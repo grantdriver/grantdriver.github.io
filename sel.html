@@ -20,9 +20,9 @@
 <main id="main" class="wrap">
 <section class="hero small sel">
   <p class="crumb"><a href="index.html">🏠 Home</a> · <a href="resources.html">📁 More resources</a></p>
-  <h1><span aria-hidden="true">💛</span> SEL · Level 1 & 2</h1>
-  <style>html[data-lv="1"] .lvonly:not(.lv1){display:none}html[data-lv="2"] .lvonly:not(.lv2){display:none}</style><div class="lvtabs" role="tablist" aria-label="Choose a level"><a class="lvtab lv1" role="tab" data-lv="1" href="#level1" aria-selected="false"><span><span aria-hidden="true">🔵</span> Level 1</span><small>3rd-grade reading · emoji &amp; pictures</small></a><a class="lvtab lv2" role="tab" data-lv="2" href="#level2" aria-selected="false"><span><span aria-hidden="true">🟡</span> Level 2</span><small>3rd-grade reading · word banks</small></a></div><p class="note lvshow">Showing <b id="lvnow">all levels</b>. Tap a button to switch.</p><script>(function(){var K='lv-sel',L=["1", "2"],r=document.documentElement;function set(v,save){r.setAttribute('data-lv',v);var t=document.querySelectorAll('.lvtab');for(var i=0;i<t.length;i++){var on=t[i].getAttribute('data-lv')===v;t[i].setAttribute('aria-selected',on?'true':'false');if(on){t[i].classList.add('on')}else{t[i].classList.remove('on')}}var w=document.getElementById('lvnow');if(w)w.textContent='Level '+v;if(save){try{localStorage.setItem(K,v)}catch(e){}}var q=document.getElementById('q');if(q&&q.value){q.dispatchEvent(new Event('input'))}}function fromHash(){var m=/^#level(\d+)$/.exec(location.hash)||/^#[\w-]+-l(\d)$/.exec(location.hash);return m&&L.indexOf(m[1])>-1?m[1]:null}var h=fromHash(),s=null;try{s=localStorage.getItem(K)}catch(e){}set(h||(s&&L.indexOf(s)>-1?s:L[0]),!!h);window.addEventListener('hashchange',function(){var v=fromHash();if(v)set(v,true)});})();</script>
-  <p class="jump lvonly lv1"><a class="btn blue" href="#units-l1">🗂️ Units</a> <a class="btn blue" href="#other-l1">🧺 Other</a> <a class="btn ghost" href="#teacher-l1">👩‍🏫 Teacher resources</a></p><p class="jump lvonly lv2"><a class="btn blue" href="#units-l2">🗂️ Units</a> <a class="btn blue" href="#other-l2">🧺 Other</a> <a class="btn ghost" href="#teacher-l2">👩‍🏫 Teacher resources</a></p>
+  <h1><span aria-hidden="true">💛</span> SEL · Levels 1, 2 & 3</h1>
+  <style>html[data-lv="1"] .lvonly:not(.lv1){display:none}html[data-lv="2"] .lvonly:not(.lv2){display:none}html[data-lv="3"] .lvonly:not(.lv3){display:none}</style><div class="lvtabs" role="tablist" aria-label="Choose a level"><a class="lvtab lv1" role="tab" data-lv="1" href="#level1" aria-selected="false"><span><span aria-hidden="true">🔵</span> Level 1</span><small>3rd-grade reading · emoji &amp; pictures</small></a><a class="lvtab lv2" role="tab" data-lv="2" href="#level2" aria-selected="false"><span><span aria-hidden="true">🟡</span> Level 2</span><small>3rd-grade reading · word banks</small></a><a class="lvtab lv3" role="tab" data-lv="3" href="#level3" aria-selected="false"><span><span aria-hidden="true">🟢</span> Level 3</span><small>Close to class · guided notes</small></a></div><p class="note lvshow">Showing <b id="lvnow">all levels</b>. Tap a button to switch.</p><script>(function(){var K='lv-sel',L=["1", "2", "3"],r=document.documentElement;function set(v,save){r.setAttribute('data-lv',v);var t=document.querySelectorAll('.lvtab');for(var i=0;i<t.length;i++){var on=t[i].getAttribute('data-lv')===v;t[i].setAttribute('aria-selected',on?'true':'false');if(on){t[i].classList.add('on')}else{t[i].classList.remove('on')}}var w=document.getElementById('lvnow');if(w)w.textContent='Level '+v;if(save){try{localStorage.setItem(K,v)}catch(e){}}var q=document.getElementById('q');if(q&&q.value){q.dispatchEvent(new Event('input'))}}function fromHash(){var m=/^#level(\d+)$/.exec(location.hash)||/^#[\w-]+-l(\d)$/.exec(location.hash);return m&&L.indexOf(m[1])>-1?m[1]:null}var h=fromHash(),s=null;try{s=localStorage.getItem(K)}catch(e){}set(h||(s&&L.indexOf(s)>-1?s:L[0]),!!h);window.addEventListener('hashchange',function(){var v=fromHash();if(v)set(v,true)});})();</script>
+  <p class="jump lvonly lv1"><a class="btn blue" href="#units-l1">🗂️ Units</a> <a class="btn blue" href="#other-l1">🧺 Other</a> <a class="btn ghost" href="#teacher-l1">👩‍🏫 Teacher resources</a></p><p class="jump lvonly lv2"><a class="btn blue" href="#units-l2">🗂️ Units</a> <a class="btn blue" href="#other-l2">🧺 Other</a> <a class="btn ghost" href="#teacher-l2">👩‍🏫 Teacher resources</a></p><p class="jump lvonly lv3"><a class="btn blue" href="#units-l3">🗂️ Units</a> <a class="btn ghost" href="#teacher-l3">👩‍🏫 Teacher resources</a></p>
   <div class="searchbar"><label for="q">🔎 Find something:</label><input id="q" type="search" placeholder="Type a word, like goal, rights, key, 10/26…" autocomplete="off"><span id="qn" class="note"></span></div>
 </section>
 <div class="lvonly lv1"><p class="lead lvlead">Social emotional learning (SEL): feelings, calm-down tools, and goals. Short words and lots of pictures.</p><span id="slides-l1"></span><span id="plans-l1"></span><span id="prints-l1"></span><span id="games-l1"></span><span id="videos-l1"></span>
@@ -37,73 +37,73 @@
   <h4>My Stress Comic</h4>
   <p class="meta">2 pages · PDF · 201 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-10-20-sel-l1-stress-comic.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-10-20-sel-l1-stress-comic.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-10-20-sel-l1-stress-comic.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-20-sel-l1-stress-comic-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="tline item" data-q="daily lesson plans plan 2026-10-20 sel level 1 revised lesson plan plan 2026-10-20 teacher key key 2026-10-20 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="plans/2026-10-20-plans.pdf" target="_blank" rel="noopener">📝 Lesson plan</a> <a class="btn ghost sm" href="plans/2026-10-20-sel-l1-revised.pdf" target="_blank" rel="noopener">📝 SEL Level 1 revised lesson plan</a> <a class="btn ghost sm" href="teacher/2026-10-20-teacher-key.pdf" target="_blank" rel="noopener">🔑 Teacher key</a></div></div><div class="lesson" id="lesson-2026-10-22-l1"><h4 class="lessonh"><span class="date">Thu, Oct 22</span> Make My Goal</h4><div class="grid"><article class="card deck item" data-q="make my goal  deck sel l1 2026-10-22 slides">
   <a class="thumb" href="decks/2026-10-22-sel-l1-goal-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Make My Goal"><img src="thumbs/2026-10-22-sel-l1-goal-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
   <div class="dtxt"><span class="date">Thu, Oct 22</span><h4>Make My Goal</h4>
   <p class="meta">20 slides · PDF · 754 KB</p>
   <div class="btns"><a class="btn blue" href="decks/2026-10-22-sel-l1-goal-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
-  <a class="btn ghost" href="decks/2026-10-22-sel-l1-goal-deck.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost" href="decks/2026-10-22-sel-l1-goal-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="decks/2026-10-22-sel-l1-goal-deck-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="grid rows"><article class="card item row" data-q="face cards  printable sel l1 2026-10-22">
   <a class="thumb2" href="printables/2026-10-22-sel-l1-face-cards.pdf" target="_blank" rel="noopener" aria-label="Open: Face Cards"><img src="thumbs/2026-10-22-sel-l1-face-cards.jpg" alt="" loading="lazy" width="96" height="124"></a>
   <div class="itxt"><span class="date">Thu, Oct 22</span> <span class="kind">Printable</span>
   <h4>Face Cards</h4>
   <p class="meta">9 pages · PDF · 113 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-10-22-sel-l1-face-cards.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-10-22-sel-l1-face-cards.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-10-22-sel-l1-face-cards.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-22-sel-l1-face-cards-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article><article class="card item row" data-q="goal card  printable sel l1 2026-10-22">
   <a class="thumb2" href="printables/2026-10-22-sel-l1-goal-card.pdf" target="_blank" rel="noopener" aria-label="Open: Goal Card"><img src="thumbs/2026-10-22-sel-l1-goal-card.jpg" alt="" loading="lazy" width="96" height="124"></a>
   <div class="itxt"><span class="date">Thu, Oct 22</span> <span class="kind">Printable</span>
   <h4>Goal Card</h4>
   <p class="meta">2 pages · PDF · 164 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-10-22-sel-l1-goal-card.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-10-22-sel-l1-goal-card.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-10-22-sel-l1-goal-card.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-22-sel-l1-goal-card-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article><article class="card item row" data-q="zones chart  printable sel l1 2026-10-22">
   <a class="thumb2" href="printables/2026-10-22-sel-l1-zones-chart.pdf" target="_blank" rel="noopener" aria-label="Open: Zones Chart"><img src="thumbs/2026-10-22-sel-l1-zones-chart.jpg" alt="" loading="lazy" width="96" height="124"></a>
   <div class="itxt"><span class="date">Thu, Oct 22</span> <span class="kind">Printable</span>
   <h4>Zones Chart</h4>
   <p class="meta">2 pages · PDF · 210 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-10-22-sel-l1-zones-chart.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-10-22-sel-l1-zones-chart.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-10-22-sel-l1-zones-chart.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-22-sel-l1-zones-chart-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article><article class="card item row" data-q="“did it work?” tool cards  printable sel l1 2026-10-22">
   <a class="thumb2" href="printables/2026-10-22-cards.pdf" target="_blank" rel="noopener" aria-label="Open: “Did It Work?” Tool Cards"><img src="thumbs/2026-10-22-cards.jpg" alt="" loading="lazy" width="96" height="124"></a>
   <div class="itxt"><span class="date">Thu, Oct 22</span> <span class="kind">Printable</span>
   <h4>“Did It Work?” Tool Cards</h4>
   <p class="meta">9 pages · PDF · 200 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-10-22-cards.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-10-22-cards.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-10-22-cards.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-22-cards-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="tline item" data-q="daily lesson plans plan 2026-10-22 simple plan (sub-ready) simple 2026-10-22 teacher key key 2026-10-22 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="plans/2026-10-22-plans.pdf" target="_blank" rel="noopener">📝 Lesson plan</a> <a class="btn ghost sm" href="plans/2026-10-22-simple-plan.pdf" target="_blank" rel="noopener">🧾 Sub plan</a> <a class="btn ghost sm" href="teacher/2026-10-22-teacher-key.pdf" target="_blank" rel="noopener">🔑 Teacher key</a></div></div><div class="lesson" id="lesson-2026-10-26-l1"><h4 class="lessonh"><span class="date">Mon, Oct 26</span> Practice My Goal</h4><div class="grid"><article class="card deck item" data-q="practice my goal  deck sel l1 2026-10-26 slides">
   <a class="thumb" href="decks/2026-10-26-sel-l1-goal-practice-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Practice My Goal"><img src="thumbs/2026-10-26-sel-l1-goal-practice-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
   <div class="dtxt"><span class="date">Mon, Oct 26</span><h4>Practice My Goal</h4>
   <p class="meta">21 slides · PDF · 357 KB</p>
   <div class="btns"><a class="btn blue" href="decks/2026-10-26-sel-l1-goal-practice-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
-  <a class="btn ghost" href="decks/2026-10-26-sel-l1-goal-practice-deck.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost" href="decks/2026-10-26-sel-l1-goal-practice-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="decks/2026-10-26-sel-l1-goal-practice-deck-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="grid rows"><article class="card item row" data-q="goal practice printables  printable sel l1 2026-10-26">
   <a class="thumb2" href="printables/2026-10-26-sel-l1-goal-practice-printables.pdf" target="_blank" rel="noopener" aria-label="Open: Goal Practice Printables"><img src="thumbs/2026-10-26-sel-l1-goal-practice-printables.jpg" alt="" loading="lazy" width="96" height="124"></a>
   <div class="itxt"><span class="date">Mon, Oct 26</span> <span class="kind">Printable</span>
   <h4>Goal Practice Printables</h4>
   <p class="meta">6 pages · PDF · 188 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-10-26-sel-l1-goal-practice-printables.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-10-26-sel-l1-goal-practice-printables.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-10-26-sel-l1-goal-practice-printables.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-26-sel-l1-goal-practice-printables-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="tline item" data-q="daily lesson plans plan 2026-10-26 simple plan (sub-ready) simple 2026-10-26 teacher key key 2026-10-26 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="plans/2026-10-26-plans.pdf" target="_blank" rel="noopener">📝 Lesson plan</a> <a class="btn ghost sm" href="plans/2026-10-26-simple-plan.pdf" target="_blank" rel="noopener">🧾 Sub plan</a> <a class="btn ghost sm" href="teacher/2026-10-26-teacher-key.pdf" target="_blank" rel="noopener">🔑 Teacher key</a></div></div><div class="lesson" id="lesson-2026-10-28-l1"><h4 class="lessonh"><span class="date">Wed, Oct 28</span> Toolkit Celebration</h4><div class="grid"><article class="card deck item" data-q="toolkit celebration  deck sel l1 2026-10-28 slides">
   <a class="thumb" href="decks/2026-10-28-sel-l1-toolkit-celebration-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Toolkit Celebration"><img src="thumbs/2026-10-28-sel-l1-toolkit-celebration-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
   <div class="dtxt"><span class="date">Wed, Oct 28</span><h4>Toolkit Celebration</h4>
   <p class="meta">18 slides · PDF · 329 KB</p>
   <div class="btns"><a class="btn blue" href="decks/2026-10-28-sel-l1-toolkit-celebration-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
-  <a class="btn ghost" href="decks/2026-10-28-sel-l1-toolkit-celebration-deck.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost" href="decks/2026-10-28-sel-l1-toolkit-celebration-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="decks/2026-10-28-sel-l1-toolkit-celebration-deck-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="grid rows"><article class="card item row" data-q="toolkit celebration printables  printable sel l1 2026-10-28">
   <a class="thumb2" href="printables/2026-10-28-sel-l1-toolkit-celebration-printables.pdf" target="_blank" rel="noopener" aria-label="Open: Toolkit Celebration Printables"><img src="thumbs/2026-10-28-sel-l1-toolkit-celebration-printables.jpg" alt="" loading="lazy" width="96" height="124"></a>
   <div class="itxt"><span class="date">Wed, Oct 28</span> <span class="kind">Printable</span>
   <h4>Toolkit Celebration Printables</h4>
   <p class="meta">3 pages · PDF · 123 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-10-28-sel-l1-toolkit-celebration-printables.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-10-28-sel-l1-toolkit-celebration-printables.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-10-28-sel-l1-toolkit-celebration-printables.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-28-sel-l1-toolkit-celebration-printables-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="tline item" data-q="daily lesson plans plan 2026-10-28 simple plan (sub-ready) simple 2026-10-28 teacher key key 2026-10-28 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="plans/2026-10-28-plans.pdf" target="_blank" rel="noopener">📝 Lesson plan</a> <a class="btn ghost sm" href="plans/2026-10-28-simple-plan.pdf" target="_blank" rel="noopener">🧾 Sub plan</a> <a class="btn ghost sm" href="teacher/2026-10-28-teacher-key.pdf" target="_blank" rel="noopener">🔑 Teacher key</a></div></div></section><p class="paneend"><a class="btn ghost sm" href="#top">⬆️ Back to top</a></p></div><div class="unitpane" data-unit="4"><span class="uanchor" id="unit-4"></span><section class="cat" id="u4-l1" aria-labelledby="h-u4-l1"><h2 id="h-u4-l1">🕵️ Unit 4: Social Awareness: Feelings Detective 📍</h2><p class=note>3 lessons in teaching order, oldest first. Each lesson keeps its slides, printables, game and teacher files together.</p><div class="lesson" id="lesson-2026-10-30-l1"><h4 class="lessonh"><span class="date">Fri, Oct 30</span> Face Clues</h4><div class="grid"><article class="card deck item" data-q="face clues  deck sel l1 2026-10-30 slides">
   <a class="thumb" href="decks/2026-10-30-sel-l1-face-clues-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Face Clues"><img src="thumbs/2026-10-30-sel-l1-face-clues-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
   <div class="dtxt"><span class="date">Fri, Oct 30</span><h4>Face Clues</h4>
   <p class="meta">21 slides · PDF · 1.2 MB</p>
   <div class="btns"><a class="btn blue" href="decks/2026-10-30-sel-l1-face-clues-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
-  <a class="btn ghost" href="decks/2026-10-30-sel-l1-face-clues-deck.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost" href="decks/2026-10-30-sel-l1-face-clues-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="decks/2026-10-30-sel-l1-face-clues-deck-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article><article class="card game item" data-q="face clues feelings detective: look at the face! game sel l1">
   <div class="gicon" aria-hidden="true">😀</div>
   <div class="gtxt"><span class="pill lv1">SEL L1</span>
@@ -115,13 +115,13 @@
   <h4>Face Clues Printables</h4>
   <p class="meta">3 pages · PDF · 178 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-10-30-sel-l1-face-clues-printables.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-10-30-sel-l1-face-clues-printables.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-10-30-sel-l1-face-clues-printables.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-30-sel-l1-face-clues-printables-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="tline item" data-q="daily lesson plans plan 2026-10-30 simple plan (sub-ready) simple 2026-10-30 teacher key key 2026-10-30 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="plans/2026-10-30-plans.pdf" target="_blank" rel="noopener">📝 Lesson plan</a> <a class="btn ghost sm" href="plans/2026-10-30-simple-plan.pdf" target="_blank" rel="noopener">🧾 Sub plan</a> <a class="btn ghost sm" href="teacher/2026-10-30-teacher-key.pdf" target="_blank" rel="noopener">🔑 Teacher key</a></div></div><div class="lesson" id="lesson-2026-11-03-l1"><h4 class="lessonh"><span class="date">Tue, Nov 3</span> Feelings Detective: Body Clues</h4><div class="grid"><article class="card deck item" data-q="feelings detective: body clues  deck sel l1 2026-11-03 slides">
   <a class="thumb" href="decks/2026-11-03-sel-l1-body-clues-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Feelings Detective: Body Clues"><img src="thumbs/2026-11-03-sel-l1-body-clues-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
   <div class="dtxt"><span class="date">Tue, Nov 3</span><h4>Feelings Detective: Body Clues</h4>
   <p class="meta">26 slides · PDF · 1.6 MB</p>
   <div class="btns"><a class="btn blue" href="decks/2026-11-03-sel-l1-body-clues-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
-  <a class="btn ghost" href="decks/2026-11-03-sel-l1-body-clues-deck.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost" href="decks/2026-11-03-sel-l1-body-clues-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="decks/2026-11-03-sel-l1-body-clues-deck-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article><article class="card game item" data-q="body clues reading others: look at the body and find the clue! game sel l1">
   <div class="gicon" aria-hidden="true">🧍</div>
   <div class="gtxt"><span class="pill lv1">SEL L1</span>
@@ -133,13 +133,13 @@
   <h4>Body Clues Printables</h4>
   <p class="meta">3 pages · PDF · 232 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-11-03-sel-l1-body-clues-printables.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-11-03-sel-l1-body-clues-printables.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-11-03-sel-l1-body-clues-printables.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-11-03-sel-l1-body-clues-printables-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="tline item" data-q="daily lesson plans plan 2026-11-03 simple plan (sub-ready) simple 2026-11-03 teacher key key 2026-11-03 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="plans/2026-11-03-plans.pdf" target="_blank" rel="noopener">📝 Lesson plan</a> <a class="btn ghost sm" href="plans/2026-11-03-simple-plan.pdf" target="_blank" rel="noopener">🧾 Sub plan</a> <a class="btn ghost sm" href="teacher/2026-11-03-teacher-key.pdf" target="_blank" rel="noopener">🔑 Teacher key</a></div></div><div class="lesson" id="lesson-2026-11-05-l1"><h4 class="lessonh"><span class="date">Thu, Nov 5</span> Feelings Detective: Voice + Place Clues <span class="pill draft">Coming up</span></h4><div class="grid"><article class="card deck item" data-q="feelings detective: voice + place clues  deck sel l1 2026-11-05 slides">
   <a class="thumb" href="decks/2026-11-05-sel-l1-voice-place-clues-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Feelings Detective: Voice + Place Clues"><img src="thumbs/2026-11-05-sel-l1-voice-place-clues-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
   <div class="dtxt"><span class="date">Thu, Nov 5</span><h4>Feelings Detective: Voice + Place Clues</h4>
   <p class="meta">25 slides · PDF · 1.6 MB</p>
   <div class="btns"><a class="btn blue" href="decks/2026-11-05-sel-l1-voice-place-clues-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
-  <a class="btn ghost" href="decks/2026-11-05-sel-l1-voice-place-clues-deck.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost" href="decks/2026-11-05-sel-l1-voice-place-clues-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="decks/2026-11-05-sel-l1-voice-place-clues-deck-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article><article class="card game item" data-q="voice clues reading others: listen to the voice and think about what happened. game sel l1">
   <div class="gicon" aria-hidden="true">🗣️</div>
   <div class="gtxt"><span class="pill lv1">SEL L1</span>
@@ -151,7 +151,7 @@
   <h4>Voice Place Clues Printables</h4>
   <p class="meta">3 pages · PDF · 223 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-11-05-sel-l1-voice-place-clues-printables.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-11-05-sel-l1-voice-place-clues-printables.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-11-05-sel-l1-voice-place-clues-printables.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-11-05-sel-l1-voice-place-clues-printables-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="tline item" data-q="daily lesson plans plan 2026-11-05 simple plan (sub-ready) simple 2026-11-05 teacher key key 2026-11-05 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="plans/2026-11-05-plans.pdf" target="_blank" rel="noopener">📝 Lesson plan</a> <a class="btn ghost sm" href="plans/2026-11-05-simple-plan.pdf" target="_blank" rel="noopener">🧾 Sub plan</a> <a class="btn ghost sm" href="teacher/2026-11-05-teacher-key.pdf" target="_blank" rel="noopener">🔑 Teacher key</a></div></div></section><p class="paneend"><a class="btn ghost sm" href="#top">⬆️ Back to top</a></p></div></div>
 <section class="cat" id="other-l1" aria-labelledby="h-other-l1"><h2 id="h-other-l1">🧺 Other / extras</h2><p class=note>Files that are not tied to one unit.</p><div class="grid rows"><article class="card item row" data-q="sel weekly check-in: how to set up the forms step-by-step setup for the teacher key sel l1 sel l2 ">
   <a class="thumb2" href="teacher/how-to-set-up.pdf" target="_blank" rel="noopener" aria-label="Open: SEL weekly check-in: how to set up the forms"><img src="thumbs/how-to-set-up.jpg" alt="" loading="lazy" width="96" height="124"></a>
@@ -242,79 +242,79 @@
   <div class="dtxt"><span class="date">Mon, Oct 19</span><h4>My Reset Plan</h4>
   <p class="meta">7 slides · PDF · 11.2 MB</p>
   <div class="btns"><a class="btn blue" href="decks/2026-10-19-sel-l2-reset-plan-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
-  <a class="btn ghost" href="decks/2026-10-19-sel-l2-reset-plan-deck.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost" href="decks/2026-10-19-sel-l2-reset-plan-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="decks/2026-10-19-sel-l2-reset-plan-deck-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="tline item" data-q="daily lesson plans plan 2026-10-19 teacher key key 2026-10-19 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="plans/2026-10-19-plans.pdf" target="_blank" rel="noopener">📝 Lesson plan</a> <a class="btn ghost sm" href="teacher/2026-10-19-teacher-key.pdf" target="_blank" rel="noopener">🔑 Teacher key</a></div></div><div class="lesson" id="lesson-2026-10-21-l2"><h4 class="lessonh"><span class="date">Wed, Oct 21</span> Build My Toolkit</h4><div class="grid"><article class="card deck item" data-q="build my toolkit  deck sel l2 2026-10-21 slides">
   <a class="thumb" href="decks/2026-10-21-sel-l2-toolkit-binder-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Build My Toolkit"><img src="thumbs/2026-10-21-sel-l2-toolkit-binder-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
   <div class="dtxt"><span class="date">Wed, Oct 21</span><h4>Build My Toolkit</h4>
   <p class="meta">11 slides · PDF · 413 KB</p>
   <div class="btns"><a class="btn blue" href="decks/2026-10-21-sel-l2-toolkit-binder-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
-  <a class="btn ghost" href="decks/2026-10-21-sel-l2-toolkit-binder-deck.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost" href="decks/2026-10-21-sel-l2-toolkit-binder-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="decks/2026-10-21-sel-l2-toolkit-binder-deck-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="grid rows"><article class="card item row" data-q="my tool page  printable sel l2 2026-10-21">
   <a class="thumb2" href="printables/2026-10-21-my-tool-page.pdf" target="_blank" rel="noopener" aria-label="Open: My Tool Page"><img src="thumbs/2026-10-21-my-tool-page.jpg" alt="" loading="lazy" width="96" height="124"></a>
   <div class="itxt"><span class="date">Wed, Oct 21</span> <span class="kind">Printable</span>
   <h4>My Tool Page</h4>
   <p class="meta">2 pages · PDF · 90 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-10-21-my-tool-page.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-10-21-my-tool-page.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-10-21-my-tool-page.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-21-my-tool-page-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article><article class="card item row" data-q="toolkit binder cover divider  printable sel l2 2026-10-21">
   <a class="thumb2" href="printables/2026-10-21-toolkit-binder-cover-divider.pdf" target="_blank" rel="noopener" aria-label="Open: Toolkit Binder Cover Divider"><img src="thumbs/2026-10-21-toolkit-binder-cover-divider.jpg" alt="" loading="lazy" width="96" height="124"></a>
   <div class="itxt"><span class="date">Wed, Oct 21</span> <span class="kind">Printable</span>
   <h4>Toolkit Binder Cover Divider</h4>
   <p class="meta">3 pages · PDF · 88 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-10-21-toolkit-binder-cover-divider.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-10-21-toolkit-binder-cover-divider.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-10-21-toolkit-binder-cover-divider.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-21-toolkit-binder-cover-divider-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="tline item" data-q="daily lesson plans plan 2026-10-21 simple plan (sub-ready) simple 2026-10-21 teacher key key 2026-10-21 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="plans/2026-10-21-plans.pdf" target="_blank" rel="noopener">📝 Lesson plan</a> <a class="btn ghost sm" href="plans/2026-10-21-simple-plan.pdf" target="_blank" rel="noopener">🧾 Sub plan</a> <a class="btn ghost sm" href="teacher/2026-10-21-teacher-key.pdf" target="_blank" rel="noopener">🔑 Teacher key</a></div></div><div class="lesson" id="lesson-2026-10-23-l2"><h4 class="lessonh"><span class="date">Fri, Oct 23</span> Set My Calm-Down Goal</h4><div class="grid"><article class="card deck item" data-q="set my calm-down goal  deck sel l2 2026-10-23 slides">
   <a class="thumb" href="decks/2026-10-23-sel-l2-calm-down-goal-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Set My Calm-Down Goal"><img src="thumbs/2026-10-23-sel-l2-calm-down-goal-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
   <div class="dtxt"><span class="date">Fri, Oct 23</span><h4>Set My Calm-Down Goal</h4>
   <p class="meta">21 slides · PDF · 641 KB</p>
   <div class="btns"><a class="btn blue" href="decks/2026-10-23-sel-l2-calm-down-goal-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
-  <a class="btn ghost" href="decks/2026-10-23-sel-l2-calm-down-goal-deck.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost" href="decks/2026-10-23-sel-l2-calm-down-goal-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="decks/2026-10-23-sel-l2-calm-down-goal-deck-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="grid rows"><article class="card item row" data-q="goal card  printable sel l2 2026-10-23">
   <a class="thumb2" href="printables/2026-10-23-sel-l2-goal-card.pdf" target="_blank" rel="noopener" aria-label="Open: Goal Card"><img src="thumbs/2026-10-23-sel-l2-goal-card.jpg" alt="" loading="lazy" width="96" height="124"></a>
   <div class="itxt"><span class="date">Fri, Oct 23</span> <span class="kind">Printable</span>
   <h4>Goal Card</h4>
   <p class="meta">2 pages · PDF · 28 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-10-23-sel-l2-goal-card.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-10-23-sel-l2-goal-card.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-10-23-sel-l2-goal-card.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-23-sel-l2-goal-card-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article><article class="card item row" data-q="goal sort cards  printable sel l2 2026-10-23">
   <a class="thumb2" href="printables/2026-10-23-sel-l2-goal-sort-cards.pdf" target="_blank" rel="noopener" aria-label="Open: Goal Sort Cards"><img src="thumbs/2026-10-23-sel-l2-goal-sort-cards.jpg" alt="" loading="lazy" width="96" height="124"></a>
   <div class="itxt"><span class="date">Fri, Oct 23</span> <span class="kind">Printable</span>
   <h4>Goal Sort Cards</h4>
   <p class="meta">2 pages · PDF · 35 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-10-23-sel-l2-goal-sort-cards.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-10-23-sel-l2-goal-sort-cards.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-10-23-sel-l2-goal-sort-cards.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-23-sel-l2-goal-sort-cards-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="tline item" data-q="daily lesson plans plan 2026-10-23 simple plan (sub-ready) simple 2026-10-23 teacher key key 2026-10-23 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="plans/2026-10-23-plans.pdf" target="_blank" rel="noopener">📝 Lesson plan</a> <a class="btn ghost sm" href="plans/2026-10-23-simple-plan.pdf" target="_blank" rel="noopener">🧾 Sub plan</a> <a class="btn ghost sm" href="teacher/2026-10-23-teacher-key.pdf" target="_blank" rel="noopener">🔑 Teacher key</a></div></div><div class="lesson" id="lesson-2026-10-27-l2"><h4 class="lessonh"><span class="date">Tue, Oct 27</span> Goal in Action</h4><div class="grid"><article class="card deck item" data-q="goal in action  deck sel l2 2026-10-27 slides">
   <a class="thumb" href="decks/2026-10-27-sel-l2-goal-in-action-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Goal in Action"><img src="thumbs/2026-10-27-sel-l2-goal-in-action-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
   <div class="dtxt"><span class="date">Tue, Oct 27</span><h4>Goal in Action</h4>
   <p class="meta">22 slides · PDF · 324 KB</p>
   <div class="btns"><a class="btn blue" href="decks/2026-10-27-sel-l2-goal-in-action-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
-  <a class="btn ghost" href="decks/2026-10-27-sel-l2-goal-in-action-deck.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost" href="decks/2026-10-27-sel-l2-goal-in-action-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="decks/2026-10-27-sel-l2-goal-in-action-deck-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="grid rows"><article class="card item row" data-q="goal in action printables  printable sel l2 2026-10-27">
   <a class="thumb2" href="printables/2026-10-27-sel-l2-goal-in-action-printables.pdf" target="_blank" rel="noopener" aria-label="Open: Goal In Action Printables"><img src="thumbs/2026-10-27-sel-l2-goal-in-action-printables.jpg" alt="" loading="lazy" width="96" height="124"></a>
   <div class="itxt"><span class="date">Tue, Oct 27</span> <span class="kind">Printable</span>
   <h4>Goal In Action Printables</h4>
   <p class="meta">3 pages · PDF · 112 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-10-27-sel-l2-goal-in-action-printables.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-10-27-sel-l2-goal-in-action-printables.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-10-27-sel-l2-goal-in-action-printables.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-27-sel-l2-goal-in-action-printables-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="tline item" data-q="daily lesson plans plan 2026-10-27 simple plan (sub-ready) simple 2026-10-27 teacher key key 2026-10-27 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="plans/2026-10-27-plans.pdf" target="_blank" rel="noopener">📝 Lesson plan</a> <a class="btn ghost sm" href="plans/2026-10-27-simple-plan.pdf" target="_blank" rel="noopener">🧾 Sub plan</a> <a class="btn ghost sm" href="teacher/2026-10-27-teacher-key.pdf" target="_blank" rel="noopener">🔑 Teacher key</a></div></div><div class="lesson" id="lesson-2026-10-29-l2"><h4 class="lessonh"><span class="date">Thu, Oct 29</span> Toolkit Wrap Up</h4><div class="grid"><article class="card deck item" data-q="toolkit wrap up  deck sel l2 2026-10-29 slides">
   <a class="thumb" href="decks/2026-10-29-sel-l2-toolkit-wrap-up-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Toolkit Wrap Up"><img src="thumbs/2026-10-29-sel-l2-toolkit-wrap-up-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
   <div class="dtxt"><span class="date">Thu, Oct 29</span><h4>Toolkit Wrap Up</h4>
   <p class="meta">22 slides · PDF · 300 KB</p>
   <div class="btns"><a class="btn blue" href="decks/2026-10-29-sel-l2-toolkit-wrap-up-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
-  <a class="btn ghost" href="decks/2026-10-29-sel-l2-toolkit-wrap-up-deck.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost" href="decks/2026-10-29-sel-l2-toolkit-wrap-up-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="decks/2026-10-29-sel-l2-toolkit-wrap-up-deck-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="grid rows"><article class="card item row" data-q="toolkit wrap up printables  printable sel l2 2026-10-29">
   <a class="thumb2" href="printables/2026-10-29-sel-l2-toolkit-wrap-up-printables.pdf" target="_blank" rel="noopener" aria-label="Open: Toolkit Wrap Up Printables"><img src="thumbs/2026-10-29-sel-l2-toolkit-wrap-up-printables.jpg" alt="" loading="lazy" width="96" height="124"></a>
   <div class="itxt"><span class="date">Thu, Oct 29</span> <span class="kind">Printable</span>
   <h4>Toolkit Wrap Up Printables</h4>
   <p class="meta">3 pages · PDF · 133 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-10-29-sel-l2-toolkit-wrap-up-printables.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-10-29-sel-l2-toolkit-wrap-up-printables.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-10-29-sel-l2-toolkit-wrap-up-printables.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-29-sel-l2-toolkit-wrap-up-printables-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="tline item" data-q="daily lesson plans plan 2026-10-29 simple plan (sub-ready) simple 2026-10-29 teacher key key 2026-10-29 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="plans/2026-10-29-plans.pdf" target="_blank" rel="noopener">📝 Lesson plan</a> <a class="btn ghost sm" href="plans/2026-10-29-simple-plan.pdf" target="_blank" rel="noopener">🧾 Sub plan</a> <a class="btn ghost sm" href="teacher/2026-10-29-teacher-key.pdf" target="_blank" rel="noopener">🔑 Teacher key</a></div></div></section><p class="paneend"><a class="btn ghost sm" href="#top">⬆️ Back to top</a></p></div><div class="unitpane" data-unit="4"><section class="cat" id="u4-l2" aria-labelledby="h-u4-l2"><h2 id="h-u4-l2">🕵️ Unit 4: Social Awareness: Feelings Detective 📍</h2><p class=note>3 lessons in teaching order, oldest first. Each lesson keeps its slides, printables, game and teacher files together.</p><div class="lesson" id="lesson-2026-11-02-l2"><h4 class="lessonh"><span class="date">Mon, Nov 2</span> Feelings Detective: Face Clues</h4><div class="grid"><article class="card deck item" data-q="feelings detective: face clues  deck sel l2 2026-11-02 slides">
   <a class="thumb" href="decks/2026-11-02-sel-l2-face-clues-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Feelings Detective: Face Clues"><img src="thumbs/2026-11-02-sel-l2-face-clues-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
   <div class="dtxt"><span class="date">Mon, Nov 2</span><h4>Feelings Detective: Face Clues</h4>
   <p class="meta">24 slides · PDF · 1.4 MB</p>
   <div class="btns"><a class="btn blue" href="decks/2026-11-02-sel-l2-face-clues-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
-  <a class="btn ghost" href="decks/2026-11-02-sel-l2-face-clues-deck.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost" href="decks/2026-11-02-sel-l2-face-clues-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="decks/2026-11-02-sel-l2-face-clues-deck-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article><article class="card game item" data-q="face clues reading others: read the eyes, eyebrows, and mouth. game sel l2">
   <div class="gicon" aria-hidden="true">🔍</div>
   <div class="gtxt"><span class="pill lv2">SEL L2</span>
@@ -326,13 +326,13 @@
   <h4>Face Clues Printables</h4>
   <p class="meta">3 pages · PDF · 141 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-11-02-sel-l2-face-clues-printables.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-11-02-sel-l2-face-clues-printables.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-11-02-sel-l2-face-clues-printables.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-11-02-sel-l2-face-clues-printables-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="tline item" data-q="daily lesson plans plan 2026-11-02 simple plan (sub-ready) simple 2026-11-02 teacher key key 2026-11-02 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="plans/2026-11-02-plans.pdf" target="_blank" rel="noopener">📝 Lesson plan</a> <a class="btn ghost sm" href="plans/2026-11-02-simple-plan.pdf" target="_blank" rel="noopener">🧾 Sub plan</a> <a class="btn ghost sm" href="teacher/2026-11-02-teacher-key.pdf" target="_blank" rel="noopener">🔑 Teacher key</a></div></div><div class="lesson" id="lesson-2026-11-04-l2"><h4 class="lessonh"><span class="date">Wed, Nov 4</span> Feelings Detective: Body Clues <span class="pill draft">Coming up</span></h4><div class="grid"><article class="card deck item" data-q="feelings detective: body clues  deck sel l2 2026-11-04 slides">
   <a class="thumb" href="decks/2026-11-04-sel-l2-body-clues-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Feelings Detective: Body Clues"><img src="thumbs/2026-11-04-sel-l2-body-clues-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
   <div class="dtxt"><span class="date">Wed, Nov 4</span><h4>Feelings Detective: Body Clues</h4>
   <p class="meta">25 slides · PDF · 1.4 MB</p>
   <div class="btns"><a class="btn blue" href="decks/2026-11-04-sel-l2-body-clues-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
-  <a class="btn ghost" href="decks/2026-11-04-sel-l2-body-clues-deck.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost" href="decks/2026-11-04-sel-l2-body-clues-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="decks/2026-11-04-sel-l2-body-clues-deck-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article><article class="card game item" data-q="body clues reading others: what do shoulders, arms, hands, and feet say? game sel l2">
   <div class="gicon" aria-hidden="true">🧍</div>
   <div class="gtxt"><span class="pill lv2">SEL L2</span>
@@ -344,13 +344,13 @@
   <h4>Body Clues Printables</h4>
   <p class="meta">3 pages · PDF · 194 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-11-04-sel-l2-body-clues-printables.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-11-04-sel-l2-body-clues-printables.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-11-04-sel-l2-body-clues-printables.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-11-04-sel-l2-body-clues-printables-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="tline item" data-q="daily lesson plans plan 2026-11-04 simple plan (sub-ready) simple 2026-11-04 teacher key key 2026-11-04 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="plans/2026-11-04-plans.pdf" target="_blank" rel="noopener">📝 Lesson plan</a> <a class="btn ghost sm" href="plans/2026-11-04-simple-plan.pdf" target="_blank" rel="noopener">🧾 Sub plan</a> <a class="btn ghost sm" href="teacher/2026-11-04-teacher-key.pdf" target="_blank" rel="noopener">🔑 Teacher key</a></div></div><div class="lesson" id="lesson-2026-11-06-l2"><h4 class="lessonh"><span class="date">Fri, Nov 6</span> Feelings Detective: Voice + Place Clues <span class="pill draft">Coming up</span></h4><div class="grid"><article class="card deck item" data-q="feelings detective: voice + place clues  deck sel l2 2026-11-06 slides">
   <a class="thumb" href="decks/2026-11-06-sel-l2-voice-place-clues-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Feelings Detective: Voice + Place Clues"><img src="thumbs/2026-11-06-sel-l2-voice-place-clues-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
   <div class="dtxt"><span class="date">Fri, Nov 6</span><h4>Feelings Detective: Voice + Place Clues</h4>
   <p class="meta">25 slides · PDF · 1.4 MB</p>
   <div class="btns"><a class="btn blue" href="decks/2026-11-06-sel-l2-voice-place-clues-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
-  <a class="btn ghost" href="decks/2026-11-06-sel-l2-voice-place-clues-deck.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost" href="decks/2026-11-06-sel-l2-voice-place-clues-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="decks/2026-11-06-sel-l2-voice-place-clues-deck-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article><article class="card game item" data-q="read the situation reading others: put face, body, voice, and place clues together. game sel l2">
   <div class="gicon" aria-hidden="true">🗣️</div>
   <div class="gtxt"><span class="pill lv2">SEL L2</span>
@@ -362,7 +362,7 @@
   <h4>Voice Place Clues Printables</h4>
   <p class="meta">3 pages · PDF · 207 KB</p>
   <div class="btns"><a class="btn blue sm" href="printables/2026-11-06-sel-l2-voice-place-clues-printables.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="printables/2026-11-06-sel-l2-voice-place-clues-printables.pdf" download>⬇ Download</a></div></div>
+  <a class="btn ghost sm" href="printables/2026-11-06-sel-l2-voice-place-clues-printables.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-11-06-sel-l2-voice-place-clues-printables-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
 </article></div><div class="tline item" data-q="daily lesson plans plan 2026-11-06 simple plan (sub-ready) simple 2026-11-06 teacher key key 2026-11-06 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="plans/2026-11-06-plans.pdf" target="_blank" rel="noopener">📝 Lesson plan</a> <a class="btn ghost sm" href="plans/2026-11-06-simple-plan.pdf" target="_blank" rel="noopener">🧾 Sub plan</a> <a class="btn ghost sm" href="teacher/2026-11-06-teacher-key.pdf" target="_blank" rel="noopener">🔑 Teacher key</a></div></div></section><p class="paneend"><a class="btn ghost sm" href="#top">⬆️ Back to top</a></p></div></div>
 <section class="cat" id="other-l2" aria-labelledby="h-other-l2"><h2 id="h-other-l2">🧺 Other / extras</h2><p class=note>Files that are not tied to one unit.</p><div class="grid rows"><article class="card item row" data-q="sel weekly check-in: how to set up the forms step-by-step setup for the teacher key sel l1 sel l2 ">
   <a class="thumb2" href="teacher/how-to-set-up.pdf" target="_blank" rel="noopener" aria-label="Open: SEL weekly check-in: how to set up the forms"><img src="thumbs/how-to-set-up.jpg" alt="" loading="lazy" width="96" height="124"></a>
@@ -442,9 +442,514 @@
   <p class="meta">1 page · PDF · 19 KB</p><p class="sub">Step-by-step setup for the teacher</p>
   <div class="btns"><a class="btn blue sm" href="teacher/how-to-set-up.pdf" target="_blank" rel="noopener">📄 Open</a>
   <a class="btn ghost sm" href="teacher/how-to-set-up.pdf" download>⬇ Download</a></div></div>
+</article></div></section></div><div class="lvonly lv3"><p class="lead lvlead">Social emotional learning (SEL), closer to the regular class work: readings, guided notes and quick checks, with read aloud.</p><span id="slides-l3"></span><span id="plans-l3"></span><span id="prints-l3"></span><span id="games-l3"></span><span id="videos-l3"></span>
+<div class="utabgroup" data-default="4"><section class="cat" id="units-l3" aria-labelledby="h-units-l3"><h2 id="h-units-l3">🗂️ Level 3 units in teaching order</h2><p class=note>2 of 11 units have materials. 📍 marks the unit we are in now. <span class="utabhint">Tap a unit to show it below.</span></p><div class="utabs" role="tablist" aria-label="Units"><span class="utab soon" title="Foundations &amp; Community"><span class="un">Unit 1</span><span class="ut"><span aria-hidden="true">🤝</span> Foundations &amp; Community</span><small class="ust">Taught before this site</small></span><span class="utab soon" title="Self-Awareness: Who Am I?"><span class="un">Unit 2</span><span class="ut"><span aria-hidden="true">🪞</span> Self-Awareness: Who Am I?</span><small class="ust">Taught before this site</small></span><a class="utab" role="tab" href="#unit-3" data-unit="3" aria-selected="false" title="Unit 3: Self-Management: My Calm-Down Toolkit"><span class="un">Unit 3</span><span class="ut"><span aria-hidden="true">🧰</span> Self-Management</span></a><a class="utab now" role="tab" href="#unit-4" data-unit="4" aria-selected="false" title="Unit 4: Social Awareness: Feelings Detective"><span class="un">Unit 4</span><span class="ut"><span aria-hidden="true">🕵️</span> Social Awareness</span><small class="ust">📍 Now</small></a><span class="utab soon" title="Relationship Skills"><span class="un">Unit 5</span><span class="ut"><span aria-hidden="true">💬</span> Relationship Skills</span><small class="ust">Coming soon</small></span><span class="utab soon" title="Stop, Think, Choose"><span class="un">Unit 6</span><span class="ut"><span aria-hidden="true">🛑</span> Stop, Think, Choose</span><small class="ust">Coming soon</small></span><span class="utab soon" title="I Can Grow"><span class="un">Unit 7</span><span class="ut"><span aria-hidden="true">🌱</span> I Can Grow</span><small class="ust">Coming soon</small></span><span class="utab soon" title="My Game Plan: Goals &amp; Routines"><span class="un">Unit 8</span><span class="ut"><span aria-hidden="true">🎯</span> My Game Plan: Goals &amp; Routines</span><small class="ust">Coming soon</small></span><span class="utab soon" title="Reading the Room"><span class="un">Unit 9</span><span class="ut"><span aria-hidden="true">👀</span> Reading the Room</span><small class="ust">Coming soon</small></span><span class="utab soon" title="Team Up &amp; Work It Out"><span class="un">Unit 10</span><span class="ut"><span aria-hidden="true">🧩</span> Team Up &amp; Work It Out</span><small class="ust">Coming soon</small></span><span class="utab soon" title="My SEL Showcase"><span class="un">Unit 11</span><span class="ut"><span aria-hidden="true">🏆</span> My SEL Showcase</span><small class="ust">Coming soon</small></span></div></section><div class="unitpane" data-unit="3"><section class="cat" id="u3-l3" aria-labelledby="h-u3-l3"><h2 id="h-u3-l3">🧰 Unit 3: Self-Management: My Calm-Down Toolkit</h2><p class=note>5 lessons in teaching order, oldest first. Each lesson keeps its slides, printables, game and teacher files together.</p><div class="lesson unitwide"><h4 class="lessonh">🗂️ For the whole unit</h4><div class="grid"><article class="card game item" data-q="self-management: my calm-down toolkit: review 10 questions from the whole unit. game sel l3">
+  <div class="gicon" aria-hidden="true">🧰</div>
+  <div class="gtxt"><span class="pill lv3">SEL L3</span>
+  <h3>Self-Management: My Calm-Down Toolkit: Review</h3><p>10 questions from the whole unit.</p>
+  <a class="btn gold" href="games/sel-unit3-self-management-L3-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div></div><div class="lesson" id="lesson-2026-10-19-l3"><h4 class="lessonh"><span class="date">Mon, Oct 19</span> My Reset Plan</h4><div class="grid rows"><article class="card item row" data-q="my reset plan: level 3 guided notes  printable sel l3 2026-10-19">
+  <a class="thumb2" href="printables/2026-10-19-sel-l3-reset-plan-guided-notes.pdf" target="_blank" rel="noopener" aria-label="Open: My Reset Plan: Level 3 guided notes"><img src="thumbs/2026-10-19-sel-l3-reset-plan-guided-notes.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Mon, Oct 19</span> <span class="kind">Printable</span>
+  <h4>My Reset Plan: Level 3 guided notes</h4>
+  <p class="meta">1 page · PDF · 62 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-10-19-sel-l3-reset-plan-guided-notes.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-10-19-sel-l3-reset-plan-guided-notes.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-19-sel-l3-reset-plan-guided-notes-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
+</article><article class="card item row" data-q="my reset plan: level 3 quick check  printable sel l3 2026-10-19">
+  <a class="thumb2" href="printables/2026-10-19-sel-l3-reset-plan-quiz.pdf" target="_blank" rel="noopener" aria-label="Open: My Reset Plan: Level 3 quick check"><img src="thumbs/2026-10-19-sel-l3-reset-plan-quiz.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Mon, Oct 19</span> <span class="kind">Printable</span>
+  <h4>My Reset Plan: Level 3 quick check</h4>
+  <p class="meta">1 page · PDF · 49 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-10-19-sel-l3-reset-plan-quiz.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-10-19-sel-l3-reset-plan-quiz.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="my reset plan: level 3 reading  printable sel l3 2026-10-19">
+  <a class="thumb2" href="printables/2026-10-19-sel-l3-reset-plan-reading.pdf" target="_blank" rel="noopener" aria-label="Open: My Reset Plan: Level 3 reading"><img src="thumbs/2026-10-19-sel-l3-reset-plan-reading.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Mon, Oct 19</span> <span class="kind">Printable</span>
+  <h4>My Reset Plan: Level 3 reading</h4>
+  <p class="meta">1 page · PDF · 46 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-10-19-sel-l3-reset-plan-reading.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-10-19-sel-l3-reset-plan-reading.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-19-sel-l3-reset-plan-reading-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
+</article></div><div class="tline item" data-q="my reset plan: level 3 notes key key 2026-10-19 my reset plan: level 3 quick check key key 2026-10-19 my reset plan: level 3 reading key key 2026-10-19 my reset plan: level 3 staff guide key 2026-10-19 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="teacher/2026-10-19-sel-l3-reset-plan-guided-notes-key.pdf" target="_blank" rel="noopener">🔑 My Reset Plan: Level 3 notes key</a> <a class="btn ghost sm" href="teacher/2026-10-19-sel-l3-reset-plan-quiz-key.pdf" target="_blank" rel="noopener">🔑 My Reset Plan: Level 3 quick check key</a> <a class="btn ghost sm" href="teacher/2026-10-19-sel-l3-reset-plan-reading-key.pdf" target="_blank" rel="noopener">🔑 My Reset Plan: Level 3 reading key</a> <a class="btn ghost sm" href="teacher/2026-10-19-sel-l3-reset-plan-staff-guide.pdf" target="_blank" rel="noopener">🔑 My Reset Plan: Level 3 staff guide</a></div></div><div class="lesson" id="lesson-2026-10-21-l3"><h4 class="lessonh"><span class="date">Wed, Oct 21</span> Build My Toolkit</h4><div class="grid rows"><article class="card item row" data-q="build my toolkit: level 3 guided notes  printable sel l3 2026-10-21">
+  <a class="thumb2" href="printables/2026-10-21-sel-l3-toolkit-binder-guided-notes.pdf" target="_blank" rel="noopener" aria-label="Open: Build My Toolkit: Level 3 guided notes"><img src="thumbs/2026-10-21-sel-l3-toolkit-binder-guided-notes.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Wed, Oct 21</span> <span class="kind">Printable</span>
+  <h4>Build My Toolkit: Level 3 guided notes</h4>
+  <p class="meta">1 page · PDF · 61 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-10-21-sel-l3-toolkit-binder-guided-notes.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-10-21-sel-l3-toolkit-binder-guided-notes.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-21-sel-l3-toolkit-binder-guided-notes-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
+</article><article class="card item row" data-q="build my toolkit: level 3 quick check  printable sel l3 2026-10-21">
+  <a class="thumb2" href="printables/2026-10-21-sel-l3-toolkit-binder-quiz.pdf" target="_blank" rel="noopener" aria-label="Open: Build My Toolkit: Level 3 quick check"><img src="thumbs/2026-10-21-sel-l3-toolkit-binder-quiz.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Wed, Oct 21</span> <span class="kind">Printable</span>
+  <h4>Build My Toolkit: Level 3 quick check</h4>
+  <p class="meta">1 page · PDF · 48 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-10-21-sel-l3-toolkit-binder-quiz.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-10-21-sel-l3-toolkit-binder-quiz.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="build my toolkit: level 3 reading  printable sel l3 2026-10-21">
+  <a class="thumb2" href="printables/2026-10-21-sel-l3-toolkit-binder-reading.pdf" target="_blank" rel="noopener" aria-label="Open: Build My Toolkit: Level 3 reading"><img src="thumbs/2026-10-21-sel-l3-toolkit-binder-reading.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Wed, Oct 21</span> <span class="kind">Printable</span>
+  <h4>Build My Toolkit: Level 3 reading</h4>
+  <p class="meta">1 page · PDF · 45 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-10-21-sel-l3-toolkit-binder-reading.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-10-21-sel-l3-toolkit-binder-reading.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-21-sel-l3-toolkit-binder-reading-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
+</article></div><div class="tline item" data-q="build my toolkit: level 3 notes key key 2026-10-21 build my toolkit: level 3 quick check key key 2026-10-21 build my toolkit: level 3 reading key key 2026-10-21 build my toolkit: level 3 staff guide key 2026-10-21 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="teacher/2026-10-21-sel-l3-toolkit-binder-guided-notes-key.pdf" target="_blank" rel="noopener">🔑 Build My Toolkit: Level 3 notes key</a> <a class="btn ghost sm" href="teacher/2026-10-21-sel-l3-toolkit-binder-quiz-key.pdf" target="_blank" rel="noopener">🔑 Build My Toolkit: Level 3 quick check key</a> <a class="btn ghost sm" href="teacher/2026-10-21-sel-l3-toolkit-binder-reading-key.pdf" target="_blank" rel="noopener">🔑 Build My Toolkit: Level 3 reading key</a> <a class="btn ghost sm" href="teacher/2026-10-21-sel-l3-toolkit-binder-staff-guide.pdf" target="_blank" rel="noopener">🔑 Build My Toolkit: Level 3 staff guide</a></div></div><div class="lesson" id="lesson-2026-10-23-l3"><h4 class="lessonh"><span class="date">Fri, Oct 23</span> Set My Calm-Down Goal</h4><div class="grid rows"><article class="card item row" data-q="set my calm-down goal: level 3 guided notes  printable sel l3 2026-10-23">
+  <a class="thumb2" href="printables/2026-10-23-sel-l3-calm-down-goal-guided-notes.pdf" target="_blank" rel="noopener" aria-label="Open: Set My Calm-Down Goal: Level 3 guided notes"><img src="thumbs/2026-10-23-sel-l3-calm-down-goal-guided-notes.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Fri, Oct 23</span> <span class="kind">Printable</span>
+  <h4>Set My Calm-Down Goal: Level 3 guided notes</h4>
+  <p class="meta">1 page · PDF · 63 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-10-23-sel-l3-calm-down-goal-guided-notes.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-10-23-sel-l3-calm-down-goal-guided-notes.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-23-sel-l3-calm-down-goal-guided-notes-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
+</article><article class="card item row" data-q="set my calm-down goal: level 3 quick check  printable sel l3 2026-10-23">
+  <a class="thumb2" href="printables/2026-10-23-sel-l3-calm-down-goal-quiz.pdf" target="_blank" rel="noopener" aria-label="Open: Set My Calm-Down Goal: Level 3 quick check"><img src="thumbs/2026-10-23-sel-l3-calm-down-goal-quiz.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Fri, Oct 23</span> <span class="kind">Printable</span>
+  <h4>Set My Calm-Down Goal: Level 3 quick check</h4>
+  <p class="meta">1 page · PDF · 52 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-10-23-sel-l3-calm-down-goal-quiz.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-10-23-sel-l3-calm-down-goal-quiz.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="set my calm-down goal: level 3 reading  printable sel l3 2026-10-23">
+  <a class="thumb2" href="printables/2026-10-23-sel-l3-calm-down-goal-reading.pdf" target="_blank" rel="noopener" aria-label="Open: Set My Calm-Down Goal: Level 3 reading"><img src="thumbs/2026-10-23-sel-l3-calm-down-goal-reading.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Fri, Oct 23</span> <span class="kind">Printable</span>
+  <h4>Set My Calm-Down Goal: Level 3 reading</h4>
+  <p class="meta">1 page · PDF · 48 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-10-23-sel-l3-calm-down-goal-reading.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-10-23-sel-l3-calm-down-goal-reading.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-23-sel-l3-calm-down-goal-reading-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
+</article></div><div class="tline item" data-q="set my calm-down goal: level 3 notes key key 2026-10-23 set my calm-down goal: level 3 quick check key key 2026-10-23 set my calm-down goal: level 3 reading key key 2026-10-23 set my calm-down goal: level 3 staff guide key 2026-10-23 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="teacher/2026-10-23-sel-l3-calm-down-goal-guided-notes-key.pdf" target="_blank" rel="noopener">🔑 Set My Calm-Down Goal: Level 3 notes key</a> <a class="btn ghost sm" href="teacher/2026-10-23-sel-l3-calm-down-goal-quiz-key.pdf" target="_blank" rel="noopener">🔑 Set My Calm-Down Goal: Level 3 quick check key</a> <a class="btn ghost sm" href="teacher/2026-10-23-sel-l3-calm-down-goal-reading-key.pdf" target="_blank" rel="noopener">🔑 Set My Calm-Down Goal: Level 3 reading key</a> <a class="btn ghost sm" href="teacher/2026-10-23-sel-l3-calm-down-goal-staff-guide.pdf" target="_blank" rel="noopener">🔑 Set My Calm-Down Goal: Level 3 staff guide</a></div></div><div class="lesson" id="lesson-2026-10-27-l3"><h4 class="lessonh"><span class="date">Tue, Oct 27</span> Goal in Action</h4><div class="grid rows"><article class="card item row" data-q="goal in action: level 3 guided notes  printable sel l3 2026-10-27">
+  <a class="thumb2" href="printables/2026-10-27-sel-l3-goal-in-action-guided-notes.pdf" target="_blank" rel="noopener" aria-label="Open: Goal in Action: Level 3 guided notes"><img src="thumbs/2026-10-27-sel-l3-goal-in-action-guided-notes.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Tue, Oct 27</span> <span class="kind">Printable</span>
+  <h4>Goal in Action: Level 3 guided notes</h4>
+  <p class="meta">1 page · PDF · 61 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-10-27-sel-l3-goal-in-action-guided-notes.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-10-27-sel-l3-goal-in-action-guided-notes.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-27-sel-l3-goal-in-action-guided-notes-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
+</article><article class="card item row" data-q="goal in action: level 3 quick check  printable sel l3 2026-10-27">
+  <a class="thumb2" href="printables/2026-10-27-sel-l3-goal-in-action-quiz.pdf" target="_blank" rel="noopener" aria-label="Open: Goal in Action: Level 3 quick check"><img src="thumbs/2026-10-27-sel-l3-goal-in-action-quiz.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Tue, Oct 27</span> <span class="kind">Printable</span>
+  <h4>Goal in Action: Level 3 quick check</h4>
+  <p class="meta">1 page · PDF · 50 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-10-27-sel-l3-goal-in-action-quiz.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-10-27-sel-l3-goal-in-action-quiz.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="goal in action: level 3 reading  printable sel l3 2026-10-27">
+  <a class="thumb2" href="printables/2026-10-27-sel-l3-goal-in-action-reading.pdf" target="_blank" rel="noopener" aria-label="Open: Goal in Action: Level 3 reading"><img src="thumbs/2026-10-27-sel-l3-goal-in-action-reading.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Tue, Oct 27</span> <span class="kind">Printable</span>
+  <h4>Goal in Action: Level 3 reading</h4>
+  <p class="meta">1 page · PDF · 46 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-10-27-sel-l3-goal-in-action-reading.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-10-27-sel-l3-goal-in-action-reading.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-27-sel-l3-goal-in-action-reading-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
+</article></div><div class="tline item" data-q="goal in action: level 3 notes key key 2026-10-27 goal in action: level 3 quick check key key 2026-10-27 goal in action: level 3 reading key key 2026-10-27 goal in action: level 3 staff guide key 2026-10-27 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="teacher/2026-10-27-sel-l3-goal-in-action-guided-notes-key.pdf" target="_blank" rel="noopener">🔑 Goal in Action: Level 3 notes key</a> <a class="btn ghost sm" href="teacher/2026-10-27-sel-l3-goal-in-action-quiz-key.pdf" target="_blank" rel="noopener">🔑 Goal in Action: Level 3 quick check key</a> <a class="btn ghost sm" href="teacher/2026-10-27-sel-l3-goal-in-action-reading-key.pdf" target="_blank" rel="noopener">🔑 Goal in Action: Level 3 reading key</a> <a class="btn ghost sm" href="teacher/2026-10-27-sel-l3-goal-in-action-staff-guide.pdf" target="_blank" rel="noopener">🔑 Goal in Action: Level 3 staff guide</a></div></div><div class="lesson" id="lesson-2026-10-29-l3"><h4 class="lessonh"><span class="date">Thu, Oct 29</span> Toolkit Wrap-Up</h4><div class="grid rows"><article class="card item row" data-q="toolkit wrap-up: level 3 guided notes  printable sel l3 2026-10-29">
+  <a class="thumb2" href="printables/2026-10-29-sel-l3-toolkit-wrap-up-guided-notes.pdf" target="_blank" rel="noopener" aria-label="Open: Toolkit Wrap-Up: Level 3 guided notes"><img src="thumbs/2026-10-29-sel-l3-toolkit-wrap-up-guided-notes.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Thu, Oct 29</span> <span class="kind">Printable</span>
+  <h4>Toolkit Wrap-Up: Level 3 guided notes</h4>
+  <p class="meta">1 page · PDF · 64 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-10-29-sel-l3-toolkit-wrap-up-guided-notes.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-10-29-sel-l3-toolkit-wrap-up-guided-notes.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-29-sel-l3-toolkit-wrap-up-guided-notes-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
+</article><article class="card item row" data-q="toolkit wrap-up: level 3 quick check  printable sel l3 2026-10-29">
+  <a class="thumb2" href="printables/2026-10-29-sel-l3-toolkit-wrap-up-quiz.pdf" target="_blank" rel="noopener" aria-label="Open: Toolkit Wrap-Up: Level 3 quick check"><img src="thumbs/2026-10-29-sel-l3-toolkit-wrap-up-quiz.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Thu, Oct 29</span> <span class="kind">Printable</span>
+  <h4>Toolkit Wrap-Up: Level 3 quick check</h4>
+  <p class="meta">1 page · PDF · 52 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-10-29-sel-l3-toolkit-wrap-up-quiz.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-10-29-sel-l3-toolkit-wrap-up-quiz.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="toolkit wrap-up: level 3 reading  printable sel l3 2026-10-29">
+  <a class="thumb2" href="printables/2026-10-29-sel-l3-toolkit-wrap-up-reading.pdf" target="_blank" rel="noopener" aria-label="Open: Toolkit Wrap-Up: Level 3 reading"><img src="thumbs/2026-10-29-sel-l3-toolkit-wrap-up-reading.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Thu, Oct 29</span> <span class="kind">Printable</span>
+  <h4>Toolkit Wrap-Up: Level 3 reading</h4>
+  <p class="meta">1 page · PDF · 49 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-10-29-sel-l3-toolkit-wrap-up-reading.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-10-29-sel-l3-toolkit-wrap-up-reading.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-10-29-sel-l3-toolkit-wrap-up-reading-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
+</article></div><div class="tline item" data-q="toolkit wrap-up: level 3 notes key key 2026-10-29 toolkit wrap-up: level 3 quick check key key 2026-10-29 toolkit wrap-up: level 3 reading key key 2026-10-29 toolkit wrap-up: level 3 staff guide key 2026-10-29 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="teacher/2026-10-29-sel-l3-toolkit-wrap-up-guided-notes-key.pdf" target="_blank" rel="noopener">🔑 Toolkit Wrap-Up: Level 3 notes key</a> <a class="btn ghost sm" href="teacher/2026-10-29-sel-l3-toolkit-wrap-up-quiz-key.pdf" target="_blank" rel="noopener">🔑 Toolkit Wrap-Up: Level 3 quick check key</a> <a class="btn ghost sm" href="teacher/2026-10-29-sel-l3-toolkit-wrap-up-reading-key.pdf" target="_blank" rel="noopener">🔑 Toolkit Wrap-Up: Level 3 reading key</a> <a class="btn ghost sm" href="teacher/2026-10-29-sel-l3-toolkit-wrap-up-staff-guide.pdf" target="_blank" rel="noopener">🔑 Toolkit Wrap-Up: Level 3 staff guide</a></div></div></section><p class="paneend"><a class="btn ghost sm" href="#top">⬆️ Back to top</a></p></div><div class="unitpane" data-unit="4"><section class="cat" id="u4-l3" aria-labelledby="h-u4-l3"><h2 id="h-u4-l3">🕵️ Unit 4: Social Awareness: Feelings Detective 📍</h2><p class=note>3 lessons in teaching order, oldest first. Each lesson keeps its slides, printables, game and teacher files together.</p><div class="lesson unitwide"><h4 class="lessonh">🗂️ For the whole unit</h4><div class="grid"><article class="card game item" data-q="social awareness: feelings detective: review 10 questions from the whole unit. game sel l3">
+  <div class="gicon" aria-hidden="true">🕵️</div>
+  <div class="gtxt"><span class="pill lv3">SEL L3</span>
+  <h3>Social Awareness: Feelings Detective: Review</h3><p>10 questions from the whole unit.</p>
+  <a class="btn gold" href="games/sel-unit4-social-awareness-L3-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div></div><div class="lesson" id="lesson-2026-11-02-l3"><h4 class="lessonh"><span class="date">Mon, Nov 2</span> Face Clues</h4><div class="grid rows"><article class="card item row" data-q="face clues: level 3 guided notes  printable sel l3 2026-11-02">
+  <a class="thumb2" href="printables/2026-11-02-sel-l3-face-clues-guided-notes.pdf" target="_blank" rel="noopener" aria-label="Open: Face Clues: Level 3 guided notes"><img src="thumbs/2026-11-02-sel-l3-face-clues-guided-notes.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Mon, Nov 2</span> <span class="kind">Printable</span>
+  <h4>Face Clues: Level 3 guided notes</h4>
+  <p class="meta">1 page · PDF · 64 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-11-02-sel-l3-face-clues-guided-notes.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-11-02-sel-l3-face-clues-guided-notes.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-11-02-sel-l3-face-clues-guided-notes-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
+</article><article class="card item row" data-q="face clues: level 3 quick check  printable sel l3 2026-11-02">
+  <a class="thumb2" href="printables/2026-11-02-sel-l3-face-clues-quiz.pdf" target="_blank" rel="noopener" aria-label="Open: Face Clues: Level 3 quick check"><img src="thumbs/2026-11-02-sel-l3-face-clues-quiz.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Mon, Nov 2</span> <span class="kind">Printable</span>
+  <h4>Face Clues: Level 3 quick check</h4>
+  <p class="meta">1 page · PDF · 54 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-11-02-sel-l3-face-clues-quiz.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-11-02-sel-l3-face-clues-quiz.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="face clues: level 3 reading  printable sel l3 2026-11-02">
+  <a class="thumb2" href="printables/2026-11-02-sel-l3-face-clues-reading.pdf" target="_blank" rel="noopener" aria-label="Open: Face Clues: Level 3 reading"><img src="thumbs/2026-11-02-sel-l3-face-clues-reading.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Mon, Nov 2</span> <span class="kind">Printable</span>
+  <h4>Face Clues: Level 3 reading</h4>
+  <p class="meta">1 page · PDF · 49 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-11-02-sel-l3-face-clues-reading.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-11-02-sel-l3-face-clues-reading.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-11-02-sel-l3-face-clues-reading-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
+</article></div><div class="tline item" data-q="face clues: level 3 notes key key 2026-11-02 face clues: level 3 quick check key key 2026-11-02 face clues: level 3 reading key key 2026-11-02 face clues: level 3 staff guide key 2026-11-02 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="teacher/2026-11-02-sel-l3-face-clues-guided-notes-key.pdf" target="_blank" rel="noopener">🔑 Face Clues: Level 3 notes key</a> <a class="btn ghost sm" href="teacher/2026-11-02-sel-l3-face-clues-quiz-key.pdf" target="_blank" rel="noopener">🔑 Face Clues: Level 3 quick check key</a> <a class="btn ghost sm" href="teacher/2026-11-02-sel-l3-face-clues-reading-key.pdf" target="_blank" rel="noopener">🔑 Face Clues: Level 3 reading key</a> <a class="btn ghost sm" href="teacher/2026-11-02-sel-l3-face-clues-staff-guide.pdf" target="_blank" rel="noopener">🔑 Face Clues: Level 3 staff guide</a></div></div><div class="lesson" id="lesson-2026-11-04-l3"><h4 class="lessonh"><span class="date">Wed, Nov 4</span> Body Clues <span class="pill draft">Coming up</span></h4><div class="grid rows"><article class="card item row" data-q="body clues: level 3 guided notes  printable sel l3 2026-11-04">
+  <a class="thumb2" href="printables/2026-11-04-sel-l3-body-clues-guided-notes.pdf" target="_blank" rel="noopener" aria-label="Open: Body Clues: Level 3 guided notes"><img src="thumbs/2026-11-04-sel-l3-body-clues-guided-notes.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Wed, Nov 4</span> <span class="kind">Printable</span>
+  <h4>Body Clues: Level 3 guided notes</h4>
+  <p class="meta">1 page · PDF · 62 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-11-04-sel-l3-body-clues-guided-notes.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-11-04-sel-l3-body-clues-guided-notes.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-11-04-sel-l3-body-clues-guided-notes-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
+</article><article class="card item row" data-q="body clues: level 3 quick check  printable sel l3 2026-11-04">
+  <a class="thumb2" href="printables/2026-11-04-sel-l3-body-clues-quiz.pdf" target="_blank" rel="noopener" aria-label="Open: Body Clues: Level 3 quick check"><img src="thumbs/2026-11-04-sel-l3-body-clues-quiz.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Wed, Nov 4</span> <span class="kind">Printable</span>
+  <h4>Body Clues: Level 3 quick check</h4>
+  <p class="meta">1 page · PDF · 50 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-11-04-sel-l3-body-clues-quiz.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-11-04-sel-l3-body-clues-quiz.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="body clues: level 3 reading  printable sel l3 2026-11-04">
+  <a class="thumb2" href="printables/2026-11-04-sel-l3-body-clues-reading.pdf" target="_blank" rel="noopener" aria-label="Open: Body Clues: Level 3 reading"><img src="thumbs/2026-11-04-sel-l3-body-clues-reading.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Wed, Nov 4</span> <span class="kind">Printable</span>
+  <h4>Body Clues: Level 3 reading</h4>
+  <p class="meta">1 page · PDF · 47 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-11-04-sel-l3-body-clues-reading.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-11-04-sel-l3-body-clues-reading.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-11-04-sel-l3-body-clues-reading-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
+</article></div><div class="tline item" data-q="body clues: level 3 notes key key 2026-11-04 body clues: level 3 quick check key key 2026-11-04 body clues: level 3 reading key key 2026-11-04 body clues: level 3 staff guide key 2026-11-04 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="teacher/2026-11-04-sel-l3-body-clues-guided-notes-key.pdf" target="_blank" rel="noopener">🔑 Body Clues: Level 3 notes key</a> <a class="btn ghost sm" href="teacher/2026-11-04-sel-l3-body-clues-quiz-key.pdf" target="_blank" rel="noopener">🔑 Body Clues: Level 3 quick check key</a> <a class="btn ghost sm" href="teacher/2026-11-04-sel-l3-body-clues-reading-key.pdf" target="_blank" rel="noopener">🔑 Body Clues: Level 3 reading key</a> <a class="btn ghost sm" href="teacher/2026-11-04-sel-l3-body-clues-staff-guide.pdf" target="_blank" rel="noopener">🔑 Body Clues: Level 3 staff guide</a></div></div><div class="lesson" id="lesson-2026-11-06-l3"><h4 class="lessonh"><span class="date">Fri, Nov 6</span> Voice + Place Clues <span class="pill draft">Coming up</span></h4><div class="grid rows"><article class="card item row" data-q="voice + place clues: level 3 guided notes  printable sel l3 2026-11-06">
+  <a class="thumb2" href="printables/2026-11-06-sel-l3-voice-place-clues-guided-notes.pdf" target="_blank" rel="noopener" aria-label="Open: Voice + Place Clues: Level 3 guided notes"><img src="thumbs/2026-11-06-sel-l3-voice-place-clues-guided-notes.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Fri, Nov 6</span> <span class="kind">Printable</span>
+  <h4>Voice + Place Clues: Level 3 guided notes</h4>
+  <p class="meta">1 page · PDF · 59 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-11-06-sel-l3-voice-place-clues-guided-notes.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-11-06-sel-l3-voice-place-clues-guided-notes.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-11-06-sel-l3-voice-place-clues-guided-notes-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
+</article><article class="card item row" data-q="voice + place clues: level 3 quick check  printable sel l3 2026-11-06">
+  <a class="thumb2" href="printables/2026-11-06-sel-l3-voice-place-clues-quiz.pdf" target="_blank" rel="noopener" aria-label="Open: Voice + Place Clues: Level 3 quick check"><img src="thumbs/2026-11-06-sel-l3-voice-place-clues-quiz.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Fri, Nov 6</span> <span class="kind">Printable</span>
+  <h4>Voice + Place Clues: Level 3 quick check</h4>
+  <p class="meta">1 page · PDF · 49 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-11-06-sel-l3-voice-place-clues-quiz.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-11-06-sel-l3-voice-place-clues-quiz.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="voice + place clues: level 3 reading  printable sel l3 2026-11-06">
+  <a class="thumb2" href="printables/2026-11-06-sel-l3-voice-place-clues-reading.pdf" target="_blank" rel="noopener" aria-label="Open: Voice + Place Clues: Level 3 reading"><img src="thumbs/2026-11-06-sel-l3-voice-place-clues-reading.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Fri, Nov 6</span> <span class="kind">Printable</span>
+  <h4>Voice + Place Clues: Level 3 reading</h4>
+  <p class="meta">1 page · PDF · 45 KB</p>
+  <div class="btns"><a class="btn blue sm" href="printables/2026-11-06-sel-l3-voice-place-clues-reading.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="printables/2026-11-06-sel-l3-voice-place-clues-reading.pdf" download>⬇ Download</a> <a class="btn gold sm" href="printables/2026-11-06-sel-l3-voice-place-clues-reading-page.html" target="_blank" rel="noopener">🔊 Read online</a></div></div>
+</article></div><div class="tline item" data-q="voice + place clues: level 3 notes key key 2026-11-06 voice + place clues: level 3 quick check key key 2026-11-06 voice + place clues: level 3 reading key key 2026-11-06 voice + place clues: level 3 staff guide key 2026-11-06 teacher plan key"><span class="tl">👩‍🏫 For teachers:</span> <a class="btn ghost sm" href="teacher/2026-11-06-sel-l3-voice-place-clues-guided-notes-key.pdf" target="_blank" rel="noopener">🔑 Voice + Place Clues: Level 3 notes key</a> <a class="btn ghost sm" href="teacher/2026-11-06-sel-l3-voice-place-clues-quiz-key.pdf" target="_blank" rel="noopener">🔑 Voice + Place Clues: Level 3 quick check key</a> <a class="btn ghost sm" href="teacher/2026-11-06-sel-l3-voice-place-clues-reading-key.pdf" target="_blank" rel="noopener">🔑 Voice + Place Clues: Level 3 reading key</a> <a class="btn ghost sm" href="teacher/2026-11-06-sel-l3-voice-place-clues-staff-guide.pdf" target="_blank" rel="noopener">🔑 Voice + Place Clues: Level 3 staff guide</a></div></div></section><p class="paneend"><a class="btn ghost sm" href="#top">⬆️ Back to top</a></p></div></div>
+
+<section class="cat" id="teacher-l3" aria-labelledby="h-teacher-l3"><h2 id="h-teacher-l3">👩‍🏫 Level 3 teacher resources</h2><p class=note>👩‍🏫 <b>For teachers.</b> Answer keys, sub-ready notes and setup guides. Students: please stay in the sections above. <a href="teacher.html">All teacher resources</a></p><div class="grid rows"><article class="card item row" data-q="voice + place clues: level 3 staff guide  key sel l3 2026-11-06">
+  <a class="thumb2" href="teacher/2026-11-06-sel-l3-voice-place-clues-staff-guide.pdf" target="_blank" rel="noopener" aria-label="Open: Voice + Place Clues: Level 3 staff guide"><img src="thumbs/2026-11-06-sel-l3-voice-place-clues-staff-guide.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Fri, Nov 6</span> <span class="kind">Teacher</span>
+  <h4>Voice + Place Clues: Level 3 staff guide</h4>
+  <p class="meta">1 page · PDF · 56 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-11-06-sel-l3-voice-place-clues-staff-guide.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-11-06-sel-l3-voice-place-clues-staff-guide.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="voice + place clues: level 3 reading key  key sel l3 2026-11-06">
+  <a class="thumb2" href="teacher/2026-11-06-sel-l3-voice-place-clues-reading-key.pdf" target="_blank" rel="noopener" aria-label="Open: Voice + Place Clues: Level 3 reading key"><img src="thumbs/2026-11-06-sel-l3-voice-place-clues-reading-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Fri, Nov 6</span> <span class="kind">Teacher</span>
+  <h4>Voice + Place Clues: Level 3 reading key</h4>
+  <p class="meta">1 page · PDF · 49 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-11-06-sel-l3-voice-place-clues-reading-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-11-06-sel-l3-voice-place-clues-reading-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="voice + place clues: level 3 quick check key  key sel l3 2026-11-06">
+  <a class="thumb2" href="teacher/2026-11-06-sel-l3-voice-place-clues-quiz-key.pdf" target="_blank" rel="noopener" aria-label="Open: Voice + Place Clues: Level 3 quick check key"><img src="thumbs/2026-11-06-sel-l3-voice-place-clues-quiz-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Fri, Nov 6</span> <span class="kind">Teacher</span>
+  <h4>Voice + Place Clues: Level 3 quick check key</h4>
+  <p class="meta">1 page · PDF · 61 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-11-06-sel-l3-voice-place-clues-quiz-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-11-06-sel-l3-voice-place-clues-quiz-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="voice + place clues: level 3 notes key  key sel l3 2026-11-06">
+  <a class="thumb2" href="teacher/2026-11-06-sel-l3-voice-place-clues-guided-notes-key.pdf" target="_blank" rel="noopener" aria-label="Open: Voice + Place Clues: Level 3 notes key"><img src="thumbs/2026-11-06-sel-l3-voice-place-clues-guided-notes-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Fri, Nov 6</span> <span class="kind">Teacher</span>
+  <h4>Voice + Place Clues: Level 3 notes key</h4>
+  <p class="meta">1 page · PDF · 71 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-11-06-sel-l3-voice-place-clues-guided-notes-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-11-06-sel-l3-voice-place-clues-guided-notes-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="body clues: level 3 staff guide  key sel l3 2026-11-04">
+  <a class="thumb2" href="teacher/2026-11-04-sel-l3-body-clues-staff-guide.pdf" target="_blank" rel="noopener" aria-label="Open: Body Clues: Level 3 staff guide"><img src="thumbs/2026-11-04-sel-l3-body-clues-staff-guide.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Wed, Nov 4</span> <span class="kind">Teacher</span>
+  <h4>Body Clues: Level 3 staff guide</h4>
+  <p class="meta">1 page · PDF · 56 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-11-04-sel-l3-body-clues-staff-guide.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-11-04-sel-l3-body-clues-staff-guide.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="body clues: level 3 reading key  key sel l3 2026-11-04">
+  <a class="thumb2" href="teacher/2026-11-04-sel-l3-body-clues-reading-key.pdf" target="_blank" rel="noopener" aria-label="Open: Body Clues: Level 3 reading key"><img src="thumbs/2026-11-04-sel-l3-body-clues-reading-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Wed, Nov 4</span> <span class="kind">Teacher</span>
+  <h4>Body Clues: Level 3 reading key</h4>
+  <p class="meta">1 page · PDF · 49 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-11-04-sel-l3-body-clues-reading-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-11-04-sel-l3-body-clues-reading-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="body clues: level 3 quick check key  key sel l3 2026-11-04">
+  <a class="thumb2" href="teacher/2026-11-04-sel-l3-body-clues-quiz-key.pdf" target="_blank" rel="noopener" aria-label="Open: Body Clues: Level 3 quick check key"><img src="thumbs/2026-11-04-sel-l3-body-clues-quiz-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Wed, Nov 4</span> <span class="kind">Teacher</span>
+  <h4>Body Clues: Level 3 quick check key</h4>
+  <p class="meta">1 page · PDF · 63 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-11-04-sel-l3-body-clues-quiz-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-11-04-sel-l3-body-clues-quiz-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="body clues: level 3 notes key  key sel l3 2026-11-04">
+  <a class="thumb2" href="teacher/2026-11-04-sel-l3-body-clues-guided-notes-key.pdf" target="_blank" rel="noopener" aria-label="Open: Body Clues: Level 3 notes key"><img src="thumbs/2026-11-04-sel-l3-body-clues-guided-notes-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Wed, Nov 4</span> <span class="kind">Teacher</span>
+  <h4>Body Clues: Level 3 notes key</h4>
+  <p class="meta">1 page · PDF · 73 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-11-04-sel-l3-body-clues-guided-notes-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-11-04-sel-l3-body-clues-guided-notes-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="face clues: level 3 staff guide  key sel l3 2026-11-02">
+  <a class="thumb2" href="teacher/2026-11-02-sel-l3-face-clues-staff-guide.pdf" target="_blank" rel="noopener" aria-label="Open: Face Clues: Level 3 staff guide"><img src="thumbs/2026-11-02-sel-l3-face-clues-staff-guide.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Mon, Nov 2</span> <span class="kind">Teacher</span>
+  <h4>Face Clues: Level 3 staff guide</h4>
+  <p class="meta">1 page · PDF · 55 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-11-02-sel-l3-face-clues-staff-guide.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-11-02-sel-l3-face-clues-staff-guide.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="face clues: level 3 reading key  key sel l3 2026-11-02">
+  <a class="thumb2" href="teacher/2026-11-02-sel-l3-face-clues-reading-key.pdf" target="_blank" rel="noopener" aria-label="Open: Face Clues: Level 3 reading key"><img src="thumbs/2026-11-02-sel-l3-face-clues-reading-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Mon, Nov 2</span> <span class="kind">Teacher</span>
+  <h4>Face Clues: Level 3 reading key</h4>
+  <p class="meta">1 page · PDF · 51 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-11-02-sel-l3-face-clues-reading-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-11-02-sel-l3-face-clues-reading-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="face clues: level 3 quick check key  key sel l3 2026-11-02">
+  <a class="thumb2" href="teacher/2026-11-02-sel-l3-face-clues-quiz-key.pdf" target="_blank" rel="noopener" aria-label="Open: Face Clues: Level 3 quick check key"><img src="thumbs/2026-11-02-sel-l3-face-clues-quiz-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Mon, Nov 2</span> <span class="kind">Teacher</span>
+  <h4>Face Clues: Level 3 quick check key</h4>
+  <p class="meta">1 page · PDF · 65 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-11-02-sel-l3-face-clues-quiz-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-11-02-sel-l3-face-clues-quiz-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="face clues: level 3 notes key  key sel l3 2026-11-02">
+  <a class="thumb2" href="teacher/2026-11-02-sel-l3-face-clues-guided-notes-key.pdf" target="_blank" rel="noopener" aria-label="Open: Face Clues: Level 3 notes key"><img src="thumbs/2026-11-02-sel-l3-face-clues-guided-notes-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Mon, Nov 2</span> <span class="kind">Teacher</span>
+  <h4>Face Clues: Level 3 notes key</h4>
+  <p class="meta">1 page · PDF · 75 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-11-02-sel-l3-face-clues-guided-notes-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-11-02-sel-l3-face-clues-guided-notes-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="toolkit wrap-up: level 3 staff guide  key sel l3 2026-10-29">
+  <a class="thumb2" href="teacher/2026-10-29-sel-l3-toolkit-wrap-up-staff-guide.pdf" target="_blank" rel="noopener" aria-label="Open: Toolkit Wrap-Up: Level 3 staff guide"><img src="thumbs/2026-10-29-sel-l3-toolkit-wrap-up-staff-guide.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Thu, Oct 29</span> <span class="kind">Teacher</span>
+  <h4>Toolkit Wrap-Up: Level 3 staff guide</h4>
+  <p class="meta">1 page · PDF · 56 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-29-sel-l3-toolkit-wrap-up-staff-guide.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-29-sel-l3-toolkit-wrap-up-staff-guide.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="toolkit wrap-up: level 3 reading key  key sel l3 2026-10-29">
+  <a class="thumb2" href="teacher/2026-10-29-sel-l3-toolkit-wrap-up-reading-key.pdf" target="_blank" rel="noopener" aria-label="Open: Toolkit Wrap-Up: Level 3 reading key"><img src="thumbs/2026-10-29-sel-l3-toolkit-wrap-up-reading-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Thu, Oct 29</span> <span class="kind">Teacher</span>
+  <h4>Toolkit Wrap-Up: Level 3 reading key</h4>
+  <p class="meta">1 page · PDF · 52 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-29-sel-l3-toolkit-wrap-up-reading-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-29-sel-l3-toolkit-wrap-up-reading-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="toolkit wrap-up: level 3 quick check key  key sel l3 2026-10-29">
+  <a class="thumb2" href="teacher/2026-10-29-sel-l3-toolkit-wrap-up-quiz-key.pdf" target="_blank" rel="noopener" aria-label="Open: Toolkit Wrap-Up: Level 3 quick check key"><img src="thumbs/2026-10-29-sel-l3-toolkit-wrap-up-quiz-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Thu, Oct 29</span> <span class="kind">Teacher</span>
+  <h4>Toolkit Wrap-Up: Level 3 quick check key</h4>
+  <p class="meta">1 page · PDF · 65 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-29-sel-l3-toolkit-wrap-up-quiz-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-29-sel-l3-toolkit-wrap-up-quiz-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="toolkit wrap-up: level 3 notes key  key sel l3 2026-10-29">
+  <a class="thumb2" href="teacher/2026-10-29-sel-l3-toolkit-wrap-up-guided-notes-key.pdf" target="_blank" rel="noopener" aria-label="Open: Toolkit Wrap-Up: Level 3 notes key"><img src="thumbs/2026-10-29-sel-l3-toolkit-wrap-up-guided-notes-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Thu, Oct 29</span> <span class="kind">Teacher</span>
+  <h4>Toolkit Wrap-Up: Level 3 notes key</h4>
+  <p class="meta">1 page · PDF · 75 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-29-sel-l3-toolkit-wrap-up-guided-notes-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-29-sel-l3-toolkit-wrap-up-guided-notes-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="goal in action: level 3 staff guide  key sel l3 2026-10-27">
+  <a class="thumb2" href="teacher/2026-10-27-sel-l3-goal-in-action-staff-guide.pdf" target="_blank" rel="noopener" aria-label="Open: Goal in Action: Level 3 staff guide"><img src="thumbs/2026-10-27-sel-l3-goal-in-action-staff-guide.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Tue, Oct 27</span> <span class="kind">Teacher</span>
+  <h4>Goal in Action: Level 3 staff guide</h4>
+  <p class="meta">1 page · PDF · 56 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-27-sel-l3-goal-in-action-staff-guide.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-27-sel-l3-goal-in-action-staff-guide.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="goal in action: level 3 reading key  key sel l3 2026-10-27">
+  <a class="thumb2" href="teacher/2026-10-27-sel-l3-goal-in-action-reading-key.pdf" target="_blank" rel="noopener" aria-label="Open: Goal in Action: Level 3 reading key"><img src="thumbs/2026-10-27-sel-l3-goal-in-action-reading-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Tue, Oct 27</span> <span class="kind">Teacher</span>
+  <h4>Goal in Action: Level 3 reading key</h4>
+  <p class="meta">1 page · PDF · 48 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-27-sel-l3-goal-in-action-reading-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-27-sel-l3-goal-in-action-reading-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="goal in action: level 3 quick check key  key sel l3 2026-10-27">
+  <a class="thumb2" href="teacher/2026-10-27-sel-l3-goal-in-action-quiz-key.pdf" target="_blank" rel="noopener" aria-label="Open: Goal in Action: Level 3 quick check key"><img src="thumbs/2026-10-27-sel-l3-goal-in-action-quiz-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Tue, Oct 27</span> <span class="kind">Teacher</span>
+  <h4>Goal in Action: Level 3 quick check key</h4>
+  <p class="meta">1 page · PDF · 62 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-27-sel-l3-goal-in-action-quiz-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-27-sel-l3-goal-in-action-quiz-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="goal in action: level 3 notes key  key sel l3 2026-10-27">
+  <a class="thumb2" href="teacher/2026-10-27-sel-l3-goal-in-action-guided-notes-key.pdf" target="_blank" rel="noopener" aria-label="Open: Goal in Action: Level 3 notes key"><img src="thumbs/2026-10-27-sel-l3-goal-in-action-guided-notes-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Tue, Oct 27</span> <span class="kind">Teacher</span>
+  <h4>Goal in Action: Level 3 notes key</h4>
+  <p class="meta">1 page · PDF · 72 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-27-sel-l3-goal-in-action-guided-notes-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-27-sel-l3-goal-in-action-guided-notes-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="set my calm-down goal: level 3 staff guide  key sel l3 2026-10-23">
+  <a class="thumb2" href="teacher/2026-10-23-sel-l3-calm-down-goal-staff-guide.pdf" target="_blank" rel="noopener" aria-label="Open: Set My Calm-Down Goal: Level 3 staff guide"><img src="thumbs/2026-10-23-sel-l3-calm-down-goal-staff-guide.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Fri, Oct 23</span> <span class="kind">Teacher</span>
+  <h4>Set My Calm-Down Goal: Level 3 staff guide</h4>
+  <p class="meta">1 page · PDF · 57 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-23-sel-l3-calm-down-goal-staff-guide.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-23-sel-l3-calm-down-goal-staff-guide.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="set my calm-down goal: level 3 reading key  key sel l3 2026-10-23">
+  <a class="thumb2" href="teacher/2026-10-23-sel-l3-calm-down-goal-reading-key.pdf" target="_blank" rel="noopener" aria-label="Open: Set My Calm-Down Goal: Level 3 reading key"><img src="thumbs/2026-10-23-sel-l3-calm-down-goal-reading-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Fri, Oct 23</span> <span class="kind">Teacher</span>
+  <h4>Set My Calm-Down Goal: Level 3 reading key</h4>
+  <p class="meta">1 page · PDF · 51 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-23-sel-l3-calm-down-goal-reading-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-23-sel-l3-calm-down-goal-reading-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="set my calm-down goal: level 3 quick check key  key sel l3 2026-10-23">
+  <a class="thumb2" href="teacher/2026-10-23-sel-l3-calm-down-goal-quiz-key.pdf" target="_blank" rel="noopener" aria-label="Open: Set My Calm-Down Goal: Level 3 quick check key"><img src="thumbs/2026-10-23-sel-l3-calm-down-goal-quiz-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Fri, Oct 23</span> <span class="kind">Teacher</span>
+  <h4>Set My Calm-Down Goal: Level 3 quick check key</h4>
+  <p class="meta">1 page · PDF · 64 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-23-sel-l3-calm-down-goal-quiz-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-23-sel-l3-calm-down-goal-quiz-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="set my calm-down goal: level 3 notes key  key sel l3 2026-10-23">
+  <a class="thumb2" href="teacher/2026-10-23-sel-l3-calm-down-goal-guided-notes-key.pdf" target="_blank" rel="noopener" aria-label="Open: Set My Calm-Down Goal: Level 3 notes key"><img src="thumbs/2026-10-23-sel-l3-calm-down-goal-guided-notes-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Fri, Oct 23</span> <span class="kind">Teacher</span>
+  <h4>Set My Calm-Down Goal: Level 3 notes key</h4>
+  <p class="meta">1 page · PDF · 73 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-23-sel-l3-calm-down-goal-guided-notes-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-23-sel-l3-calm-down-goal-guided-notes-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="build my toolkit: level 3 staff guide  key sel l3 2026-10-21">
+  <a class="thumb2" href="teacher/2026-10-21-sel-l3-toolkit-binder-staff-guide.pdf" target="_blank" rel="noopener" aria-label="Open: Build My Toolkit: Level 3 staff guide"><img src="thumbs/2026-10-21-sel-l3-toolkit-binder-staff-guide.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Wed, Oct 21</span> <span class="kind">Teacher</span>
+  <h4>Build My Toolkit: Level 3 staff guide</h4>
+  <p class="meta">1 page · PDF · 57 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-21-sel-l3-toolkit-binder-staff-guide.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-21-sel-l3-toolkit-binder-staff-guide.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="build my toolkit: level 3 reading key  key sel l3 2026-10-21">
+  <a class="thumb2" href="teacher/2026-10-21-sel-l3-toolkit-binder-reading-key.pdf" target="_blank" rel="noopener" aria-label="Open: Build My Toolkit: Level 3 reading key"><img src="thumbs/2026-10-21-sel-l3-toolkit-binder-reading-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Wed, Oct 21</span> <span class="kind">Teacher</span>
+  <h4>Build My Toolkit: Level 3 reading key</h4>
+  <p class="meta">1 page · PDF · 48 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-21-sel-l3-toolkit-binder-reading-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-21-sel-l3-toolkit-binder-reading-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="build my toolkit: level 3 quick check key  key sel l3 2026-10-21">
+  <a class="thumb2" href="teacher/2026-10-21-sel-l3-toolkit-binder-quiz-key.pdf" target="_blank" rel="noopener" aria-label="Open: Build My Toolkit: Level 3 quick check key"><img src="thumbs/2026-10-21-sel-l3-toolkit-binder-quiz-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Wed, Oct 21</span> <span class="kind">Teacher</span>
+  <h4>Build My Toolkit: Level 3 quick check key</h4>
+  <p class="meta">1 page · PDF · 61 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-21-sel-l3-toolkit-binder-quiz-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-21-sel-l3-toolkit-binder-quiz-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="build my toolkit: level 3 notes key  key sel l3 2026-10-21">
+  <a class="thumb2" href="teacher/2026-10-21-sel-l3-toolkit-binder-guided-notes-key.pdf" target="_blank" rel="noopener" aria-label="Open: Build My Toolkit: Level 3 notes key"><img src="thumbs/2026-10-21-sel-l3-toolkit-binder-guided-notes-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Wed, Oct 21</span> <span class="kind">Teacher</span>
+  <h4>Build My Toolkit: Level 3 notes key</h4>
+  <p class="meta">1 page · PDF · 72 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-21-sel-l3-toolkit-binder-guided-notes-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-21-sel-l3-toolkit-binder-guided-notes-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="my reset plan: level 3 staff guide  key sel l3 2026-10-19">
+  <a class="thumb2" href="teacher/2026-10-19-sel-l3-reset-plan-staff-guide.pdf" target="_blank" rel="noopener" aria-label="Open: My Reset Plan: Level 3 staff guide"><img src="thumbs/2026-10-19-sel-l3-reset-plan-staff-guide.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Mon, Oct 19</span> <span class="kind">Teacher</span>
+  <h4>My Reset Plan: Level 3 staff guide</h4>
+  <p class="meta">1 page · PDF · 56 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-19-sel-l3-reset-plan-staff-guide.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-19-sel-l3-reset-plan-staff-guide.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="my reset plan: level 3 reading key  key sel l3 2026-10-19">
+  <a class="thumb2" href="teacher/2026-10-19-sel-l3-reset-plan-reading-key.pdf" target="_blank" rel="noopener" aria-label="Open: My Reset Plan: Level 3 reading key"><img src="thumbs/2026-10-19-sel-l3-reset-plan-reading-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Mon, Oct 19</span> <span class="kind">Teacher</span>
+  <h4>My Reset Plan: Level 3 reading key</h4>
+  <p class="meta">1 page · PDF · 49 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-19-sel-l3-reset-plan-reading-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-19-sel-l3-reset-plan-reading-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="my reset plan: level 3 quick check key  key sel l3 2026-10-19">
+  <a class="thumb2" href="teacher/2026-10-19-sel-l3-reset-plan-quiz-key.pdf" target="_blank" rel="noopener" aria-label="Open: My Reset Plan: Level 3 quick check key"><img src="thumbs/2026-10-19-sel-l3-reset-plan-quiz-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Mon, Oct 19</span> <span class="kind">Teacher</span>
+  <h4>My Reset Plan: Level 3 quick check key</h4>
+  <p class="meta">1 page · PDF · 62 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-19-sel-l3-reset-plan-quiz-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-19-sel-l3-reset-plan-quiz-key.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="my reset plan: level 3 notes key  key sel l3 2026-10-19">
+  <a class="thumb2" href="teacher/2026-10-19-sel-l3-reset-plan-guided-notes-key.pdf" target="_blank" rel="noopener" aria-label="Open: My Reset Plan: Level 3 notes key"><img src="thumbs/2026-10-19-sel-l3-reset-plan-guided-notes-key.jpg" alt="" loading="lazy" width="96" height="124"></a>
+  <div class="itxt"><span class="date">Mon, Oct 19</span> <span class="kind">Teacher</span>
+  <h4>My Reset Plan: Level 3 notes key</h4>
+  <p class="meta">1 page · PDF · 74 KB</p>
+  <div class="btns"><a class="btn blue sm" href="teacher/2026-10-19-sel-l3-reset-plan-guided-notes-key.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="teacher/2026-10-19-sel-l3-reset-plan-guided-notes-key.pdf" download>⬇ Download</a></div></div>
 </article></div></section></div>
 <p class="note" id="none" hidden>Nothing matches that. Try a shorter word.</p>
-<p class="jump"><a class="btn ghost" href="resources.html">📁 More resources (curriculum, calendars, portfolio, cooking…)</a></p><a class="totop" href="#top" aria-label="Back to the top of the page">⬆️ Top</a>
+<p class="jump"><a class="btn ghost" href="resources.html">📁 More resources (curriculum, calendars, portfolio, cooking…)</a></p><a class="totop" href="#top" aria-label="Back to the top of the page">⬆️ Top</a><script>window.READ_ALOUD={"left": true, "sel": "h1,h2,h3,h4,.lead,.note,.card h3,.card h4,.card p.sub", "root": "main"};</script><script>/* Ferndale "Read aloud" button (reusable). Browser text-to-speech (Web Speech API): nothing to install; works in Chrome on Chromebooks.
+   Add once per page with a script tag pointing at read_aloud.js, or inline it (read_aloud.py script_tag()).  Options (set before the script):
+     window.READ_ALOUD = {sel: "CSS selector of the parts to read", root: "CSS selector of the area to read", rate: 0.9}
+   Reads each part in order, highlights the part (and the word, when the voice reports word positions), scrolls along.
+   Play / Pause / Stop, slower-faster, and tap any part while reading to jump there. Emoji are skipped; blanks are read as "blank". */
+(function () {
+  if (window.__readAloud) return; window.__readAloud = 1;
+  var O = window.READ_ALOUD || {}, synth = window.speechSynthesis;
+  var SEL = O.sel || "h1,h2,h3,h4,p,li,td,th,.q,.f1,.cq,.qt,.ch,.cc,.circ,.wb,.pb1,.tr,.sub,.hint,.rd,.ra,.l3q,.ex,.nm,.nm1";
+  var css = ".ra-bar{position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:6px;align-items:center;background:#0b1f4d;color:#fff;border-radius:999px;padding:6px 8px;box-shadow:0 4px 14px rgba(0,0,0,.3);font:600 16px system-ui,sans-serif}" +
+    ".ra-bar button,.ra-bar select{font:inherit;border:0;border-radius:999px;padding:8px 14px;cursor:pointer;background:#f2b705;color:#0b1f4d;min-height:40px}" +
+    ".ra-bar button.ra-sec{background:#fff}.ra-bar select{padding:8px 6px;background:#dbe5f5}.ra-bar [hidden]{display:none}" +
+    ".ra-on{background:#fff4b3 !important;outline:3px solid #f2b705;border-radius:6px;scroll-margin:120px}" +
+    "::highlight(ra-word){background:#1d4fa3;color:#fff}" +
+    ".ra-msg{font-size:13px;opacity:.85;padding:0 6px}@media print{.ra-bar{display:none}.ra-on{background:none !important;outline:0}}";
+  var st = document.createElement("style"); st.textContent = css; document.head.appendChild(st);
+  var bar = document.createElement("div"); bar.className = "ra-bar"; bar.setAttribute("role", "toolbar"); bar.setAttribute("aria-label", "Read aloud");
+  bar.innerHTML = '<button type="button" class="ra-play" aria-label="Read aloud">🔊 Read aloud</button>' +
+    '<button type="button" class="ra-sec ra-stop" aria-label="Stop reading" hidden>⏹ Stop</button>' +
+    '<select class="ra-rate" aria-label="Reading speed"><option value="0.75">🐢 Slow</option><option value="0.9">Normal</option><option value="1.1">🐇 Fast</option></select>';
+  if (O.left) { bar.style.right = "auto"; bar.style.left = "14px"; }
+  var play = bar.querySelector(".ra-play"), stop = bar.querySelector(".ra-stop"), rate = bar.querySelector(".ra-rate");
+  rate.value = String(O.rate || 0.9); try { var sr = localStorage.getItem("ra-rate"); if (sr) rate.value = sr; } catch (e) {}
+  if (!synth || !window.SpeechSynthesisUtterance) { play.disabled = true; play.textContent = "🔇 Read aloud not available in this browser"; }
+  function ready() { document.body.appendChild(bar); }
+  if (document.body) ready(); else document.addEventListener("DOMContentLoaded", ready);
+
+  var EMO = /[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{2B00}-\u{2BFF}\u{FE0F}\u{200D}\u{20E3}\u{1F1E6}-\u{1F1FF}\u{E0020}-\u{E007F}\u{2190}-\u{21FF}\u{2300}-\u{23FF}\u{25A0}-\u{25FF}]/u;
+  function blocks() {
+    var root = (O.root && document.querySelector(O.root)) || document.body;
+    var all = [].slice.call(root.querySelectorAll(SEL)).filter(function (el) {
+      if (el.closest(".ra-bar,[data-ra-skip],script,style,nav,footer")) return false;
+      if (!el.offsetParent && getComputedStyle(el).position !== "fixed") return false;   // hidden (other level, closed tab)
+      return /[A-Za-z0-9]/.test(el.textContent);
+    });
+    return all.filter(function (el) { return !all.some(function (o) { return o !== el && el.contains(o); }); }); // innermost only
+  }
+  function speakable(el) {          // text to say + map from each spoken char back to [textNode, offset]
+    var out = "", map = [], w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null), n, blank = false;
+    while ((n = w.nextNode())) {
+      if (n.parentElement && n.parentElement.closest("[data-ra-skip],script,style")) continue;
+      var s = n.nodeValue, cps = Array.from(s), off = 0;
+      for (var i = 0; i < cps.length; i++) {
+        var ch = cps[i];
+        if (ch === "_" || ch === "\u00a0" && n.parentElement.classList.contains("bl")) { if (!blank) { out += " blank "; for (var k = 0; k < 7; k++) map.push([n, off]); blank = true; } }
+        else if (EMO.test(ch) || ch === "☐") { out += " "; map.push([n, off]); }
+        else { blank = false; out += ch; for (var k2 = 0; k2 < ch.length; k2++) map.push([n, off + k2]); }
+        off += ch.length;
+      }
+      out += " "; map.push([n, off]);
+    }
+    if (el.querySelector(".bl") && !/blank/.test(out) && /^\s*$/.test(el.querySelector(".bl").textContent.replace(/\u00a0/g, ""))) out += " blank";
+    return { text: out.replace(/\s+/g, " ").trim() ? out : "", map: map };
+  }
+  var list = [], idx = 0, on = false, cur = null, HL = window.CSS && CSS.highlights && window.Highlight;
+  function voice() {
+    var v = synth.getVoices().filter(function (x) { return /^en(-|_)US/i.test(x.lang); });
+    return v.filter(function (x) { return x.localService; })[0] || v[0] || null;   // local voices report word positions
+  }
+  function mark(el) {
+    [].forEach.call(document.querySelectorAll(".ra-on"), function (x) { x.classList.remove("ra-on"); });
+    if (HL) CSS.highlights.delete("ra-word");
+    if (el) { el.classList.add("ra-on"); el.scrollIntoView({ block: "center", behavior: "smooth" }); }
+  }
+  function next() {
+    if (!on) return;
+    if (idx >= list.length) { end(); return; }
+    var el = list[idx], sp = speakable(el);
+    if (!sp.text.trim()) { idx++; next(); return; }
+    mark(el); var u = new SpeechSynthesisUtterance(sp.text.replace(/\s+/g, " ")); cur = u;
+    // spoken text had runs of spaces collapsed: rebuild index map for the collapsed string
+    var raw = sp.text, cmap = [], last = false;
+    for (var i = 0; i < raw.length; i++) { var sp_ = /\s/.test(raw[i]); if (sp_ && last) continue; cmap.push(sp.map[i]); last = sp_; }
+    var lead = 0;
+    u.rate = parseFloat(rate.value) || 0.9; var vv = voice(); if (vv) { u.voice = vv; u.lang = vv.lang; } else u.lang = "en-US";
+    u.onboundary = function (ev) {
+      if (!HL || ev.name && ev.name !== "word") return;
+      var a = cmap[ev.charIndex + lead], len = ev.charLength || (u.text.slice(ev.charIndex).match(/^\S+/) || [""])[0].length,
+          b = cmap[ev.charIndex + lead + len - 1];
+      if (!a || !b) return;
+      try { var r = new Range(); r.setStart(a[0], a[1]); r.setEnd(b[0], Math.min(b[1] + 1, b[0].length)); CSS.highlights.set("ra-word", new Highlight(r)); } catch (e) {}
+    };
+    u.onend = function () { if (cur === u && on) { idx++; next(); } };
+    u.onerror = function (e) { if (cur === u && on && e.error !== "interrupted" && e.error !== "canceled") { idx++; next(); } };
+    synth.speak(u);
+  }
+  function start(from) { synth.cancel(); list = blocks(); idx = from || 0; on = true; play.textContent = "⏸ Pause"; play.setAttribute("aria-label", "Pause reading"); stop.hidden = false; next(); }
+  function pause() { on = false; cur = null; synth.cancel(); play.textContent = "▶ Resume"; play.setAttribute("aria-label", "Resume reading"); } // cancel + restart the part: Chrome's pause() is unreliable
+  function end() { on = false; cur = null; synth.cancel(); mark(null); idx = 0; list = []; play.textContent = "🔊 Read aloud"; play.setAttribute("aria-label", "Read aloud"); stop.hidden = true; }
+  play.addEventListener("click", function () { if (on) pause(); else if (list.length) { on = true; play.textContent = "⏸ Pause"; next(); } else start(0); });
+  stop.addEventListener("click", end);
+  rate.addEventListener("change", function () { try { localStorage.setItem("ra-rate", rate.value); } catch (e) {} if (on) { synth.cancel(); next(); } });
+  document.addEventListener("click", function (ev) {      // while reading, tap a part to jump there
+    if (!list.length || ev.target.closest(".ra-bar,a,button,input,select,textarea")) return;
+    for (var i = 0; i < list.length; i++) if (list[i].contains(ev.target)) { cur = null; synth.cancel(); idx = i; on = true; play.textContent = "⏸ Pause"; stop.hidden = false; next(); return; }
+  });
+  window.addEventListener("beforeunload", function () { synth && synth.cancel(); });
+  if (synth && synth.getVoices().length === 0) synth.addEventListener && synth.addEventListener("voiceschanged", function () {});
+  window.readAloud = { start: start, stop: end };
+})();
+</script>
 </main>
 <footer class="foot"><div class="wrap">Ferndale High School Inclusion</div></footer>
 <script src="filter.js"></script>

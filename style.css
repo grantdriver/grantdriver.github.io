@@ -130,3 +130,5 @@ html:not(.tabs-on) .utabhint{display:none}
 @media(max-width:640px){.utab{flex:1 1 140px;min-width:0;padding:8px 12px}.utab .ut{font-size:17px}.totop{right:10px;bottom:10px;font-size:16px;min-height:46px}}
 @media(max-width:640px){.searchbar input{flex:1 1 100%;min-width:0;width:100%;box-sizing:border-box}}
 @media print{.utabs,.totop,.paneend{display:none}html.tabs-on .unitpane{display:block!important}}
+.pill.lv3{background:#2e9d5b;color:#fff}.lvgroup.lv3{border-color:#2e9d5b}.lvonly.lv3 .lesson{border-color:#2e9d5b}
+.lvtab.lv3{border-color:#2e9d5b;box-shadow:0 5px 0 #2e9d5b}.lvtab.lv3.on{background:#2e9d5b;color:#fff}

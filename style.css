@@ -132,3 +132,25 @@ html:not(.tabs-on) .utabhint{display:none}
 @media print{.utabs,.totop,.paneend{display:none}html.tabs-on .unitpane{display:block!important}}
 .pill.lv3{background:#2e9d5b;color:#fff}.lvgroup.lv3{border-color:#2e9d5b}.lvonly.lv3 .lesson{border-color:#2e9d5b}
 .lvtab.lv3{border-color:#2e9d5b;box-shadow:0 5px 0 #2e9d5b}.lvtab.lv3.on{background:#2e9d5b;color:#fff}
+
+/* wide two-column material cards (Grant 11/4, mockup B). Odd last card spans both columns. Phones: one per row. */
+main .grid,main .grid.rows{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+main .grid>.card.item:last-child:nth-child(odd){grid-column:1/-1}
+.card.item{display:flex;flex-direction:row;align-items:center;gap:20px;padding:14px 20px;min-height:180px;border-radius:16px}
+.card.item>*{margin:0}
+.card.item .thumb,.card.item .thumb2{flex:none;width:auto;height:150px;display:block;line-height:0;background:none;border:0;border-radius:6px;overflow:visible}
+.card.item .thumb img,.card.item .thumb2 img{height:150px;width:auto;max-width:267px;aspect-ratio:auto;object-fit:contain;border:1px solid #ddd;border-radius:6px;background:#fff}
+.card.item .itxt,.card.item .gtxt,.card.item .dtxt{flex:1;min-width:0;padding:0}
+.card.item .gicon{flex:none;width:116px;height:150px;font-size:56px;border-radius:10px;display:flex;align-items:center;justify-content:center}
+.tpill{display:inline-block;background:#b3262e;color:#fff;font-weight:800;letter-spacing:.06em;font-size:13px;line-height:1.3;padding:4px 10px;border-radius:999px;margin:0 6px 6px 0;vertical-align:middle;white-space:nowrap}
+.card.item .pill,.card.item .date{margin:0 6px 6px 0;vertical-align:middle}
+.card.item h3,.card.item h4{font-size:19px;margin:2px 0 4px;line-height:1.25}
+.card.item .meta{margin:0 0 2px;font-size:13px}
+.card.item .sub,.card.item .gtxt p{margin:0 0 8px;font-size:14px}
+.card.item .btns{flex-wrap:wrap;gap:8px;margin:0}
+@media(max-width:760px){main .grid,main .grid.rows{grid-template-columns:1fr}
+ .card.item{gap:12px;padding:10px 12px;min-height:0;align-items:flex-start}
+ .card.item .thumb,.card.item .thumb2,.card.item .thumb img,.card.item .thumb2 img{height:112px}
+ .card.item .thumb img{max-width:150px}.card.item .gicon{width:84px;height:112px;font-size:42px}
+ .card.item .btn{flex:0 1 auto}}
+@media(max-width:420px){.card.item.deck{flex-direction:column;align-items:stretch}.card.item.deck .thumb img{height:auto;width:100%;max-width:none;max-height:190px}.card.item.deck .thumb{height:auto}}

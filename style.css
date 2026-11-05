@@ -127,6 +127,10 @@ html.tabs-on:not(.searching) .tunit:not(.on){display:none}
 html:not(.tabs-on) .tfor,html.searching .tfor{display:none}
 @media print{html.tabs-on .tunit{display:block!important}}
 html:not(.tabs-on) .utabhint{display:none}
+.dbd.dbdall{border:3px solid var(--bb);border-radius:16px;padding:6px 12px;margin:.6em 0;background:#fbfcff}
+.dbd>summary{cursor:pointer;font-weight:800;min-height:44px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;list-style-position:inside}
+.dbdh{font-size:19px;color:var(--navy)}.dbd.dayg{border:2px solid #c9d3e8;border-radius:12px;padding:2px 10px;margin:6px 0;background:#fff}
+.dbd.dayg>summary{font-size:17px}.dbd.dayg[open]{border-color:var(--blue)}.dbd summary small{font-weight:600;opacity:.8}
 .paneend{margin:.3em 0 1.2em}.uanchor{display:block;position:relative;top:-10px}
 .totop{position:fixed;right:16px;bottom:16px;z-index:50;min-height:52px;display:flex;align-items:center;padding:8px 18px;border-radius:999px;background:var(--navy);color:#fff;font-weight:800;font-size:18px;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.25)}
 .totop:focus-visible{outline:4px solid var(--gold);outline-offset:3px}

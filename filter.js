@@ -12,9 +12,9 @@ q.addEventListener('input',run);})();
 function has(g,n){return !!g.querySelector('.unitpane[data-unit="'+n+'"]')}
 function show(g,n){if(!n||!has(g,n))n=g.getAttribute('data-default');var i,p=g.querySelectorAll('.unitpane'),t=g.querySelectorAll('.utab[data-unit]');
 for(i=0;i<p.length;i++){if(p[i].getAttribute('data-unit')===n)p[i].classList.add('on');else p[i].classList.remove('on')}
-for(i=0;i<t.length;i++){var on=t[i].getAttribute('data-unit')===n;t[i].setAttribute('aria-selected',on?'true':'false');if(on)t[i].classList.add('on');else t[i].classList.remove('on')}}
+for(i=0;i<t.length;i++){var on=t[i].getAttribute('data-unit')===n;t[i].setAttribute('aria-selected',on?'true':'false');if(on)t[i].classList.add('on');else t[i].classList.remove('on')}return n}
 function hu(){var h=location.hash,m=/^#unit-(\d+)$/.exec(h)||/^#u(\d+)(-l\d)?$/.exec(h);return m?m[1]:null}
-function apply(n){G.forEach(function(g){show(g,n)})}
+function apply(n){var m=null;G.forEach(function(g){m=show(g,n)||m});var T=document.querySelectorAll('.tunit[data-unit]'),i;for(i=0;i<T.length;i++){if(T[i].getAttribute('data-unit')===m)T[i].classList.add('on');else T[i].classList.remove('on')}var W=document.querySelectorAll('.tfor-n');for(i=0;i<W.length;i++)W[i].textContent=m?'Unit '+m:'all units'}   /* 2026-11-05 Grant: teacher resources follow the unit tab */
 function jump(){var h=location.hash;if(!h)return;var el=document.getElementById(h.slice(1));if(el&&el.offsetParent!==null)el.scrollIntoView()}
 apply(hu());if(hu())setTimeout(jump,0);
 document.addEventListener('click',function(e){var a=e.target.closest?e.target.closest('.utab[data-unit]'):null;if(!a)return;e.preventDefault();var n=a.getAttribute('data-unit');

@@ -107,7 +107,7 @@ fieldset{border:0;padding:0;margin:0;min-width:0}
 <p class="s">Gen-ed teachers: send a lesson file and we'll make Level 1, 2 and 3 inclusion versions that match your class.</p>
 <p class="demo" id="demoNote" hidden>🧪 <b>Preview mode:</b> the Google Form isn't connected yet, so nothing is sent. You'll still see the confirmation screen.</p>
 <ol class="steps" aria-label="How it works">
-<li><b>1</b>Fill this out and pick your file.</li>
+<li><b>1</b>Fill in the details about your file.</li>
 <li><b>2</b><span id="step2txt">Attach the file on the Google Form that opens and press Submit.</span></li>
 <li><b>3</b>We make the versions and review them.</li>
 <li><b>4</b>They show up on your course page.</li>
@@ -125,10 +125,7 @@ fieldset{border:0;padding:0;margin:0;min-width:0}
 <label><input type="checkbox" name="levels" value="Level 3"><span>Level 3<small>Close to class · guided notes</small></span></label>
 </div><div class="err" role="alert">Pick at least one level.</div></fieldset>
 <div class="f" data-f="docType"><label for="docType">Document type</label><select id="docType" name="docType" required><option value="">Choose a type…</option><option>Guided Notes</option><option>Worksheet</option><option>Reading</option><option>Quiz</option><option>Slides</option><option>Lab</option><option>Other</option></select><div class="err" role="alert">Please choose a type.</div></div>
-<div class="f" data-f="file"><label for="file">Your file</label>
-<div class="drop" id="drop"><input type="file" id="file" name="file" accept=".pdf,.doc,.docx,.ppt,.pptx,.png,.jpg,.jpeg,.gif,.webp,.heic,application/pdf,image/*"><div class="big" aria-hidden="true">📄</div><b>Drop your file here</b><br>or tap to choose · PDF, Word, PowerPoint or a photo</div>
-<div class="chosen" id="chosen" aria-live="polite"><span id="chosenName"></span><button type="button" id="clearFile">Change</button></div>
-<div class="err" role="alert" id="fileErr">Please choose a PDF, Word, PowerPoint or image file.</div></div>
+<div class="f"><label>Your file</label><div class="hint" style="margin-top:0;border:3px solid var(--gold);border-radius:16px;padding:12px 14px;background:var(--gb)">📎 <b>You attach the file on the next screen.</b><br>Step 1 only fills in the details. The Google Form opens with these answers filled in — attach your file there and press Submit.</div></div>
 <div class="f full" data-f="directions"><label for="directions">Directions for the modification <span class="opt">(what should we change or keep?)</span></label>
 <textarea id="directions" name="directions" maxlength="3000" placeholder="e.g. Keep the same blanks as my notes so students can follow along. Add a word bank at Level 2. Pictures for Level 1. Due next Tuesday."></textarea>
 <div class="hint">Helpful: due date, which parts matter most, vocabulary to keep, anything students struggle with. Please don't name students.</div></div>
@@ -143,7 +140,7 @@ fieldset{border:0;padding:0;margin:0;min-width:0}
 <label class="ack"><input type="checkbox" id="ack" name="ack" required> I checked: this file has no student names or identifying information.</label>
 <div class="err" role="alert">Please check the box to confirm.</div>
 </div>
-<div class="actions"><button class="sub" type="submit" id="go">Send ➜</button><span class="hint" id="goHint">Next, the Google Form opens with your answers filled in. You may need to sign in with your school Google account.</span></div>
+<div class="actions"><button class="sub" type="submit" id="go">Continue to Google Form to attach file ➜</button><span class="hint" id="goHint">Next, attach your file on the Google Form (your answers are already filled in), then press Submit. You may need to sign in with your school Google account.</span></div>
 </form>
 <div class="nx"><b>What happens next:</b> we make the versions you asked for, review them, and post them on your course page, usually within a school day. Unusual files (scans, handwriting) can take a little longer.</div>
 </div>
@@ -165,7 +162,7 @@ fieldset{border:0;padding:0;margin:0;min-width:0}
 var C=window.PORTAL_CONFIG, UNITS={"SEL": ["Unit 1: Foundations & Community", "Unit 2: Self-Awareness: Who Am I?", "Unit 3: Self-Management", "Unit 4: Social Awareness", "Unit 5: Relationship Skills", "Unit 6: Stop, Think, Choose", "Unit 7: I Can Grow", "Unit 8: My Game Plan: Goals & Routines", "Unit 9: Reading the Room", "Unit 10: Team Up & Work It Out", "Unit 11: My SEL Showcase"], "Transitions": ["Unit 1: Self-Advocacy", "Unit 2: Independent Living", "Unit 3: Health, Wellness & Relationships", "Unit 4: Employment & Career Exploration", "Unit 5: Financial Literacy & Money", "Unit 6: Community Navigation & Mobility"], "Culinary 1": ["Unit 1: Safety & Sanitation", "Unit 2: Measuring & Function of Ingredients", "Unit 3: Quick Breads", "Unit 4: Yeast Breads", "Unit 5: Fruits & Vegetables", "Unit 6: Knife Skills", "Unit 7: Roux & Mirepoix", "Unit 8: Grains & Pasta", "Unit 9: Milk, Dairy & Eggs", "Unit 10: Table Setting & Etiquette", "Unit 11: Recipes Used in Class", "Unit 12: Protein & Main Dishes"], "Biology A": ["Unit 0: Science Starts: Safety & Lab Skills", "Unit 1: Orcas & the Salish Sea", "Unit 2: Algae & Photosynthesis", "Unit 3: Biofuel & Energy", "Unit 4: Food & Digestion", "Unit 5: Breathing, Exercise & Energy", "Unit 6: Blood Sugar & Diabetes", "Unit 7: Famous Fossils & Deep Time", "Unit 8: Final Review"], "Chemistry": ["Unit 0: Lab Safety & Equipment", "Unit 1A: Lightning 1: Charges & Static", "Unit 1B: Lightning 2: Electric Forces", "Unit 1C: Lightning 3: The Strike & Staying Safe", "Unit 2: Space Exploration & Survival", "Unit 3: Oysters", "Unit 4: Polar Ice", "Unit 5: Energy"], "Health": ["Unit 1: Wellness", "Unit 2: Food & Nutrition", "Unit 3: Substance Use & Abuse", "Unit 4: Social-Emotional Health", "Unit 5A: Sexual Health 1: Bodies, Pregnancy & Relationships", "Unit 5B: Sexual Health 2: STIs, Contraception & Safer Sex", "Unit 6: Safety, First Aid & CPR", "Unit 7: Hope, Purpose & Wonder"], "US History": ["Unit 1: Timeline & Political Cartoons", "Unit 2: The Heartland: Moving West", "Unit 3: Immigration & Cities", "Unit 4: Industry & the Progressives", "Unit 5: Civil Rights at the Turn of the Century", "Unit 6: Imperialism", "Unit 7: World War I", "Unit 8: Women's Suffrage", "Unit 9: The 1920s & Harlem Renaissance", "Unit 10: The Great Depression & New Deal"], "World History": ["Unit 1: Geography & World Religions", "Unit 2: Muslim Empires", "Unit 3: The Renaissance", "Unit 4: World War I", "Unit 5: The Russian Revolution", "Unit 6: Between the Wars", "Unit 7: World War II", "Unit 8: Genocide & Human Rights", "Unit 9: Cold War, China & India", "Unit 10: The Reformation", "Unit 11: The Enlightenment", "Unit 12: The French Revolution", "Unit 13: Latin American Revolutions", "Unit 14: The Industrial Revolution"], "Ag Science 1": ["Unit 1: Ag Words & Whatcom Farms", "Unit 2: Washington Crops: Potatoes, Wheat & Apples", "Unit 3: U.S. Food & Farm Facts", "Unit 4: FFA & Ag Careers", "Unit 5: Ag Experience Project", "Unit 6: Dairy", "Unit 7: Livestock Judging", "Unit 8: Final Review", "Unit 9: Ag Issues"], "Horticulture 1": ["Unit 0: Classroom & Greenhouse Basics", "Unit 1: Jobs in Horticulture", "Unit 2: Plant Names & Life Cycles", "Unit 3: Parts of the Plant", "Unit 4: Plant ID", "Unit 5: Soil & Nutrients", "Unit 6: Seeds", "Unit 7: Propagation", "Unit 8: Poinsettias", "Unit 9: Wreaths & Floral Design"], "Small Engines Overhaul": ["Unit 0: Shop Start-Up & Safety", "Unit 1: Measuring Tools", "Unit 2: Engine Careers", "Unit 3: 4-Stroke Theory & Engine Parts", "Unit 4: Compression", "Unit 5: Carburetion & Fuel", "Unit 6: Ignition", "Unit 7: Using the Repair Manual", "Unit 8: Engine Teardown & Rebuild"]};
 var DEMO=!C.FORM_ID||/REPLACE/.test(C.FORM_ID);
 var $=function(id){return document.getElementById(id)};
-var form=$('up'),course=$('course'),unit=$('unit'),file=$('file'),drop=$('drop');
+var form=$('up'),course=$('course'),unit=$('unit'),file=null,drop=null;
 var OK_EXT=/\.(pdf|docx?|pptx?|png|jpe?g|gif|webp|heic)$/i;
 if(DEMO)$('demoNote').hidden=false;
 if(C.MODE==='post'){$('step2txt').textContent='Press Send. Your request goes straight to our team.';$('goHint').textContent='';}
@@ -176,16 +173,11 @@ course.addEventListener('change',function(){
   list.concat(['Not sure / other']).forEach(function(u){var o=document.createElement('option');o.textContent=u;unit.appendChild(o)});
   unit.disabled=!course.value;
 });
-function showFile(){
-  var f=file.files&&file.files[0];
-  $('chosen').classList.toggle('on',!!f);
-  $('chosenName').textContent=f?('📎 '+f.name+' ('+(f.size/1048576).toFixed(1)+' MB)'):'';
-  drop.hidden=!!f;
-}
-file.addEventListener('change',function(){showFile();check('file')});
-$('clearFile').addEventListener('click',function(){file.value='';showFile();file.focus()});
-['dragenter','dragover'].forEach(function(e){drop.addEventListener(e,function(){drop.classList.add('over')})});
-['dragleave','drop'].forEach(function(e){drop.addEventListener(e,function(){drop.classList.remove('over')})});
+function showFile(){}
+
+
+
+
 function v(n){var el=form.elements[n];return el&&el.value?el.value.trim():''}
 function levels(){return [].map.call(form.querySelectorAll('input[name=levels]:checked'),function(x){return x.value})}
 function emailOk(e){
@@ -199,11 +191,11 @@ function fileOk(){
   if(f.size>C.MAX_FILE_MB*1048576){$('fileErr').textContent='That file is over '+C.MAX_FILE_MB+' MB. Try a PDF version.';return false}
   return true;
 }
-var rules={teacherName:function(){return !!v('teacherName')},email:function(){return emailOk(v('email'))},course:function(){return !!v('course')},unit:function(){return !!v('unit')},levels:function(){return levels().length>0},docType:function(){return !!v('docType')},file:fileOk,ack:function(){return $('ack').checked}};
+var rules={teacherName:function(){return !!v('teacherName')},email:function(){return emailOk(v('email'))},course:function(){return !!v('course')},unit:function(){return !!v('unit')},levels:function(){return levels().length>0},docType:function(){return !!v('docType')},ack:function(){return $('ack').checked}};
 function check(k){var ok=rules[k]();var box=form.querySelector('[data-f='+k+']');if(box)box.classList.toggle('bad',!ok);return ok}
 Object.keys(rules).forEach(function(k){var box=form.querySelector('[data-f='+k+']');if(box)box.addEventListener('change',function(){if(box.classList.contains('bad'))check(k)})});
 function rid(){var d=new Date(),p=function(n){return('0'+n).slice(-2)};return 'UP-'+d.getFullYear()+p(d.getMonth()+1)+p(d.getDate())+'-'+Math.random().toString(36).slice(2,6).toUpperCase()}
-function data(){var f=file.files[0];return{teacherName:v('teacherName'),email:v('email'),course:v('course'),unit:v('unit'),levels:levels(),docType:v('docType'),fileName:f?f.name:'',directions:v('directions'),requestId:rid()}}
+function data(){var f=null;return{teacherName:v('teacherName'),email:v('email'),course:v('course'),unit:v('unit'),levels:levels(),docType:v('docType'),fileName:f?f.name:'',directions:v('directions'),requestId:rid()}}
 function params(d){
   var q=[];Object.keys(C.ENTRY).forEach(function(k){if(!C.ENTRY[k])return;var val=d[k];if(val==null||val==='')return;
     if(k==='course'){
@@ -240,7 +232,7 @@ form.addEventListener('submit',function(e){
   e.preventDefault();
   var bad=Object.keys(rules).filter(function(k){return !check(k)});
   if(bad.length){var el=form.querySelector('[data-f='+bad[0]+'] input,[data-f='+bad[0]+'] select');if(el)el.focus();return}
-  var d=data();
+  var d=data();d.fileName='(attach on Google Form)';
   if(DEMO){done(d,'demo');return}
   if(C.MODE==='post'){
     var f=document.createElement('form');f.method='POST';f.action=base()+'/formResponse';f.target='gfSink';f.hidden=true;
@@ -259,7 +251,6 @@ $('another').addEventListener('click',function(){
   form.elements.teacherName.value=keep.teacherName;form.elements.email.value=keep.email;
   showFile();$('reopen').hidden=true;$('doneView').hidden=true;$('formView').hidden=false;$('teacherName').focus();
 });
-})();
-</script>
+})();</script>
 </body>
 </html>

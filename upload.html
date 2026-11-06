@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Send a document · Ferndale High School Inclusion</title>
+<meta name="description" content="Gen-ed teachers: send a lesson file and get Level 1, 2 and 3 inclusion versions.">
+<script>
+/* =====================================================================
+   PORTAL CONFIG: the only block to edit when the real Google Form exists.
+   See SETUP.md. Until FORM_ID is replaced the page runs in DEMO mode
+   (validates, shows the confirmation, sends nothing anywhere).
+   ===================================================================== */
+window.PORTAL_CONFIG = {
+  // From the form's share link: https://docs.google.com/forms/d/e/<FORM_ID>/viewform
+  FORM_ID: "1FAIpQLScb0kPUDCYVmO0K0e8HkxngPi5RjZ2OxrT-rL6MV2gFM8SDpA",
+  // "prefill" = open the real Google Form with every answer filled in; the teacher
+  //             attaches the file there and presses Submit (REQUIRED for file uploads:
+  //             Google does not accept files sent from another website).
+  // "post"    = send the answers straight to formResponse from this page (text only,
+  //             no file). Only use with a form that has NO file-upload question.
+  MODE: "prefill",
+  // Entry ids from Get pre-filled link (see SETUP.md). Format: "entry.123456789"
+  ENTRY: {
+    teacherName: "entry.534397102",
+    email:       "entry.605710904",
+    course:      "entry.1241196105",
+    unit:        "entry.922336854",
+    levels:      "entry.1365596124",  // checkbox question: Level 1 / Level 2 / Level 3
+    docType:     "entry.66714036",
+    fileName:    "",                 // form has no File name question; leave blank
+    directions:  "entry.523295521",
+    requestId:   "entry.425037370"
+  },
+  ALLOWED_EMAIL_DOMAINS: [],   // e.g. ["ferndalesd.org"]; empty = any address accepted
+  MAX_FILE_MB: 100
+};
+</script>
+<link rel="stylesheet" href="style.css">
+<style>
+.up{max-width:940px;margin:26px auto 40px;background:#fff;border-radius:28px;border:4px solid var(--navy);box-shadow:0 8px 0 var(--navy);padding:30px 38px}
+.up h1{margin:0 0 4px;font-size:34px}.up .s{margin:0 0 18px;color:#3a4a6b;font-size:18px}
+.steps{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 22px;padding:0;list-style:none}
+.steps li{flex:1 1 160px;background:var(--bb);border-radius:16px;padding:10px 14px;font-size:15px;line-height:1.3}
+.steps b{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--gold);border:2px solid var(--navy);margin-right:6px;font-size:14px}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:18px 24px}
+fieldset{border:0;padding:0;margin:0;min-width:0}
+.f label,.f legend{display:block;font-weight:800;margin-bottom:6px;font-size:18px;padding:0}
+.f .opt{font-weight:600;color:#5a6785;font-size:15px}
+.f input[type=text],.f input[type=email],.f select,.f textarea{width:100%;box-sizing:border-box;min-height:50px;padding:10px 16px;border-radius:16px;border:3px solid var(--navy);font:inherit;font-size:18px;background:#fff;color:var(--navy)}
+.f textarea{min-height:130px;resize:vertical;line-height:1.4}
+.f select:disabled{background:#eef1f7;color:#7b869e}
+.f input:focus,.f select:focus,.f textarea:focus,.lv input:focus-visible+span,.drop:focus-within{outline:4px solid var(--gold);outline-offset:2px}
+.full{grid-column:1/-1}
+.hint{font-size:14.5px;color:#4a5878;margin-top:6px}
+.lv{display:flex;gap:12px;flex-wrap:wrap}
+.lv label{flex:1 1 150px;margin:0;cursor:pointer}
+.lv input{position:absolute;opacity:0;width:1px;height:1px}
+.lv span{display:block;border:3px solid var(--navy);border-radius:16px;padding:10px 14px;font-weight:700;background:#fff;font-size:17px}
+.lv span small{display:block;font-weight:600;font-size:13.5px;color:#4a5878}
+.lv span::before{content:"☐ ";}
+.lv input:checked+span{background:var(--bb)}
+.lv input:checked+span::before{content:"☑ "}
+.drop{position:relative;border:4px dashed var(--blue);border-radius:22px;background:#f3f7ff;text-align:center;padding:24px;cursor:pointer;transition:background .15s}
+.drop.over{background:var(--gb);border-color:#d9a400}
+.drop input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%}
+.drop b{font-size:21px}.drop .big{font-size:42px}
+.chosen{display:none;margin-top:10px;background:var(--gb);border-radius:14px;padding:10px 14px;font-weight:700;text-align:left}
+.chosen.on{display:flex;align-items:center;gap:10px;justify-content:space-between}
+.chosen button{background:none;border:2px solid var(--navy);border-radius:999px;padding:4px 12px;font:inherit;font-size:14px;cursor:pointer;color:var(--navy)}
+.priv{margin-top:22px;background:#fff4f2;border:3px solid #c0392b;border-radius:20px;padding:14px 20px}
+.priv h2{margin:0 0 6px;font-size:20px;color:#9b2c1f}.priv ul{margin:0;padding-left:22px;font-size:16px;line-height:1.4}
+.ack{display:flex;gap:10px;align-items:flex-start;margin-top:12px;font-weight:700;font-size:16.5px}
+.ack input{width:24px;height:24px;margin-top:2px;flex:none;accent-color:var(--navy)}
+.err{display:none;color:#9b2c1f;font-weight:700;font-size:15px;margin-top:6px}
+.bad .err{display:block}.bad input[type=text],.bad input[type=email],.bad select,.bad textarea,.bad .lv span,.bad .drop{border-color:#c0392b}
+.sub{background:var(--gold);color:var(--navy);border:0;border-radius:999px;font-weight:800;font-size:22px;padding:14px 40px;box-shadow:0 5px 0 #b88a00;cursor:pointer;font-family:inherit}
+.sub:hover{background:var(--gold2)}.sub:active{transform:translateY(3px);box-shadow:0 2px 0 #b88a00}
+.sub[disabled]{opacity:.6;cursor:wait}
+.actions{margin-top:22px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.nx{background:var(--gb);border-radius:16px;padding:12px 18px;margin-top:20px;font-size:16.5px;line-height:1.4}
+.demo{background:#eef1f7;border:2px dashed #7b869e;border-radius:14px;padding:8px 14px;font-size:14.5px;margin:0 0 18px;color:#3a4a6b}
+.done{text-align:center;padding:10px 0}
+.done .big{font-size:64px}.done h2{font-size:30px;margin:6px 0;display:block;text-align:center}
+.sum{max-width:560px;margin:16px auto;text-align:left;background:var(--bb);border-radius:18px;padding:14px 20px;font-size:16.5px}
+.sum dt{font-weight:800;float:left;clear:left;width:120px}.sum dd{margin:0 0 6px 130px}
+.done .btns{justify-content:center;margin-top:16px}
+[hidden]{display:none!important}
+.done h2::after,.done h2::before{display:none}button.btn{font-family:inherit}
+@media (max-width:720px){.up{padding:22px 18px;border-radius:22px}.g{grid-template-columns:1fr}.up h1{font-size:28px}.sum dt{float:none;width:auto}.sum dd{margin-left:0}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top" id="top">
+  <div class="wrap topin">
+    <a class="brand" href="index.html"><span class="logo" aria-hidden="true">🏫</span><span><b>Ferndale High School Inclusion</b><small>Levels 1, 2 &amp; 3</small></span></a>
+    <nav class="nav" aria-label="Classes"><a class="navbtn" href="index.html"><span aria-hidden="true">🏠</span> Home</a><a class="navbtn" href="transitions.html"><span aria-hidden="true">🧭</span> Transitions</a><a class="navbtn" href="sel.html"><span aria-hidden="true">💛</span> SEL</a><a class="navbtn" href="inclusion/ag-science-1.html" style="background:#3f7d3a"><span aria-hidden="true">🌾</span> Ag Science</a><a class="navbtn" href="inclusion/biology-a.html" style="background:#5e4b9c"><span aria-hidden="true">🧬</span> Biology</a><a class="navbtn" href="inclusion/chemistry.html"><span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" style="vertical-align:-.15em" aria-hidden="true" focusable="false"><path d="M8.1 12.5h7.8l3.9 6.5a1.4 1.4 0 0 1-1.2 2.1H5.4A1.4 1.4 0 0 1 4.2 19z" fill="#2fbf71"/><circle cx="10.4" cy="16.8" r="1.05" fill="#d9fbe8"/><circle cx="13.7" cy="18.6" r=".85" fill="#d9fbe8"/><circle cx="12.6" cy="14.7" r=".65" fill="#d9fbe8"/><path d="M9.6 2.2h4.8M10.3 2.4v6.4L3.6 19.3A1.9 1.9 0 0 0 5.2 22h13.6a1.9 1.9 0 0 0 1.6-2.7L13.7 8.8V2.4" fill="none" stroke="#1d3557" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Chemistry</a><a class="navbtn" href="inclusion/culinary-1.html"><span aria-hidden="true">🍳</span> Culinary 1</a><a class="navbtn" href="inclusion/health.html"><span aria-hidden="true">🌈</span> Health</a><a class="navbtn" href="inclusion/horticulture-1.html" style="background:#3f7d3a"><span aria-hidden="true">🌷</span> Horticulture</a><a class="navbtn" href="inclusion/small-engines-overhaul.html" style="background:#c0392b"><span aria-hidden="true">🔧</span> Small Engines</a><a class="navbtn" href="inclusion/us-history.html" style="background:#1c3d7a"><span aria-hidden="true">🦅</span> US History</a><a class="navbtn" href="inclusion/world-history.html"><span aria-hidden="true">🌍</span> World History</a><a class="navbtn" href="resources.html"><span aria-hidden="true">📁</span> More</a><a class="navbtn" href="teacher.html"><span aria-hidden="true">👩‍🏫</span> Teacher</a></nav>
+  </div>
+  <div class="stripe"></div>
+</header>
+<main id="main" class="wrap">
+<section class="up" aria-labelledby="ttl">
+<div id="formView">
+<h1 id="ttl">📤 Send us a document</h1>
+<p class="s">Gen-ed teachers: send a lesson file and we'll make Level 1, 2 and 3 inclusion versions that match your class.</p>
+<p class="demo" id="demoNote" hidden>🧪 <b>Preview mode:</b> the Google Form isn't connected yet, so nothing is sent. You'll still see the confirmation screen.</p>
+<ol class="steps" aria-label="How it works">
+<li><b>1</b>Fill this out and pick your file.</li>
+<li><b>2</b><span id="step2txt">Attach the file on the Google Form that opens and press Submit.</span></li>
+<li><b>3</b>We make the versions and review them.</li>
+<li><b>4</b>They show up on your course page.</li>
+</ol>
+<form id="up" novalidate>
+<div class="g">
+<div class="f" data-f="teacherName"><label for="teacherName">Your name</label><input type="text" id="teacherName" name="teacherName" autocomplete="name" placeholder="e.g. Ms. Rivera" required><div class="err" role="alert">Please add your name.</div></div>
+<div class="f" data-f="email"><label for="email">School email</label><input type="email" id="email" name="email" autocomplete="email" placeholder="you@school.org" required><div class="err" role="alert" id="emailErr">Please use your school email.</div></div>
+<div class="f" data-f="course"><label for="course">Class</label><select id="course" name="course" required><option value="">Choose a class…</option></select><div class="err" role="alert">Please choose a class.</div></div>
+<div class="f" data-f="unit"><label for="unit">Unit</label><select id="unit" name="unit" required disabled><option value="">Choose a class first</option></select><div class="err" role="alert">Please choose a unit.</div></div>
+<fieldset class="f full" data-f="levels"><legend>Levels needed</legend>
+<div class="lv">
+<label><input type="checkbox" name="levels" value="Level 1"><span>Level 1<small>About 2nd grade · pictures</small></span></label>
+<label><input type="checkbox" name="levels" value="Level 2"><span>Level 2<small>About 3rd grade · word banks</small></span></label>
+<label><input type="checkbox" name="levels" value="Level 3"><span>Level 3<small>Close to class · guided notes</small></span></label>
+</div><div class="err" role="alert">Pick at least one level.</div></fieldset>
+<div class="f" data-f="docType"><label for="docType">Document type</label><select id="docType" name="docType" required><option value="">Choose a type…</option><option>Guided notes</option><option>Worksheet</option><option>Reading</option><option>Quiz</option><option>Slides</option><option>Lab</option><option>Other</option></select><div class="err" role="alert">Please choose a type.</div></div>
+<div class="f" data-f="file"><label for="file">Your file</label>
+<div class="drop" id="drop"><input type="file" id="file" name="file" accept=".pdf,.doc,.docx,.ppt,.pptx,.png,.jpg,.jpeg,.gif,.webp,.heic,application/pdf,image/*"><div class="big" aria-hidden="true">📄</div><b>Drop your file here</b><br>or tap to choose · PDF, Word, PowerPoint or a photo</div>
+<div class="chosen" id="chosen" aria-live="polite"><span id="chosenName"></span><button type="button" id="clearFile">Change</button></div>
+<div class="err" role="alert" id="fileErr">Please choose a PDF, Word, PowerPoint or image file.</div></div>
+<div class="f full" data-f="directions"><label for="directions">Directions for the modification <span class="opt">(what should we change or keep?)</span></label>
+<textarea id="directions" name="directions" maxlength="3000" placeholder="e.g. Keep the same blanks as my notes so students can follow along. Add a word bank at Level 2. Pictures for Level 1. Due next Tuesday."></textarea>
+<div class="hint">Helpful: due date, which parts matter most, vocabulary to keep, anything students struggle with. Please don't name students.</div></div>
+</div>
+<div class="priv" data-f="ack">
+<h2>🔒 Student privacy (FERPA)</h2>
+<ul>
+<li><b>No student names or identifying info:</b> no names, IDs, photos of students, grades, or IEP/504 details in the file or directions.</li>
+<li>Files go to a <b>restricted school Google Drive folder</b>, not a public site, and only the inclusion team can open them.</li>
+<li>Nothing goes on the website until the inclusion teacher <b>reviews and approves</b> the finished versions. Anything with student info is removed, not posted.</li>
+</ul>
+<label class="ack"><input type="checkbox" id="ack" name="ack" required> I checked: this file has no student names or identifying information.</label>
+<div class="err" role="alert">Please check the box to confirm.</div>
+</div>
+<div class="actions"><button class="sub" type="submit" id="go">Send ➜</button><span class="hint" id="goHint">Next, the Google Form opens with your answers filled in. You may need to sign in with your school Google account.</span></div>
+</form>
+<div class="nx"><b>What happens next:</b> we make the versions you asked for, review them, and post them on your course page, usually within a school day. Unusual files (scans, handwriting) can take a little longer.</div>
+</div>
+
+<div id="doneView" class="done" hidden tabindex="-1">
+<div class="big" aria-hidden="true">✅</div>
+<h2 id="doneTitle">Thanks, we've got it!</h2>
+<p id="doneMsg">Your request is on its way.</p>
+<dl class="sum" id="sum"></dl>
+<p class="hint" id="doneFoot">Request code: <b id="rid"></b>. Mention it if you have a question.</p>
+<div class="btns"><a class="btn blue" id="reopen" href="#" target="_blank" rel="noopener" hidden>Open the Google Form again ↗</a><button class="btn ghost" type="button" id="another">Send another file</button></div>
+</div>
+</section>
+</main>
+<footer class="foot"><div class="wrap">Ferndale High School Inclusion</div></footer>
+<iframe name="gfSink" id="gfSink" title="" hidden></iframe>
+<script>
+(function(){
+var C=window.PORTAL_CONFIG, UNITS={"SEL": ["Unit 1: Foundations & Community", "Unit 2: Self-Awareness: Who Am I?", "Unit 3: Self-Management", "Unit 4: Social Awareness", "Unit 5: Relationship Skills", "Unit 6: Stop, Think, Choose", "Unit 7: I Can Grow", "Unit 8: My Game Plan: Goals & Routines", "Unit 9: Reading the Room", "Unit 10: Team Up & Work It Out", "Unit 11: My SEL Showcase"], "Transitions": ["Unit 1: Self-Advocacy", "Unit 2: Independent Living", "Unit 3: Health, Wellness & Relationships", "Unit 4: Employment & Career Exploration", "Unit 5: Financial Literacy & Money", "Unit 6: Community Navigation & Mobility"], "Culinary 1": ["Unit 1: Safety & Sanitation", "Unit 2: Measuring & Function of Ingredients", "Unit 3: Quick Breads", "Unit 4: Yeast Breads", "Unit 5: Fruits & Vegetables", "Unit 6: Knife Skills", "Unit 7: Roux & Mirepoix", "Unit 8: Grains & Pasta", "Unit 9: Milk, Dairy & Eggs", "Unit 10: Table Setting & Etiquette", "Unit 11: Recipes Used in Class", "Unit 12: Protein & Main Dishes"], "Biology A": ["Unit 0: Science Starts: Safety & Lab Skills", "Unit 1: Orcas & the Salish Sea", "Unit 2: Algae & Photosynthesis", "Unit 3: Biofuel & Energy", "Unit 4: Food & Digestion", "Unit 5: Breathing, Exercise & Energy", "Unit 6: Blood Sugar & Diabetes", "Unit 7: Famous Fossils & Deep Time", "Unit 8: Final Review"], "Chemistry": ["Unit 0: Lab Safety & Equipment", "Unit 1A: Lightning 1: Charges & Static", "Unit 1B: Lightning 2: Electric Forces", "Unit 1C: Lightning 3: The Strike & Staying Safe", "Unit 2: Space Exploration & Survival", "Unit 3: Oysters", "Unit 4: Polar Ice", "Unit 5: Energy"], "Health": ["Unit 1: Wellness", "Unit 2: Food & Nutrition", "Unit 3: Substance Use & Abuse", "Unit 4: Social-Emotional Health", "Unit 5A: Sexual Health 1: Bodies, Pregnancy & Relationships", "Unit 5B: Sexual Health 2: STIs, Contraception & Safer Sex", "Unit 6: Safety, First Aid & CPR", "Unit 7: Hope, Purpose & Wonder"], "US History": ["Unit 1: Timeline & Political Cartoons", "Unit 2: The Heartland: Moving West", "Unit 3: Immigration & Cities", "Unit 4: Industry & the Progressives", "Unit 5: Civil Rights at the Turn of the Century", "Unit 6: Imperialism", "Unit 7: World War I", "Unit 8: Women's Suffrage", "Unit 9: The 1920s & Harlem Renaissance", "Unit 10: The Great Depression & New Deal"], "World History": ["Unit 1: Geography & World Religions", "Unit 2: Muslim Empires", "Unit 3: The Renaissance", "Unit 4: World War I", "Unit 5: The Russian Revolution", "Unit 6: Between the Wars", "Unit 7: World War II", "Unit 8: Genocide & Human Rights", "Unit 9: Cold War, China & India", "Unit 10: The Reformation", "Unit 11: The Enlightenment", "Unit 12: The French Revolution", "Unit 13: Latin American Revolutions", "Unit 14: The Industrial Revolution"], "Ag Science 1": ["Unit 1: Ag Words & Whatcom Farms", "Unit 2: Washington Crops: Potatoes, Wheat & Apples", "Unit 3: U.S. Food & Farm Facts", "Unit 4: FFA & Ag Careers", "Unit 5: Ag Experience Project", "Unit 6: Dairy", "Unit 7: Livestock Judging", "Unit 8: Final Review", "Unit 9: Ag Issues"], "Horticulture 1": ["Unit 0: Classroom & Greenhouse Basics", "Unit 1: Jobs in Horticulture", "Unit 2: Plant Names & Life Cycles", "Unit 3: Parts of the Plant", "Unit 4: Plant ID", "Unit 5: Soil & Nutrients", "Unit 6: Seeds", "Unit 7: Propagation", "Unit 8: Poinsettias", "Unit 9: Wreaths & Floral Design"], "Small Engines Overhaul": ["Unit 0: Shop Start-Up & Safety", "Unit 1: Measuring Tools", "Unit 2: Engine Careers", "Unit 3: 4-Stroke Theory & Engine Parts", "Unit 4: Compression", "Unit 5: Carburetion & Fuel", "Unit 6: Ignition", "Unit 7: Using the Repair Manual", "Unit 8: Engine Teardown & Rebuild"]};
+var DEMO=!C.FORM_ID||/REPLACE/.test(C.FORM_ID);
+var $=function(id){return document.getElementById(id)};
+var form=$('up'),course=$('course'),unit=$('unit'),file=$('file'),drop=$('drop');
+var OK_EXT=/\.(pdf|docx?|pptx?|png|jpe?g|gif|webp|heic)$/i;
+if(DEMO)$('demoNote').hidden=false;
+if(C.MODE==='post'){$('step2txt').textContent='Press Send. Your request goes straight to our team.';$('goHint').textContent='';}
+Object.keys(UNITS).forEach(function(c){var o=document.createElement('option');o.textContent=c;course.appendChild(o)});
+course.addEventListener('change',function(){
+  unit.innerHTML='';var list=UNITS[course.value]||[];
+  var first=document.createElement('option');first.value='';first.textContent=course.value?'Choose a unit…':'Choose a class first';unit.appendChild(first);
+  list.concat(['Not sure / other']).forEach(function(u){var o=document.createElement('option');o.textContent=u;unit.appendChild(o)});
+  unit.disabled=!course.value;
+});
+function showFile(){
+  var f=file.files&&file.files[0];
+  $('chosen').classList.toggle('on',!!f);
+  $('chosenName').textContent=f?('📎 '+f.name+' ('+(f.size/1048576).toFixed(1)+' MB)'):'';
+  drop.hidden=!!f;
+}
+file.addEventListener('change',function(){showFile();check('file')});
+$('clearFile').addEventListener('click',function(){file.value='';showFile();file.focus()});
+['dragenter','dragover'].forEach(function(e){drop.addEventListener(e,function(){drop.classList.add('over')})});
+['dragleave','drop'].forEach(function(e){drop.addEventListener(e,function(){drop.classList.remove('over')})});
+function v(n){var el=form.elements[n];return el&&el.value?el.value.trim():''}
+function levels(){return [].map.call(form.querySelectorAll('input[name=levels]:checked'),function(x){return x.value})}
+function emailOk(e){
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e))return false;
+  var d=(C.ALLOWED_EMAIL_DOMAINS||[]);if(!d.length)return true;
+  var dom=e.split('@')[1].toLowerCase();return d.some(function(x){return dom===x||dom.slice(-(x.length+1))==='.'+x});
+}
+function fileOk(){
+  var f=file.files&&file.files[0];if(!f)return false;
+  if(!OK_EXT.test(f.name)){$('fileErr').textContent='That file type won\'t work. Please use PDF, Word, PowerPoint or an image.';return false}
+  if(f.size>C.MAX_FILE_MB*1048576){$('fileErr').textContent='That file is over '+C.MAX_FILE_MB+' MB. Try a PDF version.';return false}
+  return true;
+}
+var rules={teacherName:function(){return !!v('teacherName')},email:function(){return emailOk(v('email'))},course:function(){return !!v('course')},unit:function(){return !!v('unit')},levels:function(){return levels().length>0},docType:function(){return !!v('docType')},file:fileOk,ack:function(){return $('ack').checked}};
+function check(k){var ok=rules[k]();var box=form.querySelector('[data-f='+k+']');if(box)box.classList.toggle('bad',!ok);return ok}
+Object.keys(rules).forEach(function(k){var box=form.querySelector('[data-f='+k+']');if(box)box.addEventListener('change',function(){if(box.classList.contains('bad'))check(k)})});
+function rid(){var d=new Date(),p=function(n){return('0'+n).slice(-2)};return 'UP-'+d.getFullYear()+p(d.getMonth()+1)+p(d.getDate())+'-'+Math.random().toString(36).slice(2,6).toUpperCase()}
+function data(){var f=file.files[0];return{teacherName:v('teacherName'),email:v('email'),course:v('course'),unit:v('unit'),levels:levels(),docType:v('docType'),fileName:f?f.name:'',directions:v('directions'),requestId:rid()}}
+function params(d){
+  var q=[];Object.keys(C.ENTRY).forEach(function(k){if(!C.ENTRY[k])return;var val=d[k];if(val==null||val==='')return;
+    if(k==='course'&&val==='Biology A')val='Biology';
+    (Array.isArray(val)?val:[val]).forEach(function(x){q.push(encodeURIComponent(C.ENTRY[k])+'='+encodeURIComponent(x))})});
+  return q;
+}
+var base=function(){return 'https://docs.google.com/forms/d/e/'+encodeURIComponent(C.FORM_ID)};
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function done(d,mode){
+  var rows=[['Class',d.course],['Unit',d.unit],['Levels',d.levels.join(', ')],['Type',d.docType],['File',d.fileName]];
+  if(d.directions)rows.push(['Directions',d.directions.length>140?d.directions.slice(0,140)+'…':d.directions]);
+  $('sum').innerHTML=rows.map(function(r){return '<dt>'+r[0]+'</dt><dd>'+esc(r[1])+'</dd>'}).join('');
+  $('rid').textContent=d.requestId;
+  if(mode==='prefill'){
+    $('doneTitle').textContent='Almost done: attach your file';
+    $('doneMsg').innerHTML='The Google Form opened in a new tab with your answers filled in. <b>Attach '+esc(d.fileName)+' there and press Submit.</b> Your request isn\'t sent until you do.';
+    $('reopen').hidden=false;
+  }else if(mode==='demo'){
+    $('doneTitle').textContent='Thanks, we\'ve got it! (preview)';
+    $('doneMsg').textContent='Preview mode: nothing was sent. Once the Google Form is connected, this is what teachers will see.';
+  }else{
+    $('doneTitle').textContent='Thanks, we\'ve got it!';
+    $('doneMsg').textContent='Your request was sent. We\'ll make the versions, review them, and post them on your course page, usually within a school day.';
+  }
+  $('formView').hidden=true;$('doneView').hidden=false;$('doneView').focus();window.scrollTo(0,0);
+}
+form.addEventListener('submit',function(e){
+  e.preventDefault();
+  var bad=Object.keys(rules).filter(function(k){return !check(k)});
+  if(bad.length){var el=form.querySelector('[data-f='+bad[0]+'] input,[data-f='+bad[0]+'] select');if(el)el.focus();return}
+  var d=data();
+  if(DEMO){done(d,'demo');return}
+  if(C.MODE==='post'){
+    var f=document.createElement('form');f.method='POST';f.action=base()+'/formResponse';f.target='gfSink';f.hidden=true;
+    params(d).forEach(function(p){var kv=p.split('=');var i=document.createElement('input');i.type='hidden';i.name=decodeURIComponent(kv[0]);i.value=decodeURIComponent(kv[1]);f.appendChild(i)});
+    document.body.appendChild(f);$('go').disabled=true;
+    $('gfSink').onload=function(){$('go').disabled=false;done(d,'post')};
+    f.submit();setTimeout(function(){if(!$('formView').hidden){$('go').disabled=false;done(d,'post')}},4000);
+    return;
+  }
+  var url=base()+'/viewform?usp=pp_url&'+params(d).join('&');
+  $('reopen').href=url;window.open(url,'_blank','noopener');done(d,'prefill');
+});
+$('another').addEventListener('click',function(){
+  var keep={teacherName:v('teacherName'),email:v('email'),course:v('course')};
+  form.reset();course.value=keep.course;course.dispatchEvent(new Event('change'));
+  form.elements.teacherName.value=keep.teacherName;form.elements.email.value=keep.email;
+  showFile();$('reopen').hidden=true;$('doneView').hidden=true;$('formView').hidden=false;$('teacherName').focus();
+});
+})();
+</script>
+</body>
+</html>

@@ -206,7 +206,13 @@ function rid(){var d=new Date(),p=function(n){return('0'+n).slice(-2)};return 'U
 function data(){var f=file.files[0];return{teacherName:v('teacherName'),email:v('email'),course:v('course'),unit:v('unit'),levels:levels(),docType:v('docType'),fileName:f?f.name:'',directions:v('directions'),requestId:rid()}}
 function params(d){
   var q=[];Object.keys(C.ENTRY).forEach(function(k){if(!C.ENTRY[k])return;var val=d[k];if(val==null||val==='')return;
-    if(k==='course'&&val==='Biology A')val='Biology';
+    if(k==='course'){
+      if(val==='Biology A')val='Biology';
+      if(val==='Ag Science 1')val='Ag Sci';
+      if(val==='Culinary 1')val='Culinary';
+      if(val==='Horticulture 1')val='Horticulture';
+      if(val==='Small Engines Overhaul')val='Small Engines';
+    }
     (Array.isArray(val)?val:[val]).forEach(function(x){q.push(encodeURIComponent(C.ENTRY[k])+'='+encodeURIComponent(x))})});
   return q;
 }

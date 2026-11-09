@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Substitute · Ferndale High School Inclusion</title>
+<meta name="description" content="Today's materials for the substitute teacher.">
+<link rel="stylesheet" href="style.css">
+<style>
+.sp-card{background:#fff;border:4px solid var(--navy,#0d1f4f);border-radius:28px;padding:28px;margin:24px auto;max-width:860px;box-shadow:0 8px 0 var(--navy,#0d1f4f)}
+.sp-gate{text-align:center}
+.sp-gate label{display:block;font-size:26px;font-weight:800;margin:0 0 14px}
+.sp-gate input{font-size:44px;width:7em;max-width:90%;text-align:center;letter-spacing:.3em;padding:14px;border:4px solid var(--navy,#0d1f4f);border-radius:18px}
+.sp-gate input:focus{outline:5px solid #f2b705;outline-offset:3px}
+.sp-gate button,.sp-btn{font-size:28px;font-weight:800;padding:16px 36px;margin-top:18px;border:0;border-radius:999px;background:#f2b705;color:#0d1f4f;cursor:pointer}
+.sp-gate button:focus,.sp-btn:focus{outline:5px solid #0d1f4f;outline-offset:3px}
+.sp-err{color:#b3261e;font-size:22px;font-weight:700;min-height:1.4em;margin:12px 0 0}
+.sp-date{font-size:30px;font-weight:800;margin:0 0 8px}
+.sp-note{font-size:22px}
+.sp-period{border-top:3px solid #e6e1d6;padding:18px 0 6px}
+.sp-period h2{font-size:28px;margin:0 0 4px}
+.sp-period p{margin:0 0 10px;font-size:20px}
+.sp-links{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+.sp-links a{display:block;font-size:24px;font-weight:700;padding:14px 20px;border-radius:16px;background:#0d1f4f;color:#fff;text-decoration:none}
+.sp-links a:focus,.sp-links a:hover{outline:5px solid #f2b705;outline-offset:2px}
+.sp-empty{text-align:center;font-size:28px;font-weight:700;padding:20px 0}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top" id="top">
+  <div class="wrap topin">
+    <a class="brand" href="index.html"><span class="logo" aria-hidden="true">🏫</span><span><b>Ferndale High School Inclusion</b><small>Substitute</small></span></a>
+    <nav class="nav" aria-label="Site"><a class="navbtn" href="index.html"><span aria-hidden="true">🏠</span> Home</a></nav>
+  </div>
+  <div class="stripe"></div>
+</header>
+<main id="main" class="wrap">
+<section class="hero small">
+  <h1><span aria-hidden="true">🧑‍🏫</span> Substitute</h1>
+  <p class="lead">Welcome! Today's class materials are on this page.</p>
+</section>
+
+<section class="sp-card sp-gate" id="gate">
+  <form id="gateForm" autocomplete="off">
+    <label for="code">Enter the sub code</label>
+    <input id="code" name="code" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="8" autocomplete="off" aria-describedby="gateErr">
+    <br><button type="submit">Open ▶</button>
+    <p class="sp-err" id="gateErr" role="alert"></p>
+  </form>
+</section>
+
+<section class="sp-card" id="day" hidden aria-live="polite"></section>
+</main>
+<footer class="foot"><div class="wrap">Ferndale High School Inclusion</div></footer>
+<script>
+/* Substitute portal. Only a SHA-256 hash of the code is stored here.
+   The day's materials live in sub/<id>.json, where <id> is derived from the code,
+   so the page HTML holds no material links until the right code is entered. */
+(function(){
+var CODE_HASH = "6c658ee83fb7e812482494f3e416a876f63f418a0b8a1f5e76d47ee4177035cb";
+var KEY = "fhsSubCode";
+function sha256(ascii){ /* small SHA-256 (works on older TV browsers without crypto.subtle) */
+  function rr(v,a){return (v>>>a)|(v<<(32-a));}
+  var mp=Math.pow,mw=mp(2,32),i,j,res="",words=[],bl=ascii.length*8,h=[],k=[],pc=0,ic={};
+  for(var c=2;pc<64;c++){if(!ic[c]){for(i=0;i<313;i+=c)ic[i]=c;h[pc]=(mp(c,.5)*mw)|0;k[pc++]=(mp(c,1/3)*mw)|0;}}
+  h=h.slice(0,8);ascii+="\x80";while(ascii.length%64-56)ascii+="\x00";
+  for(i=0;i<ascii.length;i++){j=ascii.charCodeAt(i);if(j>>8)return "";words[i>>2]|=j<<((3-i)%4)*8;}
+  words[words.length]=((bl/mw)|0);words[words.length]=bl;
+  for(j=0;j<words.length;){var w=words.slice(j,j+=16),oh=h;h=h.slice(0,8);
+    for(i=0;i<64;i++){var w15=w[i-15],w2=w[i-2],a=h[0],e=h[4];
+      var t1=h[7]+(rr(e,6)^rr(e,11)^rr(e,25))+((e&h[5])^((~e)&h[6]))+k[i]+(w[i]=(i<16)?w[i]:(w[i-16]+(rr(w15,7)^rr(w15,18)^(w15>>>3))+w[i-7]+(rr(w2,17)^rr(w2,19)^(w2>>>10)))|0);
+      var t2=(rr(a,2)^rr(a,13)^rr(a,22))+((a&h[1])^(a&h[2])^(h[1]&h[2]));
+      h=[(t1+t2)|0].concat(h);h[4]=(h[4]+t1)|0;}
+    for(i=0;i<8;i++)h[i]=(h[i]+oh[i])|0;}
+  for(i=0;i<8;i++)for(j=3;j+1;j--){var b=(h[i]>>(j*8))&255;res+=((b<16)?0:"")+b.toString(16);}
+  return res;}
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];});}
+function safeUrl(u){u=String(u||"");return (/^(https?:\/\/|[\w.\/-]+$)/i.test(u)&&!/^javascript:/i.test(u))?u:"#";}
+function getJSON(url,ok,bad){var x=new XMLHttpRequest();x.open("GET",url+"?t="+Date.now(),true);
+  x.onreadystatechange=function(){if(x.readyState!==4)return;if(x.status===200){try{ok(JSON.parse(x.responseText));}catch(e){bad();}}else bad();};x.send();}
+var day=document.getElementById("day"),gate=document.getElementById("gate");
+function placeholder(){return '<p class="sp-empty">📌 Today\u2019s sub materials will be posted here.</p><p class="sp-note" style="text-align:center">Please check back soon, or follow the printed sub plan.</p>';}
+function render(d){
+  var html="";
+  if(d&&d.date)html+='<p class="sp-date">📅 '+esc(d.date)+'</p>';
+  if(d&&d.note)html+='<p class="sp-note">'+esc(d.note)+'</p>';
+  var ps=(d&&d.periods)||[];
+  if(!ps.length)html+=placeholder();
+  for(var i=0;i<ps.length;i++){var p=ps[i];
+    html+='<div class="sp-period"><h2>'+esc(p.period?p.period+" \u00b7 ":"")+esc(p["class"]||"")+'</h2>';
+    if(p.time||p.room)html+='<p>'+esc([p.time,p.room].filter(Boolean).join(" \u00b7 "))+'</p>';
+    if(p.note)html+='<p>'+esc(p.note)+'</p>';
+    var ls=p.links||[];html+='<ul class="sp-links">';
+    for(var j=0;j<ls.length;j++)html+='<li><a href="'+esc(safeUrl(ls[j].href))+'" target="_blank" rel="noopener">'+esc(ls[j].label||"Open")+'</a></li>';
+    html+='</ul></div>';}
+  day.innerHTML=html;day.hidden=false;gate.hidden=true;}
+function unlock(code){
+  var id=sha256("sub-materials:"+code).slice(0,32);
+  getJSON("sub/"+id+".json",render,function(){day.innerHTML=placeholder();day.hidden=false;gate.hidden=true;});}
+document.getElementById("gateForm").onsubmit=function(ev){ev.preventDefault();
+  var inp=document.getElementById("code"),v=(inp.value||"").replace(/\s+/g,"");
+  if(sha256(v)===CODE_HASH){try{sessionStorage.setItem(KEY,v);}catch(e){}document.getElementById("gateErr").textContent="";unlock(v);}
+  else{document.getElementById("gateErr").textContent="That code didn\u2019t work. Please try again.";inp.value="";inp.focus();}
+  return false;};
+var saved=null;try{saved=sessionStorage.getItem(KEY);}catch(e){}
+if(saved&&sha256(saved)===CODE_HASH)unlock(saved);else document.getElementById("code").focus();
+})();
+</script>
+</body>
+</html>

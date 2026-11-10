@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Exercise Lab · Level 1</title>
+<title>Exercise Lab · Level 1 Basic</title>
 <style>
 :root{--bg:#f7f5fb;--ink:#2a2346;--head:#2a2346;--sub:#5e4b9c;--accent:#4caf6a;--accent2:#3b8fc4;--card:#ffffff;--cardink:#2a2346;--cardline:#ddd5ee;--choiceline:#e3dcf3;--circle:#5e4b9c;--circleshadow:#2a2346;--btn:#5e4b9c;--btnink:#ffffff;--btnshadow:#2a2346;--pill:#4caf6a;--pillink:#2a2346;--band:#2a2346;--stripe:#4caf6a;--blob1:#d9f0de;--blob2:#e3dcf3;--sel:#4caf6a;--selfill:#e1f3e5;--modal:#ffffff;--modalink:#2a2346;--dim:rgba(42,35,70,.55);--back:#f07a5a;--backink:#2a2346;--good:#2e7d46;--goodfill:#e1f3e5;--try:#c4512f;--tryfill:#fde6df;--u:min(1vw,1.72vh);--fs:max(17px,calc(var(--u)*2.05))}
 body.lv1{--fs:max(19px,calc(var(--u)*2.45))}
@@ -182,7 +182,7 @@ body.th-sel .step.hint{border-color:#fff}
 <div class="sr" id="live" aria-live="assertive"></div>
 <script>
 "use strict";
-const G = {"title": "Exercise Lab", "level": 1, "icon": "🏃", "subtitle": "Steps, words, and safety.", "badge": "Biology A · Unit 5 · Level 1", "teacher_note": "Exercise Lab review (A2 Exercise Lab: breathing rate, heart rate, and CO2 (BTB) at rest and after 2 minutes of exercise).", "rounds": [{"type": "order", "title": "Lab Steps", "icon": "🔢", "items": [{"pic": "🏃", "prompt": "Exercise lab", "steps": [{"emoji": "🪑", "text": "Rest and count"}, {"emoji": "🏃", "text": "Move 2 minutes"}, {"emoji": "❤️", "text": "Count again"}, {"emoji": "📊", "text": "Compare"}], "why": "Rest, move, count, compare."}]}, {"type": "vote", "title": "Safe or Not?", "icon": "🥤", "prompt": "Is this safe?", "options": [{"emoji": "👍", "label": "Safe", "color": "green"}, {"emoji": "✋", "label": "Not safe", "color": "red"}], "items": [{"pic": "😮‍💨", "text": "Blow out through the straw", "answer": 0, "why": "Blow out only."}, {"pic": "😋", "text": "Suck in the BTB", "answer": 1, "why": "Never drink BTB."}, {"pic": "💧", "text": "Tell staff if dizzy", "answer": 0, "why": "Always tell staff."}]}], "theme": "bio", "read_aloud": true};
+const G = {"title": "Exercise Lab", "level": 1, "icon": "🏃", "subtitle": "Steps, words, and safety.", "badge": "Biology A · Unit 5 · Level 1 Basic", "teacher_note": "Exercise Lab review (A2 Exercise Lab: breathing rate, heart rate, and CO2 (BTB) at rest and after 2 minutes of exercise).", "rounds": [{"type": "order", "title": "Lab Steps", "icon": "🔢", "items": [{"pic": "🏃", "prompt": "Exercise lab", "steps": [{"emoji": "🪑", "text": "Rest and count"}, {"emoji": "🏃", "text": "Move 2 minutes"}, {"emoji": "❤️", "text": "Count again"}, {"emoji": "📊", "text": "Compare"}], "why": "Rest, move, count, compare."}]}, {"type": "vote", "title": "Safe or Not?", "icon": "🥤", "prompt": "Is this safe?", "options": [{"emoji": "👍", "label": "Safe", "color": "green"}, {"emoji": "✋", "label": "Not safe", "color": "red"}], "items": [{"pic": "😮‍💨", "text": "Blow out through the straw", "answer": 0, "why": "Blow out only."}, {"pic": "😋", "text": "Suck in the BTB", "answer": 1, "why": "Never drink BTB."}, {"pic": "💧", "text": "Tell staff if dizzy", "answer": 0, "why": "Always tell staff."}]}], "theme": "bio", "read_aloud": true};
 const VC = {"green": "#1f8a4c", "yellow": "#e0a800", "gold": "#e0a800", "red": "#c0392b", "blue": "#1d4fa3", "navy": "#0b1f4d", "teal": "#0f7d86", "purple": "#6b3fa0"};
 const L1 = G.level === 1;
 const $ = s => document.querySelector(s);

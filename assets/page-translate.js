@@ -22,6 +22,8 @@
       "body{top:0!important}",
       "#page-lang{font:inherit;border:0;border-radius:999px;padding:8px 12px;background:#dbe5f5;color:#0b1f4d;cursor:pointer;max-width:11rem}",
       "label.page-lang-wrap{display:inline-flex;align-items:center;gap:6px;margin:0}",
+      ".ra-bar #page-lang{padding:8px 6px;max-width:11rem}",
+      ".topbar .page-lang-wrap{display:none!important}",
       "@media print{.page-lang-wrap,#google_translate_element{display:none!important}}"
     ].join("");
     document.head.appendChild(s);
@@ -30,7 +32,7 @@
   function ensureSelect() {
     var existing = document.getElementById("page-lang");
     if (existing) return existing;
-    var bar = document.querySelector(".topbar");
+    var bar = document.querySelector(".ra-bar") || document.querySelector(".topbar");
     if (!bar) return null;
     var lab = document.createElement("label");
     lab.className = "page-lang-wrap notranslate";

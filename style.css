@@ -139,6 +139,9 @@ html:not(.tabs-on) .utabhint{display:none}
 @media print{.utabs,.totop,.paneend{display:none}html.tabs-on .unitpane{display:block!important}}
 .pill.lv3{background:#2e9d5b;color:#fff}.lvgroup.lv3{border-color:#2e9d5b}.lvonly.lv3 .lesson{border-color:#2e9d5b}
 .lvtab.lv3{border-color:#2e9d5b;box-shadow:0 5px 0 #2e9d5b}.lvtab.lv3.on{background:#2e9d5b;color:#fff}
+/* new Level 2 = key 4 (purple), 2026-11-09 sample */
+.pill.lv4{background:#6b3fa0;color:#fff}.lvgroup.lv4{border-color:#6b3fa0}.lvonly.lv4 .lesson{border-color:#6b3fa0}
+.lvtab.lv4{border-color:#6b3fa0;box-shadow:0 5px 0 #6b3fa0}.lvtab.lv4.on{background:#6b3fa0;color:#fff}
 
 /* wide two-column material cards (Grant 11/4, mockup B). Odd last card spans both columns. Phones: one per row. */
 main .grid,main .grid.rows{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}

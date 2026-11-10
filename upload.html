@@ -27,7 +27,7 @@ window.PORTAL_CONFIG = {
     email:       "entry.605710904",
     course:      "entry.1241196105",
     unit:        "entry.922336854",
-    levels:      "entry.1365596124",  // checkbox question: Level 1 / Level 2 / Level 3
+    levels:      "entry.1365596124",  // checkbox question: Level 1 / Level 2 / Level 3 (Grant 11/9: page offers only Level 1 and Level 3; Level 1 = we make Basic + Advanced. Form unchanged.)
     docType:     "entry.66714036",
     fileName:    "",                 // form has no File name question; leave blank
     directions:  "entry.523295521",
@@ -120,8 +120,7 @@ fieldset{border:0;padding:0;margin:0;min-width:0}
 <div class="f" data-f="unit"><label for="unit">Unit</label><select id="unit" name="unit" required disabled><option value="">Choose a class first</option></select><div class="err" role="alert">Please choose a unit.</div></div>
 <fieldset class="f full" data-f="levels"><legend>Levels needed</legend>
 <div class="lv">
-<label><input type="checkbox" name="levels" value="Level 1"><span>Level 1 Basic<small>About 2nd grade · pictures</small></span></label>
-<label><input type="checkbox" name="levels" value="Level 2"><span>Level 1 Advanced<small>About 3rd grade · word banks</small></span></label>
+<label><input type="checkbox" name="levels" value="Level 1"><span>Level 1 (we make Basic + Advanced)<small>About 2nd–3rd grade · pictures and word banks</small></span></label>
 <label><input type="checkbox" name="levels" value="Level 3"><span>Level 3<small>Close to class · guided notes</small></span></label>
 </div><div class="err" role="alert">Pick at least one level.</div></fieldset>
 <div class="f" data-f="docType"><label for="docType">Document type</label><select id="docType" name="docType" required><option value="">Choose a type…</option><option>Guided Notes</option><option>Worksheet</option><option>Reading</option><option>Quiz</option><option>Slides</option><option>Lab</option><option>Other</option></select><div class="err" role="alert">Please choose a type.</div></div>

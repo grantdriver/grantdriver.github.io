@@ -165,3 +165,19 @@ main .grid>.card.item:last-child:nth-child(odd){grid-column:1/-1}
  .card.item .thumb img{max-width:150px}.card.item .gicon{width:84px;height:112px;font-size:42px}
  .card.item .btn{flex:0 1 auto}}
 @media(max-width:420px){.card.item.deck{flex-direction:column;align-items:stretch}.card.item.deck .thumb img{height:auto;width:100%;max-width:none;max-height:190px}.card.item.deck .thumb{height:auto;max-width:none}}
+
+/* unit-daily layout (2026-11-10): opt-in via course.json "layout": "unit-daily". */
+.umat,.dmat{margin:.5em 0 .2em}
+h4.umath,h4.dmath{font-size:20px;margin:.7em 0 .35em;color:var(--navy);font-weight:800;border-bottom:2px solid var(--bb);padding-bottom:.2em}
+@media(max-width:640px){h4.umath,h4.dmath{font-size:18px}}
+/* unit-daily day arrows (2026-11-10): scoped to .dmat so other classes keep the default caret */
+.dmat .dbd>summary{cursor:pointer;list-style:none}
+.dmat .dbd>summary::-webkit-details-marker,.dmat .dbd>summary::marker{display:none;content:none}
+.dmat .dbd>summary::before{content:"▶";font-weight:900;font-size:18px;color:var(--navy);flex:none;line-height:1;width:1.25em;text-align:center}
+.dmat .dbd[open]>summary::before{content:"▼"}
+.dmat .dbd.dayg>summary{background:#f4f7fc;border:2px solid #c9d3e8;border-radius:10px;padding:8px 12px;margin:2px 0;min-height:44px}
+.dmat .dbd.dayg[open]>summary{background:#e8eef8;border-color:var(--blue)}
+.dmat .dbd.dayg>summary:hover{background:#e8eef8;border-color:var(--blue)}
+.dmat .dbd.dayg>summary:focus-visible{outline:3px solid var(--gold);outline-offset:2px;background:#e8eef8;border-color:var(--blue)}
+.dmat .dbd.dbdall>summary:hover{background:#eef3fb;border-radius:10px}
+@media(max-width:640px){.dmat .dbd.dayg>summary{font-size:16px;padding:10px 12px;min-height:48px}.dmat .dbd>summary::before{font-size:20px}}

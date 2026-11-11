@@ -231,7 +231,7 @@ function speakText(){
 $('#readBtn').onclick = () => { if(!canSpeak) return; speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(speakText()); u.rate = L1 ? .85 : .95; speechSynthesis.speak(u); };
 
 /* ---------- header ---------- */
-$('#ttl').innerHTML = `${em(G.icon)} ${esc(G.title)} · Level ${G.level}`;
+$('#ttl').innerHTML = `${em(G.icon)} ${esc(G.title)} · Level 1 Advanced`;
 function updScore(){ $('#scorepill').innerHTML = st && st.started ? `${em('✅')} ${st.score} / ${TOTAL}` : `${TOTAL} questions`; }
 
 /* ---------- screens ---------- */
@@ -472,7 +472,7 @@ function teacherSheet(){
   }).join('');
   T.innerHTML = `<div class="bar"><span style="flex:1"></span>
       <button type="button" class="p" id="tPrint">🖨️ Print</button><button type="button" id="tClose">✖ Close</button></div>
-    <h2>${em('🔑')} Teacher answer list: ${esc(G.title)} · Level ${G.level}</h2>
+    <h2>${em('🔑')} Teacher answer list: ${esc(G.title)} · Level 1 Advanced</h2>
     ${G.teacher_note ? `<div class="note">${esc(G.teacher_note)}</div>` : ''}
     <div class="note">${TOTAL} questions · ${G.rounds.length} rounds · stars: 3 = 80%+, 2 = 50%+, 1 = finished. Score counts first tries only. Nothing is saved or sent.</div>
     ${rounds}`;

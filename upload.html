@@ -4,39 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Send a document · Ferndale High School Inclusion</title>
-<meta name="description" content="Gen-ed teachers: send a lesson file and get Level 1 and Level 3 inclusion versions.">
-<script>
-/* =====================================================================
-   PORTAL CONFIG: the only block to edit when the real Google Form exists.
-   See SETUP.md. Until FORM_ID is replaced the page runs in DEMO mode
-   (validates, shows the confirmation, sends nothing anywhere).
-   ===================================================================== */
-window.PORTAL_CONFIG = {
-  // From the form's share link: https://docs.google.com/forms/d/e/<FORM_ID>/viewform
-  FORM_ID: "1FAIpQLScb0kPUDCYVmO0K0e8HkxngPi5RjZ2OxrT-rL6MV2gFM8SDpA",
-  // "prefill" = open the real Google Form with every answer filled in; the teacher
-  //             attaches the file there and presses Submit (REQUIRED for file uploads:
-  //             Google does not accept files sent from another website).
-  // "post"    = send the answers straight to formResponse from this page (text only,
-  //             no file). Only use with a form that has NO file-upload question.
-  MODE: "prefill",
-  // Entry ids from Get pre-filled link (see SETUP.md). Format: "entry.123456789"
-  ENTRY: {
-    teacherName: "entry.534397102",
-    email:       "entry.605710904",
-    course:      "entry.1241196105",
-    unit:        "entry.922336854",
-    levels:      "entry.1365596124",  // checkbox question: Level 1 / Level 2 / Level 3 (Grant 11/9: page offers only Level 1 and Level 3; Level 1 = we make Basic + Advanced. Form unchanged.)
-    docType:     "entry.66714036",
-    fileName:    "",                 // form has no File name question; leave blank
-    directions:  "entry.523295521",
-    requestId:   "entry.425037370"
-  },
-  ALLOWED_EMAIL_DOMAINS: [],   // e.g. ["ferndalesd.org"]; empty = any address accepted
-  MAX_FILE_MB: 100
-};
-</script>
+<title>Modify a document · Ferndale High School Inclusion</title>
+<meta name="description" content="Gen-ed teachers: send a lesson file or Canvas course and get Level 1, Level 2 and Level 3 inclusion versions.">
 <link rel="stylesheet" href="style.css">
 <style>
 .up{max-width:940px;margin:26px auto 40px;background:#fff;border-radius:28px;border:4px solid var(--navy);box-shadow:0 8px 0 var(--navy);padding:30px 38px}
@@ -89,167 +58,260 @@ fieldset{border:0;padding:0;margin:0;min-width:0}
 [hidden]{display:none!important}
 .done h2::after,.done h2::before{display:none}button.btn{font-family:inherit}
 @media (max-width:720px){.up{padding:22px 18px;border-radius:22px}.g{grid-template-columns:1fr}.up h1{font-size:28px}.sum dt{float:none;width:auto}.sum dd{margin-left:0}}
+
+.kind{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 20px}
+.kind label{flex:1 1 220px;cursor:pointer;margin:0}
+.kind input{position:absolute;opacity:0;width:1px;height:1px}
+.kind span{display:block;border:3px solid var(--navy);border-radius:16px;padding:12px 16px;font-weight:800;font-size:18px;background:#fff}
+.kind span small{display:block;font-weight:600;font-size:14px;color:#4a5878}
+.kind input:checked+span{background:var(--bb);box-shadow:0 4px 0 var(--navy)}
+.kind input:focus-visible+span{outline:4px solid var(--gold);outline-offset:2px}
+.hp{position:absolute!important;left:-10000px!important;top:auto;width:1px;height:1px;overflow:hidden}
+.gatebox{max-width:520px;margin:10px auto;text-align:center}
+.gatebox input{width:100%;box-sizing:border-box;min-height:56px;padding:10px 16px;border-radius:16px;border:3px solid var(--navy);font:inherit;font-size:24px;text-align:center;letter-spacing:.2em}
+.gatebox .err{display:block;min-height:1.4em}
+.prog{height:14px;border-radius:999px;background:#eef1f7;border:2px solid var(--navy);overflow:hidden;margin-top:12px}
+.prog i{display:block;height:100%;width:0;background:var(--gold);transition:width .2s}
+.formerr{display:none;color:#9b2c1f;font-weight:800;font-size:16px;background:#fff4f2;border:2px solid #c0392b;border-radius:14px;padding:10px 14px;margin-top:14px}
+.formerr.on{display:block}
+dialog.big{border:3px solid var(--navy);border-radius:22px;padding:26px 26px 22px;max-width:460px;width:calc(100% - 40px);box-shadow:0 8px 0 var(--navy);font:inherit;color:var(--navy,#0b1f4b)}
+dialog.big::backdrop{background:rgba(11,31,75,.45)}
+dialog.big h2{margin:0 0 10px;font-size:24px}
+dialog.big p{margin:0 0 8px;font-size:17px;line-height:1.45}
+dialog.big .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+dialog.big .btns button{flex:1 1 180px}
+.apprnote{display:none;margin-top:8px;font-weight:700;font-size:15px;background:#fff7e0;border:2px solid var(--gold,#f2b705);border-radius:12px;padding:8px 12px}
+.apprnote.on{display:block}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="top" id="top">
   <div class="wrap topin">
-    <a class="brand" href="index.html"><span class="logo" aria-hidden="true">🏫</span><span><b>Ferndale High School Inclusion</b><small>Level 1 &amp; Level 3</small></span></a>
+    <a class="brand" href="index.html"><span class="logo" aria-hidden="true">🏫</span><span><b>Ferndale High School Inclusion</b></span></a>
     <nav class="nav" aria-label="Classes"><a class="navbtn" href="index.html"><span aria-hidden="true">🏠</span> Home</a><a class="navbtn" href="transitions.html"><span aria-hidden="true">🧭</span> Transitions</a><a class="navbtn" href="sel.html"><span aria-hidden="true">💛</span> SEL</a><a class="navbtn" href="inclusion/ag-science-1.html" style="background:#3f7d3a"><span aria-hidden="true">🌾</span> Ag Science</a><a class="navbtn" href="inclusion/biology-a.html" style="background:#5e4b9c"><span aria-hidden="true">🧬</span> Biology</a><a class="navbtn" href="inclusion/chemistry.html"><span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" style="vertical-align:-.15em" aria-hidden="true" focusable="false"><path d="M8.1 12.5h7.8l3.9 6.5a1.4 1.4 0 0 1-1.2 2.1H5.4A1.4 1.4 0 0 1 4.2 19z" fill="#2fbf71"/><circle cx="10.4" cy="16.8" r="1.05" fill="#d9fbe8"/><circle cx="13.7" cy="18.6" r=".85" fill="#d9fbe8"/><circle cx="12.6" cy="14.7" r=".65" fill="#d9fbe8"/><path d="M9.6 2.2h4.8M10.3 2.4v6.4L3.6 19.3A1.9 1.9 0 0 0 5.2 22h13.6a1.9 1.9 0 0 0 1.6-2.7L13.7 8.8V2.4" fill="none" stroke="#1d3557" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Chemistry</a><a class="navbtn" href="inclusion/culinary-1.html"><span aria-hidden="true">🍳</span> Culinary 1</a><a class="navbtn" href="inclusion/health.html"><span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" style="vertical-align:-.15em" aria-hidden="true" focusable="false"><path d="M12 21s-7.5-4.6-9.3-9.2C1.5 8.6 3.6 5 7 5c2 0 3.3 1.1 5 3V21z" fill="#f2a0b5"/><path d="M5.2 9.4c.6-1 1.8-1.2 2.6-.5M4.6 12.2c1 .4 2.2.1 2.8-.8M7.8 15c.6-.8 1.8-1 2.6-.4M9.5 11.2c.5-.6 1.4-.7 2-.2" fill="none" stroke="#9c3d58" stroke-width=".9" stroke-linecap="round"/><path d="M12 21s7.5-4.6 9.3-9.2C22.5 8.6 20.4 5 17 5c-2 0-3.3 1.1-5 3V21z" fill="#e0475b"/><path d="M12 8v13" stroke="#fff" stroke-width=".7"/></svg></span> Health</a><a class="navbtn" href="inclusion/horticulture-1.html" style="background:#3f7d3a"><span aria-hidden="true">🌷</span> Horticulture</a><a class="navbtn" href="inclusion/small-engines-overhaul.html" style="background:#c0392b"><span aria-hidden="true">🔧</span> Small Engines</a><a class="navbtn" href="inclusion/us-history.html" style="background:#1c3d7a"><span aria-hidden="true">🦅</span> US History</a><a class="navbtn" href="inclusion/world-history.html"><span aria-hidden="true">🌍</span> World History</a><a class="navbtn" href="resources.html"><span aria-hidden="true">📁</span> More</a><a class="navbtn" href="teacher.html"><span aria-hidden="true">👩‍🏫</span> Teacher</a></nav>
   </div>
   <div class="stripe"></div>
 </header>
 <main id="main" class="wrap">
 <section class="up" aria-labelledby="ttl">
-<div id="formView">
-<h1 id="ttl">📤 Send us a document</h1>
-<p class="s">Gen-ed teachers: send a lesson file and we'll make Level 1 and Level 3 inclusion versions that match your class.</p>
-<p class="demo" id="demoNote" hidden>🧪 <b>Preview mode:</b> the Google Form isn't connected yet, so nothing is sent. You'll still see the confirmation screen.</p>
+
+<div id="gateView" hidden>
+<h1 id="ttl">📤 Modify a document</h1>
+<p class="s">This page is for Ferndale staff. Enter the staff passcode to continue.</p>
+<form id="gateForm" class="gatebox" novalidate>
+<label for="passcode" style="display:block;font-weight:800;font-size:18px;margin-bottom:8px">Staff passcode</label>
+<input type="password" id="passcode" name="passcode" inputmode="numeric" autocomplete="current-password" maxlength="64" required>
+<div class="err" role="alert" id="gateErr"></div>
+<div class="actions" style="justify-content:center"><button class="sub" type="submit" id="gateGo">Continue ➜</button></div>
+<p class="hint">Ask the inclusion team if you don't have it. You stay signed in on this device for the school day.</p>
+</form>
+</div>
+
+<div id="formView" hidden>
+<h1>📤 Modify a document</h1>
+<p class="s">Gen-ed teachers: send a lesson file and we'll make Level 1, Level 2 and Level 3 inclusion versions that match your class. You can also send a whole Canvas course.</p>
 <ol class="steps" aria-label="How it works">
-<li><b>1</b>Fill in the details about your file.</li>
-<li><b>2</b><span id="step2txt">Attach the file on the Google Form that opens and press Submit.</span></li>
+<li><b>1</b>Fill in the details and attach your file.</li>
+<li><b>2</b>Press Send. No account needed.</li>
 <li><b>3</b>We make the versions and review them.</li>
 <li><b>4</b>They show up on your course page.</li>
 </ol>
 <form id="up" novalidate>
+<fieldset class="f" data-f="kind"><legend class="hp">What are you sending?</legend>
+<div class="kind">
+<label><input type="radio" name="kind" value="document" checked><span>📄 A document<small>Notes, worksheet, reading, quiz, slides, lab</small></span></label>
+<label><input type="radio" name="kind" value="canvas"><span>🎓 A Canvas course<small>A course export file (.imscc or .zip)</small></span></label>
+</div></fieldset>
 <div class="g">
-<div class="f" data-f="teacherName"><label for="teacherName">Your name</label><input type="text" id="teacherName" name="teacherName" autocomplete="name" placeholder="e.g. Ms. Rivera" required><div class="err" role="alert">Please add your name.</div></div>
-<div class="f" data-f="email"><label for="email">School email</label><input type="email" id="email" name="email" autocomplete="email" placeholder="you@school.org" required><div class="err" role="alert" id="emailErr">Please use your school email.</div></div>
-<div class="f" data-f="course"><label for="course">Class</label><select id="course" name="course" required><option value="">Choose a class…</option></select><div class="err" role="alert">Please choose a class.</div></div>
-<div class="f" data-f="unit"><label for="unit">Unit</label><select id="unit" name="unit" required disabled><option value="">Choose a class first</option></select><div class="err" role="alert">Please choose a unit.</div></div>
+<div class="f" data-f="teacherName"><label for="teacherName">Your name</label><input type="text" id="teacherName" name="teacherName" autocomplete="name" maxlength="100" placeholder="e.g. Ms. Rivera" required><div class="err" role="alert">Please add your name.</div></div>
+<div class="f" data-f="email"><label for="email">School email <span class="opt">(optional, so we can reply)</span></label><input type="email" id="email" name="email" autocomplete="email" maxlength="160" placeholder="you@school.org"><div class="err" role="alert">That email doesn't look right.</div></div>
+<fieldset class="f full" data-f="canvasMode" id="canvasModeBox" hidden><legend>What should we do with the course?</legend>
+<div class="lv">
+<label><input type="radio" name="canvasMode" value="existing" checked><span>Add to an existing class<small>Adds units and lessons to a class already on the site</small></span></label>
+<label><input type="radio" name="canvasMode" value="new"><span>Build a new class<small>Makes a new class page from the course</small></span></label>
+</div><div class="err" role="alert">Please choose one.</div></fieldset>
+<div class="f" data-f="course" id="courseBox"><label for="course">Class</label><select id="course" name="course"><option value="">Choose a class…</option></select><div class="err" role="alert">Please choose a class.</div></div>
+<div class="f" data-f="unit" id="unitBox"><label for="unit">Unit</label><select id="unit" name="unit" disabled><option value="">Choose a class first</option></select><div class="err" role="alert">Please choose a unit.</div></div>
+<div class="f" data-f="newClassName" id="newClassBox" hidden><label for="newClassName">New class name</label><input type="text" id="newClassName" name="newClassName" maxlength="100" placeholder="e.g. Forensic Science"><div class="err" role="alert">Please name the new class.</div></div>
 <fieldset class="f full" data-f="levels"><legend>Levels needed</legend>
 <div class="lv">
 <label><input type="checkbox" name="levels" value="Level 1"><span>Level 1 (we make Basic + Advanced)<small>About 2nd–3rd grade · pictures and word banks</small></span></label>
+<label><input type="checkbox" name="levels" value="Level 2"><span>Level 2<small>About 5th–6th grade · glossary and partly filled notes</small></span></label>
 <label><input type="checkbox" name="levels" value="Level 3"><span>Level 3<small>Close to class · guided notes</small></span></label>
 </div><div class="err" role="alert">Pick at least one level.</div></fieldset>
-<div class="f" data-f="docType"><label for="docType">Document type</label><select id="docType" name="docType" required><option value="">Choose a type…</option><option>Guided Notes</option><option>Worksheet</option><option>Reading</option><option>Quiz</option><option>Slides</option><option>Lab</option><option>Other</option></select><div class="err" role="alert">Please choose a type.</div></div>
-<div class="f"><label>Your file</label><div class="hint" style="margin-top:0;border:3px solid var(--gold);border-radius:16px;padding:12px 14px;background:var(--gb)">📎 <b>You attach the file on the next screen.</b><br>Step 1 only fills in the details. The Google Form opens with these answers filled in — attach your file there and press Submit.</div></div>
+<div class="f" data-f="docType" id="docTypeBox"><label for="docType">Document type</label><select id="docType" name="docType"><option value="">Choose a type…</option><option>Guided Notes</option><option>Worksheet</option><option>Reading</option><option>Quiz</option><option>Slides</option><option>Lab</option><option>Other</option></select><div class="err" role="alert">Please choose a type.</div></div>
+<div class="f full" data-f="file"><label for="file" id="fileLabel">Your file</label>
+<div class="drop" id="drop"><input type="file" id="file" name="file"><div class="big" aria-hidden="true">📄</div><b>Drop your file here</b><br><span id="dropHint">or tap to choose · PDF, Word, PowerPoint, a Google Docs/Slides download, or a photo · up to 25 MB</span></div>
+<div class="chosen" id="chosen" aria-live="polite"><span id="chosenName"></span><button type="button" id="clearFile">Change</button></div>
+<div class="apprnote" id="apprNote" aria-live="polite">⏳ Larger file: this one will need approval before it's created.</div>
+<div class="err" role="alert" id="fileErr">Please choose a file.</div>
+<div class="hint" id="gHint">Google Docs or Slides: File → Download → PDF, Word (.docx) or PowerPoint (.pptx), then attach that file.</div></div>
 <div class="f full" data-f="directions"><label for="directions">Directions for the modification <span class="opt">(what should we change or keep?)</span></label>
 <textarea id="directions" name="directions" maxlength="3000" placeholder="e.g. Keep the same blanks as my notes so students can follow along. Add a word bank at Level 1 Advanced. Pictures for Level 1 Basic. Due next Tuesday."></textarea>
 <div class="hint">Helpful: due date, which parts matter most, vocabulary to keep, anything students struggle with. Please don't name students.</div></div>
+<div class="hp" aria-hidden="true"><label for="website">Website</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
 </div>
 <div class="priv" data-f="ack">
 <h2>🔒 Student privacy (FERPA)</h2>
 <ul>
-<li><b>No student names or identifying info:</b> no names, IDs, photos of students, grades, or IEP/504 details in the file or directions.</li>
-<li>Files go to a <b>restricted school Google Drive folder</b>, not a public site, and only the inclusion team can open them.</li>
+<li><b>No student names or personal info:</b> no names, IDs, photos of students, grades, or IEP/504 details in the file or directions.</li>
+<li>Files go to <b>private storage</b> that only the inclusion team can open. They are never posted as you sent them.</li>
 <li>Nothing goes on the website until the inclusion teacher <b>reviews and approves</b> the finished versions. Anything with student info is removed, not posted.</li>
 </ul>
-<label class="ack"><input type="checkbox" id="ack" name="ack" required> I checked: this file has no student names or identifying information.</label>
+<label class="ack"><input type="checkbox" id="ack" name="ack" required> No student names or personal info: I checked this file and my directions.</label>
 <div class="err" role="alert">Please check the box to confirm.</div>
 </div>
-<div class="actions"><button class="sub" type="submit" id="go">Continue to Google Form to attach file ➜</button><span class="hint" id="goHint">Next, attach your file on the Google Form (your answers are already filled in), then press Submit. You may need to sign in with your school Google account.</span></div>
+<div class="formerr" id="formErr" role="alert"></div>
+<div class="actions"><button class="sub" type="submit" id="go">Send ➜</button><span class="hint" id="goHint">Your file goes straight to the inclusion team.</span></div>
+<div class="prog" id="prog" hidden><i id="progBar"></i></div>
 </form>
-<div class="nx"><b>What happens next:</b> we make the versions you asked for, review them, and post them on your course page, usually within a school day. Unusual files (scans, handwriting) can take a little longer.</div>
 </div>
 
 <div id="doneView" class="done" hidden tabindex="-1">
 <div class="big" aria-hidden="true">✅</div>
 <h2 id="doneTitle">Thanks, we've got it!</h2>
-<p id="doneMsg">Your request is on its way.</p>
+<p id="doneMsg">Your request was sent. We'll make the versions, review them, and post them on your course page.</p>
 <dl class="sum" id="sum"></dl>
 <p class="hint" id="doneFoot">Request code: <b id="rid"></b>. Mention it if you have a question.</p>
-<div class="btns"><a class="btn blue" id="reopen" href="#" target="_blank" rel="noopener" hidden>Open the Google Form again ↗</a><button class="btn ghost" type="button" id="another">Send another file</button></div>
+<div class="btns"><button class="btn ghost" type="button" id="another">Send another file</button></div>
 </div>
+
+<dialog class="big" id="bigDlg" aria-labelledby="bigTtl" aria-describedby="bigMsg">
+<h2 id="bigTtl">📦 This is a larger file</h2>
+<p id="bigMsg">This is a larger document and will need approval before it's created. You can still send it now, and we'll let you know once it's approved.</p>
+<p class="hint" id="bigSize"></p>
+<div class="btns"><button class="sub" type="button" id="bigSend">Send for approval</button><button class="btn ghost" type="button" id="bigPick">Pick a different file</button></div>
+</dialog>
+
+<p class="hint" id="loadMsg">Loading…</p>
 </section>
 </main>
 <footer class="foot"><div class="wrap">Ferndale High School Inclusion</div></footer>
-<iframe name="gfSink" id="gfSink" title="" hidden></iframe>
 <script>
 (function(){
-var C=window.PORTAL_CONFIG, UNITS={"SEL": ["Unit 1: Foundations & Community", "Unit 2: Self-Awareness: Who Am I?", "Unit 3: Self-Management", "Unit 4: Social Awareness", "Unit 5: Relationship Skills", "Unit 6: Stop, Think, Choose", "Unit 7: I Can Grow", "Unit 8: My Game Plan: Goals & Routines", "Unit 9: Reading the Room", "Unit 10: Team Up & Work It Out", "Unit 11: My SEL Showcase"], "Transitions": ["Unit 1: Self-Advocacy", "Unit 2: Independent Living", "Unit 3: Health, Wellness & Relationships", "Unit 4: Employment & Career Exploration", "Unit 5: Financial Literacy & Money", "Unit 6: Community Navigation & Mobility"], "Culinary 1": ["Unit 1: Safety & Sanitation", "Unit 2: Measuring & Function of Ingredients", "Unit 3: Quick Breads", "Unit 4: Yeast Breads", "Unit 5: Fruits & Vegetables", "Unit 6: Knife Skills", "Unit 7: Roux & Mirepoix", "Unit 8: Grains & Pasta", "Unit 9: Milk, Dairy & Eggs", "Unit 10: Table Setting & Etiquette", "Unit 11: Recipes Used in Class", "Unit 12: Protein & Main Dishes"], "Biology A": ["Unit 0: Science Starts: Safety & Lab Skills", "Unit 1: Orcas & the Salish Sea", "Unit 2: Algae & Photosynthesis", "Unit 3: Biofuel & Energy", "Unit 4: Food & Digestion", "Unit 5: Breathing, Exercise & Energy", "Unit 6: Blood Sugar & Diabetes", "Unit 7: Famous Fossils & Deep Time", "Unit 8: Final Review"], "Chemistry": ["Unit 0: Lab Safety & Equipment", "Unit 1A: Lightning 1: Charges & Static", "Unit 1B: Lightning 2: Electric Forces", "Unit 1C: Lightning 3: The Strike & Staying Safe", "Unit 2: Space Exploration & Survival", "Unit 3: Oysters", "Unit 4: Polar Ice", "Unit 5: Energy"], "Health": ["Unit 1: Wellness", "Unit 2: Food & Nutrition", "Unit 3: Substance Use & Abuse", "Unit 4: Social-Emotional Health", "Unit 5A: Sexual Health 1: Bodies, Pregnancy & Relationships", "Unit 5B: Sexual Health 2: STIs, Contraception & Safer Sex", "Unit 6: Safety, First Aid & CPR", "Unit 7: Hope, Purpose & Wonder"], "US History": ["Unit 1: Timeline & Political Cartoons", "Unit 2: The Heartland: Moving West", "Unit 3: Immigration & Cities", "Unit 4: Industry & the Progressives", "Unit 5: Civil Rights at the Turn of the Century", "Unit 6: Imperialism", "Unit 7: World War I", "Unit 8: Women's Suffrage", "Unit 9: The 1920s & Harlem Renaissance", "Unit 10: The Great Depression & New Deal"], "World History": ["Unit 1: Geography & World Religions", "Unit 2: Muslim Empires", "Unit 3: The Renaissance", "Unit 4: World War I", "Unit 5: The Russian Revolution", "Unit 6: Between the Wars", "Unit 7: World War II", "Unit 8: Genocide & Human Rights", "Unit 9: Cold War, China & India", "Unit 10: The Reformation", "Unit 11: The Enlightenment", "Unit 12: The French Revolution", "Unit 13: Latin American Revolutions", "Unit 14: The Industrial Revolution"], "Ag Science 1": ["Unit 1: Ag Words & Whatcom Farms", "Unit 2: Washington Crops: Potatoes, Wheat & Apples", "Unit 3: U.S. Food & Farm Facts", "Unit 4: FFA & Ag Careers", "Unit 5: Ag Experience Project", "Unit 6: Dairy", "Unit 7: Livestock Judging", "Unit 8: Final Review", "Unit 9: Ag Issues"], "Horticulture 1": ["Unit 0: Classroom & Greenhouse Basics", "Unit 1: Jobs in Horticulture", "Unit 2: Plant Names & Life Cycles", "Unit 3: Parts of the Plant", "Unit 4: Plant ID", "Unit 5: Soil & Nutrients", "Unit 6: Seeds", "Unit 7: Propagation", "Unit 8: Poinsettias", "Unit 9: Wreaths & Floral Design"], "Small Engines Overhaul": ["Unit 0: Shop Start-Up & Safety", "Unit 1: Measuring Tools", "Unit 2: Engine Careers", "Unit 3: 4-Stroke Theory & Engine Parts", "Unit 4: Compression", "Unit 5: Carburetion & Fuel", "Unit 6: Ignition", "Unit 7: Using the Repair Manual", "Unit 8: Engine Teardown & Rebuild"]};
-var DEMO=!C.FORM_ID||/REPLACE/.test(C.FORM_ID);
-var $=function(id){return document.getElementById(id)};
-var form=$('up'),course=$('course'),unit=$('unit'),file=null,drop=null;
-var OK_EXT=/\.(pdf|docx?|pptx?|png|jpe?g|gif|webp|heic)$/i;
-if(DEMO)$('demoNote').hidden=false;
-if(C.MODE==='post'){$('step2txt').textContent='Press Send. Your request goes straight to our team.';$('goHint').textContent='';}
+var UNITS={"SEL": ["Unit 1: Foundations & Community", "Unit 2: Self-Awareness: Who Am I?", "Unit 3: Self-Management", "Unit 4: Social Awareness", "Unit 5: Relationship Skills", "Unit 6: Stop, Think, Choose", "Unit 7: I Can Grow", "Unit 8: My Game Plan: Goals & Routines", "Unit 9: Reading the Room", "Unit 10: Team Up & Work It Out", "Unit 11: My SEL Showcase"], "Transitions": ["Unit 1: Self-Advocacy", "Unit 2: Independent Living", "Unit 3: Health, Wellness & Relationships", "Unit 4: Employment & Career Exploration", "Unit 5: Financial Literacy & Money", "Unit 6: Community Navigation & Mobility"], "Culinary 1": ["Unit 1: Safety & Sanitation", "Unit 2: Measuring & Function of Ingredients", "Unit 3: Quick Breads", "Unit 4: Yeast Breads", "Unit 5: Fruits & Vegetables", "Unit 6: Knife Skills", "Unit 7: Roux & Mirepoix", "Unit 8: Grains & Pasta", "Unit 9: Milk, Dairy & Eggs", "Unit 10: Table Setting & Etiquette", "Unit 11: Recipes Used in Class", "Unit 12: Protein & Main Dishes"], "Biology A": ["Unit 0: Science Starts: Safety & Lab Skills", "Unit 1: Orcas & the Salish Sea", "Unit 2: Algae & Photosynthesis", "Unit 3: Biofuel & Energy", "Unit 4: Food & Digestion", "Unit 5: Breathing, Exercise & Energy", "Unit 6: Blood Sugar & Diabetes", "Unit 7: Famous Fossils & Deep Time", "Unit 8: Final Review"], "Chemistry": ["Unit 0: Lab Safety & Equipment", "Unit 1A: Lightning 1: Charges & Static", "Unit 1B: Lightning 2: Electric Forces", "Unit 1C: Lightning 3: The Strike & Staying Safe", "Unit 2: Space Exploration & Survival", "Unit 3: Oysters", "Unit 4: Polar Ice", "Unit 5: Energy"], "Health": ["Unit 1: Wellness", "Unit 2: Food & Nutrition", "Unit 3: Substance Use & Abuse", "Unit 4: Social-Emotional Health", "Unit 5A: Sexual Health 1: Bodies, Pregnancy & Relationships", "Unit 5B: Sexual Health 2: STIs, Contraception & Safer Sex", "Unit 6: Safety, First Aid & CPR", "Unit 7: Hope, Purpose & Wonder"], "US History": ["Unit 1: Timeline & Political Cartoons", "Unit 2: The Heartland: Moving West", "Unit 3: Immigration & Cities", "Unit 4: Industry & the Progressives", "Unit 5: Civil Rights at the Turn of the Century", "Unit 6: Imperialism", "Unit 7: World War I", "Unit 8: Women's Suffrage", "Unit 9: The 1920s & Harlem Renaissance", "Unit 10: The Great Depression & New Deal"], "World History": ["Unit 1: Geography & World Religions", "Unit 2: Muslim Empires", "Unit 3: The Renaissance", "Unit 4: World War I", "Unit 5: The Russian Revolution", "Unit 6: Between the Wars", "Unit 7: World War II", "Unit 8: Genocide & Human Rights", "Unit 9: Cold War, China & India", "Unit 10: The Reformation", "Unit 11: The Enlightenment", "Unit 12: The French Revolution", "Unit 13: Latin American Revolutions", "Unit 14: The Industrial Revolution"], "Ag Science 1": ["Unit 1: Ag Words & Whatcom Farms", "Unit 2: Washington Crops: Potatoes, Wheat & Apples", "Unit 3: U.S. Food & Farm Facts", "Unit 4: FFA & Ag Careers", "Unit 5: Ag Experience Project", "Unit 6: Dairy", "Unit 7: Livestock Judging", "Unit 8: Final Review", "Unit 9: Ag Issues"], "Horticulture 1": ["Unit 0: Classroom & Greenhouse Basics", "Unit 1: Jobs in Horticulture", "Unit 2: Plant Names & Life Cycles", "Unit 3: Parts of the Plant", "Unit 4: Plant ID", "Unit 5: Soil & Nutrients", "Unit 6: Seeds", "Unit 7: Propagation", "Unit 8: Poinsettias", "Unit 9: Wreaths & Floral Design"], "Small Engines Overhaul": ["Unit 0: Shop Start-Up & Safety", "Unit 1: Measuring Tools", "Unit 2: Engine Careers", "Unit 3: 4-Stroke Theory & Engine Parts", "Unit 4: Compression", "Unit 5: Carburetion & Fuel", "Unit 6: Ignition", "Unit 7: Using the Repair Manual", "Unit 8: Engine Teardown & Rebuild"]};
+var API=location.origin+'/api';
+var DOC_EXT=/\.(pdf|docx?|pptx?|xlsx?|odt|odp|rtf|txt|png|jpe?g|gif|webp|heic)$/i, CANVAS_EXT=/\.(imscc|zip)$/i;
+var $=function(i){return document.getElementById(i)};
+var S={ft:'',maxDocMB:25,maxCanvasMB:95,largeDocMB:10,largeCanvasMB:50};
+var bigOk=null,afterBig=null;
+var form=$('up'),course=$('course'),unit=$('unit'),file=$('file'),drop=$('drop');
+function show(id){['gateView','formView','doneView','loadMsg'].forEach(function(x){$(x).hidden=(x!==id)})}
+function getJSON(u,o){return fetch(u,Object.assign({credentials:'same-origin',cache:'no-store'},o||{})).then(function(r){return r.json().catch(function(){return{ok:false,error:'Something went wrong. Please try again.'}}).then(function(j){j._status=r.status;return j})})}
+function loadSession(){return getJSON(API+'/session').then(function(j){S=j;if(j.gate&&!j.unlocked){show('gateView');$('passcode').focus()}else{show('formView')}})
+  .catch(function(){$('loadMsg').textContent='Could not load the upload page. Please refresh.'})}
+$('gateForm').addEventListener('submit',function(e){e.preventDefault();var pc=$('passcode').value;if(!pc){$('gateErr').textContent='Please type the passcode.';return}
+  $('gateGo').disabled=true;$('gateErr').textContent='';
+  getJSON(API+'/gate',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({passcode:pc})}).then(function(j){
+    $('gateGo').disabled=false;$('passcode').value='';
+    if(j.ok){loadSession()}else{$('gateErr').textContent=j.error||'That passcode didn\'t work.';$('passcode').focus()}
+  }).catch(function(){$('gateGo').disabled=false;$('gateErr').textContent='Network problem. Please try again.'})});
+
 Object.keys(UNITS).forEach(function(c){var o=document.createElement('option');o.textContent=c;course.appendChild(o)});
 course.addEventListener('change',function(){
   unit.innerHTML='';var list=UNITS[course.value]||[];
-  var first=document.createElement('option');first.value='';first.textContent=course.value?'Choose a unit…':'Choose a class first';unit.appendChild(first);
-  list.concat(['Not sure / other']).forEach(function(u){var o=document.createElement('option');o.textContent=u;unit.appendChild(o)});
-  unit.disabled=!course.value;
+  var f=document.createElement('option');f.value='';f.textContent=list.length?'Choose a unit…':'Choose a class first';unit.appendChild(f);
+  list.forEach(function(u){var o=document.createElement('option');o.textContent=u;unit.appendChild(o)});
+  var w=document.createElement('option');w.textContent='Whole class / not sure';if(list.length)unit.appendChild(w);
+  unit.disabled=!list.length;
 });
-function showFile(){}
-
-
-
-
-function v(n){var el=form.elements[n];return el&&el.value?el.value.trim():''}
-function levels(){return [].map.call(form.querySelectorAll('input[name=levels]:checked'),function(x){return x.value})}
-function emailOk(e){
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e))return false;
-  var d=(C.ALLOWED_EMAIL_DOMAINS||[]);if(!d.length)return true;
-  var dom=e.split('@')[1].toLowerCase();return d.some(function(x){return dom===x||dom.slice(-(x.length+1))==='.'+x});
+var v=function(n){var el=form.elements[n];return el?String(el.value||'').trim():''};
+function kind(){return form.querySelector('input[name=kind]:checked').value}
+function cmode(){return form.querySelector('input[name=canvasMode]:checked').value}
+function levels(){return [].slice.call(form.querySelectorAll('input[name=levels]:checked')).map(function(x){return x.value})}
+function layout(){
+  var c=kind()==='canvas', nw=c&&cmode()==='new';
+  $('canvasModeBox').hidden=!c;$('docTypeBox').hidden=c;$('unitBox').hidden=c;
+  $('courseBox').hidden=nw;$('newClassBox').hidden=!nw;
+  $('fileLabel').textContent=c?'Your Canvas course export':'Your file';
+  file.accept=c?'.imscc,.zip,application/zip':'.pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx,.odt,.odp,.rtf,.txt,.png,.jpg,.jpeg,.gif,.webp,.heic,application/pdf,image/*';
+  $('dropHint').textContent=c?('or tap to choose · Canvas export (.imscc or .zip) · up to '+S.maxCanvasMB+' MB'):('or tap to choose · PDF, Word, PowerPoint, a Google Docs/Slides download, or a photo · up to '+S.maxDocMB+' MB');
+  $('gHint').textContent=c?'In Canvas: Settings → Export Course Content → Course → Create Export, then download the .imscc file and attach it here.':'Google Docs or Slides: File → Download → PDF, Word (.docx) or PowerPoint (.pptx), then attach that file.';
+  if(file.files[0]&&!fileOk())check('file');
+  if(typeof note==='function')note();
 }
+[].forEach.call(form.querySelectorAll('input[name=kind],input[name=canvasMode]'),function(r){r.addEventListener('change',layout)});
+function showFile(){var f=file.files&&file.files[0];$('chosen').classList.toggle('on',!!f);
+  $('chosenName').textContent=f?('📎 '+f.name+' ('+(f.size/1048576).toFixed(1)+' MB)'):'';drop.hidden=!!f}
+function isBig(){var f=file.files&&file.files[0];if(!f)return false;var c=kind()==='canvas';return f.size>(c?S.largeCanvasMB:S.largeDocMB)*1048576}
+function fkey(){var f=file.files&&file.files[0];return f?(kind()+'|'+f.name+'|'+f.size):''}
+function note(){$('apprNote').classList.toggle('on',isBig()&&bigOk===fkey())}
+var dlg=$('bigDlg'),lastFocus=null;
+function openBig(then){var f=file.files[0],c=kind()==='canvas';afterBig=then||null;lastFocus=document.activeElement;
+  $('bigTtl').textContent=c?'📦 This is a larger course':'📦 This is a larger file';
+  $('bigMsg').textContent=(c?'This is a larger course':'This is a larger document')+' and will need approval before it\'s created. You can still send it now, and we\'ll let you know once it\'s approved.';
+  $('bigSize').textContent=f.name+' · '+(f.size/1048576).toFixed(1)+' MB (files over '+(c?S.largeCanvasMB:S.largeDocMB)+' MB need approval)';
+  if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','');$('bigSend').focus()}
+function closeBig(){if(dlg.close)dlg.close();else dlg.removeAttribute('open')}
+$('bigSend').addEventListener('click',function(){bigOk=fkey();closeBig();note();var t=afterBig;afterBig=null;if(t)t();else if(lastFocus&&lastFocus.focus)lastFocus.focus()});
+$('bigPick').addEventListener('click',function(){afterBig=null;closeBig();file.value='';bigOk=null;showFile();note();file.click()});
+dlg.addEventListener('cancel',function(e){e.preventDefault();$('bigPick').click()});
+file.addEventListener('change',function(){showFile();bigOk=null;note();if(check('file')&&isBig())openBig()});
+$('clearFile').addEventListener('click',function(){file.value='';bigOk=null;showFile();note();file.focus()});
+['dragenter','dragover'].forEach(function(e){drop.addEventListener(e,function(){drop.classList.add('over')})});
+['dragleave','drop'].forEach(function(e){drop.addEventListener(e,function(){drop.classList.remove('over')})});
 function fileOk(){
-  var f=file.files&&file.files[0];if(!f)return false;
-  if(!OK_EXT.test(f.name)){$('fileErr').textContent='That file type won\'t work. Please use PDF, Word, PowerPoint or an image.';return false}
-  if(f.size>C.MAX_FILE_MB*1048576){$('fileErr').textContent='That file is over '+C.MAX_FILE_MB+' MB. Try a PDF version.';return false}
+  var f=file.files&&file.files[0];if(!f){$('fileErr').textContent='Please choose a file.';return false}
+  var c=kind()==='canvas',cap=c?S.maxCanvasMB:S.maxDocMB;
+  if(!(c?CANVAS_EXT:DOC_EXT).test(f.name)){$('fileErr').textContent=c?'Please attach the Canvas export (.imscc or .zip).':'That file type won\'t work. Please use PDF, Word, PowerPoint, a Google Docs/Slides download, or an image.';return false}
+  if(f.size>cap*1048576){$('fileErr').textContent='That file is over '+cap+' MB.'+(c?'':' Try a PDF version.');return false}
   return true;
 }
-var rules={teacherName:function(){return !!v('teacherName')},email:function(){return emailOk(v('email'))},course:function(){return !!v('course')},unit:function(){return !!v('unit')},levels:function(){return levels().length>0},docType:function(){return !!v('docType')},ack:function(){return $('ack').checked}};
+var rules={teacherName:function(){return !!v('teacherName')},
+  email:function(){var e=v('email');return !e||/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)},
+  course:function(){return (kind()==='canvas'&&cmode()==='new')||!!v('course')},
+  unit:function(){return kind()==='canvas'||!!v('unit')},
+  newClassName:function(){return !(kind()==='canvas'&&cmode()==='new')||!!v('newClassName')},
+  levels:function(){return levels().length>0},
+  docType:function(){return kind()==='canvas'||!!v('docType')},
+  file:fileOk,
+  ack:function(){return $('ack').checked}};
 function check(k){var ok=rules[k]();var box=form.querySelector('[data-f='+k+']');if(box)box.classList.toggle('bad',!ok);return ok}
 Object.keys(rules).forEach(function(k){var box=form.querySelector('[data-f='+k+']');if(box)box.addEventListener('change',function(){if(box.classList.contains('bad'))check(k)})});
-function rid(){var d=new Date(),p=function(n){return('0'+n).slice(-2)};return 'UP-'+d.getFullYear()+p(d.getMonth()+1)+p(d.getDate())+'-'+Math.random().toString(36).slice(2,6).toUpperCase()}
-function data(){var f=null;return{teacherName:v('teacherName'),email:v('email'),course:v('course'),unit:v('unit'),levels:levels(),docType:v('docType'),fileName:f?f.name:'',directions:v('directions'),requestId:rid()}}
-function params(d){
-  var q=[];Object.keys(C.ENTRY).forEach(function(k){if(!C.ENTRY[k])return;var val=d[k];if(val==null||val==='')return;
-    if(k==='course'){
-      if(val==='Biology A')val='Biology';
-      if(val==='Ag Science 1')val='Ag Sci';
-      if(val==='Culinary 1')val='Culinary';
-      if(val==='Horticulture 1')val='Horticulture';
-      if(val==='Small Engines Overhaul')val='Small Engines';
-    }
-    (Array.isArray(val)?val:[val]).forEach(function(x){q.push(encodeURIComponent(C.ENTRY[k])+'='+encodeURIComponent(x))})});
-  return q;
-}
-var base=function(){return 'https://docs.google.com/forms/d/e/'+encodeURIComponent(C.FORM_ID)};
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
-function done(d,mode){
-  var rows=[['Class',d.course],['Unit',d.unit],['Levels',d.levels.join(', ')],['Type',d.docType],['File',d.fileName]];
-  if(d.directions)rows.push(['Directions',d.directions.length>140?d.directions.slice(0,140)+'…':d.directions]);
-  $('sum').innerHTML=rows.map(function(r){return '<dt>'+r[0]+'</dt><dd>'+esc(r[1])+'</dd>'}).join('');
-  $('rid').textContent=d.requestId;
-  if(mode==='prefill'){
-    $('doneTitle').textContent='Almost done: attach your file';
-    $('doneMsg').innerHTML='The Google Form opened in a new tab with your answers filled in. <b>Attach '+esc(d.fileName)+' there and press Submit.</b> Your request isn\'t sent until you do.';
-    $('reopen').hidden=false;
-  }else if(mode==='demo'){
-    $('doneTitle').textContent='Thanks, we\'ve got it! (preview)';
-    $('doneMsg').textContent='Preview mode: nothing was sent. Once the Google Form is connected, this is what teachers will see.';
-  }else{
-    $('doneTitle').textContent='Thanks, we\'ve got it!';
-    $('doneMsg').textContent='Your request was sent. We\'ll make the versions, review them, and post them on your course page, usually within a school day.';
-  }
-  $('formView').hidden=true;$('doneView').hidden=false;$('doneView').focus();window.scrollTo(0,0);
-}
+function err(m){$('formErr').textContent=m;$('formErr').classList.toggle('on',!!m)}
+function busy(b){$('go').disabled=b;$('prog').hidden=!b;if(!b)$('progBar').style.width='0'}
+function putFile(id,tok,f){return new Promise(function(res){
+  var x=new XMLHttpRequest();x.open('PUT',API+'/upload/file/'+encodeURIComponent(id)+'?t='+encodeURIComponent(tok));x.withCredentials=true;
+  x.upload.onprogress=function(e){if(e.lengthComputable)$('progBar').style.width=Math.round(e.loaded/e.total*100)+'%'};
+  x.onload=function(){var j={};try{j=JSON.parse(x.responseText)}catch(e){}j._status=x.status;res(j)};
+  x.onerror=function(){res({ok:false,error:'Network problem while sending the file. Please try again.'})};
+  x.send(f)})}
 form.addEventListener('submit',function(e){
-  e.preventDefault();
+  e.preventDefault();err('');
   var bad=Object.keys(rules).filter(function(k){return !check(k)});
   if(bad.length){var el=form.querySelector('[data-f='+bad[0]+'] input,[data-f='+bad[0]+'] select');if(el)el.focus();return}
-  var d=data();d.fileName='(attach on Google Form)';
-  if(DEMO){done(d,'demo');return}
-  if(C.MODE==='post'){
-    var f=document.createElement('form');f.method='POST';f.action=base()+'/formResponse';f.target='gfSink';f.hidden=true;
-    params(d).forEach(function(p){var kv=p.split('=');var i=document.createElement('input');i.type='hidden';i.name=decodeURIComponent(kv[0]);i.value=decodeURIComponent(kv[1]);f.appendChild(i)});
-    document.body.appendChild(f);$('go').disabled=true;
-    $('gfSink').onload=function(){$('go').disabled=false;done(d,'post')};
-    f.submit();setTimeout(function(){if(!$('formView').hidden){$('go').disabled=false;done(d,'post')}},4000);
-    return;
-  }
-  var url=base()+'/viewform?usp=pp_url&'+params(d).join('&');
-  $('reopen').href=url;window.open(url,'_blank','noopener');done(d,'prefill');
+  if(isBig()&&bigOk!==fkey()){openBig(function(){form.requestSubmit?form.requestSubmit():form.dispatchEvent(new Event('submit',{cancelable:true}))});return}
+  var f=file.files[0],c=kind()==='canvas';
+  var d={kind:kind(),teacherName:v('teacherName'),email:v('email'),course:(c&&cmode()==='new')?'':v('course'),unit:c?'':v('unit'),
+    canvasMode:c?cmode():'',newClassName:(c&&cmode()==='new')?v('newClassName'):'',levels:levels(),docType:c?'':v('docType'),
+    directions:v('directions'),fileName:f.name,fileSize:f.size,ack:$('ack').checked,website:v('website'),ft:S.ft,largeAck:isBig()};
+  busy(true);
+  getJSON(API+'/upload/start',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(d)}).then(function(j){
+    if(!j.ok){if(j.needGate){busy(false);loadSession();return}throw new Error(j.error||'We couldn\'t send that.')}
+    return putFile(j.id,j.putToken,f).then(function(r){if(!r.ok)throw new Error(r.error||'We couldn\'t save the file.');d.needsApproval=!!j.needsApproval;done(d,j.id)});
+  }).catch(function(x){busy(false);err(x.message||'We couldn\'t send that. Please try again.')});
 });
+function done(d,id){
+  busy(false);
+  var rows=d.kind==='canvas'?[['Sent','Canvas course'],[d.canvasMode==='new'?'New class':'Add to',d.canvasMode==='new'?d.newClassName:d.course]]:[['Class',d.course],['Unit',d.unit],['Type',d.docType]];
+  rows.push(['Levels',d.levels.join(', ')],['File',d.fileName]);
+  if(d.directions)rows.push(['Directions',d.directions.length>140?d.directions.slice(0,140)+'…':d.directions]);
+  $('sum').innerHTML=rows.map(function(r){return '<dt>'+esc(r[0])+'</dt><dd>'+esc(r[1])+'</dd>'}).join('');
+  $('doneMsg').textContent=d.needsApproval?'Your request was sent. Because it\'s a larger file, it needs approval before we create the versions. We\'ll let you know once it\'s approved.':'Your request was sent. We\'ll make the versions, review them, and post them on your course page.';
+  if(d.needsApproval)rows.unshift(['Status','Waiting for approval (larger file)']),$('sum').innerHTML=rows.map(function(r){return '<dt>'+esc(r[0])+'</dt><dd>'+esc(r[1])+'</dd>'}).join('');
+  $('rid').textContent=id;show('doneView');$('doneView').focus();window.scrollTo(0,0);
+}
 $('another').addEventListener('click',function(){
   var keep={teacherName:v('teacherName'),email:v('email'),course:v('course')};
   form.reset();course.value=keep.course;course.dispatchEvent(new Event('change'));
   form.elements.teacherName.value=keep.teacherName;form.elements.email.value=keep.email;
-  showFile();$('reopen').hidden=true;$('doneView').hidden=true;$('formView').hidden=false;$('teacherName').focus();
+  bigOk=null;showFile();layout();err('');loadSession().then(function(){$('teacherName').focus()});
 });
-})();</script>
+try{var q=new URLSearchParams(location.search).get('kind');if(q==='canvas'||q==='document'){form.querySelector('input[name=kind][value='+q+']').checked=true}}catch(e){}
+layout();loadSession().then(layout);
+})();
+</script>
 </body>
 </html>

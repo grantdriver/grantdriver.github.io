@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Student Schedule Builder · Ferndale Inclusion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b1f4d;--gold:#f2b705;--gold2:#ffc82e;--blue:#1d4fa3;--cream:#fbf7ee;--gb:#fde8a6;--bb:#dbe5f5;--green:#1a7340;--muted:#4a5b80;--card:#fff}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{color:var(--navy);font-family:Poppins,"Segoe UI",system-ui,sans-serif;font-size:16px;line-height:1.45;background:var(--cream)}
+:focus-visible{outline:4px solid var(--gold);outline-offset:2px}
+.top{background:var(--navy);color:#fff}
+.top-in{max-width:1400px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.logo{width:40px;height:40px;border-radius:50%;background:var(--blue);border:2.5px solid var(--gold);display:grid;place-items:center;font-size:20px;flex-shrink:0}
+.brand .site{display:block;font-size:12px;font-weight:600;color:var(--gold2)}
+.brand .app{display:block;font-size:18px;font-weight:800;line-height:1.15}
+.stripe{height:6px;background:var(--gold)}
+.pvbar{background:#fff7e0;border-bottom:2px dashed var(--gold);padding:8px 16px;font-size:14px;font-weight:600;text-align:center;color:var(--navy)}
+.toolbar{max-width:1400px;margin:0 auto;padding:12px 16px 0;display:flex;align-items:center;gap:8px 12px;flex-wrap:wrap}
+.toolbar label{font-size:13px;font-weight:700;color:var(--muted)}
+.toolbar input[type=text]{font:inherit;font-weight:700;border:2.5px solid var(--navy);border-radius:12px;padding:6px 10px;color:var(--navy);background:#fff;min-width:140px}
+#initials{width:7.5ch;text-align:center;letter-spacing:.06em;text-transform:uppercase}
+.saved-wrap{max-width:1400px;margin:0 auto;padding:10px 16px 0}
+.saved-wrap h2{margin:0 0 8px;font-size:15px;font-weight:800}
+.saved-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.saved-list li{display:flex;align-items:center;gap:6px;background:#fff;border:2.5px solid var(--navy);border-radius:14px;padding:6px 8px 6px 12px;box-shadow:0 2px 0 var(--navy)}
+.saved-list li.active{outline:3px solid var(--gold);background:var(--gb)}
+.saved-list .sid{font-weight:800;font-size:16px;min-width:3ch}
+.saved-list .mini{font-size:12px;padding:4px 10px;box-shadow:0 2px 0 var(--navy)}
+.saved-empty{font-size:13px;font-weight:600;color:var(--muted);margin:0}
+.save-status{font-size:13px;font-weight:700;color:var(--green);min-height:1em}
+.modal-back{position:fixed;inset:0;background:rgba(11,31,77,.45);z-index:120;display:flex;align-items:center;justify-content:center;padding:20px}
+.modal-back[hidden]{display:none!important}
+.modal{background:#fff;border:3px solid var(--navy);border-radius:18px;box-shadow:0 8px 0 var(--navy);padding:20px;max-width:440px;width:100%}
+.modal h3{margin:0 0 8px;font-size:20px;font-weight:800}
+.modal p{margin:0 0 14px;font-weight:600}
+.modal input[type=text]{font:inherit;font-weight:700;border:2.5px solid var(--navy);border-radius:12px;padding:6px 10px;color:var(--navy);width:8ch;text-align:center;text-transform:uppercase;letter-spacing:.06em;margin:0 0 14px;display:block}
+.modal .row{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.btn{appearance:none;border:2.5px solid var(--navy);background:#fff;color:var(--navy);font:inherit;font-weight:800;font-size:14px;padding:6px 14px;border-radius:999px;cursor:pointer;box-shadow:0 3px 0 var(--navy);line-height:1.2}
+.btn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--navy)}
+.btn.gold{background:var(--gold);border-color:var(--navy)}
+.btn.navy{background:var(--navy);color:#fff;border-color:var(--navy)}
+.btn[aria-pressed=true]{background:var(--navy);color:#fff}
+.seg{display:flex;gap:0}
+.seg .btn{border-radius:0;box-shadow:none}
+.seg .btn:first-child{border-radius:999px 0 0 999px}
+.seg .btn:last-child{border-radius:0 999px 999px 0;margin-left:-2.5px}
+.hint{font-size:13px;font-weight:600;color:var(--muted);margin:0}
+.wrap{max-width:1400px;margin:0 auto;padding:12px 16px 40px;display:grid;grid-template-columns:300px 1fr 1fr;gap:16px;align-items:start}
+@media(max-width:1100px){.wrap{grid-template-columns:1fr 1fr}.bank{grid-column:1/-1}}
+@media(max-width:720px){.wrap{grid-template-columns:1fr}}
+.bank{background:#fff;border:3px solid var(--navy);border-radius:18px;box-shadow:0 4px 0 var(--navy);padding:12px;position:sticky;top:8px;max-height:calc(100vh - 24px);overflow:auto}
+@media(max-width:1100px){.bank{position:static;max-height:none}}
+.bank h2{margin:0 0 8px;font-size:16px;font-weight:800}
+.bank .search{width:100%;font:inherit;font-size:14px;border:2.5px solid var(--navy);border-radius:12px;padding:6px 10px;margin-bottom:8px}
+.cats{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px}
+.cats button{appearance:none;border:2px solid var(--navy);background:var(--bb);color:var(--navy);font:inherit;font-size:11px;font-weight:800;border-radius:999px;padding:2px 8px;cursor:pointer}
+.cats button[aria-pressed=true]{background:var(--navy);color:#fff}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:8px}
+.tile{border:2.5px solid var(--navy);border-radius:14px;background:#fff;padding:6px 4px 8px;cursor:grab;text-align:center;user-select:none;touch-action:none;box-shadow:0 2px 0 rgba(11,31,77,.12)}
+.tile:hover{outline:3px solid var(--gold)}
+.tile.selected{outline:3px solid var(--gold);background:var(--gb)}
+.tile img{width:64px;height:64px;object-fit:cover;border-radius:12px;display:block;margin:0 auto 4px;pointer-events:none;background:var(--cream)}
+.tile .nm{font-size:11px;font-weight:800;line-height:1.2;color:var(--navy)}
+.daycol{background:#fff;border:3px solid var(--navy);border-radius:18px;box-shadow:0 4px 0 var(--navy);padding:10px;min-height:200px}
+.dayhead{display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;text-align:center;border-radius:14px;padding:7px 10px;margin:0 0 8px;border:3px solid var(--navy)}
+.daycol-blue .dayhead{background:var(--navy);color:#fff}
+.daycol-gold .dayhead{background:var(--gold);color:var(--navy)}
+.slot{display:flex;align-items:stretch;margin:0 0 8px;min-height:86px;border-radius:14px;overflow:hidden;border:2.5px solid var(--navy);background:#fff;padding:0;position:relative}
+.slot:not(.filled){border-style:dashed;border-color:#9db4d8}
+.slot.over{outline:3px dashed var(--gold);outline-offset:1px}
+.pside{flex:0 0 108px;background:var(--navy);color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:8px 10px;text-align:left;line-height:1.15}
+.pside .pn{font-weight:800;font-size:20px;color:#fff;letter-spacing:.01em}
+.pside .pt{font-weight:800;font-size:14px;color:var(--gold2);margin-top:3px;line-height:1.2}
+.slot .empty{flex:1;display:flex;align-items:center;padding:8px 12px;color:var(--muted);font-size:13px;font-weight:700;background:#f7f9fd}
+.placed{flex:1;display:flex;align-items:center;gap:10px;padding:6px 10px;background:#fff;border:0;border-radius:0;margin:0;box-shadow:none;cursor:grab;touch-action:none;user-select:none;min-width:0}
+.placed img{width:64px;height:64px;object-fit:cover;border-radius:12px;flex-shrink:0;pointer-events:none;background:var(--cream)}
+.placed .meta{flex:1;min-width:0}
+.placed .cname{font-family:Nunito,Poppins,sans-serif;font-size:18px;font-weight:800;line-height:1.15}
+.placed .room{font-size:12px;font-weight:700;color:var(--muted)}
+.placed .x{appearance:none;border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:999px;width:28px;height:28px;font-weight:800;cursor:pointer;flex-shrink:0}
+.placed .room-edit{width:72px;font:inherit;font-size:12px;font-weight:700;border:2px solid var(--navy);border-radius:8px;padding:2px 6px}
+.placed .room-edit.bus-edit{width:88px}
+.placed .room.busno{font-size:14px;font-weight:800;color:var(--navy);display:flex;align-items:center;gap:6px}
+.placed .bus-mini{width:18px;height:18px;border-radius:4px;object-fit:cover;flex-shrink:0;pointer-events:none;background:var(--cream)}
+body.student .placed .room.busno{font-size:20px}
+body.student .placed .bus-mini{width:24px;height:24px}
+@media print{
+  .placed .room.busno{display:flex;font-size:16px}
+  .placed .bus-mini{width:20px;height:20px}
+  body.print-card .placed .room.busno{font-size:11px}
+  body.print-card .placed .bus-mini{width:14px;height:14px}
+}
+.ghost{position:fixed;z-index:80;pointer-events:none;width:88px;padding:6px;background:#fff;border:3px solid var(--gold);border-radius:14px;box-shadow:0 10px 22px rgba(11,31,77,.35);text-align:center;font-size:11px;font-weight:800}
+.ghost img{width:64px;height:64px;object-fit:cover;border-radius:12px;display:block;margin:0 auto 4px}
+body.student .builder-only,body.student .bank,body.student .toolbar .builder-only{display:none}
+body.student .wrap{grid-template-columns:1fr 1fr;max-width:1100px}
+body.student .daycol{box-shadow:0 4px 0 var(--navy)}
+body.student .slot{border-style:solid;border-color:var(--navy);background:#fff;min-height:0;margin:0 0 10px;box-shadow:0 3px 0 var(--navy)}
+body.student .pside{flex-basis:120px;padding:10px 12px}
+body.student .pside .pn{font-size:24px}
+body.student .pside .pt{font-size:16px}
+body.student .placed{cursor:default;margin:0;padding:10px 14px;box-shadow:none}
+body.student .placed img{width:92px;height:92px}
+body.student .placed .cname{font-size:26px}
+body.student .placed .x,body.student .placed .room-edit{display:none}
+body.student .slot .empty{background:#fff;color:transparent;font-size:0}
+body.student .out-title{display:block}
+body.student #btnClear,body.student .saved-wrap{display:none}
+.out-title{display:none;text-align:center;margin:0 0 8px}
+.out-title h1{font-family:Nunito,Poppins,sans-serif;font-size:32px;margin:0;font-weight:900}
+.out-title .initials-out{font-size:18px;font-weight:800;color:var(--muted)}
+.print-opts{display:none}
+@media print{
+  .top,.stripe,.pvbar,.toolbar,.bank,.print-hide,.placed .x,.placed .room-edit{display:none!important}
+  body{background:#fff}
+  .wrap{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0;max-width:none}
+  body.print-blue .daycol-gold,body.print-gold .daycol-blue{display:none}
+  body.print-blue .wrap,body.print-gold .wrap{grid-template-columns:1fr}
+  .out-title{display:block}
+  .daycol{box-shadow:none;break-inside:avoid}
+  .slot{box-shadow:none;break-inside:avoid}
+  .placed{box-shadow:none;break-inside:avoid}
+  .pside{flex-basis:108px;padding:8px 10px}
+  .pside .pn{font-size:18px}
+  .pside .pt{font-size:13px;color:var(--gold2)}
+  .placed img{width:80px;height:80px}
+  .placed .cname{font-size:22px}
+  @page{size:letter;margin:.45in}
+  body.print-blue .pside,body.print-gold .pside{flex-basis:130px}
+  body.print-blue .pside .pn,body.print-gold .pside .pn{font-size:26px}
+  body.print-blue .pside .pt,body.print-gold .pside .pt{font-size:18px}
+  body.print-card .wrap{display:flex;flex-direction:row;justify-content:center;gap:24px;padding:20px}
+  body.print-card .daycol{width:3.8in;min-height:5.2in;border-radius:16px;padding:10px 8px 14px;box-shadow:none}
+  body.print-card .slot{margin:0 0 5px;min-height:0;box-shadow:none}
+  body.print-card .pside{flex-basis:64px;padding:3px 5px}
+  body.print-card .pside .pn{font-size:11px}
+  body.print-card .pside .pt{font-size:9px;font-weight:800;color:#fff;margin-top:1px}
+  body.print-card .placed{margin:0;padding:3px 6px}
+  body.print-card .placed img{width:40px;height:40px}
+  body.print-card .placed .cname{font-size:13px}
+  body.print-card .punch{display:block}
+}
+.punch{display:none;width:18px;height:18px;border:2.5px solid var(--navy);border-radius:50%;margin:0 auto 6px;background:#fff}
+</style>
+</head>
+<body>
+<div class="pvbar print-hide">Schedules stay on this device. Nothing is saved to a server.</div>
+<header class="top print-hide">
+  <div class="top-in">
+    <div class="logo" aria-hidden="true">🦆</div>
+    <div class="brand"><span class="site"><a href="/" style="color:inherit;text-decoration:none">Ferndale Inclusion</a></span><span class="app">Student Schedule Builder</span></div>
+  </div>
+</header>
+<div class="stripe print-hide"></div>
+<div class="toolbar">
+  <label for="initials">Initials</label>
+  <input type="text" id="initials" maxlength="6" placeholder="AB" autocomplete="off" spellcheck="false" autocapitalize="characters" inputmode="text" aria-describedby="initialsHint">
+  <button type="button" class="btn gold builder-only" id="btnSave">Save</button>
+  <span class="save-status builder-only" id="saveStatus" role="status"></span>
+  <span class="builder-only">
+    <label>Lunch</label>
+    <span class="seg" role="group" aria-label="Lunch wave">
+      <button type="button" class="btn" id="lunch1">1st lunch</button>
+      <button type="button" class="btn" id="lunch2" aria-pressed="true">2nd lunch</button>
+    </span>
+  </span>
+  <span class="seg" role="group" aria-label="View">
+    <button type="button" class="btn" id="viewBuild" aria-pressed="true">Builder</button>
+    <button type="button" class="btn gold" id="viewStudent">Student view</button>
+  </span>
+  <button type="button" class="btn" id="btnPrint">Print</button>
+  <span class="seg print-hide" id="printKinds">
+    <button type="button" class="btn" data-print="both">Both days</button>
+    <button type="button" class="btn" data-print="blue">Blue</button>
+    <button type="button" class="btn" data-print="gold">Gold</button>
+    <button type="button" class="btn" data-print="card">Wallet / lanyard</button>
+  </span>
+  <button type="button" class="btn print-hide builder-only" id="btnClear">Clear this screen</button>
+  <p class="hint builder-only" id="initialsHint">Drag a class into a period, or tap a class and then tap a period. Drag to move or remove. Initials can be 1–3 letters, like AB or A.B.</p>
+</div>
+<section class="saved-wrap builder-only print-hide" id="savedWrap" aria-label="Saved schedules">
+  <h2>Saved schedules</h2>
+  <ul class="saved-list" id="savedList"></ul>
+  <p class="saved-empty" id="savedEmpty">No saved schedules on this device yet.</p>
+</section>
+
+<div class="out-title">
+  <h1>My Schedule</h1>
+  <div class="initials-out" id="outInitials"></div>
+</div>
+
+<main class="wrap" id="wrap">
+  <aside class="bank" id="bank" aria-label="Class bank">
+    <h2>Class bank</h2>
+    <input class="search" id="search" type="search" placeholder="Find a class" aria-label="Find a class">
+    <div class="cats" id="cats"></div>
+    <div class="tiles" id="tiles"></div>
+  </aside>
+  <section class="daycol daycol-blue" id="col-blue" aria-label="Blue Day"></section>
+  <section class="daycol daycol-gold" id="col-gold" aria-label="Gold Day"></section>
+</main>
+
+<script>
+const ICONS = "icons/";
+const CATS = ["All","Daily","SLE","English","Math","Science","Social Studies","Arts","PE","Languages","CTE"];
+const CLASSES = [
+  {id:"arrival", name:"Arrival", short:"Arrival", icon:"arrival", cat:"Daily"},
+  {id:"eagle-time", name:"Eagle Time", short:"Eagle Time", icon:"eagle", cat:"Daily"},
+  {id:"lunch", name:"Lunch", short:"Lunch", icon:"lunch", cat:"Daily"},
+  {id:"bus", name:"Bus / Departure", short:"Bus", icon:"bus", cat:"Daily"},
+  {id:"support-room", name:"Support Room", short:"Support Room", icon:"support", cat:"Daily"},
+  {id:"academic-workshop", name:"Academic Workshop", short:"Workshop", icon:"workshop", cat:"Daily"},
+  {id:"sel", name:"SEL", short:"SEL", icon:"sel", cat:"SLE"},
+  {id:"interpersonal-1", name:"Interpersonal Skills 1", short:"Interpersonal 1", icon:"interpersonal", cat:"SLE"},
+  {id:"interpersonal-2", name:"Interpersonal Skills 2", short:"Interpersonal 2", icon:"interpersonal", cat:"SLE"},
+  {id:"transitions", name:"Transitions", short:"Transitions", icon:"transitions", cat:"SLE"},
+  {id:"loyo", name:"Living on Your Own", short:"LOYO", icon:"loyo", cat:"SLE"},
+  {id:"aa-english", name:"AA English", short:"AA English", icon:"english", cat:"English"},
+  {id:"eng-101", name:"English 101", short:"English 101", icon:"english", cat:"English"},
+  {id:"eng-201", name:"English 201", short:"English 201", icon:"english", cat:"English"},
+  {id:"eng-301", name:"English 301", short:"English 301", icon:"english", cat:"English"},
+  {id:"eng-401", name:"English 401", short:"English 401", icon:"english", cat:"English"},
+  {id:"resource-eng-301", name:"Resource English 301", short:"Res. English 301", icon:"english", cat:"English"},
+  {id:"aa-math", name:"AA Math", short:"AA Math", icon:"math", cat:"Math"},
+  {id:"gen-math", name:"General Math", short:"General Math", icon:"math", cat:"Math"},
+  {id:"alg-2", name:"Algebra 2", short:"Algebra 2", icon:"math", cat:"Math"},
+  {id:"int-alg", name:"Intermediate Algebra", short:"Int. Algebra", icon:"math", cat:"Math"},
+  {id:"int-alg-2", name:"Intermediate Algebra 2", short:"Int. Algebra 2", icon:"math", cat:"Math"},
+  {id:"fin-alg", name:"Financial Algebra", short:"Fin. Algebra", icon:"math", cat:"Math"},
+  {id:"ext-alg", name:"Extended Algebra", short:"Extended Alg.", icon:"math", cat:"Math"},
+  {id:"geometry", name:"Geometry", short:"Geometry", icon:"math", cat:"Math"},
+  {id:"geo-stem", name:"Geometry STEM", short:"Geometry STEM", icon:"math", cat:"Math"},
+  {id:"biology", name:"Biology", short:"Biology", icon:"biology", cat:"Science"},
+  {id:"chemistry", name:"Chemistry", short:"Chemistry", icon:"chemistry", cat:"Science"},
+  {id:"physics", name:"Physics", short:"Physics", icon:"physics", cat:"Science"},
+  {id:"forensics", name:"Forensics", short:"Forensics", icon:"forensics", cat:"Science"},
+  {id:"health", name:"Health", short:"Health", icon:"health", cat:"Science"},
+  {id:"ag-sci-1", name:"Ag Science 1", short:"Ag Science 1", icon:"agscience", cat:"Science"},
+  {id:"ag-sci-2", name:"Ag Science 2", short:"Ag Science 2", icon:"agscience", cat:"Science"},
+  {id:"hort-1", name:"Horticulture 1", short:"Horticulture 1", icon:"horticulture", cat:"Science"},
+  {id:"hort-2", name:"Horticulture 2", short:"Horticulture 2", icon:"horticulture", cat:"Science"},
+  {id:"floral", name:"Floral Design", short:"Floral Design", icon:"floral", cat:"CTE"},
+  {id:"landscaping", name:"Landscaping", short:"Landscaping", icon:"landscaping", cat:"CTE"},
+  {id:"small-engines", name:"Small Engines", short:"Small Engines", icon:"engines", cat:"CTE"},
+  {id:"culinary-1", name:"Culinary 1", short:"Culinary 1", icon:"culinary", cat:"CTE"},
+  {id:"culinary-2", name:"Culinary 2", short:"Culinary 2", icon:"culinary", cat:"CTE"},
+  {id:"world-history", name:"World History", short:"World History", icon:"worldhistory", cat:"Social Studies"},
+  {id:"us-history", name:"US History", short:"US History", icon:"ushistory", cat:"Social Studies"},
+  {id:"civics", name:"Civics", short:"Civics", icon:"civics", cat:"Social Studies"},
+  {id:"cwp", name:"Current World Problems", short:"CWP", icon:"cwp", cat:"Social Studies"},
+  {id:"cwc", name:"Contemporary World Cultures", short:"CWC", icon:"cwc", cat:"Social Studies"},
+  {id:"art-1", name:"Art 1", short:"Art 1", icon:"art", cat:"Arts"},
+  {id:"art-2", name:"Art 2", short:"Art 2", icon:"art", cat:"Arts"},
+  {id:"ceramics-1", name:"Ceramics 1", short:"Ceramics 1", icon:"ceramics", cat:"Arts"},
+  {id:"guitar", name:"Guitar", short:"Guitar", icon:"guitar", cat:"Arts"},
+  {id:"orchestra", name:"Orchestra", short:"Orchestra", icon:"orchestra", cat:"Arts"},
+  {id:"drumming", name:"Drumming", short:"Drumming", icon:"drumming", cat:"Arts"},
+  {id:"percussion", name:"Percussion", short:"Percussion", icon:"drumming", cat:"Arts"},
+  {id:"music-lab", name:"Music Creation Lab", short:"Music Lab", icon:"musiclab", cat:"Arts"},
+  {id:"theater", name:"Theater Arts", short:"Theater", icon:"theater", cat:"Arts"},
+  {id:"yoga", name:"Yoga", short:"Yoga", icon:"yoga", cat:"PE"},
+  {id:"walking", name:"Walking", short:"Walking", icon:"walking", cat:"PE"},
+  {id:"lifetime", name:"Lifetime Activities", short:"Lifetime PE", icon:"lifetimepe", cat:"PE"},
+  {id:"unified-pe", name:"Unified PE", short:"Unified PE", icon:"unifiedpe", cat:"PE"},
+  {id:"weights", name:"Weights", short:"Weights", icon:"weights", cat:"PE"},
+  {id:"weights-sports", name:"Weights and Sports", short:"Weights & Sports", icon:"lifetimepe", cat:"PE"},
+  {id:"women-weights", name:"Women in Weights", short:"Women in Weights", icon:"weights", cat:"PE"},
+  {id:"aqua", name:"Aquaculture", short:"Aquaculture", icon:"aqua", cat:"Science"},
+  {id:"spanish-1", name:"Spanish 1", short:"Spanish 1", icon:"spanish", cat:"Languages"},
+  {id:"spanish-2", name:"Spanish 2", short:"Spanish 2", icon:"spanish", cat:"Languages"},
+  {id:"french-2", name:"French 2", short:"French 2", icon:"french", cat:"Languages"},
+  {id:"lummi-2", name:"Lummi 2", short:"Lummi 2", icon:"lummi", cat:"Languages"},
+  {id:"oksale", name:"Lummi Leadership", short:"Lummi Leadership", icon:"oksale", cat:"Languages"},
+  {id:"retail", name:"Retail Management", short:"Retail", icon:"retail", cat:"CTE"},
+  {id:"robotics-1", name:"Robotics 1", short:"Robotics 1", icon:"robotics", cat:"CTE"},
+  {id:"unified-robotics", name:"Unified Robotics", short:"Unified Robotics", icon:"robotics", cat:"CTE"},
+  {id:"video", name:"Video Production", short:"Video Production", icon:"video", cat:"CTE"},
+  {id:"web-design", name:"Web Design", short:"Web Design", icon:"webdesign", cat:"CTE"},
+  {id:"design-construction", name:"Design Construction", short:"Design Construction", icon:"construction", cat:"CTE"},
+  {id:"metals", name:"Metals", short:"Metals", icon:"metals", cat:"CTE"},
+  {id:"yearbook", name:"Yearbook", short:"Yearbook", icon:"yearbook", cat:"CTE"},
+  {id:"sports-marketing", name:"Sports Marketing", short:"Sports Marketing", icon:"sportsmarketing", cat:"CTE"},
+  {id:"world-of-business", name:"World of Business", short:"World of Business", icon:"business", cat:"CTE"},
+  {id:"leadership-1", name:"Leadership 1", short:"Leadership 1", icon:"leadership", cat:"CTE"},
+  {id:"leadership-2", name:"Leadership 2", short:"Leadership 2", icon:"leadership", cat:"CTE"}
+];
+const BY_ID = Object.fromEntries(CLASSES.map(c => [c.id, c]));
+const KEY = "ssb-v1";
+const SAVES_KEY = "ssb-saves-v1";
+
+const TIMES = {
+  arrival: {label:"Arrival", side:"Arrival", t:"7:30–7:40"},
+  p1: {label:"1st", side:"1st", t:"7:40–9:00"},
+  p5: {label:"5th", side:"5th", t:"7:40–9:00"},
+  et: {label:"Eagle Time", side:"ET", t:"9:05–9:30"},
+  p2: {label:"2nd", side:"2nd", t:"9:35–10:55"},
+  p6: {label:"6th", side:"6th", t:"9:35–10:55"},
+  p3_2: {label:"3rd", side:"3rd", t:"11:00–12:20"},
+  p7_2: {label:"7th", side:"7th", t:"11:00–12:20"},
+  lunch_2: {label:"Lunch", side:"Lunch", t:"12:20–12:50"},
+  p3_1: {label:"3rd", side:"3rd", t:"11:30–12:50"},
+  p7_1: {label:"7th", side:"7th", t:"11:30–12:50"},
+  lunch_1: {label:"Lunch", side:"Lunch", t:"10:55–11:25"},
+  p4: {label:"4th", side:"4th", t:"12:55–2:00"},
+  p8: {label:"8th", side:"8th", t:"12:55–2:00"},
+  bus: {label:"Bus", side:"Bus", t:"2:00–2:16"}
+};
+
+function slotOrder(wave){
+  if(wave === "first"){
+    return {
+      blue: ["arrival","p1","et","p2","lunch_1","p3_1","p4","bus"],
+      gold: ["arrival","p5","et","p6","lunch_1","p7_1","p8","bus"]
+    };
+  }
+  return {
+    blue: ["arrival","p1","et","p2","p3_2","lunch_2","p4","bus"],
+    gold: ["arrival","p5","et","p6","p7_2","lunch_2","p8","bus"]
+  };
+}
+
+let state = {
+  initials: "",
+  currentId: "",
+  lunchWave: "second",
+  blue: {},
+  gold: {},
+  cat: "All",
+  q: "",
+  selected: null,
+  view: "builder"
+};
+
+function lettersFrom(raw){
+  let letters = "";
+  for(const ch of String(raw||"").toUpperCase()){
+    if(ch>="A" && ch<="Z"){
+      if(letters.length>=3) continue;
+      letters += ch;
+    }
+  }
+  return letters;
+}
+function filterInitialsInput(raw){
+  let letters = 0, out = "";
+  for(const ch of String(raw||"").toUpperCase()){
+    if(ch>="A" && ch<="Z"){
+      if(letters>=3) continue;
+      letters += 1;
+      out += ch;
+    }else if(ch==="." && letters>0 && !out.endsWith(".")){
+      out += ".";
+    }
+  }
+  return out;
+}
+function isSaveId(s){
+  return /^[A-Z]{1,3}(-[0-9]+)?$/.test(s||"");
+}
+function baseLetters(id){
+  return lettersFrom(String(id||"").split("-")[0]);
+}
+function load(){
+  try{
+    const raw = localStorage.getItem(KEY);
+    if(!raw) return;
+    const d = JSON.parse(raw);
+    if(d && typeof d === "object"){
+      const rawInit = (typeof d.initials === "string") ? d.initials : (typeof d.code === "string" ? d.code : "");
+      state.initials = isSaveId(rawInit) ? rawInit : lettersFrom(rawInit);
+      state.currentId = isSaveId(d.currentId) ? d.currentId : (isSaveId(state.initials) ? state.initials : "");
+      state.lunchWave = d.lunchWave === "first" ? "first" : "second";
+      state.blue = sanitizeDay(d.blue);
+      state.gold = sanitizeDay(d.gold);
+    }
+  }catch(e){}
+}
+function save(){
+  try{
+    localStorage.setItem(KEY, JSON.stringify({
+      initials: state.initials, currentId: state.currentId,
+      lunchWave: state.lunchWave, blue: state.blue, gold: state.gold
+    }));
+  }catch(e){}
+}
+function readSaves(){
+  try{
+    const raw = localStorage.getItem(SAVES_KEY);
+    const d = raw ? JSON.parse(raw) : null;
+    if(d && d.items && typeof d.items === "object") return d.items;
+  }catch(e){}
+  return {};
+}
+function writeSaves(items){
+  localStorage.setItem(SAVES_KEY, JSON.stringify({ v:1, items }));
+}
+function nextSuffix(base, items){
+  let n = 2;
+  while(items[base + "-" + n]) n += 1;
+  return base + "-" + n;
+}
+function isBusSlot(slot){ return slot==="bus"; }
+function placementFrom(v, slot){
+  if(!v || typeof v !== "object" || !BY_ID[v.classId]) return null;
+  if(isBusSlot(slot)){
+    const raw = (v.bus!=null && String(v.bus)!=="") ? v.bus : (v.room||"");
+    return { classId: v.classId, bus: String(raw).slice(0,16) };
+  }
+  return { classId: v.classId, room: String(v.room||"").slice(0,16) };
+}
+function fieldValue(placed, slot){
+  if(!placed) return "";
+  if(isBusSlot(slot)) return String(placed.bus || placed.room || "");
+  return String(placed.room || "");
+}
+function busDisplay(val){
+  const t = String(val||"").trim();
+  if(!t) return "";
+  if(/^bus\s*#?\s*/i.test(t)) return t;
+  if(/^#/.test(t)) return "Bus " + t;
+  return "Bus #" + t;
+}
+function sanitizeDay(day){
+  const out = {};
+  if(!day || typeof day !== "object") return out;
+  const keys = ["arrival","et","lunch","p1","p2","p3","p4","p5","p6","p7","p8","bus"];
+  for(const k of keys){
+    const next = placementFrom(day[k], k);
+    if(next) out[k] = next;
+  }
+  return out;
+}
+function migrateSaves(){
+  try{
+    const items = readSaves();
+    let changed = false;
+    for(const id of Object.keys(items)){
+      const it = items[id];
+      if(!it || typeof it !== "object") continue;
+      const blue = sanitizeDay(it.blue);
+      const gold = sanitizeDay(it.gold);
+      if(JSON.stringify(blue)!==JSON.stringify(it.blue||{}) || JSON.stringify(gold)!==JSON.stringify(it.gold||{})){
+        items[id] = { ...it, blue, gold };
+        changed = true;
+      }
+    }
+    if(changed) writeSaves(items);
+  }catch(e){}
+}
+function snapshot(id){
+  return {
+    initials: id,
+    lunchWave: state.lunchWave === "first" ? "first" : "second",
+    blue: sanitizeDay(state.blue),
+    gold: sanitizeDay(state.gold),
+    updatedAt: Date.now()
+  };
+}
+function applySaved(item){
+  state.initials = item.initials;
+  state.currentId = item.initials;
+  state.lunchWave = item.lunchWave === "first" ? "first" : "second";
+  state.blue = sanitizeDay(item.blue);
+  state.gold = sanitizeDay(item.gold);
+  state.selected = null;
+  save();
+  render();
+}
+function putSave(id, items){
+  items[id] = snapshot(id);
+  writeSaves(items);
+  state.initials = id;
+  state.currentId = id;
+  save();
+  setStatus("Saved " + id + ".");
+  render();
+}
+let statusTimer = 0;
+function setStatus(msg){
+  const el = document.getElementById("saveStatus");
+  el.textContent = msg || "";
+  clearTimeout(statusTimer);
+  if(msg) statusTimer = setTimeout(() => { el.textContent = ""; }, 4000);
+}
+function showDialog({title, message, inputValue, buttons}){
+  return new Promise(resolve => {
+    const root = document.getElementById("modalRoot");
+    const inputHtml = (inputValue !== undefined)
+      ? `<input type="text" id="modalInput" maxlength="6" value="${esc(inputValue)}" autocomplete="off" spellcheck="false">`
+      : "";
+    root.innerHTML = `<div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <h3 id="modalTitle">${esc(title)}</h3>
+      <p>${esc(message)}</p>
+      ${inputHtml}
+      <div class="row">${buttons.map((b,i)=>`<button type="button" class="btn ${b.cls||""}" data-i="${i}">${esc(b.label)}</button>`).join("")}</div>
+    </div>`;
+    root.hidden = false;
+    const finish = (val) => { root.hidden = true; root.innerHTML = ""; resolve(val); };
+    root.querySelectorAll("[data-i]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const b = buttons[Number(btn.dataset.i)];
+        const inp = root.querySelector("#modalInput");
+        finish({ action: b.action, value: inp ? inp.value : undefined });
+      });
+    });
+    const inp = root.querySelector("#modalInput");
+    if(inp){
+      inp.addEventListener("input", () => { inp.value = filterInitialsInput(inp.value); });
+      inp.focus();
+      inp.select();
+    } else {
+      const last = root.querySelector(".row .btn:last-child");
+      if(last) last.focus();
+    }
+  });
+}
+async function onSaveClick(){
+  const typed = document.getElementById("initials").value;
+  let id = isSaveId(typed) && typed.includes("-") ? typed : lettersFrom(typed);
+  if(!id){
+    await showDialog({ title:"Initials needed", message:"Enter 1 to 3 letters, like AB or A.B.", buttons:[{label:"OK", cls:"navy", action:"ok"}] });
+    document.getElementById("initials").focus();
+    return;
+  }
+  const items = readSaves();
+  if(items[id] && state.currentId !== id){
+    const alt = nextSuffix(baseLetters(id), items);
+    const pick = await showDialog({
+      title:"Initials already saved",
+      message:"A schedule for " + id + " is already saved. Overwrite it, or save as " + alt + "?",
+      buttons:[
+        {label:"Cancel", action:"cancel"},
+        {label:"Overwrite", action:"overwrite"},
+        {label:"Save as " + alt, cls:"gold", action:"suffix"}
+      ]
+    });
+    if(!pick || pick.action==="cancel") return;
+    if(pick.action==="suffix") id = alt;
+  }
+  putSave(id, items);
+}
+function renderSaved(){
+  const items = readSaves();
+  const ids = Object.keys(items).sort((a,b) => a.localeCompare(b));
+  const list = document.getElementById("savedList");
+  const empty = document.getElementById("savedEmpty");
+  empty.hidden = ids.length>0;
+  list.innerHTML = ids.map(id => {
+    const active = state.currentId===id ? " active" : "";
+    return `<li class="${active}" data-save-id="${esc(id)}">
+      <button type="button" class="sid btn mini" data-act="load" title="Open ${esc(id)}">${esc(id)}</button>
+      <button type="button" class="btn mini" data-act="rename">Rename</button>
+      <button type="button" class="btn mini" data-act="dup">Duplicate</button>
+      <button type="button" class="btn mini" data-act="del">Delete</button>
+    </li>`;
+  }).join("");
+}
+async function onSavedClick(ev){
+  const btn = ev.target.closest("[data-act]");
+  if(!btn) return;
+  const li = btn.closest("[data-save-id]");
+  const id = li && li.dataset.saveId;
+  if(!id) return;
+  const items = readSaves();
+  const item = items[id];
+  if(!item) return;
+  const act = btn.dataset.act;
+  if(act==="load"){
+    applySaved(item);
+    setStatus("Opened " + id + ".");
+    return;
+  }
+  if(act==="dup"){
+    const copyId = nextSuffix(baseLetters(id), items);
+    items[copyId] = { ...item, initials: copyId, blue: sanitizeDay(item.blue), gold: sanitizeDay(item.gold), updatedAt: Date.now() };
+    writeSaves(items);
+    applySaved(items[copyId]);
+    setStatus("Copied as " + copyId + ".");
+    return;
+  }
+  if(act==="del"){
+    const pick = await showDialog({
+      title:"Delete this schedule?",
+      message:"Delete the saved schedule for " + id + "? This cannot be undone.",
+      buttons:[{label:"Cancel", action:"cancel"},{label:"Delete", cls:"navy", action:"del"}]
+    });
+    if(!pick || pick.action!=="del") return;
+    delete items[id];
+    writeSaves(items);
+    if(state.currentId===id) state.currentId = "";
+    save();
+    setStatus("Deleted " + id + ".");
+    render();
+    return;
+  }
+  if(act==="rename"){
+    const pick = await showDialog({
+      title:"Rename",
+      message:"New initials for this schedule (1–3 letters):",
+      inputValue: baseLetters(id),
+      buttons:[{label:"Cancel", action:"cancel"},{label:"Rename", cls:"gold", action:"ok"}]
+    });
+    if(!pick || pick.action!=="ok") return;
+    let next = lettersFrom(pick.value);
+    if(!next){
+      await showDialog({ title:"Initials needed", message:"Enter 1 to 3 letters.", buttons:[{label:"OK", cls:"navy", action:"ok"}] });
+      return;
+    }
+    if(next!==id && items[next]){
+      const alt = nextSuffix(next, items);
+      const clash = await showDialog({
+        title:"Initials already saved",
+        message:"A schedule for " + next + " is already saved. Overwrite it, or rename to " + alt + "?",
+        buttons:[
+          {label:"Cancel", action:"cancel"},
+          {label:"Overwrite", action:"overwrite"},
+          {label:"Use " + alt, cls:"gold", action:"suffix"}
+        ]
+      });
+      if(!clash || clash.action==="cancel") return;
+      if(clash.action==="suffix") next = alt;
+      else if(clash.action==="overwrite") delete items[next];
+    }
+    if(next===id) return;
+    items[next] = { ...item, initials: next, updatedAt: Date.now() };
+    delete items[id];
+    writeSaves(items);
+    if(state.currentId===id){
+      state.currentId = next;
+      state.initials = next;
+    }
+    save();
+    setStatus("Renamed to " + next + ".");
+    render();
+  }
+}
+function periodKey(slotId){
+  if(slotId.startsWith("p1")||slotId==="p1") return "p1";
+  if(slotId.startsWith("p2")||slotId==="p2") return "p2";
+  if(slotId.startsWith("p3")) return "p3";
+  if(slotId.startsWith("p4")||slotId==="p4") return "p4";
+  if(slotId.startsWith("p5")||slotId==="p5") return "p5";
+  if(slotId.startsWith("p6")||slotId==="p6") return "p6";
+  if(slotId.startsWith("p7")) return "p7";
+  if(slotId.startsWith("p8")||slotId==="p8") return "p8";
+  if(slotId.startsWith("lunch")) return "lunch";
+  if(slotId==="et") return "et";
+  if(slotId==="arrival") return "arrival";
+  if(slotId==="bus") return "bus";
+  return slotId;
+}
+
+function imgFor(c){ return ICONS + c.icon + ".webp"; }
+
+function renderBank(){
+  const cats = document.getElementById("cats");
+  cats.innerHTML = CATS.map(c => `<button type="button" aria-pressed="${state.cat===c}" data-cat="${c}">${c}</button>`).join("");
+  const q = state.q.trim().toLowerCase();
+  const list = CLASSES.filter(c => (state.cat==="All"||c.cat===state.cat) && (!q || c.name.toLowerCase().includes(q) || c.short.toLowerCase().includes(q)));
+  document.getElementById("tiles").innerHTML = list.map(c => `
+    <div class="tile${state.selected===c.id?" selected":""}" role="button" tabindex="0" data-class="${c.id}" aria-label="${c.name}" aria-pressed="${state.selected===c.id}">
+      <img src="${imgFor(c)}" alt="" width="64" height="64">
+      <div class="nm">${c.short}</div>
+    </div>`).join("");
+}
+
+function renderDay(day){
+  const col = document.getElementById("col-"+day);
+  const order = slotOrder(state.lunchWave)[day];
+  const title = day==="blue" ? "Blue Day" : "Gold Day";
+  const rows = order.map(slotId => {
+    const info = TIMES[slotId];
+    const pk = periodKey(slotId);
+    const placed = state[day][pk];
+    const cls = placed && BY_ID[placed.classId];
+    let inner;
+    const pside = `<div class="pside" aria-label="${esc(info.label)} ${esc(info.t)}"><span class="pn">${esc(info.side)}</span><span class="pt">${esc(info.t)}</span></div>`;
+    if(cls){
+      const isBus = isBusSlot(pk);
+      const val = fieldValue(placed, pk);
+      const shown = val
+        ? (isBus
+          ? `<div class="room busno"><img class="bus-mini" src="${ICONS}bus.webp" alt="">${esc(busDisplay(val))}</div>`
+          : `<div class="room">${esc(val)}</div>`)
+        : "";
+      const ph = isBus ? "Bus #" : "Room";
+      const aria = isBus ? `Bus number for ${cls.name}` : `Room for ${cls.name}`;
+      const fieldCls = isBus ? "room-edit bus-edit print-hide" : "room-edit print-hide";
+      inner = `<div class="placed" data-day="${day}" data-slot="${pk}" data-class="${cls.id}">
+        <img src="${imgFor(cls)}" alt="" width="64" height="64">
+        <div class="meta">
+          <div class="cname">${esc(cls.name)}</div>
+          ${shown}
+          <input class="${fieldCls}" data-day="${day}" data-slot="${pk}" data-field="${isBus?"bus":"room"}" placeholder="${ph}" value="${esc(val)}" maxlength="16" aria-label="${esc(aria)}">
+        </div>
+        <button type="button" class="x print-hide" data-remove="${day}:${pk}" aria-label="Remove ${esc(cls.name)}">×</button>
+      </div>`;
+    } else {
+      inner = `<div class="empty">Drop a class here</div>`;
+    }
+    return `<div class="slot${cls?" filled":""}" data-day="${day}" data-slot="${pk}">${pside}${inner}</div>`;
+  }).join("");
+  col.innerHTML = `<div class="dayhead"><span class="punch" aria-hidden="true"></span>${title}</div>${rows}`;
+}
+
+function render(){
+  document.getElementById("initials").value = state.initials;
+  document.getElementById("lunch1").setAttribute("aria-pressed", state.lunchWave==="first");
+  document.getElementById("lunch2").setAttribute("aria-pressed", state.lunchWave==="second");
+  document.getElementById("viewBuild").setAttribute("aria-pressed", state.view==="builder");
+  document.getElementById("viewStudent").setAttribute("aria-pressed", state.view==="student");
+  document.body.classList.toggle("student", state.view==="student");
+  document.getElementById("outInitials").textContent = state.initials || "";
+  renderBank();
+  renderDay("blue");
+  renderDay("gold");
+  bindDynamic();
+  renderSaved();
+}
+
+function esc(s){ return String(s||"").replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+function place(day, slot, classId, from){
+  if(!BY_ID[classId]) return;
+  const dest = state[day];
+  const keep = dest[slot] && dest[slot].classId===classId ? dest[slot] : {classId};
+  const incoming = placementFrom(keep, slot);
+  if(from && from.day && from.slot && (from.day!==day || from.slot!==slot)){
+    const moving = dest===state[from.day] ? dest[from.slot] : state[from.day][from.slot];
+    const swap = dest[slot];
+    if(moving){
+      const sameField = isBusSlot(slot)===isBusSlot(from.slot);
+      dest[slot] = placementFrom(sameField ? moving : {classId: moving.classId}, slot);
+      if(swap) state[from.day][from.slot] = placementFrom(sameField ? swap : {classId: swap.classId}, from.slot);
+      else delete state[from.day][from.slot];
+      save(); render(); return;
+    }
+  }
+  dest[slot] = incoming;
+  state.selected = null;
+  save(); render();
+}
+function remove(day, slot){
+  delete state[day][slot];
+  save(); render();
+}
+
+function bindDynamic(){
+  document.querySelectorAll(".tile").forEach(el => {
+    el.addEventListener("pointerdown", ev => startDrag(ev, {type:"bank", classId: el.dataset.class, el}));
+    el.addEventListener("keydown", ev => {
+      if(ev.key==="Enter" || ev.key===" "){
+        ev.preventDefault();
+        state.selected = state.selected===el.dataset.class ? null : el.dataset.class;
+        renderBank(); bindDynamic();
+      }
+    });
+  });
+  document.querySelectorAll(".placed").forEach(el => {
+    el.addEventListener("pointerdown", ev => {
+      if(ev.target.closest(".x") || ev.target.closest(".room-edit")) return;
+      startDrag(ev, {type:"slot", classId: el.dataset.class, day: el.dataset.day, slot: el.dataset.slot, el});
+    });
+  });
+  document.querySelectorAll("[data-remove]").forEach(btn => {
+    btn.addEventListener("click", ev => {
+      ev.stopPropagation();
+      const [day,slot] = btn.dataset.remove.split(":");
+      remove(day, slot);
+    });
+  });
+  document.querySelectorAll(".room-edit").forEach(inp => {
+    inp.addEventListener("change", () => {
+      const day=inp.dataset.day, slot=inp.dataset.slot;
+      if(!state[day][slot]) return;
+      const val = inp.value.trim();
+      if(isBusSlot(slot)){
+        state[day][slot].bus = val;
+        delete state[day][slot].room;
+      }else{
+        state[day][slot].room = val;
+      }
+      save();
+    });
+    inp.addEventListener("pointerdown", ev => ev.stopPropagation());
+  });
+  document.querySelectorAll(".slot").forEach(slot => {
+    slot.addEventListener("pointerup", ev => {
+      if(drag && drag.moved) return;
+      if(state.selected && ev.target.closest(".x,.room-edit")) return;
+      if(state.selected && ev.currentTarget){
+        // handled in endDrag / tap path
+      }
+    });
+  });
+}
+
+let drag = null;
+function startDrag(ev, src){
+  if(ev.button && ev.button!==0) return;
+  ev.preventDefault();
+  src.el.setPointerCapture(ev.pointerId);
+  drag = { ...src, startX: ev.clientX, startY: ev.clientY, moved:false, ghost:null, pointerId: ev.pointerId };
+  const move = ev2 => onMove(ev2);
+  const up = ev2 => { onUp(ev2); src.el.removeEventListener("pointermove", move); src.el.removeEventListener("pointerup", up); src.el.removeEventListener("pointercancel", up); };
+  src.el.addEventListener("pointermove", move);
+  src.el.addEventListener("pointerup", up);
+  src.el.addEventListener("pointercancel", up);
+}
+function onMove(ev){
+  if(!drag) return;
+  const dx=ev.clientX-drag.startX, dy=ev.clientY-drag.startY;
+  if(!drag.moved && Math.hypot(dx,dy)<8) return;
+  if(!drag.moved){
+    drag.moved = true;
+    const c = BY_ID[drag.classId];
+    const g = document.createElement("div");
+    g.className = "ghost";
+    g.innerHTML = `<img src="${imgFor(c)}" alt=""><div>${esc(c.short)}</div>`;
+    document.body.appendChild(g);
+    drag.ghost = g;
+  }
+  if(drag.ghost){
+    drag.ghost.style.left = (ev.clientX-44)+"px";
+    drag.ghost.style.top = (ev.clientY-44)+"px";
+  }
+  document.querySelectorAll(".slot.over").forEach(s => s.classList.remove("over"));
+  const hit = hitSlot(ev.clientX, ev.clientY);
+  if(hit) hit.classList.add("over");
+}
+function hitSlot(x,y){
+  if(drag && drag.ghost) drag.ghost.style.visibility="hidden";
+  const el = document.elementFromPoint(x,y);
+  if(drag && drag.ghost) drag.ghost.style.visibility="visible";
+  return el && el.closest(".slot");
+}
+function onUp(ev){
+  if(!drag) return;
+  const d = drag;
+  drag = null;
+  document.querySelectorAll(".slot.over").forEach(s => s.classList.remove("over"));
+  if(d.ghost) d.ghost.style.visibility="hidden";
+  const under = document.elementFromPoint(ev.clientX, ev.clientY);
+  const hit = under && under.closest ? under.closest(".slot") : null;
+  const overBank = under && under.closest ? under.closest("#bank") : null;
+  if(d.ghost) d.ghost.remove();
+  if(d.moved){
+    if(hit){
+      place(hit.dataset.day, hit.dataset.slot, d.classId, d.type==="slot"?{day:d.day,slot:d.slot}:null);
+      state.selected = null;
+    } else if(d.type==="slot" && overBank){
+      remove(d.day, d.slot);
+    }
+    return;
+  }
+  // tap
+  if(d.type==="bank"){
+    if(state.selected===d.classId) state.selected = null;
+    else state.selected = d.classId;
+    render();
+    return;
+  }
+  if(d.type==="slot" && state.selected){
+    place(d.day, d.slot, state.selected, null);
+    state.selected = null;
+    return;
+  }
+}
+
+document.addEventListener("pointerup", ev => {
+  if(drag) return;
+  if(!state.selected) return;
+  const slot = ev.target.closest && ev.target.closest(".slot");
+  if(!slot) return;
+  if(ev.target.closest(".x,.room-edit")) return;
+  // If the slot already handled via startDrag on empty area...
+  if(!ev.target.closest(".placed")){
+    place(slot.dataset.day, slot.dataset.slot, state.selected, null);
+    state.selected = null;
+  }
+}, true);
+
+document.getElementById("cats").addEventListener("click", ev => {
+  const b = ev.target.closest("[data-cat]");
+  if(!b) return;
+  state.cat = b.dataset.cat;
+  render();
+});
+document.getElementById("search").addEventListener("input", ev => { state.q = ev.target.value; renderBank(); bindDynamic(); });
+const initialsEl = document.getElementById("initials");
+initialsEl.addEventListener("input", ev => {
+  ev.target.value = filterInitialsInput(ev.target.value);
+  state.initials = ev.target.value;
+  save();
+  document.getElementById("outInitials").textContent = lettersFrom(state.initials) || state.initials;
+});
+initialsEl.addEventListener("blur", ev => {
+  if(isSaveId(ev.target.value) && ev.target.value.includes("-")){
+    state.initials = ev.target.value;
+  }else{
+    state.initials = lettersFrom(ev.target.value);
+    ev.target.value = state.initials;
+  }
+  save();
+  document.getElementById("outInitials").textContent = state.initials || "";
+});
+document.getElementById("btnSave").addEventListener("click", () => { onSaveClick(); });
+document.getElementById("savedList").addEventListener("click", ev => { onSavedClick(ev); });
+document.getElementById("lunch1").addEventListener("click", () => { state.lunchWave="first"; save(); render(); });
+document.getElementById("lunch2").addEventListener("click", () => { state.lunchWave="second"; save(); render(); });
+document.getElementById("viewBuild").addEventListener("click", () => { state.view="builder"; render(); });
+document.getElementById("viewStudent").addEventListener("click", () => { state.view="student"; render(); });
+document.getElementById("btnClear").addEventListener("click", () => {
+  if(!confirm("Clear the schedule on screen? Saved schedules are kept.")) return;
+  state.initials=""; state.currentId=""; state.blue={}; state.gold={}; state.selected=null;
+  try{ localStorage.removeItem(KEY); }catch(e){}
+  render();
+});
+document.getElementById("btnPrint").addEventListener("click", () => {
+  state.view="student"; render();
+  document.body.classList.remove("print-blue","print-gold","print-card");
+  window.print();
+});
+document.getElementById("printKinds").addEventListener("click", ev => {
+  const b = ev.target.closest("[data-print]");
+  if(!b) return;
+  const kind = b.dataset.print;
+  state.view="student"; render();
+  document.body.classList.remove("print-blue","print-gold","print-card");
+  if(kind==="blue") document.body.classList.add("print-blue");
+  if(kind==="gold") document.body.classList.add("print-gold");
+  if(kind==="card") document.body.classList.add("print-card");
+  window.print();
+});
+window.addEventListener("afterprint", () => { document.body.classList.remove("print-blue","print-gold","print-card"); });
+document.addEventListener("keydown", ev => {
+  if(ev.key==="Escape"){
+    const root = document.getElementById("modalRoot");
+    if(root && !root.hidden){ root.hidden = true; root.innerHTML = ""; return; }
+    state.selected=null; render();
+  }
+});
+
+migrateSaves();
+load();
+render();
+</script>
+<div class="modal-back print-hide" id="modalRoot" hidden></div>
+</body>
+</html>

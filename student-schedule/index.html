@@ -94,6 +94,11 @@ body{color:var(--navy);font-family:Poppins,"Segoe UI",system-ui,sans-serif;font-
 .placed .room-edit.pickup-edit{width:170px}
 .pside .pn.pn-sm{font-size:16px}
 .slot.optional:not(.filled) .empty{font-style:italic}
+.placed .bfast{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;margin-top:4px;padding:3px 8px;border:2px dashed #e0b84a;border-radius:10px;background:#fff8e6;width:fit-content;max-width:100%}
+.placed .bf-l{font-weight:800;font-size:14px;color:var(--navy)}.placed .bf-l{display:inline-flex;align-items:center;gap:5px}.placed .bfast img.bf-i{width:24px!important;height:24px!important;border-radius:5px;flex:none}body.print-card .placed .bfast img.bf-i{width:14px!important;height:14px!important}.placed .bf-loc{display:none;font-size:12px;font-weight:700;color:var(--muted)}body.student .placed .bf-loc{display:inline}
+.placed .bloc-edit{width:190px;max-width:100%}.placed .bf-x{border:0;background:none;font-size:12px;font-weight:800;text-decoration:underline;cursor:pointer;color:var(--muted);min-height:32px;padding:0 4px}
+body.student .placed .bloc-edit,body.student .placed .bf-x{display:none}body.student .placed .bf-l{font-size:17px}body.student .placed .bf-loc{font-size:15px}
+@media print{.placed .bf-loc{display:inline}.placed .bfast{margin-top:2px;padding:1px 6px}.placed .bf-l{font-size:15px}.placed .bf-loc{font-size:13px}body.print-card .placed .bf-l{font-size:10px}body.print-card .placed .bf-loc{font-size:9px}body.print-card .placed .bfast{padding:0 4px;border-width:1px}}
 body.student .slot.optional:not(.filled){display:none}
 body.student .pside .pn.pn-sm{font-size:18px}
 @media print{body.student .pside .pn.pn-sm{font-size:15px}body.print-card .pside .pn.pn-sm{font-size:10px}}
@@ -318,7 +323,6 @@ const SAVES_KEY = "ssb-saves-v1";
 
 const TIMES = {
   arrival: {label:"Arrival", side:"Arrival", t:"7:30–7:40"},
-  breakfast: {label:"Breakfast", side:"Breakfast", t:"Before 1st", sm:true},
   p1: {label:"1st", side:"1st", t:"7:40–9:00"},
   p5: {label:"5th", side:"5th", t:"7:40–9:00"},
   et: {label:"Eagle Time", side:"ET", t:"9:05–9:30"},
@@ -338,13 +342,13 @@ const TIMES = {
 function slotOrder(wave){
   if(wave === "first"){
     return {
-      blue: ["arrival","breakfast","p1","et","p2","lunch_1","p3_1","p4","bus"],
-      gold: ["arrival","breakfast","p5","et","p6","lunch_1","p7_1","p8","bus"]
+      blue: ["arrival","p1","et","p2","lunch_1","p3_1","p4","bus"],
+      gold: ["arrival","p5","et","p6","lunch_1","p7_1","p8","bus"]
     };
   }
   return {
-    blue: ["arrival","breakfast","p1","et","p2","p3_2","lunch_2","p4","bus"],
-    gold: ["arrival","breakfast","p5","et","p6","p7_2","lunch_2","p8","bus"]
+    blue: ["arrival","p1","et","p2","p3_2","lunch_2","p4","bus"],
+    gold: ["arrival","p5","et","p6","p7_2","lunch_2","p8","bus"]
   };
 }
 
@@ -429,7 +433,7 @@ function nextSuffix(base, items){
   return base + "-" + n;
 }
 function isBusSlot(slot){ return slot==="bus"; }
-function isBreakfastSlot(slot){ return slot==="breakfast"; }
+function isBreakfastSlot(slot){ return false; }   // 2026-11-17: Breakfast is no longer its own row; it is an optional add-on on Arrival
 function isParent(placed){ return !!placed && placed.mode==="parent"; }
 function defaultTeacher(classId){
   const c = BY_ID[classId];
@@ -445,12 +449,15 @@ function placementFrom(v, slot){
     if(pick) out.pickup = pick;
     return out;
   }
-  if(isBreakfastSlot(slot)){
-    if(v.classId!=="breakfast") return null;
-    return { classId: v.classId, room: String(v.room||"").slice(0,32) };   // optional location
-  }
+  if(v.classId==="breakfast") return null;            // Breakfast only rides on Arrival (see place())
   const teacher = (v.teacher!=null) ? String(v.teacher).slice(0,32) : "";
-  return { classId: v.classId, room: String(v.room||"").slice(0,16), teacher };
+  const out = { classId: v.classId, room: String(v.room||"").slice(0,16), teacher };
+  if(slot==="arrival" && v.breakfast){                 // 🍳 optional Breakfast add-on with an optional location
+    out.breakfast = true;
+    const loc = String(v.bloc||"").slice(0,32);
+    if(loc) out.bloc = loc;
+  }
+  return out;
 }
 function fieldValue(placed, slot){
   if(!placed) return "";
@@ -467,7 +474,10 @@ function busDisplay(val){
 function sanitizeDay(day){
   const out = {};
   if(!day || typeof day !== "object") return out;
-  const keys = ["arrival","breakfast","et","lunch","p1","p2","p3","p4","p5","p6","p7","p8","bus"];
+  if(day.breakfast && typeof day.breakfast==="object" && !(day.arrival && day.arrival.breakfast)){   // older saves had a separate Breakfast row
+    day = { ...day, arrival: { ...(day.arrival && BY_ID[day.arrival.classId] ? day.arrival : {classId:"arrival", room:"", teacher:defaultTeacher("arrival")}), breakfast:true, bloc: day.breakfast.room||"" } };
+  }
+  const keys = ["arrival","et","lunch","p1","p2","p3","p4","p5","p6","p7","p8","bus"];
   for(const k of keys){
     const next = placementFrom(day[k], k);
     if(next) out[k] = next;
@@ -690,7 +700,6 @@ function periodKey(slotId){
   if(slotId.startsWith("lunch")) return "lunch";
   if(slotId==="et") return "et";
   if(slotId==="arrival") return "arrival";
-  if(slotId==="breakfast") return "breakfast";
   if(slotId==="bus") return "bus";
   return slotId;
 }
@@ -736,6 +745,7 @@ function renderDay(day){
           : `<div class="room">${esc(val)}</div>`);
       }
       if(teacher) shownParts.push(`<div class="teacher">${esc(teacher)}</div>`);
+      const bk = (pk==="arrival" && placed.breakfast) ? `<div class="bfast"><span class="bf-l"><img class="bf-i" src="${ICONS}breakfast.webp" alt="">Breakfast</span>${placed.bloc ? `<span class="bf-loc">${esc(placed.bloc)}</span>` : ""}<input class="room-edit bloc-edit print-hide" data-day="${day}" data-slot="arrival" data-field="bloc" placeholder="Breakfast location (optional)" value="${esc(placed.bloc||"")}" maxlength="32" aria-label="Breakfast location"><button type="button" class="bf-x print-hide" data-bkremove="${day}" aria-label="Remove Breakfast">Remove</button></div>` : "";
       const shown = shownParts.length ? `<div class="meta-row">${shownParts.join("")}</div>` : "";
       let fields;
       const seg = isBus ? `<span class="dep-seg print-hide" role="group" aria-label="How this student goes home"><button type="button" class="dep-btn" data-day="${day}" data-mode="bus" aria-pressed="${!parent}">🚌 Bus</button><button type="button" class="dep-btn" data-day="${day}" data-mode="parent" aria-pressed="${parent}">🚗 Parent Pick-Up</button></span>` : "";
@@ -757,11 +767,12 @@ function renderDay(day){
           <div class="cname">${esc(parent ? "Parent Pick-Up" : cls.name)}</div>
           ${shown}
           ${fields}
+          ${bk}
         </div>
         <button type="button" class="x print-hide" data-remove="${day}:${pk}" aria-label="Remove ${esc(cls.name)}">×</button>
       </div>`;
     } else {
-      inner = `<div class="empty">${isBreakfastSlot(pk) ? "Optional: add Breakfast here" : "Drop a class here"}</div>`;
+      inner = `<div class="empty">Drop a class here</div>`;
     }
     return `<div class="slot${cls?" filled":""}${isBreakfastSlot(pk)?" optional":""}" data-day="${day}" data-slot="${pk}">${pside}${inner}</div>`;
   }).join("");
@@ -787,10 +798,12 @@ function esc(s){ return String(s||"").replace(/[&<>"']/g, c => ({'&':'&amp;','<'
 
 function place(day, slot, classId, from){
   if(!BY_ID[classId]) return;
-  if(isBreakfastSlot(slot) && classId!=="breakfast"){ setStatus("Only Breakfast goes in the Breakfast row."); state.selected = null; render(); return; }
-  if(classId==="breakfast" && !isBreakfastSlot(slot)){
-    if(from && isBreakfastSlot(from.slot)){ render(); return; }
-    slot = "breakfast";
+  if(classId==="breakfast"){                       // Breakfast is an add-on to that day's Arrival, wherever it is dropped
+    const a = state[day].arrival && BY_ID[state[day].arrival.classId] ? state[day].arrival : {classId:"arrival", room:"", teacher:defaultTeacher("arrival")};
+    state[day].arrival = { ...a, breakfast:true };
+    state.selected = null;
+    setStatus("Breakfast added to Arrival (" + (day==="blue"?"Blue":"Gold") + " Day).");
+    save(); render(); return;
   }
   const dest = state[day];
   const keep = dest[slot] && dest[slot].classId===classId ? dest[slot] : {classId, teacher: defaultTeacher(classId)};
@@ -832,6 +845,15 @@ function bindDynamic(){
       startDrag(ev, {type:"slot", classId: el.dataset.class, day: el.dataset.day, slot: el.dataset.slot, el});
     });
   });
+  document.querySelectorAll("[data-bkremove]").forEach(btn => {
+    btn.addEventListener("pointerdown", ev => ev.stopPropagation());
+    btn.addEventListener("click", ev => {
+      ev.stopPropagation();
+      const a = state[btn.dataset.bkremove].arrival;
+      if(a){ delete a.breakfast; delete a.bloc; }
+      save(); render();
+    });
+  });
   document.querySelectorAll("[data-remove]").forEach(btn => {
     btn.addEventListener("click", ev => {
       ev.stopPropagation();
@@ -844,7 +866,10 @@ function bindDynamic(){
       const day=inp.dataset.day, slot=inp.dataset.slot;
       if(!state[day][slot]) return;
       const val = inp.value.trim();
-      if(isBusSlot(slot) && inp.dataset.field==="pickup"){
+      if(inp.dataset.field==="bloc"){
+        if(val) state[day][slot].bloc = val; else delete state[day][slot].bloc;
+        save(); render(); return;
+      }else if(isBusSlot(slot) && inp.dataset.field==="pickup"){
         if(val) state[day][slot].pickup = val; else delete state[day][slot].pickup;
       }else if(isBusSlot(slot)){
         state[day][slot].bus = val;
@@ -871,7 +896,7 @@ function bindDynamic(){
   document.querySelectorAll(".slot").forEach(slot => {
     slot.addEventListener("pointerup", ev => {
       if(drag && drag.moved) return;
-      if(state.selected && ev.target.closest(".x,.room-edit,.teacher-edit,.dep-seg")) return;
+      if(state.selected && ev.target.closest(".x,.bf-x,.room-edit,.teacher-edit,.dep-seg")) return;
       if(state.selected && ev.currentTarget){
         // handled in endDrag / tap path
       }
@@ -956,7 +981,7 @@ document.addEventListener("pointerup", ev => {
   if(!state.selected) return;
   const slot = ev.target.closest && ev.target.closest(".slot");
   if(!slot) return;
-  if(ev.target.closest(".x,.room-edit,.teacher-edit,.dep-seg")) return;
+  if(ev.target.closest(".x,.bf-x,.room-edit,.teacher-edit,.dep-seg")) return;
   // If the slot already handled via startDrag on empty area...
   if(!ev.target.closest(".placed")){
     place(slot.dataset.day, slot.dataset.slot, state.selected, null);

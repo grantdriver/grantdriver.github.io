@@ -95,6 +95,8 @@ body{color:var(--navy);font-family:Poppins,"Segoe UI",system-ui,sans-serif;font-
 .pside .pn.pn-sm{font-size:16px}
 .slot.optional:not(.filled) .empty{font-style:italic}
 body.student .slot.optional:not(.filled){display:none}
+body.student .pside .pn.pn-sm{font-size:18px}
+@media print{body.student .pside .pn.pn-sm{font-size:15px}body.print-card .pside .pn.pn-sm{font-size:10px}}
 .placed .room.busno{font-size:14px;font-weight:800;color:var(--navy);display:flex;align-items:center;gap:6px}
 .placed .bus-mini{width:18px;height:18px;border-radius:4px;object-fit:cover;flex-shrink:0;pointer-events:none;background:var(--cream)}
 body.student .placed .room.busno{font-size:20px}
@@ -717,7 +719,7 @@ function renderDay(day){
     const placed = state[day][pk];
     const cls = placed && BY_ID[placed.classId];
     let inner;
-    const pside = `<div class="pside" aria-label="${esc(info.label)} ${esc(info.t)}"><span class="pn${info.sm?" pn-sm":""}">${esc((pk==="bus" && isParent(placed)) ? "Pick-Up" : info.side)}</span><span class="pt">${esc(info.t)}</span></div>`;
+    const pside = `<div class="pside" aria-label="${esc(info.label)} ${esc(info.t)}"><span class="pn${(info.sm || (pk==="bus" && isParent(placed)))?" pn-sm":""}">${esc((pk==="bus" && isParent(placed)) ? "Pick-Up" : info.side)}</span><span class="pt">${esc(info.t)}</span></div>`;
     if(cls){
       const isBus = isBusSlot(pk);
       const isBk = isBreakfastSlot(pk);

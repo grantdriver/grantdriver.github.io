@@ -86,15 +86,23 @@ body{color:var(--navy);font-family:Poppins,"Segoe UI",system-ui,sans-serif;font-
 .placed .x{appearance:none;border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:999px;width:28px;height:28px;font-weight:800;cursor:pointer;flex-shrink:0}
 .placed .room-edit{width:72px;font:inherit;font-size:12px;font-weight:700;border:2px solid var(--navy);border-radius:8px;padding:2px 6px}
 .placed .room-edit.bus-edit{width:88px}
+.placed .meta-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 12px}
+.placed .teacher{font-size:12px;font-weight:700;color:var(--muted)}
+.placed .field-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:2px}
+.placed .teacher-edit{width:118px;font:inherit;font-size:12px;font-weight:700;border:2px solid var(--navy);border-radius:8px;padding:2px 6px}
 .placed .room.busno{font-size:14px;font-weight:800;color:var(--navy);display:flex;align-items:center;gap:6px}
 .placed .bus-mini{width:18px;height:18px;border-radius:4px;object-fit:cover;flex-shrink:0;pointer-events:none;background:var(--cream)}
 body.student .placed .room.busno{font-size:20px}
 body.student .placed .bus-mini{width:24px;height:24px}
+body.student .placed .teacher{font-size:16px}
 @media print{
   .placed .room.busno{display:flex;font-size:16px}
   .placed .bus-mini{width:20px;height:20px}
   body.print-card .placed .room.busno{font-size:11px}
   body.print-card .placed .bus-mini{width:14px;height:14px}
+  .placed .teacher{font-size:14px}
+  body.print-card .placed .room,body.print-card .placed .teacher{font-size:10px}
+  body.print-card .placed .meta-row{gap:0 8px}
 }
 .ghost{position:fixed;z-index:80;pointer-events:none;width:88px;padding:6px;background:#fff;border:3px solid var(--gold);border-radius:14px;box-shadow:0 10px 22px rgba(11,31,77,.35);text-align:center;font-size:11px;font-weight:800}
 .ghost img{width:64px;height:64px;object-fit:cover;border-radius:12px;display:block;margin:0 auto 4px}
@@ -108,7 +116,7 @@ body.student .pside .pt{font-size:16px}
 body.student .placed{cursor:default;margin:0;padding:10px 14px;box-shadow:none}
 body.student .placed img{width:92px;height:92px}
 body.student .placed .cname{font-size:26px}
-body.student .placed .x,body.student .placed .room-edit{display:none}
+body.student .placed .x,body.student .placed .room-edit,body.student .placed .teacher-edit,body.student .placed .field-row{display:none}
 body.student .slot .empty{background:#fff;color:transparent;font-size:0}
 body.student .out-title{display:block}
 body.student #btnClear,body.student .saved-wrap{display:none}
@@ -117,7 +125,7 @@ body.student #btnClear,body.student .saved-wrap{display:none}
 .out-title .initials-out{font-size:18px;font-weight:800;color:var(--muted)}
 .print-opts{display:none}
 @media print{
-  .top,.stripe,.pvbar,.toolbar,.bank,.print-hide,.placed .x,.placed .room-edit{display:none!important}
+  .top,.stripe,.pvbar,.toolbar,.bank,.print-hide,.placed .x,.placed .room-edit,.placed .teacher-edit,.placed .field-row{display:none!important}
   body{background:#fff}
   .wrap{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0;max-width:none}
   body.print-blue .daycol-gold,body.print-gold .daycol-blue{display:none}
@@ -406,13 +414,18 @@ function nextSuffix(base, items){
   return base + "-" + n;
 }
 function isBusSlot(slot){ return slot==="bus"; }
+function defaultTeacher(classId){
+  const c = BY_ID[classId];
+  return (c && c.teacher) ? String(c.teacher).slice(0,32) : "";
+}
 function placementFrom(v, slot){
   if(!v || typeof v !== "object" || !BY_ID[v.classId]) return null;
   if(isBusSlot(slot)){
     const raw = (v.bus!=null && String(v.bus)!=="") ? v.bus : (v.room||"");
     return { classId: v.classId, bus: String(raw).slice(0,16) };
   }
-  return { classId: v.classId, room: String(v.room||"").slice(0,16) };
+  const teacher = (v.teacher!=null) ? String(v.teacher).slice(0,32) : "";
+  return { classId: v.classId, room: String(v.room||"").slice(0,16), teacher };
 }
 function fieldValue(placed, slot){
   if(!placed) return "";
@@ -684,20 +697,30 @@ function renderDay(day){
     if(cls){
       const isBus = isBusSlot(pk);
       const val = fieldValue(placed, pk);
-      const shown = val
-        ? (isBus
+      const teacher = isBus ? "" : String(placed.teacher || "");
+      const shownParts = [];
+      if(val){
+        shownParts.push(isBus
           ? `<div class="room busno"><img class="bus-mini" src="${ICONS}bus.webp" alt="">${esc(busDisplay(val))}</div>`
-          : `<div class="room">${esc(val)}</div>`)
-        : "";
-      const ph = isBus ? "Bus #" : "Room";
-      const aria = isBus ? `Bus number for ${cls.name}` : `Room for ${cls.name}`;
-      const fieldCls = isBus ? "room-edit bus-edit print-hide" : "room-edit print-hide";
+          : `<div class="room">${esc(val)}</div>`);
+      }
+      if(teacher) shownParts.push(`<div class="teacher">${esc(teacher)}</div>`);
+      const shown = shownParts.length ? `<div class="meta-row">${shownParts.join("")}</div>` : "";
+      let fields;
+      if(isBus){
+        fields = `<input class="room-edit bus-edit print-hide" data-day="${day}" data-slot="${pk}" data-field="bus" placeholder="Bus #" value="${esc(val)}" maxlength="16" aria-label="${esc("Bus number for "+cls.name)}">`;
+      } else {
+        fields = `<div class="field-row print-hide">
+          <input class="room-edit" data-day="${day}" data-slot="${pk}" data-field="room" placeholder="Room" value="${esc(val)}" maxlength="16" aria-label="${esc("Room for "+cls.name)}">
+          <input class="teacher-edit" data-day="${day}" data-slot="${pk}" data-field="teacher" placeholder="Teacher" value="${esc(teacher)}" maxlength="32" aria-label="${esc("Teacher for "+cls.name)}">
+        </div>`;
+      }
       inner = `<div class="placed" data-day="${day}" data-slot="${pk}" data-class="${cls.id}">
         <img src="${imgFor(cls)}" alt="" width="64" height="64">
         <div class="meta">
           <div class="cname">${esc(cls.name)}</div>
           ${shown}
-          <input class="${fieldCls}" data-day="${day}" data-slot="${pk}" data-field="${isBus?"bus":"room"}" placeholder="${ph}" value="${esc(val)}" maxlength="16" aria-label="${esc(aria)}">
+          ${fields}
         </div>
         <button type="button" class="x print-hide" data-remove="${day}:${pk}" aria-label="Remove ${esc(cls.name)}">×</button>
       </div>`;
@@ -729,15 +752,15 @@ function esc(s){ return String(s||"").replace(/[&<>"']/g, c => ({'&':'&amp;','<'
 function place(day, slot, classId, from){
   if(!BY_ID[classId]) return;
   const dest = state[day];
-  const keep = dest[slot] && dest[slot].classId===classId ? dest[slot] : {classId};
+  const keep = dest[slot] && dest[slot].classId===classId ? dest[slot] : {classId, teacher: defaultTeacher(classId)};
   const incoming = placementFrom(keep, slot);
   if(from && from.day && from.slot && (from.day!==day || from.slot!==slot)){
     const moving = dest===state[from.day] ? dest[from.slot] : state[from.day][from.slot];
     const swap = dest[slot];
     if(moving){
       const sameField = isBusSlot(slot)===isBusSlot(from.slot);
-      dest[slot] = placementFrom(sameField ? moving : {classId: moving.classId}, slot);
-      if(swap) state[from.day][from.slot] = placementFrom(sameField ? swap : {classId: swap.classId}, from.slot);
+      dest[slot] = placementFrom(sameField ? moving : {classId: moving.classId, teacher: defaultTeacher(moving.classId)}, slot);
+      if(swap) state[from.day][from.slot] = placementFrom(sameField ? swap : {classId: swap.classId, teacher: defaultTeacher(swap.classId)}, from.slot);
       else delete state[from.day][from.slot];
       save(); render(); return;
     }
@@ -764,7 +787,7 @@ function bindDynamic(){
   });
   document.querySelectorAll(".placed").forEach(el => {
     el.addEventListener("pointerdown", ev => {
-      if(ev.target.closest(".x") || ev.target.closest(".room-edit")) return;
+      if(ev.target.closest(".x") || ev.target.closest(".room-edit") || ev.target.closest(".teacher-edit")) return;
       startDrag(ev, {type:"slot", classId: el.dataset.class, day: el.dataset.day, slot: el.dataset.slot, el});
     });
   });
@@ -775,7 +798,7 @@ function bindDynamic(){
       remove(day, slot);
     });
   });
-  document.querySelectorAll(".room-edit").forEach(inp => {
+  document.querySelectorAll(".room-edit,.teacher-edit").forEach(inp => {
     inp.addEventListener("change", () => {
       const day=inp.dataset.day, slot=inp.dataset.slot;
       if(!state[day][slot]) return;
@@ -783,6 +806,8 @@ function bindDynamic(){
       if(isBusSlot(slot)){
         state[day][slot].bus = val;
         delete state[day][slot].room;
+      }else if(inp.dataset.field==="teacher"){
+        state[day][slot].teacher = val;
       }else{
         state[day][slot].room = val;
       }
@@ -793,7 +818,7 @@ function bindDynamic(){
   document.querySelectorAll(".slot").forEach(slot => {
     slot.addEventListener("pointerup", ev => {
       if(drag && drag.moved) return;
-      if(state.selected && ev.target.closest(".x,.room-edit")) return;
+      if(state.selected && ev.target.closest(".x,.room-edit,.teacher-edit")) return;
       if(state.selected && ev.currentTarget){
         // handled in endDrag / tap path
       }
@@ -878,7 +903,7 @@ document.addEventListener("pointerup", ev => {
   if(!state.selected) return;
   const slot = ev.target.closest && ev.target.closest(".slot");
   if(!slot) return;
-  if(ev.target.closest(".x,.room-edit")) return;
+  if(ev.target.closest(".x,.room-edit,.teacher-edit")) return;
   // If the slot already handled via startDrag on empty area...
   if(!ev.target.closest(".placed")){
     place(slot.dataset.day, slot.dataset.slot, state.selected, null);

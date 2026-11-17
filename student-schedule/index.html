@@ -47,6 +47,7 @@ body{color:var(--navy);font-family:Poppins,"Segoe UI",system-ui,sans-serif;font-
 .btn.navy{background:var(--navy);color:#fff;border-color:var(--navy)}
 .btn[aria-pressed=true]{background:var(--navy);color:#fff}
 .seg{display:flex;gap:0}
+.lunchset{display:inline-flex;align-items:center;gap:6px 8px;flex-wrap:wrap}.lunchset label{display:inline;margin:0}
 .seg .btn{border-radius:0;box-shadow:none}
 .seg .btn:first-child{border-radius:999px 0 0 999px}
 .seg .btn:last-child{border-radius:0 999px 999px 0;margin-left:-2.5px}
@@ -189,11 +190,16 @@ body.student #btnClear,body.student .saved-wrap{display:none}
   <input type="text" id="initials" maxlength="6" placeholder="AB" autocomplete="off" spellcheck="false" autocapitalize="characters" inputmode="text" aria-describedby="initialsHint">
   <button type="button" class="btn gold builder-only" id="btnSave">Save</button>
   <span class="save-status builder-only" id="saveStatus" role="status"></span>
-  <span class="builder-only">
-    <label>Lunch</label>
-    <span class="seg" role="group" aria-label="Lunch wave">
-      <button type="button" class="btn" id="lunch1">1st lunch</button>
-      <button type="button" class="btn" id="lunch2" aria-pressed="true">2nd lunch</button>
+  <span class="builder-only lunchset">
+    <label>Blue lunch</label>
+    <span class="seg" role="group" aria-label="Blue Day lunch">
+      <button type="button" class="btn" id="lunchB1" data-lday="blue" data-wave="first">1st</button>
+      <button type="button" class="btn" id="lunchB2" data-lday="blue" data-wave="second" aria-pressed="true">2nd</button>
+    </span>
+    <label>Gold lunch</label>
+    <span class="seg" role="group" aria-label="Gold Day lunch">
+      <button type="button" class="btn" id="lunchG1" data-lday="gold" data-wave="first">1st</button>
+      <button type="button" class="btn" id="lunchG2" data-lday="gold" data-wave="second" aria-pressed="true">2nd</button>
     </span>
   </span>
   <span class="seg" role="group" aria-label="View">
@@ -339,6 +345,11 @@ const TIMES = {
   bus: {label:"Bus", side:"Bus", t:"2:00–2:16"}
 };
 
+function wv(x){ return x === "first" ? "first" : "second"; }
+function lunchFrom(d){                 // per-day lunch; older saves only had one lunchWave for both days
+  const old = wv(d && d.lunchWave);
+  return { blue: wv(d && d.lunchBlue ? d.lunchBlue : old), gold: wv(d && d.lunchGold ? d.lunchGold : old) };
+}
 function slotOrder(wave){
   if(wave === "first"){
     return {
@@ -355,7 +366,8 @@ function slotOrder(wave){
 let state = {
   initials: "",
   currentId: "",
-  lunchWave: "second",
+  lunchWave: "second",          // legacy single value (kept = Blue's, for older copies of the page)
+  lunch: {blue:"second", gold:"second"},   // 2026-11-17: each day has its own 1st/2nd lunch
   blue: {},
   gold: {},
   cat: "All",
@@ -402,7 +414,7 @@ function load(){
       const rawInit = (typeof d.initials === "string") ? d.initials : (typeof d.code === "string" ? d.code : "");
       state.initials = isSaveId(rawInit) ? rawInit : lettersFrom(rawInit);
       state.currentId = isSaveId(d.currentId) ? d.currentId : (isSaveId(state.initials) ? state.initials : "");
-      state.lunchWave = d.lunchWave === "first" ? "first" : "second";
+      state.lunch = lunchFrom(d); state.lunchWave = state.lunch.blue;
       state.blue = sanitizeDay(d.blue);
       state.gold = sanitizeDay(d.gold);
     }
@@ -412,7 +424,7 @@ function save(){
   try{
     localStorage.setItem(KEY, JSON.stringify({
       initials: state.initials, currentId: state.currentId,
-      lunchWave: state.lunchWave, blue: state.blue, gold: state.gold
+      lunchWave: state.lunch.blue, lunchBlue: state.lunch.blue, lunchGold: state.lunch.gold, blue: state.blue, gold: state.gold
     }));
   }catch(e){}
 }
@@ -504,7 +516,7 @@ function migrateSaves(){
 function snapshot(id){
   return {
     initials: id,
-    lunchWave: state.lunchWave === "first" ? "first" : "second",
+    lunchWave: wv(state.lunch.blue), lunchBlue: wv(state.lunch.blue), lunchGold: wv(state.lunch.gold),
     blue: sanitizeDay(state.blue),
     gold: sanitizeDay(state.gold),
     updatedAt: Date.now()
@@ -513,7 +525,7 @@ function snapshot(id){
 function applySaved(item){
   state.initials = item.initials;
   state.currentId = item.initials;
-  state.lunchWave = item.lunchWave === "first" ? "first" : "second";
+  state.lunch = lunchFrom(item); state.lunchWave = state.lunch.blue;
   state.blue = sanitizeDay(item.blue);
   state.gold = sanitizeDay(item.gold);
   state.selected = null;
@@ -720,7 +732,7 @@ function renderBank(){
 
 function renderDay(day){
   const col = document.getElementById("col-"+day);
-  const order = slotOrder(state.lunchWave)[day];
+  const order = slotOrder(state.lunch[day])[day];
   const title = day==="blue" ? "Blue Day" : "Gold Day";
   const rows = order.map(slotId => {
     const info = TIMES[slotId];
@@ -781,8 +793,7 @@ function renderDay(day){
 
 function render(){
   document.getElementById("initials").value = state.initials;
-  document.getElementById("lunch1").setAttribute("aria-pressed", state.lunchWave==="first");
-  document.getElementById("lunch2").setAttribute("aria-pressed", state.lunchWave==="second");
+  document.querySelectorAll("[data-lday]").forEach(b => b.setAttribute("aria-pressed", state.lunch[b.dataset.lday]===b.dataset.wave));
   document.getElementById("viewBuild").setAttribute("aria-pressed", state.view==="builder");
   document.getElementById("viewStudent").setAttribute("aria-pressed", state.view==="student");
   document.body.classList.toggle("student", state.view==="student");
@@ -1015,8 +1026,9 @@ initialsEl.addEventListener("blur", ev => {
 });
 document.getElementById("btnSave").addEventListener("click", () => { onSaveClick(); });
 document.getElementById("savedList").addEventListener("click", ev => { onSavedClick(ev); });
-document.getElementById("lunch1").addEventListener("click", () => { state.lunchWave="first"; save(); render(); });
-document.getElementById("lunch2").addEventListener("click", () => { state.lunchWave="second"; save(); render(); });
+document.querySelectorAll("[data-lday]").forEach(b => b.addEventListener("click", () => {
+  state.lunch[b.dataset.lday] = wv(b.dataset.wave); state.lunchWave = state.lunch.blue; save(); render();
+}));
 document.getElementById("viewBuild").addEventListener("click", () => { state.view="builder"; render(); });
 document.getElementById("viewStudent").addEventListener("click", () => { state.view="student"; render(); });
 document.getElementById("btnClear").addEventListener("click", () => {

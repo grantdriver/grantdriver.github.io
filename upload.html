@@ -165,6 +165,7 @@ dialog.big .btns button{flex:1 1 180px}
 <div class="formerr" id="formErr" role="alert"></div>
 <div class="actions"><button class="sub" type="submit" id="go">Send ➜</button><span class="hint" id="goHint">Your file goes straight to the inclusion team.</span></div>
 <div class="prog" id="prog" hidden><i id="progBar"></i></div>
+<p class="hint" id="progMsg" hidden></p>
 </form>
 </div>
 
@@ -271,13 +272,42 @@ function check(k){var ok=rules[k]();var box=form.querySelector('[data-f='+k+']')
 Object.keys(rules).forEach(function(k){var box=form.querySelector('[data-f='+k+']');if(box)box.addEventListener('change',function(){if(box.classList.contains('bad'))check(k)})});
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 function err(m){$('formErr').textContent=m;$('formErr').classList.toggle('on',!!m)}
-function busy(b){$('go').disabled=b;$('prog').hidden=!b;if(!b)$('progBar').style.width='0'}
+function busy(b){$('go').disabled=b;$('prog').hidden=!b;if($('progMsg'))$('progMsg').hidden=!b;if(!b){$('progBar').style.width='0';if($('progMsg'))$('progMsg').textContent=''}}
 function putFile(id,tok,f){return new Promise(function(res){
   var x=new XMLHttpRequest();x.open('PUT',API+'/upload/file/'+encodeURIComponent(id)+'?t='+encodeURIComponent(tok));x.withCredentials=true;
   x.upload.onprogress=function(e){if(e.lengthComputable)$('progBar').style.width=Math.round(e.loaded/e.total*100)+'%'};
   x.onload=function(){var j={};try{j=JSON.parse(x.responseText)}catch(e){}j._status=x.status;res(j)};
   x.onerror=function(){res({ok:false,error:'Network problem while sending the file. Please try again.'})};
   x.send(f)})}
+function putPart(id,tok,blob,n,onProg){return new Promise(function(res){
+  var x=new XMLHttpRequest();x.open('PUT',API+'/upload/part/'+encodeURIComponent(id)+'?t='+encodeURIComponent(tok)+'&n='+n);x.withCredentials=true;
+  x.upload.onprogress=function(e){if(e.lengthComputable&&onProg)onProg(e.loaded,e.total)};
+  x.onload=function(){var j={};try{j=JSON.parse(x.responseText)}catch(e){}j._status=x.status;res(j)};
+  x.onerror=function(){res({ok:false,error:'Network problem while sending the file. Please try again.'})};
+  x.send(blob)})}
+function putParts(j,f){
+  var partSize=j.partSize, count=j.partCount, parts=[], i=0;
+  function setMsg(s){if($('progMsg'))$('progMsg').textContent=s}
+  function tryPart(n,blob,attempt){
+    setMsg('Sending part '+n+' of '+count+'…');
+    return putPart(j.id,j.putToken,blob,n,function(loaded){
+      var done=(n-1)*partSize+loaded;$('progBar').style.width=Math.round(done/f.size*100)+'%';
+    }).then(function(r){
+      if(r.ok) return r;
+      if(attempt<2) return tryPart(n,blob,attempt+1);
+      throw new Error(r.error||('We couldn\'t send part '+n+' of the file. Please try again.'));
+    });
+  }
+  function next(){
+    if(i>=count){
+      setMsg('Finishing the upload…');
+      return getJSON(API+'/upload/complete/'+encodeURIComponent(j.id)+'?t='+encodeURIComponent(j.putToken),{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({parts:parts})});
+    }
+    var n=i+1, blob=f.slice(i*partSize, Math.min((i+1)*partSize, f.size));
+    return tryPart(n,blob,0).then(function(r){parts.push({partNumber:n,etag:r.etag});i++;$('progBar').style.width=Math.round(i/count*100)+'%';return next()});
+  }
+  return next();
+}
 form.addEventListener('submit',function(e){
   e.preventDefault();err('');
   var bad=Object.keys(rules).filter(function(k){return !check(k)});
@@ -290,7 +320,14 @@ form.addEventListener('submit',function(e){
   busy(true);
   getJSON(API+'/upload/start',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(d)}).then(function(j){
     if(!j.ok){if(j.needGate){busy(false);loadSession();return}throw new Error(j.error||'We couldn\'t send that.')}
-    return putFile(j.id,j.putToken,f).then(function(r){if(!r.ok)throw new Error(r.error||'We couldn\'t save the file.');d.needsApproval=!!j.needsApproval;done(d,j.id)});
+    var send=j.multipart?putParts(j,f):putFile(j.id,j.putToken,f);
+    return send.then(function(r){
+      if(!r.ok)throw new Error(r.error||'We couldn\'t save the file.');
+      d.needsApproval=!!j.needsApproval;done(d,j.id);
+    }).catch(function(x){
+      if(j.multipart) getJSON(API+'/upload/abort/'+encodeURIComponent(j.id)+'?t='+encodeURIComponent(j.putToken),{method:'POST'}).catch(function(){});
+      throw x;
+    });
   }).catch(function(x){busy(false);err(x.message||'We couldn\'t send that. Please try again.')});
 });
 function done(d,id){

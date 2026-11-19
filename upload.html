@@ -137,7 +137,11 @@ dialog.big .btns button{flex:1 1 180px}
 <label><input type="radio" name="canvasMode" value="existing" checked><span>Add to an existing class<small>Adds units and lessons to a class already on the site</small></span></label>
 <label><input type="radio" name="canvasMode" value="new"><span>Build a new class<small>Makes a new class page from the course</small></span></label>
 </div><div class="err" role="alert">Please choose one.</div></fieldset>
-<div class="f" data-f="course" id="courseBox"><label for="course">Class</label><select id="course" name="course"><option value="">Choose a class…</option></select><div class="err" role="alert">Please choose a class.</div></div>
+<div class="f" data-f="course" id="courseBox"><label for="course">Class</label><select id="course" name="course"><option value="">Choose a class…</option></select>
+<p class="hint" id="unlistedHint" hidden>Use this if your class isn't on the site yet. Type its name below.</p>
+<div class="err" role="alert">Please choose a class.</div></div>
+<div class="f full" data-f="unlistedClassName" id="unlistedClassBox" hidden><label for="unlistedClassName">Class name</label><input type="text" id="unlistedClassName" name="unlistedClassName" maxlength="100" placeholder="e.g. Forensic Science"><div class="err" role="alert">Please type the class name.</div></div>
+<div class="f full" data-f="unlistedUnit" id="unlistedUnitBox" hidden><label for="unlistedUnit">Unit <span class="opt">(optional)</span></label><input type="text" id="unlistedUnit" name="unlistedUnit" maxlength="120" placeholder="e.g. Unit 3, or leave blank if not sure"></div>
 <div class="f" data-f="unit" id="unitBox"><label for="unit">Unit</label><select id="unit" name="unit" disabled><option value="">Choose a class first</option></select><div class="err" role="alert">Please choose a unit.</div></div>
 <div class="f" data-f="newClassName" id="newClassBox" hidden><label for="newClassName">New class name</label><input type="text" id="newClassName" name="newClassName" maxlength="100" placeholder="e.g. Forensic Science"><div class="err" role="alert">Please name the new class.</div></div>
 <fieldset class="f full" data-f="levels"><legend>Levels needed</legend>
@@ -204,7 +208,7 @@ dialog.big .btns button{flex:1 1 180px}
 <footer class="foot"><div class="wrap">Ferndale High School Inclusion</div></footer>
 <script>
 (function(){
-var UNITS={"SEL": ["Unit 1: Foundations & Community", "Unit 2: Self-Awareness: Who Am I?", "Unit 3: Self-Management", "Unit 4: Social Awareness", "Unit 5: Relationship Skills", "Unit 6: Stop, Think, Choose", "Unit 7: I Can Grow", "Unit 8: My Game Plan: Goals & Routines", "Unit 9: Reading the Room", "Unit 10: Team Up & Work It Out", "Unit 11: My SEL Showcase"], "Transitions": ["Unit 1: Self-Advocacy", "Unit 2: Independent Living", "Unit 3: Health, Wellness & Relationships", "Unit 4: Employment & Career Exploration", "Unit 5: Financial Literacy & Money", "Unit 6: Community Navigation & Mobility"], "Culinary 1": ["Unit 1: Safety & Sanitation", "Unit 2: Measuring & Function of Ingredients", "Unit 3: Quick Breads", "Unit 4: Yeast Breads", "Unit 5: Fruits & Vegetables", "Unit 6: Knife Skills", "Unit 7: Roux & Mirepoix", "Unit 8: Grains & Pasta", "Unit 9: Milk, Dairy & Eggs", "Unit 10: Table Setting & Etiquette", "Unit 11: Recipes Used in Class", "Unit 12: Protein & Main Dishes"], "Biology A": ["Unit 0: Science Starts: Safety & Lab Skills", "Unit 1: Orcas & the Salish Sea", "Unit 2: Algae & Photosynthesis", "Unit 3: Biofuel & Energy", "Unit 4: Food & Digestion", "Unit 5: Breathing, Exercise & Energy", "Unit 6: Blood Sugar & Diabetes", "Unit 7: Famous Fossils & Deep Time", "Unit 8: Final Review"], "Chemistry": ["Unit 0: Lab Safety & Equipment", "Unit 1A: Lightning 1: Charges & Static", "Unit 1B: Lightning 2: Electric Forces", "Unit 1C: Lightning 3: The Strike & Staying Safe", "Unit 2: Space Exploration & Survival", "Unit 3: Oysters", "Unit 4: Polar Ice", "Unit 5: Energy"], "Health": ["Unit 1: Wellness", "Unit 2: Food & Nutrition", "Unit 3: Substance Use & Abuse", "Unit 4: Social-Emotional Health", "Unit 5A: Sexual Health 1: Bodies, Pregnancy & Relationships", "Unit 5B: Sexual Health 2: STIs, Contraception & Safer Sex", "Unit 6: Safety, First Aid & CPR", "Unit 7: Hope, Purpose & Wonder"], "US History": ["Unit 1: Timeline & Political Cartoons", "Unit 2: The Heartland: Moving West", "Unit 3: Immigration & Cities", "Unit 4: Industry & the Progressives", "Unit 5: Civil Rights at the Turn of the Century", "Unit 6: Imperialism", "Unit 7: World War I", "Unit 8: Women's Suffrage", "Unit 9: The 1920s & Harlem Renaissance", "Unit 10: The Great Depression & New Deal"], "World History": ["Unit 1: Geography & World Religions", "Unit 2: Muslim Empires", "Unit 3: The Renaissance", "Unit 4: World War I", "Unit 5: The Russian Revolution", "Unit 6: Between the Wars", "Unit 7: World War II", "Unit 8: Genocide & Human Rights", "Unit 9: Cold War, China & India", "Unit 10: The Reformation", "Unit 11: The Enlightenment", "Unit 12: The French Revolution", "Unit 13: Latin American Revolutions", "Unit 14: The Industrial Revolution"], "Ag Science 1": ["Unit 1: Ag Words & Whatcom Farms", "Unit 2: Washington Crops: Potatoes, Wheat & Apples", "Unit 3: U.S. Food & Farm Facts", "Unit 4: FFA & Ag Careers", "Unit 5: Ag Experience Project", "Unit 6: Dairy", "Unit 7: Livestock Judging", "Unit 8: Final Review", "Unit 9: Ag Issues"], "Horticulture 1": ["Unit 0: Classroom & Greenhouse Basics", "Unit 1: Jobs in Horticulture", "Unit 2: Plant Names & Life Cycles", "Unit 3: Parts of the Plant", "Unit 4: Plant ID", "Unit 5: Soil & Nutrients", "Unit 6: Seeds", "Unit 7: Propagation", "Unit 8: Poinsettias", "Unit 9: Wreaths & Floral Design"], "Small Engines Overhaul": ["Unit 0: Shop Start-Up & Safety", "Unit 1: Measuring Tools", "Unit 2: Engine Careers", "Unit 3: 4-Stroke Theory & Engine Parts", "Unit 4: Compression", "Unit 5: Carburetion & Fuel", "Unit 6: Ignition", "Unit 7: Using the Repair Manual", "Unit 8: Engine Teardown & Rebuild"]};
+var UNITS={"SEL": ["Unit 1: Foundations & Community", "Unit 2: Self-Awareness: Who Am I?", "Unit 3: Self-Management", "Unit 4: Social Awareness", "Unit 5: Relationship Skills", "Unit 6: Stop, Think, Choose", "Unit 7: I Can Grow", "Unit 8: My Game Plan: Goals & Routines", "Unit 9: Reading the Room", "Unit 10: Team Up & Work It Out", "Unit 11: My SEL Showcase"], "Transitions": ["Unit 1: Self-Advocacy", "Unit 2: Independent Living", "Unit 3: Health, Wellness & Relationships", "Unit 4: Employment & Career Exploration", "Unit 5: Financial Literacy & Money", "Unit 6: Community Navigation & Mobility"], "Culinary 1": ["Unit 1: Safety & Sanitation", "Unit 2: Measuring & Function of Ingredients", "Unit 3: Quick Breads", "Unit 4: Yeast Breads", "Unit 5: Fruits & Vegetables", "Unit 6: Knife Skills", "Unit 7: Roux & Mirepoix", "Unit 8: Grains & Pasta", "Unit 9: Milk, Dairy & Eggs", "Unit 10: Table Setting & Etiquette", "Unit 11: Recipes Used in Class", "Unit 12: Protein & Main Dishes"], "Biology A": ["Unit 0: Science Starts: Safety & Lab Skills", "Unit 1: Orcas & the Salish Sea", "Unit 2: Algae & Photosynthesis", "Unit 3: Biofuel & Energy", "Unit 4: Food & Digestion", "Unit 5: Breathing, Exercise & Energy", "Unit 6: Blood Sugar & Diabetes", "Unit 7: Famous Fossils & Deep Time", "Unit 8: Final Review"], "Chemistry": ["Unit 0: Lab Safety & Equipment", "Unit 1A: Lightning 1: Charges & Static", "Unit 1B: Lightning 2: Electric Forces", "Unit 1C: Lightning 3: The Strike & Staying Safe", "Unit 2: Space Exploration & Survival", "Unit 3: Oysters", "Unit 4: Polar Ice", "Unit 5: Energy"], "Health": ["Unit 1: Wellness", "Unit 2: Food & Nutrition", "Unit 3: Substance Use & Abuse", "Unit 4: Social-Emotional Health", "Unit 5A: Sexual Health 1: Bodies, Pregnancy & Relationships", "Unit 5B: Sexual Health 2: STIs, Contraception & Safer Sex", "Unit 6: Safety, First Aid & CPR", "Unit 7: Hope, Purpose & Wonder"], "US History": ["Unit 1: Timeline & Political Cartoons", "Unit 2: The Heartland: Moving West", "Unit 3: Immigration & Cities", "Unit 4: Industry & the Progressives", "Unit 5: Civil Rights at the Turn of the Century", "Unit 6: Imperialism", "Unit 7: World War I", "Unit 8: Women's Suffrage", "Unit 9: The 1920s & Harlem Renaissance", "Unit 10: The Great Depression & New Deal"], "World History": ["Unit 1: Geography & World Religions", "Unit 2: Muslim Empires", "Unit 3: The Renaissance", "Unit 4: World War I", "Unit 5: The Russian Revolution", "Unit 6: Between the Wars", "Unit 7: World War II", "Unit 8: Genocide & Human Rights", "Unit 9: Cold War, China & India", "Unit 10: The Reformation", "Unit 11: The Enlightenment", "Unit 12: The French Revolution", "Unit 13: Latin American Revolutions", "Unit 14: The Industrial Revolution"], "Ag Science 1": ["Unit 1: Ag Words & Whatcom Farms", "Unit 2: Washington Crops: Potatoes, Wheat & Apples", "Unit 3: U.S. Food & Farm Facts", "Unit 4: FFA & Ag Careers", "Unit 5: Ag Experience Project", "Unit 6: Dairy", "Unit 7: Livestock Judging", "Unit 8: Final Review", "Unit 9: Ag Issues"], "Horticulture 1": ["Unit 0: Classroom & Greenhouse Basics", "Unit 1: Jobs in Horticulture", "Unit 2: Plant Names & Life Cycles", "Unit 3: Parts of the Plant", "Unit 4: Plant ID", "Unit 5: Soil & Nutrients", "Unit 6: Seeds", "Unit 7: Propagation", "Unit 8: Poinsettias", "Unit 9: Wreaths & Floral Design"], "Small Engines Overhaul": ["Unit 0: Shop Start-Up & Safety", "Unit 1: Measuring Tools", "Unit 2: Engine Careers", "Unit 3: 4-Stroke Theory & Engine Parts", "Unit 4: Compression", "Unit 5: Carburetion & Fuel", "Unit 6: Ignition", "Unit 7: Using the Repair Manual", "Unit 8: Engine Teardown & Rebuild"], "Astronomy": ["Unit 0: Semester Startup", "Unit 1: Patterns in the Sky", "Unit 2: The Solar System", "Unit 3: Our Sun and the Stars", "Unit 4: Galaxies and the Universe", "Unit 5: Space Exploration", "Unit 6: Semester Final Review"], "Freshman English 9A": ["Unit 1: Media Literacy", "Unit 2: Animal Farm", "Unit 3: The Hero's Journey", "Unit 4: Short Stories & Lit Circles"], "Physics": ["Unit 0: Semester Start: Safety and Measuring", "Unit 1: Energy Flow (The Texas Blackout)", "Unit 2: Energy, Forces & Earth's Crust", "Unit 3: Intro to Kinematics (Motion)", "Unit 4: Semester 1 Final Review", "Unit 5: Collisions and Momentum", "Unit 6: Meteors, Orbits and Gravity", "Unit 7: Electromagnetic Radiation", "Unit 8: Stars and the Big Bang", "Unit 9: Semester 2 Final Review"], "Senior English A": ["Unit 1: Creation Stories", "Unit 2: The Tragedy of Macbeth", "Unit 3: Poetry Analysis & Creative Writing"]};
 var API=location.origin+'/api';
 var DOC_EXT=/\.(pdf|docx?|pptx?|xlsx?|odt|odp|rtf|txt|png|jpe?g|gif|webp|heic)$/i, CANVAS_EXT=/\.(imscc|zip)$/i;
 var $=function(i){return document.getElementById(i)};
@@ -222,13 +226,16 @@ $('gateForm').addEventListener('submit',function(e){e.preventDefault();var pc=$(
     if(j.ok){loadSession()}else{$('gateErr').textContent=j.error||'That passcode didn\'t work.';$('passcode').focus()}
   }).catch(function(){$('gateGo').disabled=false;$('gateErr').textContent='Network problem. Please try again.'})});
 
-Object.keys(UNITS).forEach(function(c){var o=document.createElement('option');o.textContent=c;course.appendChild(o)});
+var COURSE_ICONS={"SEL":"💛","Transitions":"🧭","Ag Science 1":"🌾","Astronomy":"🔭","Biology A":"🧬","Culinary 1":"🍳","Freshman English 9A":"📚","Physics":"🧲","Senior English A":"🪶","Small Engines Overhaul":"🔧","US History":"🦅","World History":"🌍"};
+Object.keys(UNITS).forEach(function(c){var o=document.createElement('option');o.value=c;o.textContent=(COURSE_ICONS[c]?COURSE_ICONS[c]+' ':'')+c;course.appendChild(o)});
+var unlistedOpt=document.createElement('option');unlistedOpt.value='Class not listed';unlistedOpt.id='unlistedCourseOpt';unlistedOpt.textContent='Class not listed';course.appendChild(unlistedOpt);
 course.addEventListener('change',function(){
   unit.innerHTML='';var list=UNITS[course.value]||[];
   var f=document.createElement('option');f.value='';f.textContent=list.length?'Choose a unit…':'Choose a class first';unit.appendChild(f);
   list.forEach(function(u){var o=document.createElement('option');o.textContent=u;unit.appendChild(o)});
   var w=document.createElement('option');w.textContent='Whole class / not sure';if(list.length)unit.appendChild(w);
   unit.disabled=!list.length;
+  if(typeof layout==='function')layout();
 });
 var v=function(n){var el=form.elements[n];return el?String(el.value||'').trim():''};
 function kind(){return form.querySelector('input[name=kind]:checked').value}
@@ -236,10 +243,17 @@ function cmode(){return form.querySelector('input[name=canvasMode]:checked').val
 function levels(){return [].slice.call(form.querySelectorAll('input[name=levels]:checked')).map(function(x){return x.value})}
 function adaptType(){var el=form.querySelector('input[name=adaptType]:checked');return el?el.value:''}
 function adaptLabel(t){return t==='modify'?'Modified (S grade)':t==='accommodate'?'Accommodation':''}
+function unlisted(){return kind()!=='canvas'&&v('course')==='Class not listed'}
 function layout(){
-  var c=kind()==='canvas', nw=c&&cmode()==='new';
-  $('canvasModeBox').hidden=!c;$('docTypeBox').hidden=c;$('adaptBox').hidden=c;$('unitBox').hidden=c;
+  var c=kind()==='canvas', nw=c&&cmode()==='new', un=unlisted();
+  if(c&&v('course')==='Class not listed'){course.value='';un=false;}
+  if($('unlistedCourseOpt'))$('unlistedCourseOpt').hidden=c;
+  $('canvasModeBox').hidden=!c;$('docTypeBox').hidden=c;$('adaptBox').hidden=c;$('unitBox').hidden=c||un;
   $('courseBox').hidden=nw;$('newClassBox').hidden=!nw;
+  $('courseBox').classList.toggle('full', un);
+  if($('unlistedHint'))$('unlistedHint').hidden=!un;
+  if($('unlistedClassBox'))$('unlistedClassBox').hidden=!un;
+  if($('unlistedUnitBox'))$('unlistedUnitBox').hidden=!un;
   $('fileLabel').textContent=c?'Your Canvas course export':'Your file';
   file.accept=c?'.imscc,.zip,application/zip':'.pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx,.odt,.odp,.rtf,.txt,.png,.jpg,.jpeg,.gif,.webp,.heic,application/pdf,image/*';
   $('dropHint').textContent=c?('or tap to choose · Canvas export (.imscc or .zip) · up to '+S.maxCanvasMB+' MB'):('or tap to choose · PDF, Word, PowerPoint, a Google Docs/Slides download, or a photo · up to '+S.maxDocMB+' MB');
@@ -277,8 +291,9 @@ function fileOk(){
 var rules={teacherName:function(){return !!v('teacherName')},
   email:function(){var e=v('email');return !e||/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)},
   course:function(){return (kind()==='canvas'&&cmode()==='new')||!!v('course')},
-  unit:function(){return kind()==='canvas'||!!v('unit')},
+  unit:function(){return kind()==='canvas'||unlisted()||!!v('unit')},
   newClassName:function(){return !(kind()==='canvas'&&cmode()==='new')||!!v('newClassName')},
+  unlistedClassName:function(){return !unlisted()||!!v('unlistedClassName')},
   levels:function(){return levels().length>0},
   docType:function(){return kind()==='canvas'||!!v('docType')},
   adaptType:function(){return kind()==='canvas'||!!adaptType()},
@@ -330,8 +345,9 @@ form.addEventListener('submit',function(e){
   if(bad.length){var el=form.querySelector('[data-f='+bad[0]+'] input,[data-f='+bad[0]+'] select');if(el)el.focus();return}
   if(isBig()&&bigOk!==fkey()){openBig(function(){form.requestSubmit?form.requestSubmit():form.dispatchEvent(new Event('submit',{cancelable:true}))});return}
   var f=file.files[0],c=kind()==='canvas';
-  var d={kind:kind(),teacherName:v('teacherName'),email:v('email'),course:(c&&cmode()==='new')?'':v('course'),unit:c?'':v('unit'),
-    canvasMode:c?cmode():'',newClassName:(c&&cmode()==='new')?v('newClassName'):'',levels:levels(),docType:c?'':v('docType'),adaptType:c?'':adaptType(),
+  var un=unlisted();
+  var d={kind:kind(),teacherName:v('teacherName'),email:v('email'),course:(c&&cmode()==='new')?'':v('course'),unit:c?'':(un?(v('unlistedUnit')||'Whole class / not sure'):v('unit')),
+    canvasMode:c?cmode():'',newClassName:(c&&cmode()==='new')?v('newClassName'):'',unlistedClassName:un?v('unlistedClassName'):'',classNotListed:un,levels:levels(),docType:c?'':v('docType'),adaptType:c?'':adaptType(),
     directions:v('directions'),fileName:f.name,fileSize:f.size,ack:$('ack').checked,website:v('website'),ft:S.ft,largeAck:isBig()};
   busy(true);
   getJSON(API+'/upload/start',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(d)}).then(function(j){
@@ -348,12 +364,13 @@ form.addEventListener('submit',function(e){
 });
 function done(d,id){
   busy(false);
-  var rows=d.kind==='canvas'?[['Sent','Canvas course'],[d.canvasMode==='new'?'New class':'Add to',d.canvasMode==='new'?d.newClassName:d.course]]:[['Class',d.course],['Unit',d.unit],['Type',d.docType]];
+  var classLabel=(d.classNotListed&&d.unlistedClassName)?('Class not listed: '+d.unlistedClassName):d.course;
+  var rows=d.kind==='canvas'?[['Sent','Canvas course'],[d.canvasMode==='new'?'New class':'Add to',d.canvasMode==='new'?d.newClassName:d.course]]:[['Class',classLabel],['Unit',d.unit],['Type',d.docType]];
   if(d.kind==='document'&&adaptLabel(d.adaptType))rows.push(['Request',adaptLabel(d.adaptType)]);
   rows.push(['Levels',d.levels.join(', ')],['File',d.fileName]);
   if(d.directions)rows.push(['Directions',d.directions.length>140?d.directions.slice(0,140)+'…':d.directions]);
   $('sum').innerHTML=rows.map(function(r){return '<dt>'+esc(r[0])+'</dt><dd>'+esc(r[1])+'</dd>'}).join('');
-  $('doneMsg').textContent=d.needsApproval?'Your request was sent. Because it\'s a larger file, it needs approval before we create the versions. We\'ll let you know once it\'s approved.':'Your request was sent. We\'ll make the versions, review them, and post them on your course page.';
+  $('doneMsg').textContent=d.needsApproval?'Your request was sent. Because it\'s a larger file, it needs approval before we create the versions. We\'ll let you know once it\'s approved.':(d.classNotListed?'Your request was sent. We\'ll make the versions and send them to the inclusion teacher. They will not be posted on the website.':'Your request was sent. We\'ll make the versions, review them, and post them on your course page.');
   if(d.needsApproval)rows.unshift(['Status','Waiting for approval (larger file)']),$('sum').innerHTML=rows.map(function(r){return '<dt>'+esc(r[0])+'</dt><dd>'+esc(r[1])+'</dd>'}).join('');
   $('rid').textContent=id;show('doneView');$('doneView').focus();window.scrollTo(0,0);
 }

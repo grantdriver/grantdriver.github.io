@@ -137,11 +137,7 @@ dialog.big .btns button{flex:1 1 180px}
 <label><input type="radio" name="canvasMode" value="existing" checked><span>Add to an existing class<small>Adds units and lessons to a class already on the site</small></span></label>
 <label><input type="radio" name="canvasMode" value="new"><span>Build a new class<small>Makes a new class page from the course</small></span></label>
 </div><div class="err" role="alert">Please choose one.</div></fieldset>
-<div class="f" data-f="course" id="courseBox"><label for="course">Class</label><select id="course" name="course"><option value="">Choose a class…</option></select>
-<p class="hint" id="unlistedHint" hidden>Use this if your class isn't on the site yet. Type its name below.</p>
-<div class="err" role="alert">Please choose a class.</div></div>
-<div class="f full" data-f="unlistedClassName" id="unlistedClassBox" hidden><label for="unlistedClassName">Class name</label><input type="text" id="unlistedClassName" name="unlistedClassName" maxlength="100" placeholder="e.g. Forensic Science"><div class="err" role="alert">Please type the class name.</div></div>
-<div class="f full" data-f="unlistedUnit" id="unlistedUnitBox" hidden><label for="unlistedUnit">Unit <span class="opt">(optional)</span></label><input type="text" id="unlistedUnit" name="unlistedUnit" maxlength="120" placeholder="e.g. Unit 3, or leave blank if not sure"></div>
+<div class="f" data-f="course" id="courseBox"><label for="course">Class</label><select id="course" name="course"><option value="">Choose a class…</option></select><div class="err" role="alert">Please choose a class.</div></div>
 <div class="f" data-f="unit" id="unitBox"><label for="unit">Unit</label><select id="unit" name="unit" disabled><option value="">Choose a class first</option></select><div class="err" role="alert">Please choose a unit.</div></div>
 <div class="f" data-f="newClassName" id="newClassBox" hidden><label for="newClassName">New class name</label><input type="text" id="newClassName" name="newClassName" maxlength="100" placeholder="e.g. Forensic Science"><div class="err" role="alert">Please name the new class.</div></div>
 <fieldset class="f full" data-f="levels"><legend>Levels needed</legend>
@@ -228,7 +224,7 @@ $('gateForm').addEventListener('submit',function(e){e.preventDefault();var pc=$(
 
 var COURSE_ICONS={"SEL":"💛","Transitions":"🧭","Ag Science 1":"🌾","Astronomy":"🔭","Biology A":"🧬","Culinary 1":"🍳","Freshman English 9A":"📚","Physics":"🧲","Senior English A":"🪶","Small Engines Overhaul":"🔧","US History":"🦅","World History":"🌍"};
 Object.keys(UNITS).forEach(function(c){var o=document.createElement('option');o.value=c;o.textContent=(COURSE_ICONS[c]?COURSE_ICONS[c]+' ':'')+c;course.appendChild(o)});
-var unlistedOpt=document.createElement('option');unlistedOpt.value='Class not listed';unlistedOpt.id='unlistedCourseOpt';unlistedOpt.textContent='Class not listed';course.appendChild(unlistedOpt);
+var unlistedOpt=document.createElement('option');unlistedOpt.value='Class Not Listed';unlistedOpt.id='unlistedCourseOpt';unlistedOpt.textContent='Class Not Listed';course.appendChild(unlistedOpt);
 course.addEventListener('change',function(){
   unit.innerHTML='';var list=UNITS[course.value]||[];
   var f=document.createElement('option');f.value='';f.textContent=list.length?'Choose a unit…':'Choose a class first';unit.appendChild(f);
@@ -243,17 +239,13 @@ function cmode(){return form.querySelector('input[name=canvasMode]:checked').val
 function levels(){return [].slice.call(form.querySelectorAll('input[name=levels]:checked')).map(function(x){return x.value})}
 function adaptType(){var el=form.querySelector('input[name=adaptType]:checked');return el?el.value:''}
 function adaptLabel(t){return t==='modify'?'Modified (S grade)':t==='accommodate'?'Accommodation':''}
-function unlisted(){return kind()!=='canvas'&&v('course')==='Class not listed'}
+function unlisted(){return kind()!=='canvas'&&v('course')==='Class Not Listed'}
 function layout(){
   var c=kind()==='canvas', nw=c&&cmode()==='new', un=unlisted();
-  if(c&&v('course')==='Class not listed'){course.value='';un=false;}
+  if(c&&v('course')==='Class Not Listed'){course.value='';un=false;}
   if($('unlistedCourseOpt'))$('unlistedCourseOpt').hidden=c;
   $('canvasModeBox').hidden=!c;$('docTypeBox').hidden=c;$('adaptBox').hidden=c;$('unitBox').hidden=c||un;
   $('courseBox').hidden=nw;$('newClassBox').hidden=!nw;
-  $('courseBox').classList.toggle('full', un);
-  if($('unlistedHint'))$('unlistedHint').hidden=!un;
-  if($('unlistedClassBox'))$('unlistedClassBox').hidden=!un;
-  if($('unlistedUnitBox'))$('unlistedUnitBox').hidden=!un;
   $('fileLabel').textContent=c?'Your Canvas course export':'Your file';
   file.accept=c?'.imscc,.zip,application/zip':'.pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx,.odt,.odp,.rtf,.txt,.png,.jpg,.jpeg,.gif,.webp,.heic,application/pdf,image/*';
   $('dropHint').textContent=c?('or tap to choose · Canvas export (.imscc or .zip) · up to '+S.maxCanvasMB+' MB'):('or tap to choose · PDF, Word, PowerPoint, a Google Docs/Slides download, or a photo · up to '+S.maxDocMB+' MB');
@@ -293,7 +285,6 @@ var rules={teacherName:function(){return !!v('teacherName')},
   course:function(){return (kind()==='canvas'&&cmode()==='new')||!!v('course')},
   unit:function(){return kind()==='canvas'||unlisted()||!!v('unit')},
   newClassName:function(){return !(kind()==='canvas'&&cmode()==='new')||!!v('newClassName')},
-  unlistedClassName:function(){return !unlisted()||!!v('unlistedClassName')},
   levels:function(){return levels().length>0},
   docType:function(){return kind()==='canvas'||!!v('docType')},
   adaptType:function(){return kind()==='canvas'||!!adaptType()},
@@ -346,8 +337,8 @@ form.addEventListener('submit',function(e){
   if(isBig()&&bigOk!==fkey()){openBig(function(){form.requestSubmit?form.requestSubmit():form.dispatchEvent(new Event('submit',{cancelable:true}))});return}
   var f=file.files[0],c=kind()==='canvas';
   var un=unlisted();
-  var d={kind:kind(),teacherName:v('teacherName'),email:v('email'),course:(c&&cmode()==='new')?'':v('course'),unit:c?'':(un?(v('unlistedUnit')||'Whole class / not sure'):v('unit')),
-    canvasMode:c?cmode():'',newClassName:(c&&cmode()==='new')?v('newClassName'):'',unlistedClassName:un?v('unlistedClassName'):'',classNotListed:un,levels:levels(),docType:c?'':v('docType'),adaptType:c?'':adaptType(),
+  var d={kind:kind(),teacherName:v('teacherName'),email:v('email'),course:(c&&cmode()==='new')?'':v('course'),unit:c?'':(un?'Whole class / not sure':v('unit')),
+    canvasMode:c?cmode():'',newClassName:(c&&cmode()==='new')?v('newClassName'):'',classNotListed:un,levels:levels(),docType:c?'':v('docType'),adaptType:c?'':adaptType(),
     directions:v('directions'),fileName:f.name,fileSize:f.size,ack:$('ack').checked,website:v('website'),ft:S.ft,largeAck:isBig()};
   busy(true);
   getJSON(API+'/upload/start',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(d)}).then(function(j){
@@ -364,7 +355,7 @@ form.addEventListener('submit',function(e){
 });
 function done(d,id){
   busy(false);
-  var classLabel=(d.classNotListed&&d.unlistedClassName)?('Class not listed: '+d.unlistedClassName):d.course;
+  var classLabel=d.classNotListed?'Class Not Listed':d.course;
   var rows=d.kind==='canvas'?[['Sent','Canvas course'],[d.canvasMode==='new'?'New class':'Add to',d.canvasMode==='new'?d.newClassName:d.course]]:[['Class',classLabel],['Unit',d.unit],['Type',d.docType]];
   if(d.kind==='document'&&adaptLabel(d.adaptType))rows.push(['Request',adaptLabel(d.adaptType)]);
   rows.push(['Levels',d.levels.join(', ')],['File',d.fileName]);

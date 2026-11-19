@@ -43,7 +43,7 @@ fieldset{border:0;padding:0;margin:0;min-width:0}
 .ack{display:flex;gap:10px;align-items:flex-start;margin-top:12px;font-weight:700;font-size:16.5px}
 .ack input{width:24px;height:24px;margin-top:2px;flex:none;accent-color:var(--navy)}
 .err{display:none;color:#9b2c1f;font-weight:700;font-size:15px;margin-top:6px}
-.bad .err{display:block}.bad input[type=text],.bad input[type=email],.bad select,.bad textarea,.bad .lv span,.bad .drop{border-color:#c0392b}
+.bad .err{display:block}.bad input[type=text],.bad input[type=email],.bad select,.bad textarea,.bad .lv span,.bad .drop,.bad .adapt span{border-color:#c0392b}
 .sub{background:var(--gold);color:var(--navy);border:0;border-radius:999px;font-weight:800;font-size:22px;padding:14px 40px;box-shadow:0 5px 0 #b88a00;cursor:pointer;font-family:inherit}
 .sub:hover{background:var(--gold2)}.sub:active{transform:translateY(3px);box-shadow:0 2px 0 #b88a00}
 .sub[disabled]{opacity:.6;cursor:wait}
@@ -66,6 +66,12 @@ fieldset{border:0;padding:0;margin:0;min-width:0}
 .kind span small{display:block;font-weight:600;font-size:14px;color:#4a5878}
 .kind input:checked+span{background:var(--bb);box-shadow:0 4px 0 var(--navy)}
 .kind input:focus-visible+span{outline:4px solid var(--gold);outline-offset:2px}
+
+.adapt{margin-top:0}
+.adapt label{flex:1 1 280px}
+.adapt input[value=accommodate]:checked+span{background:#e8f0fb;border-color:#1d4fa3;box-shadow:0 4px 0 #1d4fa3}
+.adapt input[value=modify]:checked+span{background:#fff4ed;border-color:#e8590c;box-shadow:0 4px 0 #e8590c}
+.adapt-diff{margin:8px 0 0;font-size:14.5px;color:#4a5878;line-height:1.4}
 .hp{position:absolute!important;left:-10000px!important;top:auto;width:1px;height:1px;overflow:hidden}
 .gatebox{max-width:520px;margin:10px auto;text-align:center}
 .gatebox input{width:100%;box-sizing:border-box;min-height:56px;padding:10px 16px;border-radius:16px;border:3px solid var(--navy);font:inherit;font-size:24px;text-align:center;letter-spacing:.2em}
@@ -141,13 +147,20 @@ dialog.big .btns button{flex:1 1 180px}
 <label><input type="checkbox" name="levels" value="Level 3"><span>Level 3<small>Close to class · guided notes</small></span></label>
 </div><div class="err" role="alert">Pick at least one level.</div></fieldset>
 <div class="f" data-f="docType" id="docTypeBox"><label for="docType">Document type</label><select id="docType" name="docType"><option value="">Choose a type…</option><option>Guided Notes</option><option>Worksheet</option><option>Reading</option><option>Quiz</option><option>Slides</option><option>Lab</option><option>Other</option></select><div class="err" role="alert">Please choose a type.</div></div>
+<fieldset class="f full" data-f="adaptType" id="adaptBox"><legend>What should we do with this document?</legend>
+<div class="kind adapt">
+<label><input type="radio" name="adaptType" value="accommodate"><span>Accommodate<small>Same standard. Changes how the student gets to the work or shows what they know (guided notes, word bank, read-aloud, more writing space).</small></span></label>
+<label><input type="radio" name="adaptType" value="modify"><span>Modify<small>Lowers what the student is expected to learn. The student will need an S grade on this work, per their IEP.</small></span></label>
+</div>
+<p class="hint adapt-diff" id="adaptDiff"><b>What's the difference?</b> An accommodation keeps the same learning goal. A modification lowers the goal, and that means an S grade.</p>
+<div class="err" role="alert">Please choose Accommodate or Modify.</div></fieldset>
 <div class="f full" data-f="file"><label for="file" id="fileLabel">Your file</label>
 <div class="drop" id="drop"><input type="file" id="file" name="file"><div class="big" aria-hidden="true">📄</div><b>Drop your file here</b><br><span id="dropHint">or tap to choose · PDF, Word, PowerPoint, a Google Docs/Slides download, or a photo · up to 25 MB</span></div>
 <div class="chosen" id="chosen" aria-live="polite"><span id="chosenName"></span><button type="button" id="clearFile">Change</button></div>
 <div class="apprnote" id="apprNote" aria-live="polite">⏳ Larger file: this one will need approval before it's created.</div>
 <div class="err" role="alert" id="fileErr">Please choose a file.</div>
 <div class="hint" id="gHint">Google Docs or Slides: File → Download → PDF, Word (.docx) or PowerPoint (.pptx), then attach that file.</div></div>
-<div class="f full" data-f="directions"><label for="directions">Directions for the modification <span class="opt">(what should we change or keep?)</span></label>
+<div class="f full" data-f="directions"><label for="directions">Directions for this document <span class="opt">(what should we change or keep?)</span></label>
 <textarea id="directions" name="directions" maxlength="3000" placeholder="e.g. Keep the same blanks as my notes so students can follow along. Add a word bank at Level 1 Advanced. Pictures for Level 1 Basic. Due next Tuesday."></textarea>
 <div class="hint">Helpful: due date, which parts matter most, vocabulary to keep, anything students struggle with. Please don't name students.</div></div>
 <div class="hp" aria-hidden="true"><label for="website">Website</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
@@ -200,7 +213,7 @@ var bigOk=null,afterBig=null;
 var form=$('up'),course=$('course'),unit=$('unit'),file=$('file'),drop=$('drop');
 function show(id){['gateView','formView','doneView','loadMsg'].forEach(function(x){$(x).hidden=(x!==id)})}
 function getJSON(u,o){return fetch(u,Object.assign({credentials:'same-origin',cache:'no-store'},o||{})).then(function(r){return r.json().catch(function(){return{ok:false,error:'Something went wrong. Please try again.'}}).then(function(j){j._status=r.status;return j})})}
-function loadSession(){return getJSON(API+'/session').then(function(j){S=j;if(j.gate&&!j.unlocked){show('gateView');$('passcode').focus()}else{show('formView')}})
+function loadSession(){return getJSON(API+'/session').then(function(j){if(typeof j.maxDocMB==='number')S=j;if(j.gate&&!j.unlocked){show('gateView');$('passcode').focus()}else{show('formView')}})
   .catch(function(){$('loadMsg').textContent='Could not load the upload page. Please refresh.'})}
 $('gateForm').addEventListener('submit',function(e){e.preventDefault();var pc=$('passcode').value;if(!pc){$('gateErr').textContent='Please type the passcode.';return}
   $('gateGo').disabled=true;$('gateErr').textContent='';
@@ -221,9 +234,11 @@ var v=function(n){var el=form.elements[n];return el?String(el.value||'').trim():
 function kind(){return form.querySelector('input[name=kind]:checked').value}
 function cmode(){return form.querySelector('input[name=canvasMode]:checked').value}
 function levels(){return [].slice.call(form.querySelectorAll('input[name=levels]:checked')).map(function(x){return x.value})}
+function adaptType(){var el=form.querySelector('input[name=adaptType]:checked');return el?el.value:''}
+function adaptLabel(t){return t==='modify'?'Modified (S grade)':t==='accommodate'?'Accommodation':''}
 function layout(){
   var c=kind()==='canvas', nw=c&&cmode()==='new';
-  $('canvasModeBox').hidden=!c;$('docTypeBox').hidden=c;$('unitBox').hidden=c;
+  $('canvasModeBox').hidden=!c;$('docTypeBox').hidden=c;$('adaptBox').hidden=c;$('unitBox').hidden=c;
   $('courseBox').hidden=nw;$('newClassBox').hidden=!nw;
   $('fileLabel').textContent=c?'Your Canvas course export':'Your file';
   file.accept=c?'.imscc,.zip,application/zip':'.pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx,.odt,.odp,.rtf,.txt,.png,.jpg,.jpeg,.gif,.webp,.heic,application/pdf,image/*';
@@ -266,6 +281,7 @@ var rules={teacherName:function(){return !!v('teacherName')},
   newClassName:function(){return !(kind()==='canvas'&&cmode()==='new')||!!v('newClassName')},
   levels:function(){return levels().length>0},
   docType:function(){return kind()==='canvas'||!!v('docType')},
+  adaptType:function(){return kind()==='canvas'||!!adaptType()},
   file:fileOk,
   ack:function(){return $('ack').checked}};
 function check(k){var ok=rules[k]();var box=form.querySelector('[data-f='+k+']');if(box)box.classList.toggle('bad',!ok);return ok}
@@ -315,7 +331,7 @@ form.addEventListener('submit',function(e){
   if(isBig()&&bigOk!==fkey()){openBig(function(){form.requestSubmit?form.requestSubmit():form.dispatchEvent(new Event('submit',{cancelable:true}))});return}
   var f=file.files[0],c=kind()==='canvas';
   var d={kind:kind(),teacherName:v('teacherName'),email:v('email'),course:(c&&cmode()==='new')?'':v('course'),unit:c?'':v('unit'),
-    canvasMode:c?cmode():'',newClassName:(c&&cmode()==='new')?v('newClassName'):'',levels:levels(),docType:c?'':v('docType'),
+    canvasMode:c?cmode():'',newClassName:(c&&cmode()==='new')?v('newClassName'):'',levels:levels(),docType:c?'':v('docType'),adaptType:c?'':adaptType(),
     directions:v('directions'),fileName:f.name,fileSize:f.size,ack:$('ack').checked,website:v('website'),ft:S.ft,largeAck:isBig()};
   busy(true);
   getJSON(API+'/upload/start',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(d)}).then(function(j){
@@ -333,6 +349,7 @@ form.addEventListener('submit',function(e){
 function done(d,id){
   busy(false);
   var rows=d.kind==='canvas'?[['Sent','Canvas course'],[d.canvasMode==='new'?'New class':'Add to',d.canvasMode==='new'?d.newClassName:d.course]]:[['Class',d.course],['Unit',d.unit],['Type',d.docType]];
+  if(d.kind==='document'&&adaptLabel(d.adaptType))rows.push(['Request',adaptLabel(d.adaptType)]);
   rows.push(['Levels',d.levels.join(', ')],['File',d.fileName]);
   if(d.directions)rows.push(['Directions',d.directions.length>140?d.directions.slice(0,140)+'…':d.directions]);
   $('sum').innerHTML=rows.map(function(r){return '<dt>'+esc(r[0])+'</dt><dd>'+esc(r[1])+'</dd>'}).join('');

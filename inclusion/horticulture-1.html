@@ -24,35 +24,9 @@
   <h1><span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" style="vertical-align:-.15em" aria-hidden="true" focusable="false"><path d="M12 13.1c-.15-2.6-.05-4.7.55-6.55" fill="none" stroke="#1d3557" stroke-width="1.7" stroke-linecap="round"/><path d="M12 13.1c-.15-2.6-.05-4.7.55-6.55" fill="none" stroke="#7bc142" stroke-width="1.05" stroke-linecap="round"/><path d="M12.2 8.05c-2.15.15-4.15-1.05-4.85-2.95 2.55-.85 5.05.55 5.55 2.75-.08.1-.2.16-.35.14z" fill="#c8f06a" stroke="#1d3557" stroke-width="1.05" stroke-linejoin="round"/><path d="M12.55 7.15c1.55-1.85 3.85-2.55 5.7-1.7-.15 2.45-2.05 4.35-4.45 4.7-.1-.12-.18-.28-.18-.45z" fill="#b6e85c" stroke="#1d3557" stroke-width="1.05" stroke-linejoin="round"/><ellipse cx="12" cy="13.15" rx="5.15" ry="1.35" fill="#4a2c18"/><path d="M7.25 14.15h9.5l-1.12 6.7c-.14.82-.84 1.4-1.68 1.4H10.05c-.84 0-1.54-.58-1.68-1.4z" fill="#ef9a4a" stroke="#1d3557" stroke-width="1.15" stroke-linejoin="round"/><path d="M5.85 12.2h12.3c.55 0 1 .42 1 .95v.95H4.85v-.95c0-.53.45-.95 1-.95z" fill="#d4722e" stroke="#1d3557" stroke-width="1.15" stroke-linejoin="round"/></svg></span> Horticulture 1</h1>
   <style>html[data-lv="1"] .lvonly:not(.lv1):not(.lv2){display:none}html[data-lv="4"] .lvonly:not(.lv4){display:none}html[data-lv="3"] .lvonly:not(.lv3){display:none}html[data-lv="1"] .jump.lvonly.lv2,html[data-lv="1"] main.wrap>.lvonly.lv2>.lvlead{display:none}html[data-lv="1"] .lvgroup.lvonly.lv2{margin-top:14px}html[data-lv="1"] main.wrap:has(>.lvonly.lv2){display:flex;flex-direction:column}html[data-lv="1"] main.wrap>.lvonly.lv1,html[data-lv="1"] main.wrap>.lvonly.lv2{display:contents}html[data-lv="1"] main.wrap:has(>.lvonly.lv2)>*{order:9}html[data-lv="1"] main.wrap:has(>.lvonly.lv2)>.hero{order:0}html[data-lv="1"] main.wrap>.lvonly>*{order:1}html[data-lv="1"] main.wrap>.lv1>.utabgroup{order:2}html[data-lv="1"] main.wrap>.lv2>.utabgroup{order:3}html[data-lv="1"] main.wrap>.lv1>[id^="other-"]{order:4}html[data-lv="1"] main.wrap>.lv2>[id^="other-"]{order:5}html[data-lv="1"] main.wrap>.lv1>[id^="teacher-"]{order:6}html[data-lv="1"] main.wrap>.lv2>[id^="teacher-"]{order:7}html[data-lv="1"] main.wrap>.lv2>.utabgroup,html[data-lv="1"] main.wrap>.lv2>[id^="other-"],html[data-lv="1"] main.wrap>.lv2>[id^="teacher-"]{border-top:4px dashed #f2b705;margin-top:22px;padding-top:6px}</style><div class="lvtabs" role="tablist" aria-label="Choose a level" data-v="2"><a class="lvtab lv1" role="tab" data-lv="1" href="#level1" aria-selected="false"><span><span aria-hidden="true">🔵</span> Level 1</span><small>Basic + Advanced inside</small></a><a class="lvtab lv4" role="tab" data-lv="4" href="#level4" aria-selected="false"><span><span aria-hidden="true">🟣</span> Level 2</span><small>About 5th–6th-grade reading</small></a><a class="lvtab lv3" role="tab" data-lv="3" href="#level3" aria-selected="false"><span><span aria-hidden="true">🟢</span> Level 3</span><small>Close to class · guided notes</small></a></div><p class="note lvshow">Showing <b id="lvnow">all levels</b>. Tap a button to switch.</p><script>(function(){var K='lv-horticulture-1',L=["1", "4", "3"],N={"1": "Level 1 (Basic + Advanced)", "3": "Level 3", "4": "Level 2"},r=document.documentElement;function nv(v){return v==='2'?'1':v}function set(v,save){v=nv(v);r.setAttribute('data-lv',v);var t=document.querySelectorAll('.lvtab');for(var i=0;i<t.length;i++){var on=t[i].getAttribute('data-lv')===v;t[i].setAttribute('aria-selected',on?'true':'false');if(on){t[i].classList.add('on')}else{t[i].classList.remove('on')}}var w=document.getElementById('lvnow');if(w)w.textContent=N[v]||('Level '+v);if(save){try{localStorage.setItem(K,v)}catch(e){}}var q=document.getElementById('q');if(q&&q.value){q.dispatchEvent(new Event('input'))}}function fromHash(){var m=/^#level(\d+)$/.exec(location.hash)||/^#[\w-]+-l(\d)$/.exec(location.hash);var v=m?nv(m[1]):null;return v&&L.indexOf(v)>-1?v:null}var h=fromHash(),s=null;try{s=localStorage.getItem(K)}catch(e){}if(s)s=nv(s);set(h||(s&&L.indexOf(s)>-1?s:L[0]),!!h);window.addEventListener('hashchange',function(){var v=fromHash();if(v)set(v,true)});document.addEventListener('DOMContentLoaded',function(){var W={"1": " level 1 basic l1 basic", "2": " level 1 advanced l1 advanced", "3": " level 3 l3", "4": " level 2 l2"};[].forEach.call(document.querySelectorAll('.lvonly .item'),function(el){var g=el.closest('.lvonly'),m=/\blv(\d)\b/.exec(g.className);if(m&&W[m[1]]){var q=el.getAttribute('data-q')||'';if(q.indexOf(W[m[1]].slice(1,12))<0)el.setAttribute('data-q',q+W[m[1]])}})});})();</script>
   <p class="lead">Modified Level 1 (Basic + Advanced), Level 2 and Level 3 materials for students in Horticulture 1. Students stay in the gen ed lesson and greenhouse work and use these pieces next to it: same units, same order, same points. Every notes page and reading has a 🔊 Read aloud button. Staff guides include tool and plant safety.</p>
-  <p class="jump"><a class="btn blue" href="#syllabus">📋 Syllabus</a> <a class="btn blue" href="#booklet">📘 Activity booklet</a> <a class="btn blue" href="#units">🗂️ Units</a> <a class="btn ghost" href="#teacher">👩‍🏫 Teacher resources</a></p>
+  <p class="jump"><a class="btn blue" href="#syllabus">📋 Syllabus</a> <a class="btn blue" href="#booklet">📘 Activity booklet</a> <a class="btn blue" href="#labs">🌱 Greenhouse Labs &amp; Projects</a> <a class="btn blue" href="#units">🗂️ Units</a> <a class="btn ghost" href="#teacher">👩‍🏫 Teacher resources</a></p>
   <div class="searchbar"><label for="q">🔎 Find something:</label><input id="q" type="search" placeholder="Type a word, like goal, rights, key, 10/26…" autocomplete="off"><span id="qn" class="note"></span></div>
 </section>
-<section class="cat" id="syllabus" aria-labelledby="h-syllabus"><h2 id="h-syllabus">📋 Horticulture 1 Syllabus</h2>
-<details class="dbd ucond" open><summary><span class="dbdh">📋 Leveled syllabi</span> <small>(3)</small></summary><div class="grid rows"><article class="card item row" data-q="Horticulture 1 level 1 syllabus 2026-27">
-  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/horticulture-1-syllabus-l1.pdf" target="_blank" rel="noopener" aria-label="Open: Horticulture 1 · Level 1 syllabus"><img src="../thumbs/incl-horticulture-1-syllabus-l1.jpg" alt="" loading="lazy" width="116" height="150"></a>
-  <div class="itxt"><span class="tpill">📋 SYLLABUS</span>
-  <h4>Horticulture 1 · Level 1 syllabus</h4>
-  <p class="meta">4 pages · PDF · 361 KB</p><p class="sub">Level 1 syllabus · 2026–27</p>
-  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/horticulture-1-syllabus-l1.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/horticulture-1-syllabus-l1.pdf" download>⬇ Download</a></div></div>
-</article>
-<article class="card item row" data-q="Horticulture 1 level 2 syllabus 2026-27">
-  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/horticulture-1-syllabus-l2.pdf" target="_blank" rel="noopener" aria-label="Open: Horticulture 1 · Level 2 syllabus"><img src="../thumbs/incl-horticulture-1-syllabus-l2.jpg" alt="" loading="lazy" width="116" height="150"></a>
-  <div class="itxt"><span class="tpill">📋 SYLLABUS</span>
-  <h4>Horticulture 1 · Level 2 syllabus</h4>
-  <p class="meta">4 pages · PDF · 256 KB</p><p class="sub">Level 2 syllabus · 2026–27</p>
-  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/horticulture-1-syllabus-l2.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/horticulture-1-syllabus-l2.pdf" download>⬇ Download</a></div></div>
-</article>
-<article class="card item row" data-q="Horticulture 1 level 3 syllabus 2026-27">
-  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/horticulture-1-syllabus-l3.pdf" target="_blank" rel="noopener" aria-label="Open: Horticulture 1 · Level 3 syllabus"><img src="../thumbs/incl-horticulture-1-syllabus-l3.jpg" alt="" loading="lazy" width="116" height="150"></a>
-  <div class="itxt"><span class="tpill">📋 SYLLABUS</span>
-  <h4>Horticulture 1 · Level 3 syllabus</h4>
-  <p class="meta">4 pages · PDF · 270 KB</p><p class="sub">Level 3 syllabus · 2026–27</p>
-  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/horticulture-1-syllabus-l3.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/horticulture-1-syllabus-l3.pdf" download>⬇ Download</a></div></div>
-</article></div>
-</details></section>
 <section class="cat" id="booklet" aria-labelledby="h-booklet"><h2 id="h-booklet">📘 Horticulture 1 Activity Booklet</h2>
 <details class="dbd ucond" open><summary><span class="dbdh">📘 Horticulture 1 Activity Booklet</span> <small>(1)</small></summary><div class="grid rows"><article class="card item row" data-q="horticulture 1 activity booklet level 1 activity pages printable booklet">
   <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/horticulture-1-activity-booklet.pdf" target="_blank" rel="noopener" aria-label="Open: Horticulture 1 Activity Booklet"><img src="../thumbs/incl-horticulture-1-activity-booklet.jpg" alt="" loading="lazy" width="116" height="150"></a>
@@ -63,6 +37,943 @@
   <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/horticulture-1-activity-booklet.pdf" download>⬇ Download</a></div></div>
 </article></div>
 </details></section>
+<section class="cat labs-index" id="labs" aria-labelledby="h-labs"><h2 id="h-labs">🌱 Greenhouse Labs &amp; Projects</h2><p class="note">Every lab and project in this class, in unit order. The level buttons at the top still apply. If a lab only exists at another level, it stays visible and is labeled.</p><div class="labs-unit" data-unit="0"><h3><a href="#unit-0">🏡 Unit 0: Classroom &amp; Greenhouse Basics</a></h3><div class="labblock" data-lvs="1 2"><h4 class="unit"><span aria-hidden="true">🙋</span> Class Rules &amp; Safety (from Ag Science)</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="class rules &amp; safety contract: level 1 basic slides (shared with ag science) jobs, safety, steps, checks · shared from ag science 1: same safety rules apply in the greenhouse slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l1-class-rules-safety-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Class Rules &amp; Safety Contract: Level 1 Basic slides (shared with Ag Science)"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-class-rules-safety-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Class Rules &amp; Safety Contract (shared with Ag Science)</h4>
+  <p class="meta">10 slides · PDF · 539 KB</p><p class="sub">Jobs, safety, steps, checks · Shared from Ag Science 1: same safety rules apply in the greenhouse</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l1-class-rules-safety-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l1-class-rules-safety-lab-deck.pdf" download>⬇ Download</a></div></div>
+</article><article class="card game item" data-q="class rules &amp; safety contract steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🙋</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Class Rules &amp; Safety Contract</h3><p>Lab review game</p>
+  <a class="btn gold" href="horticulture-1/00-basics/horticulture-1-l1-class-rules-safety-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="class rules &amp; safety contract: level 1 basic prep sheet (shared with ag science) jobs, tools checklist, safety · shared from ag science 1: same safety rules apply in the greenhouse printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l1-class-rules-safety-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Class Rules &amp; Safety Contract: Level 1 Basic prep sheet (shared with Ag Science)"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-class-rules-safety-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Class Rules &amp; Safety Contract: Level 1 Basic (shared with Ag Science)</h4>
+  <p class="meta">1 page · PDF · 150 KB</p><p class="sub">Jobs, tools checklist, safety · Shared from Ag Science 1: same safety rules apply in the greenhouse</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l1-class-rules-safety-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l1-class-rules-safety-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="class rules &amp; safety contract: level 1 basic my check (shared with ag science) name line · photo checklist · self-check · shared from ag science 1: same safety rules apply in the greenhouse printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l1-class-rules-safety-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Class Rules &amp; Safety Contract: Level 1 Basic my check (shared with Ag Science)"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-class-rules-safety-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Class Rules &amp; Safety Contract: Level 1 Basic (shared with Ag Science)</h4>
+  <p class="meta">1 page · PDF · 145 KB</p><p class="sub">Name line · photo checklist · self-check · Shared from Ag Science 1: same safety rules apply in the greenhouse</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l1-class-rules-safety-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l1-class-rules-safety-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="class rules &amp; safety contract: level 1 advanced slides (shared with ag science) jobs, safety, steps, checks · shared from ag science 1: same safety rules apply in the greenhouse slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l2-class-rules-safety-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Class Rules &amp; Safety Contract: Level 1 Advanced slides (shared with Ag Science)"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-class-rules-safety-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Class Rules &amp; Safety Contract (shared with Ag Science)</h4>
+  <p class="meta">9 slides · PDF · 511 KB</p><p class="sub">Jobs, safety, steps, checks · Shared from Ag Science 1: same safety rules apply in the greenhouse</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l2-class-rules-safety-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l2-class-rules-safety-lab-deck.pdf" download>⬇ Download</a></div></div>
+</article><article class="card game item" data-q="class rules &amp; safety contract steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🙋</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Class Rules &amp; Safety Contract</h3><p>Lab review game</p>
+  <a class="btn gold" href="horticulture-1/00-basics/horticulture-1-l2-class-rules-safety-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="class rules &amp; safety contract: level 1 advanced prep sheet (shared with ag science) jobs, tools checklist, safety · shared from ag science 1: same safety rules apply in the greenhouse printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l2-class-rules-safety-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Class Rules &amp; Safety Contract: Level 1 Advanced prep sheet (shared with Ag Science)"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-class-rules-safety-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Class Rules &amp; Safety Contract: Level 1 Advanced (shared with Ag Science)</h4>
+  <p class="meta">1 page · PDF · 153 KB</p><p class="sub">Jobs, tools checklist, safety · Shared from Ag Science 1: same safety rules apply in the greenhouse</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l2-class-rules-safety-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l2-class-rules-safety-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="class rules &amp; safety contract: level 1 advanced reflection (shared with ag science) name line · photo checklist · self-check · shared from ag science 1: same safety rules apply in the greenhouse printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l2-class-rules-safety-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Class Rules &amp; Safety Contract: Level 1 Advanced reflection (shared with Ag Science)"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-class-rules-safety-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Class Rules &amp; Safety Contract: Level 1 Advanced (shared with Ag Science)</h4>
+  <p class="meta">1 page · PDF · 135 KB</p><p class="sub">Name line · photo checklist · self-check · Shared from Ag Science 1: same safety rules apply in the greenhouse</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l2-class-rules-safety-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l2-class-rules-safety-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div><div class="labblock" data-lvs="1 2"><h4 class="unit"><span aria-hidden="true">📜</span> FFA Creed (from Ag Science)</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="ffa creed: level 1 basic slides (shared with ag science) jobs, safety, steps, checks · shared from ag science 1: ffa week and leadership points slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l1-ffa-creed-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: FFA Creed: Level 1 Basic slides (shared with Ag Science)"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-ffa-creed-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>FFA Creed (shared with Ag Science)</h4>
+  <p class="meta">10 slides · PDF · 540 KB</p><p class="sub">Jobs, safety, steps, checks · Shared from Ag Science 1: FFA Week and leadership points</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l1-ffa-creed-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l1-ffa-creed-lab-deck.pdf" download>⬇ Download</a></div></div>
+</article><article class="card game item" data-q="ffa creed steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">📜</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>FFA Creed</h3><p>Lab review game</p>
+  <a class="btn gold" href="horticulture-1/00-basics/horticulture-1-l1-ffa-creed-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="ffa creed: level 1 basic prep sheet (shared with ag science) jobs, tools checklist, safety · shared from ag science 1: ffa week and leadership points printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l1-ffa-creed-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: FFA Creed: Level 1 Basic prep sheet (shared with Ag Science)"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-ffa-creed-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>FFA Creed: Level 1 Basic (shared with Ag Science)</h4>
+  <p class="meta">1 page · PDF · 130 KB</p><p class="sub">Jobs, tools checklist, safety · Shared from Ag Science 1: FFA Week and leadership points</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l1-ffa-creed-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l1-ffa-creed-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="ffa creed: level 1 basic my check (shared with ag science) name line · photo checklist · self-check · shared from ag science 1: ffa week and leadership points printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l1-ffa-creed-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: FFA Creed: Level 1 Basic my check (shared with Ag Science)"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-ffa-creed-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>FFA Creed: Level 1 Basic (shared with Ag Science)</h4>
+  <p class="meta">1 page · PDF · 121 KB</p><p class="sub">Name line · photo checklist · self-check · Shared from Ag Science 1: FFA Week and leadership points</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l1-ffa-creed-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l1-ffa-creed-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="ffa creed: level 1 advanced slides (shared with ag science) jobs, safety, steps, checks · shared from ag science 1: ffa week and leadership points slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l2-ffa-creed-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: FFA Creed: Level 1 Advanced slides (shared with Ag Science)"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-ffa-creed-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>FFA Creed (shared with Ag Science)</h4>
+  <p class="meta">9 slides · PDF · 528 KB</p><p class="sub">Jobs, safety, steps, checks · Shared from Ag Science 1: FFA Week and leadership points</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l2-ffa-creed-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l2-ffa-creed-lab-deck.pdf" download>⬇ Download</a></div></div>
+</article><article class="card game item" data-q="ffa creed steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">📜</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>FFA Creed</h3><p>Lab review game</p>
+  <a class="btn gold" href="horticulture-1/00-basics/horticulture-1-l2-ffa-creed-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="ffa creed: level 1 advanced prep sheet (shared with ag science) jobs, tools checklist, safety · shared from ag science 1: ffa week and leadership points printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l2-ffa-creed-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: FFA Creed: Level 1 Advanced prep sheet (shared with Ag Science)"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-ffa-creed-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>FFA Creed: Level 1 Advanced (shared with Ag Science)</h4>
+  <p class="meta">1 page · PDF · 130 KB</p><p class="sub">Jobs, tools checklist, safety · Shared from Ag Science 1: FFA Week and leadership points</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l2-ffa-creed-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l2-ffa-creed-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="ffa creed: level 1 advanced reflection (shared with ag science) name line · photo checklist · self-check · shared from ag science 1: ffa week and leadership points printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l2-ffa-creed-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: FFA Creed: Level 1 Advanced reflection (shared with Ag Science)"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-ffa-creed-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>FFA Creed: Level 1 Advanced (shared with Ag Science)</h4>
+  <p class="meta">1 page · PDF · 104 KB</p><p class="sub">Name line · photo checklist · self-check · Shared from Ag Science 1: FFA Week and leadership points</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l2-ffa-creed-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l2-ffa-creed-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div><div class="labblock" data-lvs="1 2 3"><h4 class="unit"><span aria-hidden="true">🗺️</span> Greenhouse Orientation &amp; Map</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="greenhouse orientation &amp; map: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l1-gh-orientation-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Greenhouse Orientation &amp; Map: Level 1 Basic slides"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-gh-orientation-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Greenhouse Orientation &amp; Map</h4>
+  <p class="meta">12 slides · PDF · 690 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l1-gh-orientation-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l1-gh-orientation-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="horticulture-1/00-basics/horticulture-1-l1-gh-orientation-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="greenhouse orientation &amp; map steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🗺️</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Greenhouse Orientation &amp; Map</h3><p>Lab review game</p>
+  <a class="btn gold" href="horticulture-1/00-basics/horticulture-1-l1-gh-orientation-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="🚧 greenhouse orientation &amp; map: level 1 basic task card 🚧 under construction: our map packet uses a generic layout; the real greenhouse map (sinks, doors, tables) is room-specific. one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l1-gh-orientation-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: 🚧 Greenhouse Orientation &amp; Map: Level 1 Basic task card"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-gh-orientation-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>🚧 Greenhouse Orientation &amp; Map: Level 1 Basic</h4>
+  <p class="meta">2 pages · PDF · 145 KB</p><p class="sub">🚧 Under construction: Our map packet uses a generic layout; the real greenhouse map (sinks, doors, tables) is room-specific. One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l1-gh-orientation-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l1-gh-orientation-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="greenhouse orientation &amp; map: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l1-gh-orientation-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Greenhouse Orientation &amp; Map: Level 1 Basic prep sheet"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-gh-orientation-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Greenhouse Orientation &amp; Map: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 143 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l1-gh-orientation-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l1-gh-orientation-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="greenhouse orientation &amp; map: level 1 basic my check name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l1-gh-orientation-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Greenhouse Orientation &amp; Map: Level 1 Basic my check"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-gh-orientation-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Greenhouse Orientation &amp; Map: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 134 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l1-gh-orientation-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l1-gh-orientation-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="greenhouse orientation &amp; map: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l2-gh-orientation-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Greenhouse Orientation &amp; Map: Level 1 Advanced slides"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-gh-orientation-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Greenhouse Orientation &amp; Map</h4>
+  <p class="meta">12 slides · PDF · 651 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l2-gh-orientation-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l2-gh-orientation-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="horticulture-1/00-basics/horticulture-1-l2-gh-orientation-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="greenhouse orientation &amp; map steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🗺️</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Greenhouse Orientation &amp; Map</h3><p>Lab review game</p>
+  <a class="btn gold" href="horticulture-1/00-basics/horticulture-1-l2-gh-orientation-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="🚧 greenhouse orientation &amp; map: level 1 advanced task card 🚧 under construction: our map packet uses a generic layout; the real greenhouse map (sinks, doors, tables) is room-specific. one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l2-gh-orientation-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: 🚧 Greenhouse Orientation &amp; Map: Level 1 Advanced task card"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-gh-orientation-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>🚧 Greenhouse Orientation &amp; Map: Level 1 Advanced</h4>
+  <p class="meta">2 pages · PDF · 149 KB</p><p class="sub">🚧 Under construction: Our map packet uses a generic layout; the real greenhouse map (sinks, doors, tables) is room-specific. One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l2-gh-orientation-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l2-gh-orientation-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="greenhouse orientation &amp; map: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l2-gh-orientation-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Greenhouse Orientation &amp; Map: Level 1 Advanced prep sheet"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-gh-orientation-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Greenhouse Orientation &amp; Map: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 141 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l2-gh-orientation-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l2-gh-orientation-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="greenhouse orientation &amp; map: level 1 advanced reflection name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l2-gh-orientation-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Greenhouse Orientation &amp; Map: Level 1 Advanced reflection"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-gh-orientation-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Greenhouse Orientation &amp; Map: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 98 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l2-gh-orientation-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l2-gh-orientation-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="3"><div class="grid"><article class="card game page item" data-q="greenhouse orientation &amp; map: level 3 lab sheet (read aloud) opens in the browser · read-aloud inside read aloud notes reading lab sheet">
+  <a class="thumb2" href="horticulture-1/00-basics/horticulture-1-l3-gh-orientation-lab-sheet-page.html" target="_blank" rel="noopener" aria-label="Open: Greenhouse Orientation &amp; Map: Level 3"><img src="../thumbs/incl-horticulture-1-horticulture-1-l3-gh-orientation-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="gtxt"><span class="pill lv3">Level 3</span><span class="tpill">🧪 LAB SHEET</span>
+  <h3>Greenhouse Orientation &amp; Map: Level 3</h3><p>Opens in the browser · read-aloud inside</p>
+  <a class="btn blue" href="horticulture-1/00-basics/horticulture-1-l3-gh-orientation-lab-sheet-page.html" target="_blank" rel="noopener">Open</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="greenhouse orientation &amp; map: level 3 lab sheet question, prediction, steps, data table, cer printable lab sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l3-gh-orientation-lab-sheet.pdf" target="_blank" rel="noopener" aria-label="Open: Greenhouse Orientation &amp; Map: Level 3 lab sheet"><img src="../thumbs/incl-horticulture-1-horticulture-1-l3-gh-orientation-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB SHEET</span>
+  <h4>Greenhouse Orientation &amp; Map: Level 3</h4>
+  <p class="meta">2 pages · PDF · 50 KB</p><p class="sub">Question, prediction, steps, data table, CER</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l3-gh-orientation-lab-sheet.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l3-gh-orientation-lab-sheet.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div></div><div class="labs-unit" data-unit="3"><h3><a href="#unit-3">🌿 Unit 3: Parts of the Plant</a></h3><div class="labblock" data-lvs="1 2 3"><h4 class="unit"><span aria-hidden="true">🍃</span> Leaf Collection Walk</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="leaf collection walk: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l1-leaf-collection-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Leaf Collection Walk: Level 1 Basic slides"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-leaf-collection-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Leaf Collection Walk</h4>
+  <p class="meta">12 slides · PDF · 677 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l1-leaf-collection-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l1-leaf-collection-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="horticulture-1/03-plant-parts/horticulture-1-l1-leaf-collection-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="leaf collection walk steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🍃</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Leaf Collection Walk</h3><p>Lab review game</p>
+  <a class="btn gold" href="horticulture-1/03-plant-parts/horticulture-1-l1-leaf-collection-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="leaf collection walk: level 1 basic task card one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l1-leaf-collection-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Leaf Collection Walk: Level 1 Basic task card"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-leaf-collection-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Leaf Collection Walk: Level 1 Basic</h4>
+  <p class="meta">2 pages · PDF · 129 KB</p><p class="sub">One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l1-leaf-collection-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l1-leaf-collection-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="leaf collection walk: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l1-leaf-collection-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Leaf Collection Walk: Level 1 Basic prep sheet"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-leaf-collection-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Leaf Collection Walk: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 150 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l1-leaf-collection-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l1-leaf-collection-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="leaf collection walk: level 1 basic my check name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l1-leaf-collection-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Leaf Collection Walk: Level 1 Basic my check"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-leaf-collection-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Leaf Collection Walk: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 133 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l1-leaf-collection-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l1-leaf-collection-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="leaf collection walk: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l2-leaf-collection-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Leaf Collection Walk: Level 1 Advanced slides"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-leaf-collection-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Leaf Collection Walk</h4>
+  <p class="meta">12 slides · PDF · 630 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l2-leaf-collection-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l2-leaf-collection-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="horticulture-1/03-plant-parts/horticulture-1-l2-leaf-collection-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="leaf collection walk steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🍃</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Leaf Collection Walk</h3><p>Lab review game</p>
+  <a class="btn gold" href="horticulture-1/03-plant-parts/horticulture-1-l2-leaf-collection-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="leaf collection walk: level 1 advanced task card one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l2-leaf-collection-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Leaf Collection Walk: Level 1 Advanced task card"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-leaf-collection-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Leaf Collection Walk: Level 1 Advanced</h4>
+  <p class="meta">2 pages · PDF · 120 KB</p><p class="sub">One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l2-leaf-collection-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l2-leaf-collection-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="leaf collection walk: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l2-leaf-collection-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Leaf Collection Walk: Level 1 Advanced prep sheet"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-leaf-collection-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Leaf Collection Walk: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 148 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l2-leaf-collection-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l2-leaf-collection-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="leaf collection walk: level 1 advanced reflection name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l2-leaf-collection-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Leaf Collection Walk: Level 1 Advanced reflection"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-leaf-collection-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Leaf Collection Walk: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 95 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l2-leaf-collection-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l2-leaf-collection-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="3"><div class="grid"><article class="card game page item" data-q="leaf collection walk: level 3 lab sheet (read aloud) opens in the browser · read-aloud inside read aloud notes reading lab sheet">
+  <a class="thumb2" href="horticulture-1/03-plant-parts/horticulture-1-l3-leaf-collection-lab-sheet-page.html" target="_blank" rel="noopener" aria-label="Open: Leaf Collection Walk: Level 3"><img src="../thumbs/incl-horticulture-1-horticulture-1-l3-leaf-collection-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="gtxt"><span class="pill lv3">Level 3</span><span class="tpill">🧪 LAB SHEET</span>
+  <h3>Leaf Collection Walk: Level 3</h3><p>Opens in the browser · read-aloud inside</p>
+  <a class="btn blue" href="horticulture-1/03-plant-parts/horticulture-1-l3-leaf-collection-lab-sheet-page.html" target="_blank" rel="noopener">Open</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="leaf collection walk: level 3 lab sheet question, prediction, steps, data table, cer printable lab sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l3-leaf-collection-lab-sheet.pdf" target="_blank" rel="noopener" aria-label="Open: Leaf Collection Walk: Level 3 lab sheet"><img src="../thumbs/incl-horticulture-1-horticulture-1-l3-leaf-collection-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB SHEET</span>
+  <h4>Leaf Collection Walk: Level 3</h4>
+  <p class="meta">2 pages · PDF · 49 KB</p><p class="sub">Question, prediction, steps, data table, CER</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l3-leaf-collection-lab-sheet.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l3-leaf-collection-lab-sheet.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div><div class="labblock" data-lvs="1 2 3"><h4 class="unit"><span aria-hidden="true">🌸</span> Flower Dissection</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="flower dissection: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l1-flower-dissection-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Flower Dissection: Level 1 Basic slides"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-flower-dissection-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Flower Dissection</h4>
+  <p class="meta">12 slides · PDF · 714 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l1-flower-dissection-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l1-flower-dissection-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="horticulture-1/03-plant-parts/horticulture-1-l1-flower-dissection-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="flower dissection steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🌸</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Flower Dissection</h3><p>Lab review game</p>
+  <a class="btn gold" href="horticulture-1/03-plant-parts/horticulture-1-l1-flower-dissection-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="flower dissection: level 1 basic task card one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l1-flower-dissection-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Flower Dissection: Level 1 Basic task card"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-flower-dissection-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Flower Dissection: Level 1 Basic</h4>
+  <p class="meta">2 pages · PDF · 141 KB</p><p class="sub">One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l1-flower-dissection-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l1-flower-dissection-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="flower dissection: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l1-flower-dissection-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Flower Dissection: Level 1 Basic prep sheet"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-flower-dissection-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Flower Dissection: Level 1 Basic</h4>
+  <p class="meta">2 pages · PDF · 154 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l1-flower-dissection-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l1-flower-dissection-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="flower dissection: level 1 basic my check name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l1-flower-dissection-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Flower Dissection: Level 1 Basic my check"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-flower-dissection-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Flower Dissection: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 131 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l1-flower-dissection-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l1-flower-dissection-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="flower dissection: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l2-flower-dissection-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Flower Dissection: Level 1 Advanced slides"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-flower-dissection-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Flower Dissection</h4>
+  <p class="meta">12 slides · PDF · 659 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l2-flower-dissection-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l2-flower-dissection-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="horticulture-1/03-plant-parts/horticulture-1-l2-flower-dissection-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="flower dissection steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🌸</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Flower Dissection</h3><p>Lab review game</p>
+  <a class="btn gold" href="horticulture-1/03-plant-parts/horticulture-1-l2-flower-dissection-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="flower dissection: level 1 advanced task card one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l2-flower-dissection-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Flower Dissection: Level 1 Advanced task card"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-flower-dissection-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Flower Dissection: Level 1 Advanced</h4>
+  <p class="meta">2 pages · PDF · 123 KB</p><p class="sub">One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l2-flower-dissection-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l2-flower-dissection-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="flower dissection: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l2-flower-dissection-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Flower Dissection: Level 1 Advanced prep sheet"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-flower-dissection-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Flower Dissection: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 149 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l2-flower-dissection-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l2-flower-dissection-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="flower dissection: level 1 advanced reflection name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l2-flower-dissection-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Flower Dissection: Level 1 Advanced reflection"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-flower-dissection-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Flower Dissection: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 93 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l2-flower-dissection-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l2-flower-dissection-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="3"><div class="grid"><article class="card game page item" data-q="flower dissection: level 3 lab sheet (read aloud) opens in the browser · read-aloud inside read aloud notes reading lab sheet">
+  <a class="thumb2" href="horticulture-1/03-plant-parts/horticulture-1-l3-flower-dissection-lab-sheet-page.html" target="_blank" rel="noopener" aria-label="Open: Flower Dissection: Level 3"><img src="../thumbs/incl-horticulture-1-horticulture-1-l3-flower-dissection-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="gtxt"><span class="pill lv3">Level 3</span><span class="tpill">🧪 LAB SHEET</span>
+  <h3>Flower Dissection: Level 3</h3><p>Opens in the browser · read-aloud inside</p>
+  <a class="btn blue" href="horticulture-1/03-plant-parts/horticulture-1-l3-flower-dissection-lab-sheet-page.html" target="_blank" rel="noopener">Open</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="flower dissection: level 3 lab sheet question, prediction, steps, data table, cer printable lab sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l3-flower-dissection-lab-sheet.pdf" target="_blank" rel="noopener" aria-label="Open: Flower Dissection: Level 3 lab sheet"><img src="../thumbs/incl-horticulture-1-horticulture-1-l3-flower-dissection-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB SHEET</span>
+  <h4>Flower Dissection: Level 3</h4>
+  <p class="meta">2 pages · PDF · 49 KB</p><p class="sub">Question, prediction, steps, data table, CER</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l3-flower-dissection-lab-sheet.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/03-plant-parts/horticulture-1-l3-flower-dissection-lab-sheet.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div></div><div class="labs-unit" data-unit="4"><h3><a href="#unit-4">🔎 Unit 4: Plant ID</a></h3><div class="labblock" data-lvs="1 2 3"><h4 class="unit"><span aria-hidden="true">🏷️</span> Plant ID Card</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="plant id card: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/04-plant-id/horticulture-1-l1-plant-id-card-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Plant ID Card: Level 1 Basic slides"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-plant-id-card-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Plant ID Card</h4>
+  <p class="meta">12 slides · PDF · 704 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/04-plant-id/horticulture-1-l1-plant-id-card-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/04-plant-id/horticulture-1-l1-plant-id-card-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="horticulture-1/04-plant-id/horticulture-1-l1-plant-id-card-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="plant id card steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🏷️</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Plant ID Card</h3><p>Lab review game</p>
+  <a class="btn gold" href="horticulture-1/04-plant-id/horticulture-1-l1-plant-id-card-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="plant id card: level 1 basic task card one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/04-plant-id/horticulture-1-l1-plant-id-card-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Plant ID Card: Level 1 Basic task card"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-plant-id-card-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Plant ID Card: Level 1 Basic</h4>
+  <p class="meta">2 pages · PDF · 138 KB</p><p class="sub">One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/04-plant-id/horticulture-1-l1-plant-id-card-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/04-plant-id/horticulture-1-l1-plant-id-card-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="plant id card: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/04-plant-id/horticulture-1-l1-plant-id-card-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Plant ID Card: Level 1 Basic prep sheet"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-plant-id-card-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Plant ID Card: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 156 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/04-plant-id/horticulture-1-l1-plant-id-card-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/04-plant-id/horticulture-1-l1-plant-id-card-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="plant id card: level 1 basic my check name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/04-plant-id/horticulture-1-l1-plant-id-card-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Plant ID Card: Level 1 Basic my check"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-plant-id-card-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Plant ID Card: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 134 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/04-plant-id/horticulture-1-l1-plant-id-card-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/04-plant-id/horticulture-1-l1-plant-id-card-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="plant id card: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/04-plant-id/horticulture-1-l2-plant-id-card-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Plant ID Card: Level 1 Advanced slides"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-plant-id-card-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Plant ID Card</h4>
+  <p class="meta">12 slides · PDF · 665 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/04-plant-id/horticulture-1-l2-plant-id-card-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/04-plant-id/horticulture-1-l2-plant-id-card-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="horticulture-1/04-plant-id/horticulture-1-l2-plant-id-card-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="plant id card steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🏷️</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Plant ID Card</h3><p>Lab review game</p>
+  <a class="btn gold" href="horticulture-1/04-plant-id/horticulture-1-l2-plant-id-card-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="plant id card: level 1 advanced task card one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/04-plant-id/horticulture-1-l2-plant-id-card-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Plant ID Card: Level 1 Advanced task card"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-plant-id-card-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Plant ID Card: Level 1 Advanced</h4>
+  <p class="meta">2 pages · PDF · 142 KB</p><p class="sub">One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/04-plant-id/horticulture-1-l2-plant-id-card-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/04-plant-id/horticulture-1-l2-plant-id-card-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="plant id card: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/04-plant-id/horticulture-1-l2-plant-id-card-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Plant ID Card: Level 1 Advanced prep sheet"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-plant-id-card-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Plant ID Card: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 154 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/04-plant-id/horticulture-1-l2-plant-id-card-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/04-plant-id/horticulture-1-l2-plant-id-card-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="plant id card: level 1 advanced reflection name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/04-plant-id/horticulture-1-l2-plant-id-card-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Plant ID Card: Level 1 Advanced reflection"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-plant-id-card-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Plant ID Card: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 96 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/04-plant-id/horticulture-1-l2-plant-id-card-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/04-plant-id/horticulture-1-l2-plant-id-card-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="3"><div class="grid"><article class="card game page item" data-q="plant id card: level 3 lab sheet (read aloud) opens in the browser · read-aloud inside read aloud notes reading lab sheet">
+  <a class="thumb2" href="horticulture-1/04-plant-id/horticulture-1-l3-plant-id-card-lab-sheet-page.html" target="_blank" rel="noopener" aria-label="Open: Plant ID Card: Level 3"><img src="../thumbs/incl-horticulture-1-horticulture-1-l3-plant-id-card-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="gtxt"><span class="pill lv3">Level 3</span><span class="tpill">🧪 LAB SHEET</span>
+  <h3>Plant ID Card: Level 3</h3><p>Opens in the browser · read-aloud inside</p>
+  <a class="btn blue" href="horticulture-1/04-plant-id/horticulture-1-l3-plant-id-card-lab-sheet-page.html" target="_blank" rel="noopener">Open</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="plant id card: level 3 lab sheet question, prediction, steps, data table, cer printable lab sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/04-plant-id/horticulture-1-l3-plant-id-card-lab-sheet.pdf" target="_blank" rel="noopener" aria-label="Open: Plant ID Card: Level 3 lab sheet"><img src="../thumbs/incl-horticulture-1-horticulture-1-l3-plant-id-card-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB SHEET</span>
+  <h4>Plant ID Card: Level 3</h4>
+  <p class="meta">2 pages · PDF · 52 KB</p><p class="sub">Question, prediction, steps, data table, CER</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/04-plant-id/horticulture-1-l3-plant-id-card-lab-sheet.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/04-plant-id/horticulture-1-l3-plant-id-card-lab-sheet.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div></div><div class="labs-unit" data-unit="5"><h3><a href="#unit-5">🪱 Unit 5: Soil &amp; Nutrients</a></h3><div class="labblock" data-lvs="1 2 3"><h4 class="unit"><span aria-hidden="true">🫙</span> Soil Jar Test</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="soil jar test: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l1-soil-jar-test-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Soil Jar Test: Level 1 Basic slides"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-soil-jar-test-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Soil Jar Test</h4>
+  <p class="meta">12 slides · PDF · 688 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l1-soil-jar-test-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l1-soil-jar-test-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="horticulture-1/05-soil-nutrients/horticulture-1-l1-soil-jar-test-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="soil jar test steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🫙</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Soil Jar Test</h3><p>Lab review game</p>
+  <a class="btn gold" href="horticulture-1/05-soil-nutrients/horticulture-1-l1-soil-jar-test-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="soil jar test: level 1 basic task card one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l1-soil-jar-test-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Soil Jar Test: Level 1 Basic task card"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-soil-jar-test-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Soil Jar Test: Level 1 Basic</h4>
+  <p class="meta">2 pages · PDF · 124 KB</p><p class="sub">One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l1-soil-jar-test-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l1-soil-jar-test-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="soil jar test: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l1-soil-jar-test-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Soil Jar Test: Level 1 Basic prep sheet"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-soil-jar-test-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Soil Jar Test: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 146 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l1-soil-jar-test-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l1-soil-jar-test-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="soil jar test: level 1 basic my check name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l1-soil-jar-test-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Soil Jar Test: Level 1 Basic my check"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-soil-jar-test-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Soil Jar Test: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 131 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l1-soil-jar-test-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l1-soil-jar-test-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="soil jar test: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l2-soil-jar-test-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Soil Jar Test: Level 1 Advanced slides"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-soil-jar-test-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Soil Jar Test</h4>
+  <p class="meta">12 slides · PDF · 658 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l2-soil-jar-test-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l2-soil-jar-test-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="horticulture-1/05-soil-nutrients/horticulture-1-l2-soil-jar-test-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="soil jar test steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🫙</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Soil Jar Test</h3><p>Lab review game</p>
+  <a class="btn gold" href="horticulture-1/05-soil-nutrients/horticulture-1-l2-soil-jar-test-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="soil jar test: level 1 advanced task card one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l2-soil-jar-test-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Soil Jar Test: Level 1 Advanced task card"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-soil-jar-test-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Soil Jar Test: Level 1 Advanced</h4>
+  <p class="meta">2 pages · PDF · 115 KB</p><p class="sub">One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l2-soil-jar-test-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l2-soil-jar-test-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="soil jar test: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l2-soil-jar-test-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Soil Jar Test: Level 1 Advanced prep sheet"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-soil-jar-test-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Soil Jar Test: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 149 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l2-soil-jar-test-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l2-soil-jar-test-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="soil jar test: level 1 advanced reflection name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l2-soil-jar-test-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Soil Jar Test: Level 1 Advanced reflection"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-soil-jar-test-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Soil Jar Test: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 93 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l2-soil-jar-test-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l2-soil-jar-test-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="3"><div class="grid"><article class="card game page item" data-q="soil jar test: level 3 lab sheet (read aloud) opens in the browser · read-aloud inside read aloud notes reading lab sheet">
+  <a class="thumb2" href="horticulture-1/05-soil-nutrients/horticulture-1-l3-soil-jar-test-lab-sheet-page.html" target="_blank" rel="noopener" aria-label="Open: Soil Jar Test: Level 3"><img src="../thumbs/incl-horticulture-1-horticulture-1-l3-soil-jar-test-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="gtxt"><span class="pill lv3">Level 3</span><span class="tpill">🧪 LAB SHEET</span>
+  <h3>Soil Jar Test: Level 3</h3><p>Opens in the browser · read-aloud inside</p>
+  <a class="btn blue" href="horticulture-1/05-soil-nutrients/horticulture-1-l3-soil-jar-test-lab-sheet-page.html" target="_blank" rel="noopener">Open</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="soil jar test: level 3 lab sheet question, prediction, steps, data table, cer printable lab sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l3-soil-jar-test-lab-sheet.pdf" target="_blank" rel="noopener" aria-label="Open: Soil Jar Test: Level 3 lab sheet"><img src="../thumbs/incl-horticulture-1-horticulture-1-l3-soil-jar-test-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB SHEET</span>
+  <h4>Soil Jar Test: Level 3</h4>
+  <p class="meta">2 pages · PDF · 51 KB</p><p class="sub">Question, prediction, steps, data table, CER</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l3-soil-jar-test-lab-sheet.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l3-soil-jar-test-lab-sheet.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div><div class="labblock" data-lvs="1 2 3"><h4 class="unit"><span aria-hidden="true">🟢</span> N-P-K Plant Check</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="n-p-k plant check: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l1-npk-check-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: N-P-K Plant Check: Level 1 Basic slides"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-npk-check-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>N-P-K Plant Check</h4>
+  <p class="meta">12 slides · PDF · 664 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l1-npk-check-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l1-npk-check-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="horticulture-1/05-soil-nutrients/horticulture-1-l1-npk-check-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="n-p-k plant check steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🟢</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>N-P-K Plant Check</h3><p>Lab review game</p>
+  <a class="btn gold" href="horticulture-1/05-soil-nutrients/horticulture-1-l1-npk-check-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="🚧 n-p-k plant check: level 1 basic task card 🚧 under construction: gh participation nutrient activities were done in class and are not written in the export; this packet is team-written. one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l1-npk-check-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: 🚧 N-P-K Plant Check: Level 1 Basic task card"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-npk-check-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>🚧 N-P-K Plant Check: Level 1 Basic</h4>
+  <p class="meta">2 pages · PDF · 144 KB</p><p class="sub">🚧 Under construction: GH Participation nutrient activities were done in class and are not written in the export; this packet is team-written. One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l1-npk-check-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l1-npk-check-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="n-p-k plant check: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l1-npk-check-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: N-P-K Plant Check: Level 1 Basic prep sheet"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-npk-check-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>N-P-K Plant Check: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 141 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l1-npk-check-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l1-npk-check-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="n-p-k plant check: level 1 basic my check name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l1-npk-check-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: N-P-K Plant Check: Level 1 Basic my check"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-npk-check-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>N-P-K Plant Check: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 130 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l1-npk-check-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l1-npk-check-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="n-p-k plant check: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l2-npk-check-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: N-P-K Plant Check: Level 1 Advanced slides"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-npk-check-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>N-P-K Plant Check</h4>
+  <p class="meta">12 slides · PDF · 634 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l2-npk-check-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l2-npk-check-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="horticulture-1/05-soil-nutrients/horticulture-1-l2-npk-check-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="n-p-k plant check steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🟢</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>N-P-K Plant Check</h3><p>Lab review game</p>
+  <a class="btn gold" href="horticulture-1/05-soil-nutrients/horticulture-1-l2-npk-check-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="🚧 n-p-k plant check: level 1 advanced task card 🚧 under construction: gh participation nutrient activities were done in class and are not written in the export; this packet is team-written. one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l2-npk-check-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: 🚧 N-P-K Plant Check: Level 1 Advanced task card"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-npk-check-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>🚧 N-P-K Plant Check: Level 1 Advanced</h4>
+  <p class="meta">2 pages · PDF · 135 KB</p><p class="sub">🚧 Under construction: GH Participation nutrient activities were done in class and are not written in the export; this packet is team-written. One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l2-npk-check-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l2-npk-check-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="n-p-k plant check: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l2-npk-check-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: N-P-K Plant Check: Level 1 Advanced prep sheet"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-npk-check-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>N-P-K Plant Check: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 144 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l2-npk-check-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l2-npk-check-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="n-p-k plant check: level 1 advanced reflection name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l2-npk-check-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: N-P-K Plant Check: Level 1 Advanced reflection"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-npk-check-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>N-P-K Plant Check: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 92 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l2-npk-check-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l2-npk-check-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="3"><div class="grid"><article class="card game page item" data-q="n-p-k plant check: level 3 lab sheet (read aloud) opens in the browser · read-aloud inside read aloud notes reading lab sheet">
+  <a class="thumb2" href="horticulture-1/05-soil-nutrients/horticulture-1-l3-npk-check-lab-sheet-page.html" target="_blank" rel="noopener" aria-label="Open: N-P-K Plant Check: Level 3"><img src="../thumbs/incl-horticulture-1-horticulture-1-l3-npk-check-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="gtxt"><span class="pill lv3">Level 3</span><span class="tpill">🧪 LAB SHEET</span>
+  <h3>N-P-K Plant Check: Level 3</h3><p>Opens in the browser · read-aloud inside</p>
+  <a class="btn blue" href="horticulture-1/05-soil-nutrients/horticulture-1-l3-npk-check-lab-sheet-page.html" target="_blank" rel="noopener">Open</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="n-p-k plant check: level 3 lab sheet question, prediction, steps, data table, cer printable lab sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l3-npk-check-lab-sheet.pdf" target="_blank" rel="noopener" aria-label="Open: N-P-K Plant Check: Level 3 lab sheet"><img src="../thumbs/incl-horticulture-1-horticulture-1-l3-npk-check-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB SHEET</span>
+  <h4>N-P-K Plant Check: Level 3</h4>
+  <p class="meta">2 pages · PDF · 48 KB</p><p class="sub">Question, prediction, steps, data table, CER</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l3-npk-check-lab-sheet.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/05-soil-nutrients/horticulture-1-l3-npk-check-lab-sheet.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div></div><div class="labs-unit" data-unit="6"><h3><a href="#unit-6">🌰 Unit 6: Seeds</a></h3><div class="labblock" data-lvs="1 2 3"><h4 class="unit"><span aria-hidden="true">🌱</span> Sowing Seeds &amp; Transplanting</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="sowing seeds &amp; transplanting: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/06-seeds/horticulture-1-l1-sowing-seeds-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Sowing Seeds &amp; Transplanting: Level 1 Basic slides"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-sowing-seeds-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Sowing Seeds &amp; Transplanting</h4>
+  <p class="meta">12 slides · PDF · 724 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/06-seeds/horticulture-1-l1-sowing-seeds-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/06-seeds/horticulture-1-l1-sowing-seeds-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="horticulture-1/06-seeds/horticulture-1-l1-sowing-seeds-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="sowing seeds &amp; transplanting steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🌱</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Sowing Seeds &amp; Transplanting</h3><p>Lab review game</p>
+  <a class="btn gold" href="horticulture-1/06-seeds/horticulture-1-l1-sowing-seeds-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="sowing seeds &amp; transplanting: level 1 basic task card one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/06-seeds/horticulture-1-l1-sowing-seeds-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Sowing Seeds &amp; Transplanting: Level 1 Basic task card"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-sowing-seeds-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Sowing Seeds &amp; Transplanting: Level 1 Basic</h4>
+  <p class="meta">2 pages · PDF · 146 KB</p><p class="sub">One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/06-seeds/horticulture-1-l1-sowing-seeds-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/06-seeds/horticulture-1-l1-sowing-seeds-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="sowing seeds &amp; transplanting: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/06-seeds/horticulture-1-l1-sowing-seeds-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Sowing Seeds &amp; Transplanting: Level 1 Basic prep sheet"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-sowing-seeds-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Sowing Seeds &amp; Transplanting: Level 1 Basic</h4>
+  <p class="meta">2 pages · PDF · 162 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/06-seeds/horticulture-1-l1-sowing-seeds-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/06-seeds/horticulture-1-l1-sowing-seeds-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="sowing seeds &amp; transplanting: level 1 basic my check name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/06-seeds/horticulture-1-l1-sowing-seeds-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Sowing Seeds &amp; Transplanting: Level 1 Basic my check"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-sowing-seeds-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Sowing Seeds &amp; Transplanting: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 127 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/06-seeds/horticulture-1-l1-sowing-seeds-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/06-seeds/horticulture-1-l1-sowing-seeds-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="sowing seeds &amp; transplanting: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/06-seeds/horticulture-1-l2-sowing-seeds-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Sowing Seeds &amp; Transplanting: Level 1 Advanced slides"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-sowing-seeds-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Sowing Seeds &amp; Transplanting</h4>
+  <p class="meta">12 slides · PDF · 661 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/06-seeds/horticulture-1-l2-sowing-seeds-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/06-seeds/horticulture-1-l2-sowing-seeds-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="horticulture-1/06-seeds/horticulture-1-l2-sowing-seeds-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="sowing seeds &amp; transplanting steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🌱</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Sowing Seeds &amp; Transplanting</h3><p>Lab review game</p>
+  <a class="btn gold" href="horticulture-1/06-seeds/horticulture-1-l2-sowing-seeds-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="sowing seeds &amp; transplanting: level 1 advanced task card one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/06-seeds/horticulture-1-l2-sowing-seeds-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Sowing Seeds &amp; Transplanting: Level 1 Advanced task card"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-sowing-seeds-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Sowing Seeds &amp; Transplanting: Level 1 Advanced</h4>
+  <p class="meta">2 pages · PDF · 136 KB</p><p class="sub">One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/06-seeds/horticulture-1-l2-sowing-seeds-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/06-seeds/horticulture-1-l2-sowing-seeds-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="sowing seeds &amp; transplanting: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/06-seeds/horticulture-1-l2-sowing-seeds-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Sowing Seeds &amp; Transplanting: Level 1 Advanced prep sheet"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-sowing-seeds-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Sowing Seeds &amp; Transplanting: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 166 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/06-seeds/horticulture-1-l2-sowing-seeds-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/06-seeds/horticulture-1-l2-sowing-seeds-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="sowing seeds &amp; transplanting: level 1 advanced reflection name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/06-seeds/horticulture-1-l2-sowing-seeds-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Sowing Seeds &amp; Transplanting: Level 1 Advanced reflection"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-sowing-seeds-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Sowing Seeds &amp; Transplanting: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 90 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/06-seeds/horticulture-1-l2-sowing-seeds-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/06-seeds/horticulture-1-l2-sowing-seeds-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="3"><div class="grid"><article class="card game page item" data-q="sowing seeds &amp; transplanting: level 3 lab sheet (read aloud) opens in the browser · read-aloud inside read aloud notes reading lab sheet">
+  <a class="thumb2" href="horticulture-1/06-seeds/horticulture-1-l3-sowing-seeds-lab-sheet-page.html" target="_blank" rel="noopener" aria-label="Open: Sowing Seeds &amp; Transplanting: Level 3"><img src="../thumbs/incl-horticulture-1-horticulture-1-l3-sowing-seeds-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="gtxt"><span class="pill lv3">Level 3</span><span class="tpill">🧪 LAB SHEET</span>
+  <h3>Sowing Seeds &amp; Transplanting: Level 3</h3><p>Opens in the browser · read-aloud inside</p>
+  <a class="btn blue" href="horticulture-1/06-seeds/horticulture-1-l3-sowing-seeds-lab-sheet-page.html" target="_blank" rel="noopener">Open</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="sowing seeds &amp; transplanting: level 3 lab sheet question, prediction, steps, data table, cer printable lab sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/06-seeds/horticulture-1-l3-sowing-seeds-lab-sheet.pdf" target="_blank" rel="noopener" aria-label="Open: Sowing Seeds &amp; Transplanting: Level 3 lab sheet"><img src="../thumbs/incl-horticulture-1-horticulture-1-l3-sowing-seeds-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB SHEET</span>
+  <h4>Sowing Seeds &amp; Transplanting: Level 3</h4>
+  <p class="meta">2 pages · PDF · 50 KB</p><p class="sub">Question, prediction, steps, data table, CER</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/06-seeds/horticulture-1-l3-sowing-seeds-lab-sheet.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/06-seeds/horticulture-1-l3-sowing-seeds-lab-sheet.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div></div><div class="labs-unit" data-unit="7"><h3><a href="#unit-7">✂️ Unit 7: Propagation</a></h3><div class="labblock" data-lvs="1 2 3"><h4 class="unit"><span aria-hidden="true">✂️</span> Cuttings &amp; Separation</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="cuttings &amp; separation: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/07-propagation/horticulture-1-l1-cuttings-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Cuttings &amp; Separation: Level 1 Basic slides"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-cuttings-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Cuttings &amp; Separation</h4>
+  <p class="meta">12 slides · PDF · 703 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/07-propagation/horticulture-1-l1-cuttings-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/07-propagation/horticulture-1-l1-cuttings-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="horticulture-1/07-propagation/horticulture-1-l1-cuttings-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="cuttings &amp; separation steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">✂️</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Cuttings &amp; Separation</h3><p>Lab review game</p>
+  <a class="btn gold" href="horticulture-1/07-propagation/horticulture-1-l1-cuttings-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="cuttings &amp; separation: level 1 basic task card one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/07-propagation/horticulture-1-l1-cuttings-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Cuttings &amp; Separation: Level 1 Basic task card"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-cuttings-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Cuttings &amp; Separation: Level 1 Basic</h4>
+  <p class="meta">2 pages · PDF · 138 KB</p><p class="sub">One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/07-propagation/horticulture-1-l1-cuttings-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/07-propagation/horticulture-1-l1-cuttings-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="cuttings &amp; separation: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/07-propagation/horticulture-1-l1-cuttings-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Cuttings &amp; Separation: Level 1 Basic prep sheet"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-cuttings-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Cuttings &amp; Separation: Level 1 Basic</h4>
+  <p class="meta">2 pages · PDF · 150 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/07-propagation/horticulture-1-l1-cuttings-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/07-propagation/horticulture-1-l1-cuttings-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="cuttings &amp; separation: level 1 basic my check name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/07-propagation/horticulture-1-l1-cuttings-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Cuttings &amp; Separation: Level 1 Basic my check"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-cuttings-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Cuttings &amp; Separation: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 135 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/07-propagation/horticulture-1-l1-cuttings-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/07-propagation/horticulture-1-l1-cuttings-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="cuttings &amp; separation: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/07-propagation/horticulture-1-l2-cuttings-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Cuttings &amp; Separation: Level 1 Advanced slides"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-cuttings-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Cuttings &amp; Separation</h4>
+  <p class="meta">12 slides · PDF · 662 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/07-propagation/horticulture-1-l2-cuttings-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/07-propagation/horticulture-1-l2-cuttings-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="horticulture-1/07-propagation/horticulture-1-l2-cuttings-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="cuttings &amp; separation steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">✂️</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Cuttings &amp; Separation</h3><p>Lab review game</p>
+  <a class="btn gold" href="horticulture-1/07-propagation/horticulture-1-l2-cuttings-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="cuttings &amp; separation: level 1 advanced task card one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/07-propagation/horticulture-1-l2-cuttings-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Cuttings &amp; Separation: Level 1 Advanced task card"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-cuttings-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Cuttings &amp; Separation: Level 1 Advanced</h4>
+  <p class="meta">2 pages · PDF · 132 KB</p><p class="sub">One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/07-propagation/horticulture-1-l2-cuttings-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/07-propagation/horticulture-1-l2-cuttings-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="cuttings &amp; separation: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/07-propagation/horticulture-1-l2-cuttings-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Cuttings &amp; Separation: Level 1 Advanced prep sheet"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-cuttings-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Cuttings &amp; Separation: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 153 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/07-propagation/horticulture-1-l2-cuttings-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/07-propagation/horticulture-1-l2-cuttings-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="cuttings &amp; separation: level 1 advanced reflection name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/07-propagation/horticulture-1-l2-cuttings-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Cuttings &amp; Separation: Level 1 Advanced reflection"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-cuttings-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Cuttings &amp; Separation: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 97 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/07-propagation/horticulture-1-l2-cuttings-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/07-propagation/horticulture-1-l2-cuttings-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="3"><div class="grid"><article class="card game page item" data-q="cuttings &amp; separation: level 3 lab sheet (read aloud) opens in the browser · read-aloud inside read aloud notes reading lab sheet">
+  <a class="thumb2" href="horticulture-1/07-propagation/horticulture-1-l3-cuttings-lab-sheet-page.html" target="_blank" rel="noopener" aria-label="Open: Cuttings &amp; Separation: Level 3"><img src="../thumbs/incl-horticulture-1-horticulture-1-l3-cuttings-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="gtxt"><span class="pill lv3">Level 3</span><span class="tpill">🧪 LAB SHEET</span>
+  <h3>Cuttings &amp; Separation: Level 3</h3><p>Opens in the browser · read-aloud inside</p>
+  <a class="btn blue" href="horticulture-1/07-propagation/horticulture-1-l3-cuttings-lab-sheet-page.html" target="_blank" rel="noopener">Open</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="cuttings &amp; separation: level 3 lab sheet question, prediction, steps, data table, cer printable lab sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/07-propagation/horticulture-1-l3-cuttings-lab-sheet.pdf" target="_blank" rel="noopener" aria-label="Open: Cuttings &amp; Separation: Level 3 lab sheet"><img src="../thumbs/incl-horticulture-1-horticulture-1-l3-cuttings-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB SHEET</span>
+  <h4>Cuttings &amp; Separation: Level 3</h4>
+  <p class="meta">2 pages · PDF · 50 KB</p><p class="sub">Question, prediction, steps, data table, CER</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/07-propagation/horticulture-1-l3-cuttings-lab-sheet.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/07-propagation/horticulture-1-l3-cuttings-lab-sheet.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div></div><div class="labs-unit" data-unit="8"><h3><a href="#unit-8">🌺 Unit 8: Poinsettias</a></h3><div class="labblock" data-lvs="1 2 3"><h4 class="unit"><span aria-hidden="true">🌺</span> Poinsettia Care &amp; Pinching</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="poinsettia care &amp; pinching: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/08-poinsettias/horticulture-1-l1-poinsettia-care-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Poinsettia Care &amp; Pinching: Level 1 Basic slides"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-poinsettia-care-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Poinsettia Care &amp; Pinching</h4>
+  <p class="meta">12 slides · PDF · 702 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/08-poinsettias/horticulture-1-l1-poinsettia-care-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/08-poinsettias/horticulture-1-l1-poinsettia-care-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="horticulture-1/08-poinsettias/horticulture-1-l1-poinsettia-care-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="poinsettia care &amp; pinching steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🌺</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Poinsettia Care &amp; Pinching</h3><p>Lab review game</p>
+  <a class="btn gold" href="horticulture-1/08-poinsettias/horticulture-1-l1-poinsettia-care-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="poinsettia care &amp; pinching: level 1 basic task card one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/08-poinsettias/horticulture-1-l1-poinsettia-care-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Poinsettia Care &amp; Pinching: Level 1 Basic task card"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-poinsettia-care-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Poinsettia Care &amp; Pinching: Level 1 Basic</h4>
+  <p class="meta">2 pages · PDF · 144 KB</p><p class="sub">One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/08-poinsettias/horticulture-1-l1-poinsettia-care-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/08-poinsettias/horticulture-1-l1-poinsettia-care-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="poinsettia care &amp; pinching: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/08-poinsettias/horticulture-1-l1-poinsettia-care-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Poinsettia Care &amp; Pinching: Level 1 Basic prep sheet"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-poinsettia-care-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Poinsettia Care &amp; Pinching: Level 1 Basic</h4>
+  <p class="meta">2 pages · PDF · 160 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/08-poinsettias/horticulture-1-l1-poinsettia-care-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/08-poinsettias/horticulture-1-l1-poinsettia-care-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="poinsettia care &amp; pinching: level 1 basic my check name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/08-poinsettias/horticulture-1-l1-poinsettia-care-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Poinsettia Care &amp; Pinching: Level 1 Basic my check"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-poinsettia-care-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Poinsettia Care &amp; Pinching: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 134 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/08-poinsettias/horticulture-1-l1-poinsettia-care-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/08-poinsettias/horticulture-1-l1-poinsettia-care-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="poinsettia care &amp; pinching: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/08-poinsettias/horticulture-1-l2-poinsettia-care-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Poinsettia Care &amp; Pinching: Level 1 Advanced slides"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-poinsettia-care-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Poinsettia Care &amp; Pinching</h4>
+  <p class="meta">12 slides · PDF · 661 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/08-poinsettias/horticulture-1-l2-poinsettia-care-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/08-poinsettias/horticulture-1-l2-poinsettia-care-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="horticulture-1/08-poinsettias/horticulture-1-l2-poinsettia-care-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="poinsettia care &amp; pinching steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🌺</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Poinsettia Care &amp; Pinching</h3><p>Lab review game</p>
+  <a class="btn gold" href="horticulture-1/08-poinsettias/horticulture-1-l2-poinsettia-care-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="poinsettia care &amp; pinching: level 1 advanced task card one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/08-poinsettias/horticulture-1-l2-poinsettia-care-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Poinsettia Care &amp; Pinching: Level 1 Advanced task card"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-poinsettia-care-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Poinsettia Care &amp; Pinching: Level 1 Advanced</h4>
+  <p class="meta">2 pages · PDF · 143 KB</p><p class="sub">One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/08-poinsettias/horticulture-1-l2-poinsettia-care-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/08-poinsettias/horticulture-1-l2-poinsettia-care-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="poinsettia care &amp; pinching: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/08-poinsettias/horticulture-1-l2-poinsettia-care-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Poinsettia Care &amp; Pinching: Level 1 Advanced prep sheet"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-poinsettia-care-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Poinsettia Care &amp; Pinching: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 163 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/08-poinsettias/horticulture-1-l2-poinsettia-care-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/08-poinsettias/horticulture-1-l2-poinsettia-care-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="poinsettia care &amp; pinching: level 1 advanced reflection name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/08-poinsettias/horticulture-1-l2-poinsettia-care-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Poinsettia Care &amp; Pinching: Level 1 Advanced reflection"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-poinsettia-care-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Poinsettia Care &amp; Pinching: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 96 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/08-poinsettias/horticulture-1-l2-poinsettia-care-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/08-poinsettias/horticulture-1-l2-poinsettia-care-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="3"><div class="grid"><article class="card game page item" data-q="poinsettia care &amp; pinching: level 3 lab sheet (read aloud) opens in the browser · read-aloud inside read aloud notes reading lab sheet">
+  <a class="thumb2" href="horticulture-1/08-poinsettias/horticulture-1-l3-poinsettia-care-lab-sheet-page.html" target="_blank" rel="noopener" aria-label="Open: Poinsettia Care &amp; Pinching: Level 3"><img src="../thumbs/incl-horticulture-1-horticulture-1-l3-poinsettia-care-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="gtxt"><span class="pill lv3">Level 3</span><span class="tpill">🧪 LAB SHEET</span>
+  <h3>Poinsettia Care &amp; Pinching: Level 3</h3><p>Opens in the browser · read-aloud inside</p>
+  <a class="btn blue" href="horticulture-1/08-poinsettias/horticulture-1-l3-poinsettia-care-lab-sheet-page.html" target="_blank" rel="noopener">Open</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="poinsettia care &amp; pinching: level 3 lab sheet question, prediction, steps, data table, cer printable lab sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/08-poinsettias/horticulture-1-l3-poinsettia-care-lab-sheet.pdf" target="_blank" rel="noopener" aria-label="Open: Poinsettia Care &amp; Pinching: Level 3 lab sheet"><img src="../thumbs/incl-horticulture-1-horticulture-1-l3-poinsettia-care-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB SHEET</span>
+  <h4>Poinsettia Care &amp; Pinching: Level 3</h4>
+  <p class="meta">2 pages · PDF · 51 KB</p><p class="sub">Question, prediction, steps, data table, CER</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/08-poinsettias/horticulture-1-l3-poinsettia-care-lab-sheet.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/08-poinsettias/horticulture-1-l3-poinsettia-care-lab-sheet.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div></div><div class="labs-unit" data-unit="9"><h3><a href="#unit-9">💐 Unit 9: Wreaths &amp; Floral Design</a></h3><div class="labblock" data-lvs="1 2 3"><h4 class="unit"><span aria-hidden="true">🎄</span> Wreath &amp; Harvest Centerpiece</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="wreath &amp; harvest centerpiece: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l1-wreath-centerpiece-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Wreath &amp; Harvest Centerpiece: Level 1 Basic slides"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-wreath-centerpiece-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Wreath &amp; Harvest Centerpiece</h4>
+  <p class="meta">12 slides · PDF · 710 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l1-wreath-centerpiece-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l1-wreath-centerpiece-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="horticulture-1/09-wreaths-floral/horticulture-1-l1-wreath-centerpiece-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="wreath &amp; harvest centerpiece steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🎄</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Wreath &amp; Harvest Centerpiece</h3><p>Lab review game</p>
+  <a class="btn gold" href="horticulture-1/09-wreaths-floral/horticulture-1-l1-wreath-centerpiece-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="wreath &amp; harvest centerpiece: level 1 basic task card one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l1-wreath-centerpiece-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Wreath &amp; Harvest Centerpiece: Level 1 Basic task card"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-wreath-centerpiece-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Wreath &amp; Harvest Centerpiece: Level 1 Basic</h4>
+  <p class="meta">2 pages · PDF · 152 KB</p><p class="sub">One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l1-wreath-centerpiece-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l1-wreath-centerpiece-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="wreath &amp; harvest centerpiece: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l1-wreath-centerpiece-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Wreath &amp; Harvest Centerpiece: Level 1 Basic prep sheet"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-wreath-centerpiece-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Wreath &amp; Harvest Centerpiece: Level 1 Basic</h4>
+  <p class="meta">2 pages · PDF · 168 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l1-wreath-centerpiece-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l1-wreath-centerpiece-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="wreath &amp; harvest centerpiece: level 1 basic my check name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l1-wreath-centerpiece-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Wreath &amp; Harvest Centerpiece: Level 1 Basic my check"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-wreath-centerpiece-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Wreath &amp; Harvest Centerpiece: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 137 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l1-wreath-centerpiece-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l1-wreath-centerpiece-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="wreath &amp; harvest centerpiece: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l2-wreath-centerpiece-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Wreath &amp; Harvest Centerpiece: Level 1 Advanced slides"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-wreath-centerpiece-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Wreath &amp; Harvest Centerpiece</h4>
+  <p class="meta">12 slides · PDF · 669 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l2-wreath-centerpiece-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l2-wreath-centerpiece-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="horticulture-1/09-wreaths-floral/horticulture-1-l2-wreath-centerpiece-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="wreath &amp; harvest centerpiece steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🎄</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Wreath &amp; Harvest Centerpiece</h3><p>Lab review game</p>
+  <a class="btn gold" href="horticulture-1/09-wreaths-floral/horticulture-1-l2-wreath-centerpiece-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="wreath &amp; harvest centerpiece: level 1 advanced task card one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l2-wreath-centerpiece-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Wreath &amp; Harvest Centerpiece: Level 1 Advanced task card"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-wreath-centerpiece-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Wreath &amp; Harvest Centerpiece: Level 1 Advanced</h4>
+  <p class="meta">2 pages · PDF · 141 KB</p><p class="sub">One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l2-wreath-centerpiece-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l2-wreath-centerpiece-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="wreath &amp; harvest centerpiece: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l2-wreath-centerpiece-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Wreath &amp; Harvest Centerpiece: Level 1 Advanced prep sheet"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-wreath-centerpiece-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Wreath &amp; Harvest Centerpiece: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 171 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l2-wreath-centerpiece-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l2-wreath-centerpiece-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="wreath &amp; harvest centerpiece: level 1 advanced reflection name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l2-wreath-centerpiece-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Wreath &amp; Harvest Centerpiece: Level 1 Advanced reflection"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-wreath-centerpiece-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Wreath &amp; Harvest Centerpiece: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 99 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l2-wreath-centerpiece-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l2-wreath-centerpiece-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="3"><div class="grid"><article class="card game page item" data-q="wreath &amp; harvest centerpiece: level 3 lab sheet (read aloud) opens in the browser · read-aloud inside read aloud notes reading lab sheet">
+  <a class="thumb2" href="horticulture-1/09-wreaths-floral/horticulture-1-l3-wreath-centerpiece-lab-sheet-page.html" target="_blank" rel="noopener" aria-label="Open: Wreath &amp; Harvest Centerpiece: Level 3"><img src="../thumbs/incl-horticulture-1-horticulture-1-l3-wreath-centerpiece-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="gtxt"><span class="pill lv3">Level 3</span><span class="tpill">🧪 LAB SHEET</span>
+  <h3>Wreath &amp; Harvest Centerpiece: Level 3</h3><p>Opens in the browser · read-aloud inside</p>
+  <a class="btn blue" href="horticulture-1/09-wreaths-floral/horticulture-1-l3-wreath-centerpiece-lab-sheet-page.html" target="_blank" rel="noopener">Open</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="wreath &amp; harvest centerpiece: level 3 lab sheet question, prediction, steps, data table, cer printable lab sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l3-wreath-centerpiece-lab-sheet.pdf" target="_blank" rel="noopener" aria-label="Open: Wreath &amp; Harvest Centerpiece: Level 3 lab sheet"><img src="../thumbs/incl-horticulture-1-horticulture-1-l3-wreath-centerpiece-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB SHEET</span>
+  <h4>Wreath &amp; Harvest Centerpiece: Level 3</h4>
+  <p class="meta">2 pages · PDF · 52 KB</p><p class="sub">Question, prediction, steps, data table, CER</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l3-wreath-centerpiece-lab-sheet.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l3-wreath-centerpiece-lab-sheet.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div><div class="labblock" data-lvs="1 2 3"><h4 class="unit"><span aria-hidden="true">🌵</span> Succulent Planter &amp; Plant Sale</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="succulent planter &amp; plant sale: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l1-succulent-planter-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Succulent Planter &amp; Plant Sale: Level 1 Basic slides"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-succulent-planter-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Succulent Planter &amp; Plant Sale</h4>
+  <p class="meta">12 slides · PDF · 696 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l1-succulent-planter-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l1-succulent-planter-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="horticulture-1/09-wreaths-floral/horticulture-1-l1-succulent-planter-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="succulent planter &amp; plant sale steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🌵</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Succulent Planter &amp; Plant Sale</h3><p>Lab review game</p>
+  <a class="btn gold" href="horticulture-1/09-wreaths-floral/horticulture-1-l1-succulent-planter-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="succulent planter &amp; plant sale: level 1 basic task card one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l1-succulent-planter-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Succulent Planter &amp; Plant Sale: Level 1 Basic task card"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-succulent-planter-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Succulent Planter &amp; Plant Sale: Level 1 Basic</h4>
+  <p class="meta">2 pages · PDF · 134 KB</p><p class="sub">One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l1-succulent-planter-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l1-succulent-planter-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="succulent planter &amp; plant sale: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l1-succulent-planter-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Succulent Planter &amp; Plant Sale: Level 1 Basic prep sheet"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-succulent-planter-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Succulent Planter &amp; Plant Sale: Level 1 Basic</h4>
+  <p class="meta">2 pages · PDF · 161 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l1-succulent-planter-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l1-succulent-planter-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="succulent planter &amp; plant sale: level 1 basic my check name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l1-succulent-planter-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Succulent Planter &amp; Plant Sale: Level 1 Basic my check"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-succulent-planter-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Succulent Planter &amp; Plant Sale: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 134 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l1-succulent-planter-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l1-succulent-planter-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="succulent planter &amp; plant sale: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l2-succulent-planter-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Succulent Planter &amp; Plant Sale: Level 1 Advanced slides"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-succulent-planter-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Succulent Planter &amp; Plant Sale</h4>
+  <p class="meta">12 slides · PDF · 652 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l2-succulent-planter-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l2-succulent-planter-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="horticulture-1/09-wreaths-floral/horticulture-1-l2-succulent-planter-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="succulent planter &amp; plant sale steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🌵</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Succulent Planter &amp; Plant Sale</h3><p>Lab review game</p>
+  <a class="btn gold" href="horticulture-1/09-wreaths-floral/horticulture-1-l2-succulent-planter-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="succulent planter &amp; plant sale: level 1 advanced task card one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l2-succulent-planter-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Succulent Planter &amp; Plant Sale: Level 1 Advanced task card"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-succulent-planter-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Succulent Planter &amp; Plant Sale: Level 1 Advanced</h4>
+  <p class="meta">2 pages · PDF · 131 KB</p><p class="sub">One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l2-succulent-planter-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l2-succulent-planter-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="succulent planter &amp; plant sale: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l2-succulent-planter-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Succulent Planter &amp; Plant Sale: Level 1 Advanced prep sheet"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-succulent-planter-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Succulent Planter &amp; Plant Sale: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 164 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l2-succulent-planter-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l2-succulent-planter-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="succulent planter &amp; plant sale: level 1 advanced reflection name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l2-succulent-planter-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Succulent Planter &amp; Plant Sale: Level 1 Advanced reflection"><img src="../thumbs/incl-horticulture-1-horticulture-1-l2-succulent-planter-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Succulent Planter &amp; Plant Sale: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 97 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l2-succulent-planter-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l2-succulent-planter-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="3"><div class="grid"><article class="card game page item" data-q="succulent planter &amp; plant sale: level 3 lab sheet (read aloud) opens in the browser · read-aloud inside read aloud notes reading lab sheet">
+  <a class="thumb2" href="horticulture-1/09-wreaths-floral/horticulture-1-l3-succulent-planter-lab-sheet-page.html" target="_blank" rel="noopener" aria-label="Open: Succulent Planter &amp; Plant Sale: Level 3"><img src="../thumbs/incl-horticulture-1-horticulture-1-l3-succulent-planter-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="gtxt"><span class="pill lv3">Level 3</span><span class="tpill">🧪 LAB SHEET</span>
+  <h3>Succulent Planter &amp; Plant Sale: Level 3</h3><p>Opens in the browser · read-aloud inside</p>
+  <a class="btn blue" href="horticulture-1/09-wreaths-floral/horticulture-1-l3-succulent-planter-lab-sheet-page.html" target="_blank" rel="noopener">Open</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="succulent planter &amp; plant sale: level 3 lab sheet question, prediction, steps, data table, cer printable lab sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l3-succulent-planter-lab-sheet.pdf" target="_blank" rel="noopener" aria-label="Open: Succulent Planter &amp; Plant Sale: Level 3 lab sheet"><img src="../thumbs/incl-horticulture-1-horticulture-1-l3-succulent-planter-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB SHEET</span>
+  <h4>Succulent Planter &amp; Plant Sale: Level 3</h4>
+  <p class="meta">2 pages · PDF · 51 KB</p><p class="sub">Question, prediction, steps, data table, CER</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l3-succulent-planter-lab-sheet.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l3-succulent-planter-lab-sheet.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div></div></section>
 <div class="utabgroup" data-default="1"><section class="cat" id="units" aria-labelledby="h-units"><h2 id="h-units">🗂️ Units in course order</h2><p class=note>Same units and order as the gen ed class. 10 of 10 ready. <span class="utabhint">Tap a unit to show it below.</span></p><div class="utabs" role="tablist" aria-label="Units"><a class="utab" role="tab" href="#unit-0" data-unit="0" aria-selected="false" title="Unit 0: Classroom &amp; Greenhouse Basics"><span class="un">Unit 0</span><span class="ut"><span aria-hidden="true">🏡</span> Classroom &amp; Greenhouse…</span></a><a class="utab now" role="tab" href="#unit-1" data-unit="1" aria-selected="false" title="Unit 1: Jobs in Horticulture"><span class="un">Unit 1</span><span class="ut"><span aria-hidden="true">🧑‍🌾</span> Jobs in Horticulture</span></a><a class="utab" role="tab" href="#unit-2" data-unit="2" aria-selected="false" title="Unit 2: Plant Names &amp; Life Cycles"><span class="un">Unit 2</span><span class="ut"><span aria-hidden="true">🏷️</span> Plant Names &amp; Life Cycles</span></a><a class="utab" role="tab" href="#unit-3" data-unit="3" aria-selected="false" title="Unit 3: Parts of the Plant"><span class="un">Unit 3</span><span class="ut"><span aria-hidden="true">🌿</span> Parts of the Plant</span></a><a class="utab" role="tab" href="#unit-4" data-unit="4" aria-selected="false" title="Unit 4: Plant ID"><span class="un">Unit 4</span><span class="ut"><span aria-hidden="true">🔎</span> Plant ID</span></a><a class="utab" role="tab" href="#unit-5" data-unit="5" aria-selected="false" title="Unit 5: Soil &amp; Nutrients"><span class="un">Unit 5</span><span class="ut"><span aria-hidden="true">🪱</span> Soil &amp; Nutrients</span></a><a class="utab" role="tab" href="#unit-6" data-unit="6" aria-selected="false" title="Unit 6: Seeds"><span class="un">Unit 6</span><span class="ut"><span aria-hidden="true">🌰</span> Seeds</span></a><a class="utab" role="tab" href="#unit-7" data-unit="7" aria-selected="false" title="Unit 7: Propagation"><span class="un">Unit 7</span><span class="ut"><span aria-hidden="true">✂️</span> Propagation</span></a><a class="utab" role="tab" href="#unit-8" data-unit="8" aria-selected="false" title="Unit 8: Poinsettias"><span class="un">Unit 8</span><span class="ut"><span aria-hidden="true">🌺</span> Poinsettias</span></a><a class="utab" role="tab" href="#unit-9" data-unit="9" aria-selected="false" title="Unit 9: Wreaths &amp; Floral Design"><span class="un">Unit 9</span><span class="ut"><span aria-hidden="true">💐</span> Wreaths &amp; Floral Design</span></a></div></section><div class="unitpane" data-unit="0"><span class="uanchor" id="unit-0"></span><section class="cat" id="u0" aria-labelledby="h-u0"><h2 id="h-u0">🏡 Unit 0: Classroom &amp; Greenhouse Basics</h2><p class="note">Class rules, greenhouse map and tools, safety, the Propagation Journal and leadership points.</p><div class="lvgroup lvonly lv1"><h3 class="lvh"><span class="pill lv1">Level 1 Basic</span> 2nd-grade reading: pictures and emoji, one idea at a time</h3><div class="umat uc"><details class="dbd ucond" open><summary><span class="dbdh">📦 Unit materials</span> <small>(20)</small></summary><p class="note ucanvas"><small>Goes with the class Canvas module: “Syllabus packet + syllabus quiz, science safety contract, greenhouse map, name tag, Propagation Journal, Leadership Point Log, intro questions, FFA Week”.</small></p><p class="printall"><a class="btn gold" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-unit0-L1-print-all.pdf" target="_blank" rel="noopener">🖨️ Print all (Level 1 Basic)</a> <small>14 files · 20 pages · 1.9 MB · staff guide, printables, then answer keys</small></p><h4 class="unit">📖 Slides</h4><div class="grid"><article class="card deck item" data-q="classroom &amp; greenhouse basics: level 1 basic slides words to know, pictures, checks, recap slides">
   <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/00-basics/horticulture-1-l1-u0-basics-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Classroom &amp; Greenhouse Basics: Level 1 Basic slides"><img src="../thumbs/incl-horticulture-1-horticulture-1-l1-u0-basics-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
   <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Classroom &amp; Greenhouse Basics</h4>
@@ -4091,6 +5002,32 @@
   <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l3-u9-wreaths-floral-quiz-key.pdf" target="_blank" rel="noopener">📄 Open</a>
   <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/09-wreaths-floral/horticulture-1-l3-u9-wreaths-floral-quiz-key.pdf" download>⬇ Download</a></div></div>
 </article></div></details></div></div></section>
+<section class="cat" id="syllabus" aria-labelledby="h-syllabus"><h2 id="h-syllabus">📋 Horticulture 1 Syllabus</h2>
+<details class="dbd ucond" open><summary><span class="dbdh">📋 Leveled syllabi</span> <small>(3)</small></summary><div class="grid rows"><article class="card item row" data-q="Horticulture 1 level 1 syllabus 2026-27">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/horticulture-1-syllabus-l1.pdf" target="_blank" rel="noopener" aria-label="Open: Horticulture 1 · Level 1 syllabus"><img src="../thumbs/incl-horticulture-1-syllabus-l1.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 SYLLABUS</span>
+  <h4>Horticulture 1 · Level 1 syllabus</h4>
+  <p class="meta">4 pages · PDF · 361 KB</p><p class="sub">Level 1 syllabus · 2026–27</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/horticulture-1-syllabus-l1.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/horticulture-1-syllabus-l1.pdf" download>⬇ Download</a></div></div>
+</article>
+<article class="card item row" data-q="Horticulture 1 level 2 syllabus 2026-27">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/horticulture-1-syllabus-l2.pdf" target="_blank" rel="noopener" aria-label="Open: Horticulture 1 · Level 2 syllabus"><img src="../thumbs/incl-horticulture-1-syllabus-l2.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 SYLLABUS</span>
+  <h4>Horticulture 1 · Level 2 syllabus</h4>
+  <p class="meta">4 pages · PDF · 256 KB</p><p class="sub">Level 2 syllabus · 2026–27</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/horticulture-1-syllabus-l2.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/horticulture-1-syllabus-l2.pdf" download>⬇ Download</a></div></div>
+</article>
+<article class="card item row" data-q="Horticulture 1 level 3 syllabus 2026-27">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/horticulture-1-syllabus-l3.pdf" target="_blank" rel="noopener" aria-label="Open: Horticulture 1 · Level 3 syllabus"><img src="../thumbs/incl-horticulture-1-syllabus-l3.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 SYLLABUS</span>
+  <h4>Horticulture 1 · Level 3 syllabus</h4>
+  <p class="meta">4 pages · PDF · 270 KB</p><p class="sub">Level 3 syllabus · 2026–27</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/horticulture-1-syllabus-l3.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/horticulture-1/horticulture-1-syllabus-l3.pdf" download>⬇ Download</a></div></div>
+</article></div>
+</details></section>
 <p class="note" id="none" hidden>Nothing matches that. Try a shorter word.</p><script>window.READ_ALOUD={"left": true, "sel": "h1,h2,h3,h4,.lead,.note,.card h3,.card h4,.card p.sub", "root": "main"};</script><script>/* Ferndale "Read aloud" button (reusable). Browser text-to-speech (Web Speech API): nothing to install; works in Chrome on Chromebooks.
    Add once per page with a script tag pointing at read_aloud.js, or inline it (read_aloud.py script_tag()).  Options (set before the script):
      window.READ_ALOUD = {sel: "CSS selector of the parts to read", root: "CSS selector of the area to read", rate: 0.9}

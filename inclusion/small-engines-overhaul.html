@@ -24,35 +24,9 @@
   <h1><span aria-hidden="true">🔧</span> Small Engines Overhaul</h1>
   <style>html[data-lv="1"] .lvonly:not(.lv1):not(.lv2){display:none}html[data-lv="4"] .lvonly:not(.lv4){display:none}html[data-lv="3"] .lvonly:not(.lv3){display:none}html[data-lv="1"] .jump.lvonly.lv2,html[data-lv="1"] main.wrap>.lvonly.lv2>.lvlead{display:none}html[data-lv="1"] .lvgroup.lvonly.lv2{margin-top:14px}html[data-lv="1"] main.wrap:has(>.lvonly.lv2){display:flex;flex-direction:column}html[data-lv="1"] main.wrap>.lvonly.lv1,html[data-lv="1"] main.wrap>.lvonly.lv2{display:contents}html[data-lv="1"] main.wrap:has(>.lvonly.lv2)>*{order:9}html[data-lv="1"] main.wrap:has(>.lvonly.lv2)>.hero{order:0}html[data-lv="1"] main.wrap>.lvonly>*{order:1}html[data-lv="1"] main.wrap>.lv1>.utabgroup{order:2}html[data-lv="1"] main.wrap>.lv2>.utabgroup{order:3}html[data-lv="1"] main.wrap>.lv1>[id^="other-"]{order:4}html[data-lv="1"] main.wrap>.lv2>[id^="other-"]{order:5}html[data-lv="1"] main.wrap>.lv1>[id^="teacher-"]{order:6}html[data-lv="1"] main.wrap>.lv2>[id^="teacher-"]{order:7}html[data-lv="1"] main.wrap>.lv2>.utabgroup,html[data-lv="1"] main.wrap>.lv2>[id^="other-"],html[data-lv="1"] main.wrap>.lv2>[id^="teacher-"]{border-top:4px dashed #f2b705;margin-top:22px;padding-top:6px}</style><div class="lvtabs" role="tablist" aria-label="Choose a level" data-v="2"><a class="lvtab lv1" role="tab" data-lv="1" href="#level1" aria-selected="false"><span><span aria-hidden="true">🔵</span> Level 1</span><small>Basic + Advanced inside</small></a><a class="lvtab lv4" role="tab" data-lv="4" href="#level4" aria-selected="false"><span><span aria-hidden="true">🟣</span> Level 2</span><small>About 5th–6th-grade reading</small></a><a class="lvtab lv3" role="tab" data-lv="3" href="#level3" aria-selected="false"><span><span aria-hidden="true">🟢</span> Level 3</span><small>Close to class · guided notes</small></a></div><p class="note lvshow">Showing <b id="lvnow">all levels</b>. Tap a button to switch.</p><script>(function(){var K='lv-small-engines-overhaul',L=["1", "4", "3"],N={"1": "Level 1 (Basic + Advanced)", "3": "Level 3", "4": "Level 2"},r=document.documentElement;function nv(v){return v==='2'?'1':v}function set(v,save){v=nv(v);r.setAttribute('data-lv',v);var t=document.querySelectorAll('.lvtab');for(var i=0;i<t.length;i++){var on=t[i].getAttribute('data-lv')===v;t[i].setAttribute('aria-selected',on?'true':'false');if(on){t[i].classList.add('on')}else{t[i].classList.remove('on')}}var w=document.getElementById('lvnow');if(w)w.textContent=N[v]||('Level '+v);if(save){try{localStorage.setItem(K,v)}catch(e){}}var q=document.getElementById('q');if(q&&q.value){q.dispatchEvent(new Event('input'))}}function fromHash(){var m=/^#level(\d+)$/.exec(location.hash)||/^#[\w-]+-l(\d)$/.exec(location.hash);var v=m?nv(m[1]):null;return v&&L.indexOf(v)>-1?v:null}var h=fromHash(),s=null;try{s=localStorage.getItem(K)}catch(e){}if(s)s=nv(s);set(h||(s&&L.indexOf(s)>-1?s:L[0]),!!h);window.addEventListener('hashchange',function(){var v=fromHash();if(v)set(v,true)});document.addEventListener('DOMContentLoaded',function(){var W={"1": " level 1 basic l1 basic", "2": " level 1 advanced l1 advanced", "3": " level 3 l3", "4": " level 2 l2"};[].forEach.call(document.querySelectorAll('.lvonly .item'),function(el){var g=el.closest('.lvonly'),m=/\blv(\d)\b/.exec(g.className);if(m&&W[m[1]]){var q=el.getAttribute('data-q')||'';if(q.indexOf(W[m[1]].slice(1,12))<0)el.setAttribute('data-q',q+W[m[1]])}})});})();</script>
   <p class="lead">Modified Level 1 (Basic + Advanced), Level 2 and Level 3 materials for students in Mr. Davis&#x27;s Small Engines Overhaul class. Students stay in the gen ed lesson and shop work and use these pieces next to it: same units, same order, same points. Every notes page and reading has a 🔊 Read aloud button. Staff guides include shop and tool safety (all tools with adult supervision).</p>
-  <p class="jump"><a class="btn blue" href="#syllabus">📋 Syllabus</a> <a class="btn blue" href="#booklet">📘 Activity booklet</a> <a class="btn blue" href="#units">🗂️ Units</a> <a class="btn ghost" href="#teacher">👩‍🏫 Teacher resources</a></p>
+  <p class="jump"><a class="btn blue" href="#syllabus">📋 Syllabus</a> <a class="btn blue" href="#booklet">📘 Activity booklet</a> <a class="btn blue" href="#labs">🔧 Shop Labs &amp; Projects</a> <a class="btn blue" href="#units">🗂️ Units</a> <a class="btn ghost" href="#teacher">👩‍🏫 Teacher resources</a></p>
   <div class="searchbar"><label for="q">🔎 Find something:</label><input id="q" type="search" placeholder="Type a word, like goal, rights, key, 10/26…" autocomplete="off"><span id="qn" class="note"></span></div>
 </section>
-<section class="cat" id="syllabus" aria-labelledby="h-syllabus"><h2 id="h-syllabus">📋 Small Engines Overhaul Syllabus</h2>
-<details class="dbd ucond" open><summary><span class="dbdh">📋 Leveled syllabi</span> <small>(3)</small></summary><div class="grid rows"><article class="card item row" data-q="Small Engines Overhaul level 1 syllabus 2026-27">
-  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/small-engines-overhaul-syllabus-l1.pdf" target="_blank" rel="noopener" aria-label="Open: Small Engines Overhaul · Level 1 syllabus"><img src="../thumbs/incl-small-engines-overhaul-syllabus-l1.jpg" alt="" loading="lazy" width="116" height="150"></a>
-  <div class="itxt"><span class="tpill">📋 SYLLABUS</span>
-  <h4>Small Engines Overhaul · Level 1 syllabus</h4>
-  <p class="meta">4 pages · PDF · 329 KB</p><p class="sub">Level 1 syllabus · 2026–27</p>
-  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/small-engines-overhaul-syllabus-l1.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/small-engines-overhaul-syllabus-l1.pdf" download>⬇ Download</a></div></div>
-</article>
-<article class="card item row" data-q="Small Engines Overhaul level 2 syllabus 2026-27">
-  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/small-engines-overhaul-syllabus-l2.pdf" target="_blank" rel="noopener" aria-label="Open: Small Engines Overhaul · Level 2 syllabus"><img src="../thumbs/incl-small-engines-overhaul-syllabus-l2.jpg" alt="" loading="lazy" width="116" height="150"></a>
-  <div class="itxt"><span class="tpill">📋 SYLLABUS</span>
-  <h4>Small Engines Overhaul · Level 2 syllabus</h4>
-  <p class="meta">4 pages · PDF · 227 KB</p><p class="sub">Level 2 syllabus · 2026–27</p>
-  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/small-engines-overhaul-syllabus-l2.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/small-engines-overhaul-syllabus-l2.pdf" download>⬇ Download</a></div></div>
-</article>
-<article class="card item row" data-q="Small Engines Overhaul level 3 syllabus 2026-27">
-  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/small-engines-overhaul-syllabus-l3.pdf" target="_blank" rel="noopener" aria-label="Open: Small Engines Overhaul · Level 3 syllabus"><img src="../thumbs/incl-small-engines-overhaul-syllabus-l3.jpg" alt="" loading="lazy" width="116" height="150"></a>
-  <div class="itxt"><span class="tpill">📋 SYLLABUS</span>
-  <h4>Small Engines Overhaul · Level 3 syllabus</h4>
-  <p class="meta">4 pages · PDF · 215 KB</p><p class="sub">Level 3 syllabus · 2026–27</p>
-  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/small-engines-overhaul-syllabus-l3.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/small-engines-overhaul-syllabus-l3.pdf" download>⬇ Download</a></div></div>
-</article></div>
-</details></section>
 <section class="cat" id="booklet" aria-labelledby="h-booklet"><h2 id="h-booklet">📘 Small Engines Overhaul Activity Booklet</h2>
 <details class="dbd ucond" open><summary><span class="dbdh">📘 Small Engines Overhaul Activity Booklet</span> <small>(1)</small></summary><div class="grid rows"><article class="card item row" data-q="small engines overhaul activity booklet level 1 activity pages printable booklet">
   <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/small-engines-overhaul-activity-booklet.pdf" target="_blank" rel="noopener" aria-label="Open: Small Engines Overhaul Activity Booklet"><img src="../thumbs/incl-small-engines-overhaul-activity-booklet.jpg" alt="" loading="lazy" width="116" height="150"></a>
@@ -63,6 +37,615 @@
   <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/small-engines-overhaul-activity-booklet.pdf" download>⬇ Download</a></div></div>
 </article></div>
 </details></section>
+<section class="cat labs-index" id="labs" aria-labelledby="h-labs"><h2 id="h-labs">🔧 Shop Labs &amp; Projects</h2><p class="note">Every lab and project in this class, in unit order. The level buttons at the top still apply. If a lab only exists at another level, it stays visible and is labeled.</p><div class="labs-unit" data-unit="0"><h3><a href="#unit-0">🛡️ Unit 0: Shop Start-Up &amp; Safety</a></h3><div class="labblock" data-lvs="1 2 3"><h4 class="unit"><span aria-hidden="true">🧯</span> Shop Safety Walk &amp; Tool Board</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="shop safety walk &amp; tool board: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/00-shop-safety/small-engines-overhaul-l1-shop-walk-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Shop Safety Walk &amp; Tool Board: Level 1 Basic slides"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l1-shop-walk-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Shop Safety Walk &amp; Tool Board</h4>
+  <p class="meta">12 slides · PDF · 651 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/00-shop-safety/small-engines-overhaul-l1-shop-walk-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/00-shop-safety/small-engines-overhaul-l1-shop-walk-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="small-engines-overhaul/00-shop-safety/small-engines-overhaul-l1-shop-walk-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="shop safety walk &amp; tool board steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🧯</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Shop Safety Walk &amp; Tool Board</h3><p>Lab review game</p>
+  <a class="btn gold" href="small-engines-overhaul/00-shop-safety/small-engines-overhaul-l1-shop-walk-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="🚧 shop safety walk &amp; tool board: level 1 basic task card 🚧 under construction: room locations (extinguisher, eyewash, exits) are specific to mr. davis&#x27;s shop; staff fill them in on the walk. one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/00-shop-safety/small-engines-overhaul-l1-shop-walk-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: 🚧 Shop Safety Walk &amp; Tool Board: Level 1 Basic task card"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l1-shop-walk-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>🚧 Shop Safety Walk &amp; Tool Board: Level 1 Basic</h4>
+  <p class="meta">2 pages · PDF · 132 KB</p><p class="sub">🚧 Under construction: Room locations (extinguisher, eyewash, exits) are specific to Mr. Davis&#x27;s shop; staff fill them in on the walk. One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/00-shop-safety/small-engines-overhaul-l1-shop-walk-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/00-shop-safety/small-engines-overhaul-l1-shop-walk-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="shop safety walk &amp; tool board: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/00-shop-safety/small-engines-overhaul-l1-shop-walk-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Shop Safety Walk &amp; Tool Board: Level 1 Basic prep sheet"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l1-shop-walk-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Shop Safety Walk &amp; Tool Board: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 128 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/00-shop-safety/small-engines-overhaul-l1-shop-walk-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/00-shop-safety/small-engines-overhaul-l1-shop-walk-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="shop safety walk &amp; tool board: level 1 basic my check name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/00-shop-safety/small-engines-overhaul-l1-shop-walk-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Shop Safety Walk &amp; Tool Board: Level 1 Basic my check"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l1-shop-walk-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Shop Safety Walk &amp; Tool Board: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 125 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/00-shop-safety/small-engines-overhaul-l1-shop-walk-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/00-shop-safety/small-engines-overhaul-l1-shop-walk-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="shop safety walk &amp; tool board: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/00-shop-safety/small-engines-overhaul-l2-shop-walk-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Shop Safety Walk &amp; Tool Board: Level 1 Advanced slides"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l2-shop-walk-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Shop Safety Walk &amp; Tool Board</h4>
+  <p class="meta">12 slides · PDF · 623 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/00-shop-safety/small-engines-overhaul-l2-shop-walk-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/00-shop-safety/small-engines-overhaul-l2-shop-walk-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="small-engines-overhaul/00-shop-safety/small-engines-overhaul-l2-shop-walk-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="shop safety walk &amp; tool board steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🧯</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Shop Safety Walk &amp; Tool Board</h3><p>Lab review game</p>
+  <a class="btn gold" href="small-engines-overhaul/00-shop-safety/small-engines-overhaul-l2-shop-walk-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="🚧 shop safety walk &amp; tool board: level 1 advanced task card 🚧 under construction: room locations (extinguisher, eyewash, exits) are specific to mr. davis&#x27;s shop; staff fill them in on the walk. one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/00-shop-safety/small-engines-overhaul-l2-shop-walk-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: 🚧 Shop Safety Walk &amp; Tool Board: Level 1 Advanced task card"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l2-shop-walk-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>🚧 Shop Safety Walk &amp; Tool Board: Level 1 Advanced</h4>
+  <p class="meta">2 pages · PDF · 131 KB</p><p class="sub">🚧 Under construction: Room locations (extinguisher, eyewash, exits) are specific to Mr. Davis&#x27;s shop; staff fill them in on the walk. One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/00-shop-safety/small-engines-overhaul-l2-shop-walk-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/00-shop-safety/small-engines-overhaul-l2-shop-walk-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="shop safety walk &amp; tool board: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/00-shop-safety/small-engines-overhaul-l2-shop-walk-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Shop Safety Walk &amp; Tool Board: Level 1 Advanced prep sheet"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l2-shop-walk-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Shop Safety Walk &amp; Tool Board: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 125 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/00-shop-safety/small-engines-overhaul-l2-shop-walk-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/00-shop-safety/small-engines-overhaul-l2-shop-walk-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="shop safety walk &amp; tool board: level 1 advanced reflection name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/00-shop-safety/small-engines-overhaul-l2-shop-walk-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Shop Safety Walk &amp; Tool Board: Level 1 Advanced reflection"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l2-shop-walk-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Shop Safety Walk &amp; Tool Board: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 96 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/00-shop-safety/small-engines-overhaul-l2-shop-walk-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/00-shop-safety/small-engines-overhaul-l2-shop-walk-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="3"><div class="grid"><article class="card game page item" data-q="shop safety walk &amp; tool board: level 3 lab sheet (read aloud) opens in the browser · read-aloud inside read aloud notes reading lab sheet">
+  <a class="thumb2" href="small-engines-overhaul/00-shop-safety/small-engines-overhaul-l3-shop-walk-lab-sheet-page.html" target="_blank" rel="noopener" aria-label="Open: Shop Safety Walk &amp; Tool Board: Level 3"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l3-shop-walk-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="gtxt"><span class="pill lv3">Level 3</span><span class="tpill">🔧 LAB SHEET</span>
+  <h3>Shop Safety Walk &amp; Tool Board: Level 3</h3><p>Opens in the browser · read-aloud inside</p>
+  <a class="btn blue" href="small-engines-overhaul/00-shop-safety/small-engines-overhaul-l3-shop-walk-lab-sheet-page.html" target="_blank" rel="noopener">Open</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="shop safety walk &amp; tool board: level 3 lab sheet question, prediction, steps, data table, cer printable lab sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/00-shop-safety/small-engines-overhaul-l3-shop-walk-lab-sheet.pdf" target="_blank" rel="noopener" aria-label="Open: Shop Safety Walk &amp; Tool Board: Level 3 lab sheet"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l3-shop-walk-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🔧 LAB SHEET</span>
+  <h4>Shop Safety Walk &amp; Tool Board: Level 3</h4>
+  <p class="meta">2 pages · PDF · 50 KB</p><p class="sub">Question, prediction, steps, data table, CER</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/00-shop-safety/small-engines-overhaul-l3-shop-walk-lab-sheet.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/00-shop-safety/small-engines-overhaul-l3-shop-walk-lab-sheet.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div></div><div class="labs-unit" data-unit="1"><h3><a href="#unit-1">📏 Unit 1: Measuring Tools</a></h3><div class="labblock" data-lvs="1 2 3"><h4 class="unit"><span aria-hidden="true">📏</span> Measurement Stations</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="measurement stations: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/01-measuring/small-engines-overhaul-l1-measurement-stations-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Measurement Stations: Level 1 Basic slides"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l1-measurement-stations-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Measurement Stations</h4>
+  <p class="meta">12 slides · PDF · 677 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/01-measuring/small-engines-overhaul-l1-measurement-stations-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/01-measuring/small-engines-overhaul-l1-measurement-stations-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="small-engines-overhaul/01-measuring/small-engines-overhaul-l1-measurement-stations-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="measurement stations steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">📏</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Measurement Stations</h3><p>Lab review game</p>
+  <a class="btn gold" href="small-engines-overhaul/01-measuring/small-engines-overhaul-l1-measurement-stations-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="🚧 measurement stations: level 1 basic task card 🚧 under construction: station specs depend on the engines in mr. davis&#x27;s shop (the lab sheet leaves the model blank); staff fill in the spec column. one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/01-measuring/small-engines-overhaul-l1-measurement-stations-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: 🚧 Measurement Stations: Level 1 Basic task card"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l1-measurement-stations-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>🚧 Measurement Stations: Level 1 Basic</h4>
+  <p class="meta">2 pages · PDF · 146 KB</p><p class="sub">🚧 Under construction: Station specs depend on the engines in Mr. Davis&#x27;s shop (the Lab Sheet leaves the model blank); staff fill in the spec column. One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/01-measuring/small-engines-overhaul-l1-measurement-stations-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/01-measuring/small-engines-overhaul-l1-measurement-stations-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="measurement stations: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/01-measuring/small-engines-overhaul-l1-measurement-stations-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Measurement Stations: Level 1 Basic prep sheet"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l1-measurement-stations-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Measurement Stations: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 133 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/01-measuring/small-engines-overhaul-l1-measurement-stations-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/01-measuring/small-engines-overhaul-l1-measurement-stations-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="measurement stations: level 1 basic my check name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/01-measuring/small-engines-overhaul-l1-measurement-stations-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Measurement Stations: Level 1 Basic my check"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l1-measurement-stations-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Measurement Stations: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 123 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/01-measuring/small-engines-overhaul-l1-measurement-stations-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/01-measuring/small-engines-overhaul-l1-measurement-stations-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="measurement stations: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/01-measuring/small-engines-overhaul-l2-measurement-stations-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Measurement Stations: Level 1 Advanced slides"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l2-measurement-stations-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Measurement Stations</h4>
+  <p class="meta">12 slides · PDF · 634 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/01-measuring/small-engines-overhaul-l2-measurement-stations-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/01-measuring/small-engines-overhaul-l2-measurement-stations-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="small-engines-overhaul/01-measuring/small-engines-overhaul-l2-measurement-stations-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="measurement stations steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">📏</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Measurement Stations</h3><p>Lab review game</p>
+  <a class="btn gold" href="small-engines-overhaul/01-measuring/small-engines-overhaul-l2-measurement-stations-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="🚧 measurement stations: level 1 advanced task card 🚧 under construction: station specs depend on the engines in mr. davis&#x27;s shop (the lab sheet leaves the model blank); staff fill in the spec column. one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/01-measuring/small-engines-overhaul-l2-measurement-stations-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: 🚧 Measurement Stations: Level 1 Advanced task card"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l2-measurement-stations-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>🚧 Measurement Stations: Level 1 Advanced</h4>
+  <p class="meta">2 pages · PDF · 129 KB</p><p class="sub">🚧 Under construction: Station specs depend on the engines in Mr. Davis&#x27;s shop (the Lab Sheet leaves the model blank); staff fill in the spec column. One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/01-measuring/small-engines-overhaul-l2-measurement-stations-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/01-measuring/small-engines-overhaul-l2-measurement-stations-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="measurement stations: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/01-measuring/small-engines-overhaul-l2-measurement-stations-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Measurement Stations: Level 1 Advanced prep sheet"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l2-measurement-stations-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Measurement Stations: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 128 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/01-measuring/small-engines-overhaul-l2-measurement-stations-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/01-measuring/small-engines-overhaul-l2-measurement-stations-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="measurement stations: level 1 advanced reflection name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/01-measuring/small-engines-overhaul-l2-measurement-stations-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Measurement Stations: Level 1 Advanced reflection"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l2-measurement-stations-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Measurement Stations: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 95 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/01-measuring/small-engines-overhaul-l2-measurement-stations-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/01-measuring/small-engines-overhaul-l2-measurement-stations-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="3"><div class="grid"><article class="card game page item" data-q="measurement stations: level 3 lab sheet (read aloud) opens in the browser · read-aloud inside read aloud notes reading lab sheet">
+  <a class="thumb2" href="small-engines-overhaul/01-measuring/small-engines-overhaul-l3-measurement-stations-lab-sheet-page.html" target="_blank" rel="noopener" aria-label="Open: Measurement Stations: Level 3"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l3-measurement-stations-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="gtxt"><span class="pill lv3">Level 3</span><span class="tpill">🔧 LAB SHEET</span>
+  <h3>Measurement Stations: Level 3</h3><p>Opens in the browser · read-aloud inside</p>
+  <a class="btn blue" href="small-engines-overhaul/01-measuring/small-engines-overhaul-l3-measurement-stations-lab-sheet-page.html" target="_blank" rel="noopener">Open</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="measurement stations: level 3 lab sheet question, prediction, steps, data table, cer printable lab sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/01-measuring/small-engines-overhaul-l3-measurement-stations-lab-sheet.pdf" target="_blank" rel="noopener" aria-label="Open: Measurement Stations: Level 3 lab sheet"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l3-measurement-stations-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🔧 LAB SHEET</span>
+  <h4>Measurement Stations: Level 3</h4>
+  <p class="meta">2 pages · PDF · 50 KB</p><p class="sub">Question, prediction, steps, data table, CER</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/01-measuring/small-engines-overhaul-l3-measurement-stations-lab-sheet.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/01-measuring/small-engines-overhaul-l3-measurement-stations-lab-sheet.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div></div><div class="labs-unit" data-unit="3"><h3><a href="#unit-3">⚙️ Unit 3: 4-Stroke Theory &amp; Engine Parts</a></h3><div class="labblock" data-lvs="1 2 3"><h4 class="unit"><span aria-hidden="true">🔩</span> Engine Parts ID</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="engine parts id: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/03-four-stroke/small-engines-overhaul-l1-parts-id-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Engine Parts ID: Level 1 Basic slides"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l1-parts-id-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Engine Parts ID</h4>
+  <p class="meta">12 slides · PDF · 665 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/03-four-stroke/small-engines-overhaul-l1-parts-id-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/03-four-stroke/small-engines-overhaul-l1-parts-id-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="small-engines-overhaul/03-four-stroke/small-engines-overhaul-l1-parts-id-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="engine parts id steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🔩</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Engine Parts ID</h3><p>Lab review game</p>
+  <a class="btn gold" href="small-engines-overhaul/03-four-stroke/small-engines-overhaul-l1-parts-id-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="engine parts id: level 1 basic task card one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/03-four-stroke/small-engines-overhaul-l1-parts-id-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Engine Parts ID: Level 1 Basic task card"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l1-parts-id-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Engine Parts ID: Level 1 Basic</h4>
+  <p class="meta">2 pages · PDF · 127 KB</p><p class="sub">One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/03-four-stroke/small-engines-overhaul-l1-parts-id-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/03-four-stroke/small-engines-overhaul-l1-parts-id-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="engine parts id: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/03-four-stroke/small-engines-overhaul-l1-parts-id-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Engine Parts ID: Level 1 Basic prep sheet"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l1-parts-id-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Engine Parts ID: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 137 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/03-four-stroke/small-engines-overhaul-l1-parts-id-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/03-four-stroke/small-engines-overhaul-l1-parts-id-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="engine parts id: level 1 basic my check name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/03-four-stroke/small-engines-overhaul-l1-parts-id-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Engine Parts ID: Level 1 Basic my check"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l1-parts-id-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Engine Parts ID: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 126 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/03-four-stroke/small-engines-overhaul-l1-parts-id-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/03-four-stroke/small-engines-overhaul-l1-parts-id-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="engine parts id: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/03-four-stroke/small-engines-overhaul-l2-parts-id-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Engine Parts ID: Level 1 Advanced slides"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l2-parts-id-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Engine Parts ID</h4>
+  <p class="meta">11 slides · PDF · 609 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/03-four-stroke/small-engines-overhaul-l2-parts-id-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/03-four-stroke/small-engines-overhaul-l2-parts-id-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="small-engines-overhaul/03-four-stroke/small-engines-overhaul-l2-parts-id-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="engine parts id steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🔩</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Engine Parts ID</h3><p>Lab review game</p>
+  <a class="btn gold" href="small-engines-overhaul/03-four-stroke/small-engines-overhaul-l2-parts-id-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="engine parts id: level 1 advanced task card one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/03-four-stroke/small-engines-overhaul-l2-parts-id-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Engine Parts ID: Level 1 Advanced task card"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l2-parts-id-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Engine Parts ID: Level 1 Advanced</h4>
+  <p class="meta">2 pages · PDF · 111 KB</p><p class="sub">One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/03-four-stroke/small-engines-overhaul-l2-parts-id-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/03-four-stroke/small-engines-overhaul-l2-parts-id-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="engine parts id: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/03-four-stroke/small-engines-overhaul-l2-parts-id-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Engine Parts ID: Level 1 Advanced prep sheet"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l2-parts-id-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Engine Parts ID: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 134 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/03-four-stroke/small-engines-overhaul-l2-parts-id-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/03-four-stroke/small-engines-overhaul-l2-parts-id-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="engine parts id: level 1 advanced reflection name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/03-four-stroke/small-engines-overhaul-l2-parts-id-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Engine Parts ID: Level 1 Advanced reflection"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l2-parts-id-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Engine Parts ID: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 97 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/03-four-stroke/small-engines-overhaul-l2-parts-id-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/03-four-stroke/small-engines-overhaul-l2-parts-id-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="3"><div class="grid"><article class="card game page item" data-q="engine parts id: level 3 lab sheet (read aloud) opens in the browser · read-aloud inside read aloud notes reading lab sheet">
+  <a class="thumb2" href="small-engines-overhaul/03-four-stroke/small-engines-overhaul-l3-parts-id-lab-sheet-page.html" target="_blank" rel="noopener" aria-label="Open: Engine Parts ID: Level 3"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l3-parts-id-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="gtxt"><span class="pill lv3">Level 3</span><span class="tpill">🔧 LAB SHEET</span>
+  <h3>Engine Parts ID: Level 3</h3><p>Opens in the browser · read-aloud inside</p>
+  <a class="btn blue" href="small-engines-overhaul/03-four-stroke/small-engines-overhaul-l3-parts-id-lab-sheet-page.html" target="_blank" rel="noopener">Open</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="engine parts id: level 3 lab sheet question, prediction, steps, data table, cer printable lab sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/03-four-stroke/small-engines-overhaul-l3-parts-id-lab-sheet.pdf" target="_blank" rel="noopener" aria-label="Open: Engine Parts ID: Level 3 lab sheet"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l3-parts-id-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🔧 LAB SHEET</span>
+  <h4>Engine Parts ID: Level 3</h4>
+  <p class="meta">2 pages · PDF · 50 KB</p><p class="sub">Question, prediction, steps, data table, CER</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/03-four-stroke/small-engines-overhaul-l3-parts-id-lab-sheet.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/03-four-stroke/small-engines-overhaul-l3-parts-id-lab-sheet.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div></div><div class="labs-unit" data-unit="4"><h3><a href="#unit-4">💨 Unit 4: Compression</a></h3><div class="labblock" data-lvs="1 2 3"><h4 class="unit"><span aria-hidden="true">📟</span> Compression Test</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="compression test: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/04-compression/small-engines-overhaul-l1-compression-test-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Compression Test: Level 1 Basic slides"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l1-compression-test-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Compression Test</h4>
+  <p class="meta">12 slides · PDF · 668 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/04-compression/small-engines-overhaul-l1-compression-test-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/04-compression/small-engines-overhaul-l1-compression-test-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="small-engines-overhaul/04-compression/small-engines-overhaul-l1-compression-test-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="compression test steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">📟</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Compression Test</h3><p>Lab review game</p>
+  <a class="btn gold" href="small-engines-overhaul/04-compression/small-engines-overhaul-l1-compression-test-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="🚧 compression test: level 1 basic task card 🚧 under construction: compression spec depends on the engines in mr. davis&#x27;s shop; staff fill in the spec. one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/04-compression/small-engines-overhaul-l1-compression-test-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: 🚧 Compression Test: Level 1 Basic task card"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l1-compression-test-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>🚧 Compression Test: Level 1 Basic</h4>
+  <p class="meta">2 pages · PDF · 140 KB</p><p class="sub">🚧 Under construction: Compression spec depends on the engines in Mr. Davis&#x27;s shop; staff fill in the spec. One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/04-compression/small-engines-overhaul-l1-compression-test-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/04-compression/small-engines-overhaul-l1-compression-test-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="compression test: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/04-compression/small-engines-overhaul-l1-compression-test-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Compression Test: Level 1 Basic prep sheet"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l1-compression-test-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Compression Test: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 119 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/04-compression/small-engines-overhaul-l1-compression-test-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/04-compression/small-engines-overhaul-l1-compression-test-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="compression test: level 1 basic my check name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/04-compression/small-engines-overhaul-l1-compression-test-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Compression Test: Level 1 Basic my check"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l1-compression-test-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Compression Test: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 121 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/04-compression/small-engines-overhaul-l1-compression-test-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/04-compression/small-engines-overhaul-l1-compression-test-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="compression test: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/04-compression/small-engines-overhaul-l2-compression-test-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Compression Test: Level 1 Advanced slides"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l2-compression-test-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Compression Test</h4>
+  <p class="meta">12 slides · PDF · 627 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/04-compression/small-engines-overhaul-l2-compression-test-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/04-compression/small-engines-overhaul-l2-compression-test-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="small-engines-overhaul/04-compression/small-engines-overhaul-l2-compression-test-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="compression test steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">📟</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Compression Test</h3><p>Lab review game</p>
+  <a class="btn gold" href="small-engines-overhaul/04-compression/small-engines-overhaul-l2-compression-test-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="🚧 compression test: level 1 advanced task card 🚧 under construction: compression spec depends on the engines in mr. davis&#x27;s shop; staff fill in the spec. one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/04-compression/small-engines-overhaul-l2-compression-test-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: 🚧 Compression Test: Level 1 Advanced task card"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l2-compression-test-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>🚧 Compression Test: Level 1 Advanced</h4>
+  <p class="meta">2 pages · PDF · 133 KB</p><p class="sub">🚧 Under construction: Compression spec depends on the engines in Mr. Davis&#x27;s shop; staff fill in the spec. One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/04-compression/small-engines-overhaul-l2-compression-test-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/04-compression/small-engines-overhaul-l2-compression-test-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="compression test: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/04-compression/small-engines-overhaul-l2-compression-test-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Compression Test: Level 1 Advanced prep sheet"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l2-compression-test-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Compression Test: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 119 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/04-compression/small-engines-overhaul-l2-compression-test-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/04-compression/small-engines-overhaul-l2-compression-test-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="compression test: level 1 advanced reflection name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/04-compression/small-engines-overhaul-l2-compression-test-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Compression Test: Level 1 Advanced reflection"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l2-compression-test-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Compression Test: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 94 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/04-compression/small-engines-overhaul-l2-compression-test-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/04-compression/small-engines-overhaul-l2-compression-test-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="3"><div class="grid"><article class="card game page item" data-q="compression test: level 3 lab sheet (read aloud) opens in the browser · read-aloud inside read aloud notes reading lab sheet">
+  <a class="thumb2" href="small-engines-overhaul/04-compression/small-engines-overhaul-l3-compression-test-lab-sheet-page.html" target="_blank" rel="noopener" aria-label="Open: Compression Test: Level 3"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l3-compression-test-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="gtxt"><span class="pill lv3">Level 3</span><span class="tpill">🔧 LAB SHEET</span>
+  <h3>Compression Test: Level 3</h3><p>Opens in the browser · read-aloud inside</p>
+  <a class="btn blue" href="small-engines-overhaul/04-compression/small-engines-overhaul-l3-compression-test-lab-sheet-page.html" target="_blank" rel="noopener">Open</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="compression test: level 3 lab sheet question, prediction, steps, data table, cer printable lab sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/04-compression/small-engines-overhaul-l3-compression-test-lab-sheet.pdf" target="_blank" rel="noopener" aria-label="Open: Compression Test: Level 3 lab sheet"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l3-compression-test-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🔧 LAB SHEET</span>
+  <h4>Compression Test: Level 3</h4>
+  <p class="meta">2 pages · PDF · 49 KB</p><p class="sub">Question, prediction, steps, data table, CER</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/04-compression/small-engines-overhaul-l3-compression-test-lab-sheet.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/04-compression/small-engines-overhaul-l3-compression-test-lab-sheet.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div></div><div class="labs-unit" data-unit="5"><h3><a href="#unit-5">⛽ Unit 5: Carburetion &amp; Fuel</a></h3><div class="labblock" data-lvs="1 2 3"><h4 class="unit"><span aria-hidden="true">⏳</span> Venturi &amp; Carburetor Lab</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="venturi &amp; carburetor lab: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/05-carburetion/small-engines-overhaul-l1-venturi-carb-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Venturi &amp; Carburetor Lab: Level 1 Basic slides"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l1-venturi-carb-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Venturi &amp; Carburetor Lab</h4>
+  <p class="meta">12 slides · PDF · 671 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/05-carburetion/small-engines-overhaul-l1-venturi-carb-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/05-carburetion/small-engines-overhaul-l1-venturi-carb-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="small-engines-overhaul/05-carburetion/small-engines-overhaul-l1-venturi-carb-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="venturi &amp; carburetor lab steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">⏳</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Venturi &amp; Carburetor Lab</h3><p>Lab review game</p>
+  <a class="btn gold" href="small-engines-overhaul/05-carburetion/small-engines-overhaul-l1-venturi-carb-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="🚧 venturi &amp; carburetor lab: level 1 basic task card 🚧 under construction: the class venturi lab is title-only in canvas; this lab is team-written. one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/05-carburetion/small-engines-overhaul-l1-venturi-carb-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: 🚧 Venturi &amp; Carburetor Lab: Level 1 Basic task card"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l1-venturi-carb-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>🚧 Venturi &amp; Carburetor Lab: Level 1 Basic</h4>
+  <p class="meta">2 pages · PDF · 142 KB</p><p class="sub">🚧 Under construction: The class Venturi Lab is title-only in Canvas; this lab is team-written. One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/05-carburetion/small-engines-overhaul-l1-venturi-carb-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/05-carburetion/small-engines-overhaul-l1-venturi-carb-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="venturi &amp; carburetor lab: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/05-carburetion/small-engines-overhaul-l1-venturi-carb-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Venturi &amp; Carburetor Lab: Level 1 Basic prep sheet"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l1-venturi-carb-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Venturi &amp; Carburetor Lab: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 125 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/05-carburetion/small-engines-overhaul-l1-venturi-carb-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/05-carburetion/small-engines-overhaul-l1-venturi-carb-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="venturi &amp; carburetor lab: level 1 basic my check name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/05-carburetion/small-engines-overhaul-l1-venturi-carb-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Venturi &amp; Carburetor Lab: Level 1 Basic my check"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l1-venturi-carb-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Venturi &amp; Carburetor Lab: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 126 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/05-carburetion/small-engines-overhaul-l1-venturi-carb-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/05-carburetion/small-engines-overhaul-l1-venturi-carb-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="venturi &amp; carburetor lab: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/05-carburetion/small-engines-overhaul-l2-venturi-carb-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Venturi &amp; Carburetor Lab: Level 1 Advanced slides"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l2-venturi-carb-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Venturi &amp; Carburetor Lab</h4>
+  <p class="meta">12 slides · PDF · 617 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/05-carburetion/small-engines-overhaul-l2-venturi-carb-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/05-carburetion/small-engines-overhaul-l2-venturi-carb-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="small-engines-overhaul/05-carburetion/small-engines-overhaul-l2-venturi-carb-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="venturi &amp; carburetor lab steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">⏳</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Venturi &amp; Carburetor Lab</h3><p>Lab review game</p>
+  <a class="btn gold" href="small-engines-overhaul/05-carburetion/small-engines-overhaul-l2-venturi-carb-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="🚧 venturi &amp; carburetor lab: level 1 advanced task card 🚧 under construction: the class venturi lab is title-only in canvas; this lab is team-written. one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/05-carburetion/small-engines-overhaul-l2-venturi-carb-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: 🚧 Venturi &amp; Carburetor Lab: Level 1 Advanced task card"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l2-venturi-carb-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>🚧 Venturi &amp; Carburetor Lab: Level 1 Advanced</h4>
+  <p class="meta">2 pages · PDF · 128 KB</p><p class="sub">🚧 Under construction: The class Venturi Lab is title-only in Canvas; this lab is team-written. One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/05-carburetion/small-engines-overhaul-l2-venturi-carb-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/05-carburetion/small-engines-overhaul-l2-venturi-carb-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="venturi &amp; carburetor lab: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/05-carburetion/small-engines-overhaul-l2-venturi-carb-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Venturi &amp; Carburetor Lab: Level 1 Advanced prep sheet"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l2-venturi-carb-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Venturi &amp; Carburetor Lab: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 126 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/05-carburetion/small-engines-overhaul-l2-venturi-carb-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/05-carburetion/small-engines-overhaul-l2-venturi-carb-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="venturi &amp; carburetor lab: level 1 advanced reflection name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/05-carburetion/small-engines-overhaul-l2-venturi-carb-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Venturi &amp; Carburetor Lab: Level 1 Advanced reflection"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l2-venturi-carb-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Venturi &amp; Carburetor Lab: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 98 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/05-carburetion/small-engines-overhaul-l2-venturi-carb-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/05-carburetion/small-engines-overhaul-l2-venturi-carb-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="3"><div class="grid"><article class="card game page item" data-q="venturi &amp; carburetor lab: level 3 lab sheet (read aloud) opens in the browser · read-aloud inside read aloud notes reading lab sheet">
+  <a class="thumb2" href="small-engines-overhaul/05-carburetion/small-engines-overhaul-l3-venturi-carb-lab-sheet-page.html" target="_blank" rel="noopener" aria-label="Open: Venturi &amp; Carburetor Lab: Level 3"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l3-venturi-carb-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="gtxt"><span class="pill lv3">Level 3</span><span class="tpill">🔧 LAB SHEET</span>
+  <h3>Venturi &amp; Carburetor Lab: Level 3</h3><p>Opens in the browser · read-aloud inside</p>
+  <a class="btn blue" href="small-engines-overhaul/05-carburetion/small-engines-overhaul-l3-venturi-carb-lab-sheet-page.html" target="_blank" rel="noopener">Open</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="venturi &amp; carburetor lab: level 3 lab sheet question, prediction, steps, data table, cer printable lab sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/05-carburetion/small-engines-overhaul-l3-venturi-carb-lab-sheet.pdf" target="_blank" rel="noopener" aria-label="Open: Venturi &amp; Carburetor Lab: Level 3 lab sheet"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l3-venturi-carb-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🔧 LAB SHEET</span>
+  <h4>Venturi &amp; Carburetor Lab: Level 3</h4>
+  <p class="meta">2 pages · PDF · 49 KB</p><p class="sub">Question, prediction, steps, data table, CER</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/05-carburetion/small-engines-overhaul-l3-venturi-carb-lab-sheet.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/05-carburetion/small-engines-overhaul-l3-venturi-carb-lab-sheet.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div></div><div class="labs-unit" data-unit="6"><h3><a href="#unit-6">⚡ Unit 6: Ignition</a></h3><div class="labblock" data-lvs="1 2 3"><h4 class="unit"><span aria-hidden="true">⚡</span> Spark Plug &amp; Spark Check</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="spark plug &amp; spark check: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/06-ignition/small-engines-overhaul-l1-spark-check-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Spark Plug &amp; Spark Check: Level 1 Basic slides"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l1-spark-check-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Spark Plug &amp; Spark Check</h4>
+  <p class="meta">12 slides · PDF · 663 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/06-ignition/small-engines-overhaul-l1-spark-check-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/06-ignition/small-engines-overhaul-l1-spark-check-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="small-engines-overhaul/06-ignition/small-engines-overhaul-l1-spark-check-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="spark plug &amp; spark check steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">⚡</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Spark Plug &amp; Spark Check</h3><p>Lab review game</p>
+  <a class="btn gold" href="small-engines-overhaul/06-ignition/small-engines-overhaul-l1-spark-check-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="🚧 spark plug &amp; spark check: level 1 basic task card 🚧 under construction: plug and air gap specs depend on the engines in mr. davis&#x27;s shop; staff fill in the spec. one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/06-ignition/small-engines-overhaul-l1-spark-check-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: 🚧 Spark Plug &amp; Spark Check: Level 1 Basic task card"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l1-spark-check-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>🚧 Spark Plug &amp; Spark Check: Level 1 Basic</h4>
+  <p class="meta">2 pages · PDF · 141 KB</p><p class="sub">🚧 Under construction: Plug and air gap specs depend on the engines in Mr. Davis&#x27;s shop; staff fill in the spec. One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/06-ignition/small-engines-overhaul-l1-spark-check-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/06-ignition/small-engines-overhaul-l1-spark-check-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="spark plug &amp; spark check: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/06-ignition/small-engines-overhaul-l1-spark-check-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Spark Plug &amp; Spark Check: Level 1 Basic prep sheet"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l1-spark-check-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Spark Plug &amp; Spark Check: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 123 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/06-ignition/small-engines-overhaul-l1-spark-check-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/06-ignition/small-engines-overhaul-l1-spark-check-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="spark plug &amp; spark check: level 1 basic my check name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/06-ignition/small-engines-overhaul-l1-spark-check-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Spark Plug &amp; Spark Check: Level 1 Basic my check"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l1-spark-check-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Spark Plug &amp; Spark Check: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 123 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/06-ignition/small-engines-overhaul-l1-spark-check-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/06-ignition/small-engines-overhaul-l1-spark-check-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="spark plug &amp; spark check: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/06-ignition/small-engines-overhaul-l2-spark-check-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Spark Plug &amp; Spark Check: Level 1 Advanced slides"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l2-spark-check-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Spark Plug &amp; Spark Check</h4>
+  <p class="meta">12 slides · PDF · 621 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/06-ignition/small-engines-overhaul-l2-spark-check-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/06-ignition/small-engines-overhaul-l2-spark-check-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="small-engines-overhaul/06-ignition/small-engines-overhaul-l2-spark-check-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="spark plug &amp; spark check steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">⚡</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Spark Plug &amp; Spark Check</h3><p>Lab review game</p>
+  <a class="btn gold" href="small-engines-overhaul/06-ignition/small-engines-overhaul-l2-spark-check-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="🚧 spark plug &amp; spark check: level 1 advanced task card 🚧 under construction: plug and air gap specs depend on the engines in mr. davis&#x27;s shop; staff fill in the spec. one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/06-ignition/small-engines-overhaul-l2-spark-check-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: 🚧 Spark Plug &amp; Spark Check: Level 1 Advanced task card"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l2-spark-check-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>🚧 Spark Plug &amp; Spark Check: Level 1 Advanced</h4>
+  <p class="meta">2 pages · PDF · 121 KB</p><p class="sub">🚧 Under construction: Plug and air gap specs depend on the engines in Mr. Davis&#x27;s shop; staff fill in the spec. One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/06-ignition/small-engines-overhaul-l2-spark-check-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/06-ignition/small-engines-overhaul-l2-spark-check-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="spark plug &amp; spark check: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/06-ignition/small-engines-overhaul-l2-spark-check-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Spark Plug &amp; Spark Check: Level 1 Advanced prep sheet"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l2-spark-check-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Spark Plug &amp; Spark Check: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 122 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/06-ignition/small-engines-overhaul-l2-spark-check-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/06-ignition/small-engines-overhaul-l2-spark-check-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="spark plug &amp; spark check: level 1 advanced reflection name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/06-ignition/small-engines-overhaul-l2-spark-check-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Spark Plug &amp; Spark Check: Level 1 Advanced reflection"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l2-spark-check-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Spark Plug &amp; Spark Check: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 95 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/06-ignition/small-engines-overhaul-l2-spark-check-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/06-ignition/small-engines-overhaul-l2-spark-check-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="3"><div class="grid"><article class="card game page item" data-q="spark plug &amp; spark check: level 3 lab sheet (read aloud) opens in the browser · read-aloud inside read aloud notes reading lab sheet">
+  <a class="thumb2" href="small-engines-overhaul/06-ignition/small-engines-overhaul-l3-spark-check-lab-sheet-page.html" target="_blank" rel="noopener" aria-label="Open: Spark Plug &amp; Spark Check: Level 3"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l3-spark-check-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="gtxt"><span class="pill lv3">Level 3</span><span class="tpill">🔧 LAB SHEET</span>
+  <h3>Spark Plug &amp; Spark Check: Level 3</h3><p>Opens in the browser · read-aloud inside</p>
+  <a class="btn blue" href="small-engines-overhaul/06-ignition/small-engines-overhaul-l3-spark-check-lab-sheet-page.html" target="_blank" rel="noopener">Open</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="spark plug &amp; spark check: level 3 lab sheet question, prediction, steps, data table, cer printable lab sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/06-ignition/small-engines-overhaul-l3-spark-check-lab-sheet.pdf" target="_blank" rel="noopener" aria-label="Open: Spark Plug &amp; Spark Check: Level 3 lab sheet"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l3-spark-check-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🔧 LAB SHEET</span>
+  <h4>Spark Plug &amp; Spark Check: Level 3</h4>
+  <p class="meta">2 pages · PDF · 49 KB</p><p class="sub">Question, prediction, steps, data table, CER</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/06-ignition/small-engines-overhaul-l3-spark-check-lab-sheet.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/06-ignition/small-engines-overhaul-l3-spark-check-lab-sheet.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div></div><div class="labs-unit" data-unit="7"><h3><a href="#unit-7">📘 Unit 7: Using the Repair Manual</a></h3><div class="labblock" data-lvs="1 2 3"><h4 class="unit"><span aria-hidden="true">📘</span> Repair Manual Look-Up</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="repair manual look-up: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/07-repair-manual/small-engines-overhaul-l1-manual-lookup-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Repair Manual Look-Up: Level 1 Basic slides"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l1-manual-lookup-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Repair Manual Look-Up</h4>
+  <p class="meta">12 slides · PDF · 659 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/07-repair-manual/small-engines-overhaul-l1-manual-lookup-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/07-repair-manual/small-engines-overhaul-l1-manual-lookup-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="small-engines-overhaul/07-repair-manual/small-engines-overhaul-l1-manual-lookup-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="repair manual look-up steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">📘</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Repair Manual Look-Up</h3><p>Lab review game</p>
+  <a class="btn gold" href="small-engines-overhaul/07-repair-manual/small-engines-overhaul-l1-manual-lookup-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="🚧 repair manual look-up: level 1 basic task card 🚧 under construction: spec values depend on the class manual and engine models; our key shows typical values only. the manual itself stays in the classroom (copyrighted). one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/07-repair-manual/small-engines-overhaul-l1-manual-lookup-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: 🚧 Repair Manual Look-Up: Level 1 Basic task card"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l1-manual-lookup-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>🚧 Repair Manual Look-Up: Level 1 Basic</h4>
+  <p class="meta">2 pages · PDF · 127 KB</p><p class="sub">🚧 Under construction: Spec values depend on the class manual and engine models; our key shows typical values only. The manual itself stays in the classroom (copyrighted). One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/07-repair-manual/small-engines-overhaul-l1-manual-lookup-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/07-repair-manual/small-engines-overhaul-l1-manual-lookup-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="repair manual look-up: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/07-repair-manual/small-engines-overhaul-l1-manual-lookup-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Repair Manual Look-Up: Level 1 Basic prep sheet"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l1-manual-lookup-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Repair Manual Look-Up: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 123 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/07-repair-manual/small-engines-overhaul-l1-manual-lookup-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/07-repair-manual/small-engines-overhaul-l1-manual-lookup-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="repair manual look-up: level 1 basic my check name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/07-repair-manual/small-engines-overhaul-l1-manual-lookup-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Repair Manual Look-Up: Level 1 Basic my check"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l1-manual-lookup-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Repair Manual Look-Up: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 118 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/07-repair-manual/small-engines-overhaul-l1-manual-lookup-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/07-repair-manual/small-engines-overhaul-l1-manual-lookup-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="repair manual look-up: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/07-repair-manual/small-engines-overhaul-l2-manual-lookup-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Repair Manual Look-Up: Level 1 Advanced slides"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l2-manual-lookup-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Repair Manual Look-Up</h4>
+  <p class="meta">12 slides · PDF · 614 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/07-repair-manual/small-engines-overhaul-l2-manual-lookup-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/07-repair-manual/small-engines-overhaul-l2-manual-lookup-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="small-engines-overhaul/07-repair-manual/small-engines-overhaul-l2-manual-lookup-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="repair manual look-up steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">📘</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Repair Manual Look-Up</h3><p>Lab review game</p>
+  <a class="btn gold" href="small-engines-overhaul/07-repair-manual/small-engines-overhaul-l2-manual-lookup-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="🚧 repair manual look-up: level 1 advanced task card 🚧 under construction: spec values depend on the class manual and engine models; our key shows typical values only. the manual itself stays in the classroom (copyrighted). one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/07-repair-manual/small-engines-overhaul-l2-manual-lookup-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: 🚧 Repair Manual Look-Up: Level 1 Advanced task card"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l2-manual-lookup-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>🚧 Repair Manual Look-Up: Level 1 Advanced</h4>
+  <p class="meta">2 pages · PDF · 116 KB</p><p class="sub">🚧 Under construction: Spec values depend on the class manual and engine models; our key shows typical values only. The manual itself stays in the classroom (copyrighted). One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/07-repair-manual/small-engines-overhaul-l2-manual-lookup-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/07-repair-manual/small-engines-overhaul-l2-manual-lookup-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="repair manual look-up: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/07-repair-manual/small-engines-overhaul-l2-manual-lookup-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Repair Manual Look-Up: Level 1 Advanced prep sheet"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l2-manual-lookup-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Repair Manual Look-Up: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 123 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/07-repair-manual/small-engines-overhaul-l2-manual-lookup-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/07-repair-manual/small-engines-overhaul-l2-manual-lookup-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="repair manual look-up: level 1 advanced reflection name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/07-repair-manual/small-engines-overhaul-l2-manual-lookup-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Repair Manual Look-Up: Level 1 Advanced reflection"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l2-manual-lookup-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Repair Manual Look-Up: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 91 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/07-repair-manual/small-engines-overhaul-l2-manual-lookup-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/07-repair-manual/small-engines-overhaul-l2-manual-lookup-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="3"><div class="grid"><article class="card game page item" data-q="repair manual look-up: level 3 lab sheet (read aloud) opens in the browser · read-aloud inside read aloud notes reading lab sheet">
+  <a class="thumb2" href="small-engines-overhaul/07-repair-manual/small-engines-overhaul-l3-manual-lookup-lab-sheet-page.html" target="_blank" rel="noopener" aria-label="Open: Repair Manual Look-Up: Level 3"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l3-manual-lookup-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="gtxt"><span class="pill lv3">Level 3</span><span class="tpill">🔧 LAB SHEET</span>
+  <h3>Repair Manual Look-Up: Level 3</h3><p>Opens in the browser · read-aloud inside</p>
+  <a class="btn blue" href="small-engines-overhaul/07-repair-manual/small-engines-overhaul-l3-manual-lookup-lab-sheet-page.html" target="_blank" rel="noopener">Open</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="repair manual look-up: level 3 lab sheet question, prediction, steps, data table, cer printable lab sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/07-repair-manual/small-engines-overhaul-l3-manual-lookup-lab-sheet.pdf" target="_blank" rel="noopener" aria-label="Open: Repair Manual Look-Up: Level 3 lab sheet"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l3-manual-lookup-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🔧 LAB SHEET</span>
+  <h4>Repair Manual Look-Up: Level 3</h4>
+  <p class="meta">2 pages · PDF · 48 KB</p><p class="sub">Question, prediction, steps, data table, CER</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/07-repair-manual/small-engines-overhaul-l3-manual-lookup-lab-sheet.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/07-repair-manual/small-engines-overhaul-l3-manual-lookup-lab-sheet.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div></div><div class="labs-unit" data-unit="8"><h3><a href="#unit-8">🔧 Unit 8: Engine Teardown &amp; Rebuild</a></h3><div class="labblock" data-lvs="1 2 3"><h4 class="unit"><span aria-hidden="true">🔧</span> Engine Teardown &amp; Rebuild</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="engine teardown &amp; rebuild: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/08-teardown/small-engines-overhaul-l1-teardown-rebuild-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Engine Teardown &amp; Rebuild: Level 1 Basic slides"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l1-teardown-rebuild-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Engine Teardown &amp; Rebuild</h4>
+  <p class="meta">13 slides · PDF · 728 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/08-teardown/small-engines-overhaul-l1-teardown-rebuild-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/08-teardown/small-engines-overhaul-l1-teardown-rebuild-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="small-engines-overhaul/08-teardown/small-engines-overhaul-l1-teardown-rebuild-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="engine teardown &amp; rebuild steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🔧</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Engine Teardown &amp; Rebuild</h3><p>Lab review game</p>
+  <a class="btn gold" href="small-engines-overhaul/08-teardown/small-engines-overhaul-l1-teardown-rebuild-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="🚧 engine teardown &amp; rebuild: level 1 basic task card 🚧 under construction: the class engine project steps and rubric are not written in canvas; this checklist is team-written. specs vary by engine model; staff fill them in from the class manual. one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/08-teardown/small-engines-overhaul-l1-teardown-rebuild-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: 🚧 Engine Teardown &amp; Rebuild: Level 1 Basic task card"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l1-teardown-rebuild-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>🚧 Engine Teardown &amp; Rebuild: Level 1 Basic</h4>
+  <p class="meta">2 pages · PDF · 166 KB</p><p class="sub">🚧 Under construction: The class engine project steps and rubric are not written in Canvas; this checklist is team-written. Specs vary by engine model; staff fill them in from the class manual. One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/08-teardown/small-engines-overhaul-l1-teardown-rebuild-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/08-teardown/small-engines-overhaul-l1-teardown-rebuild-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="engine teardown &amp; rebuild: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/08-teardown/small-engines-overhaul-l1-teardown-rebuild-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Engine Teardown &amp; Rebuild: Level 1 Basic prep sheet"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l1-teardown-rebuild-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Engine Teardown &amp; Rebuild: Level 1 Basic</h4>
+  <p class="meta">2 pages · PDF · 142 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/08-teardown/small-engines-overhaul-l1-teardown-rebuild-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/08-teardown/small-engines-overhaul-l1-teardown-rebuild-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="engine teardown &amp; rebuild: level 1 basic my check name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/08-teardown/small-engines-overhaul-l1-teardown-rebuild-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Engine Teardown &amp; Rebuild: Level 1 Basic my check"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l1-teardown-rebuild-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Engine Teardown &amp; Rebuild: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 121 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/08-teardown/small-engines-overhaul-l1-teardown-rebuild-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/08-teardown/small-engines-overhaul-l1-teardown-rebuild-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="engine teardown &amp; rebuild: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/08-teardown/small-engines-overhaul-l2-teardown-rebuild-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Engine Teardown &amp; Rebuild: Level 1 Advanced slides"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l2-teardown-rebuild-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Engine Teardown &amp; Rebuild</h4>
+  <p class="meta">12 slides · PDF · 665 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/08-teardown/small-engines-overhaul-l2-teardown-rebuild-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/08-teardown/small-engines-overhaul-l2-teardown-rebuild-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="small-engines-overhaul/08-teardown/small-engines-overhaul-l2-teardown-rebuild-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="engine teardown &amp; rebuild steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🔧</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Engine Teardown &amp; Rebuild</h3><p>Lab review game</p>
+  <a class="btn gold" href="small-engines-overhaul/08-teardown/small-engines-overhaul-l2-teardown-rebuild-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="🚧 engine teardown &amp; rebuild: level 1 advanced task card 🚧 under construction: the class engine project steps and rubric are not written in canvas; this checklist is team-written. specs vary by engine model; staff fill them in from the class manual. one step per box · check boxes printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/08-teardown/small-engines-overhaul-l2-teardown-rebuild-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: 🚧 Engine Teardown &amp; Rebuild: Level 1 Advanced task card"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l2-teardown-rebuild-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>🚧 Engine Teardown &amp; Rebuild: Level 1 Advanced</h4>
+  <p class="meta">2 pages · PDF · 163 KB</p><p class="sub">🚧 Under construction: The class engine project steps and rubric are not written in Canvas; this checklist is team-written. Specs vary by engine model; staff fill them in from the class manual. One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/08-teardown/small-engines-overhaul-l2-teardown-rebuild-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/08-teardown/small-engines-overhaul-l2-teardown-rebuild-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="engine teardown &amp; rebuild: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/08-teardown/small-engines-overhaul-l2-teardown-rebuild-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Engine Teardown &amp; Rebuild: Level 1 Advanced prep sheet"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l2-teardown-rebuild-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Engine Teardown &amp; Rebuild: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 146 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/08-teardown/small-engines-overhaul-l2-teardown-rebuild-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/08-teardown/small-engines-overhaul-l2-teardown-rebuild-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="engine teardown &amp; rebuild: level 1 advanced reflection name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/08-teardown/small-engines-overhaul-l2-teardown-rebuild-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Engine Teardown &amp; Rebuild: Level 1 Advanced reflection"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l2-teardown-rebuild-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Engine Teardown &amp; Rebuild: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 92 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/08-teardown/small-engines-overhaul-l2-teardown-rebuild-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/08-teardown/small-engines-overhaul-l2-teardown-rebuild-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="3"><div class="grid"><article class="card game page item" data-q="engine teardown &amp; rebuild: level 3 lab sheet (read aloud) opens in the browser · read-aloud inside read aloud notes reading lab sheet">
+  <a class="thumb2" href="small-engines-overhaul/08-teardown/small-engines-overhaul-l3-teardown-rebuild-lab-sheet-page.html" target="_blank" rel="noopener" aria-label="Open: Engine Teardown &amp; Rebuild: Level 3"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l3-teardown-rebuild-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="gtxt"><span class="pill lv3">Level 3</span><span class="tpill">🔧 LAB SHEET</span>
+  <h3>Engine Teardown &amp; Rebuild: Level 3</h3><p>Opens in the browser · read-aloud inside</p>
+  <a class="btn blue" href="small-engines-overhaul/08-teardown/small-engines-overhaul-l3-teardown-rebuild-lab-sheet-page.html" target="_blank" rel="noopener">Open</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="engine teardown &amp; rebuild: level 3 lab sheet question, prediction, steps, data table, cer printable lab sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/08-teardown/small-engines-overhaul-l3-teardown-rebuild-lab-sheet.pdf" target="_blank" rel="noopener" aria-label="Open: Engine Teardown &amp; Rebuild: Level 3 lab sheet"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l3-teardown-rebuild-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🔧 LAB SHEET</span>
+  <h4>Engine Teardown &amp; Rebuild: Level 3</h4>
+  <p class="meta">2 pages · PDF · 52 KB</p><p class="sub">Question, prediction, steps, data table, CER</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/08-teardown/small-engines-overhaul-l3-teardown-rebuild-lab-sheet.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/08-teardown/small-engines-overhaul-l3-teardown-rebuild-lab-sheet.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div></div></section>
 <div class="utabgroup" data-default="1"><section class="cat" id="units" aria-labelledby="h-units"><h2 id="h-units">🗂️ Units in course order</h2><p class=note>Same units and order as the gen ed class. 9 of 9 ready. <span class="utabhint">Tap a unit to show it below.</span></p><div class="utabs" role="tablist" aria-label="Units"><a class="utab" role="tab" href="#unit-0" data-unit="0" aria-selected="false" title="Unit 0: Shop Start-Up &amp; Safety"><span class="un">Unit 0</span><span class="ut"><span aria-hidden="true">🛡️</span> Shop Start-Up &amp; Safety</span></a><a class="utab now" role="tab" href="#unit-1" data-unit="1" aria-selected="false" title="Unit 1: Measuring Tools"><span class="un">Unit 1</span><span class="ut"><span aria-hidden="true">📏</span> Measuring Tools</span></a><a class="utab" role="tab" href="#unit-2" data-unit="2" aria-selected="false" title="Unit 2: Engine Careers"><span class="un">Unit 2</span><span class="ut"><span aria-hidden="true">🧑‍🔧</span> Engine Careers</span></a><a class="utab" role="tab" href="#unit-3" data-unit="3" aria-selected="false" title="Unit 3: 4-Stroke Theory &amp; Engine Parts"><span class="un">Unit 3</span><span class="ut"><span aria-hidden="true">⚙️</span> 4-Stroke Theory &amp; Engine…</span></a><a class="utab" role="tab" href="#unit-4" data-unit="4" aria-selected="false" title="Unit 4: Compression"><span class="un">Unit 4</span><span class="ut"><span aria-hidden="true">💨</span> Compression</span></a><a class="utab" role="tab" href="#unit-5" data-unit="5" aria-selected="false" title="Unit 5: Carburetion &amp; Fuel"><span class="un">Unit 5</span><span class="ut"><span aria-hidden="true">⛽</span> Carburetion &amp; Fuel</span></a><a class="utab" role="tab" href="#unit-6" data-unit="6" aria-selected="false" title="Unit 6: Ignition"><span class="un">Unit 6</span><span class="ut"><span aria-hidden="true">⚡</span> Ignition</span></a><a class="utab" role="tab" href="#unit-7" data-unit="7" aria-selected="false" title="Unit 7: Using the Repair Manual"><span class="un">Unit 7</span><span class="ut"><span aria-hidden="true">📘</span> Using the Repair Manual</span></a><a class="utab" role="tab" href="#unit-8" data-unit="8" aria-selected="false" title="Unit 8: Engine Teardown &amp; Rebuild"><span class="un">Unit 8</span><span class="ut"><span aria-hidden="true">🔧</span> Engine Teardown &amp; Rebuild</span></a></div></section><div class="unitpane" data-unit="0"><span class="uanchor" id="unit-0"></span><section class="cat" id="u0" aria-labelledby="h-u0"><h2 id="h-u0">🛡️ Unit 0: Shop Start-Up &amp; Safety</h2><p class="note">Shop rules, safety gear, fuel and fire safety, and the shop safety test.</p><div class="lvgroup lvonly lv1"><h3 class="lvh"><span class="pill lv1">Level 1 Basic</span> 2nd-grade reading: pictures and emoji, one idea at a time</h3><div class="umat uc"><details class="dbd ucond" open><summary><span class="dbdh">📦 Unit materials</span> <small>(18)</small></summary><p class="note ucanvas"><small>Goes with the class Canvas module: “Week 1: syllabus + contract, FHS shop contract, class norms, Day One activity, Small Engine Overhaul Shop TEST”.</small></p><p class="printall"><a class="btn gold" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/00-shop-safety/small-engines-overhaul-unit0-L1-print-all.pdf" target="_blank" rel="noopener">🖨️ Print all (Level 1 Basic)</a> <small>14 files · 22 pages · 1.9 MB · staff guide, printables, then answer keys</small></p><h4 class="unit">📖 Slides</h4><div class="grid"><article class="card deck item" data-q="class rules &amp; safety contract: level 1 basic slides (shared with ag science) jobs, safety, steps, checks · shared from ag science 1: class rules and safety slides">
   <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/00-shop-safety/small-engines-overhaul-l1-class-rules-safety-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Class Rules &amp; Safety Contract: Level 1 Basic slides (shared with Ag Science)"><img src="../thumbs/incl-small-engines-overhaul-small-engines-overhaul-l1-class-rules-safety-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
   <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Class Rules &amp; Safety Contract (shared with Ag Science)</h4>
@@ -3389,6 +3972,32 @@
   <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/08-teardown/small-engines-overhaul-l3-u8-teardown-quiz-key.pdf" target="_blank" rel="noopener">📄 Open</a>
   <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/08-teardown/small-engines-overhaul-l3-u8-teardown-quiz-key.pdf" download>⬇ Download</a></div></div>
 </article></div></details></div></div></section>
+<section class="cat" id="syllabus" aria-labelledby="h-syllabus"><h2 id="h-syllabus">📋 Small Engines Overhaul Syllabus</h2>
+<details class="dbd ucond" open><summary><span class="dbdh">📋 Leveled syllabi</span> <small>(3)</small></summary><div class="grid rows"><article class="card item row" data-q="Small Engines Overhaul level 1 syllabus 2026-27">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/small-engines-overhaul-syllabus-l1.pdf" target="_blank" rel="noopener" aria-label="Open: Small Engines Overhaul · Level 1 syllabus"><img src="../thumbs/incl-small-engines-overhaul-syllabus-l1.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 SYLLABUS</span>
+  <h4>Small Engines Overhaul · Level 1 syllabus</h4>
+  <p class="meta">4 pages · PDF · 329 KB</p><p class="sub">Level 1 syllabus · 2026–27</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/small-engines-overhaul-syllabus-l1.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/small-engines-overhaul-syllabus-l1.pdf" download>⬇ Download</a></div></div>
+</article>
+<article class="card item row" data-q="Small Engines Overhaul level 2 syllabus 2026-27">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/small-engines-overhaul-syllabus-l2.pdf" target="_blank" rel="noopener" aria-label="Open: Small Engines Overhaul · Level 2 syllabus"><img src="../thumbs/incl-small-engines-overhaul-syllabus-l2.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 SYLLABUS</span>
+  <h4>Small Engines Overhaul · Level 2 syllabus</h4>
+  <p class="meta">4 pages · PDF · 227 KB</p><p class="sub">Level 2 syllabus · 2026–27</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/small-engines-overhaul-syllabus-l2.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/small-engines-overhaul-syllabus-l2.pdf" download>⬇ Download</a></div></div>
+</article>
+<article class="card item row" data-q="Small Engines Overhaul level 3 syllabus 2026-27">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/small-engines-overhaul-syllabus-l3.pdf" target="_blank" rel="noopener" aria-label="Open: Small Engines Overhaul · Level 3 syllabus"><img src="../thumbs/incl-small-engines-overhaul-syllabus-l3.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 SYLLABUS</span>
+  <h4>Small Engines Overhaul · Level 3 syllabus</h4>
+  <p class="meta">4 pages · PDF · 215 KB</p><p class="sub">Level 3 syllabus · 2026–27</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/small-engines-overhaul-syllabus-l3.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/small-engines-overhaul/small-engines-overhaul-syllabus-l3.pdf" download>⬇ Download</a></div></div>
+</article></div>
+</details></section>
 <p class="note" id="none" hidden>Nothing matches that. Try a shorter word.</p><script>window.READ_ALOUD={"left": true, "sel": "h1,h2,h3,h4,.lead,.note,.card h3,.card h4,.card p.sub", "root": "main"};</script><script>/* Ferndale "Read aloud" button (reusable). Browser text-to-speech (Web Speech API): nothing to install; works in Chrome on Chromebooks.
    Add once per page with a script tag pointing at read_aloud.js, or inline it (read_aloud.py script_tag()).  Options (set before the script):
      window.READ_ALOUD = {sel: "CSS selector of the parts to read", root: "CSS selector of the area to read", rate: 0.9}

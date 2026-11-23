@@ -24,35 +24,9 @@
   <h1><span aria-hidden="true">🌾</span> Ag Science 1</h1>
   <style>html[data-lv="1"] .lvonly:not(.lv1):not(.lv2){display:none}html[data-lv="4"] .lvonly:not(.lv4){display:none}html[data-lv="3"] .lvonly:not(.lv3){display:none}html[data-lv="1"] .jump.lvonly.lv2,html[data-lv="1"] main.wrap>.lvonly.lv2>.lvlead{display:none}html[data-lv="1"] .lvgroup.lvonly.lv2{margin-top:14px}html[data-lv="1"] main.wrap:has(>.lvonly.lv2){display:flex;flex-direction:column}html[data-lv="1"] main.wrap>.lvonly.lv1,html[data-lv="1"] main.wrap>.lvonly.lv2{display:contents}html[data-lv="1"] main.wrap:has(>.lvonly.lv2)>*{order:9}html[data-lv="1"] main.wrap:has(>.lvonly.lv2)>.hero{order:0}html[data-lv="1"] main.wrap>.lvonly>*{order:1}html[data-lv="1"] main.wrap>.lv1>.utabgroup{order:2}html[data-lv="1"] main.wrap>.lv2>.utabgroup{order:3}html[data-lv="1"] main.wrap>.lv1>[id^="other-"]{order:4}html[data-lv="1"] main.wrap>.lv2>[id^="other-"]{order:5}html[data-lv="1"] main.wrap>.lv1>[id^="teacher-"]{order:6}html[data-lv="1"] main.wrap>.lv2>[id^="teacher-"]{order:7}html[data-lv="1"] main.wrap>.lv2>.utabgroup,html[data-lv="1"] main.wrap>.lv2>[id^="other-"],html[data-lv="1"] main.wrap>.lv2>[id^="teacher-"]{border-top:4px dashed #f2b705;margin-top:22px;padding-top:6px}</style><div class="lvtabs" role="tablist" aria-label="Choose a level" data-v="2"><a class="lvtab lv1" role="tab" data-lv="1" href="#level1" aria-selected="false"><span><span aria-hidden="true">🔵</span> Level 1</span><small>Basic + Advanced inside</small></a><a class="lvtab lv4" role="tab" data-lv="4" href="#level4" aria-selected="false"><span><span aria-hidden="true">🟣</span> Level 2</span><small>About 5th–6th-grade reading</small></a><a class="lvtab lv3" role="tab" data-lv="3" href="#level3" aria-selected="false"><span><span aria-hidden="true">🟢</span> Level 3</span><small>Close to class · guided notes</small></a></div><p class="note lvshow">Showing <b id="lvnow">all levels</b>. Tap a button to switch.</p><script>(function(){var K='lv-ag-science-1',L=["1", "4", "3"],N={"1": "Level 1 (Basic + Advanced)", "3": "Level 3", "4": "Level 2"},r=document.documentElement;function nv(v){return v==='2'?'1':v}function set(v,save){v=nv(v);r.setAttribute('data-lv',v);var t=document.querySelectorAll('.lvtab');for(var i=0;i<t.length;i++){var on=t[i].getAttribute('data-lv')===v;t[i].setAttribute('aria-selected',on?'true':'false');if(on){t[i].classList.add('on')}else{t[i].classList.remove('on')}}var w=document.getElementById('lvnow');if(w)w.textContent=N[v]||('Level '+v);if(save){try{localStorage.setItem(K,v)}catch(e){}}var q=document.getElementById('q');if(q&&q.value){q.dispatchEvent(new Event('input'))}}function fromHash(){var m=/^#level(\d+)$/.exec(location.hash)||/^#[\w-]+-l(\d)$/.exec(location.hash);var v=m?nv(m[1]):null;return v&&L.indexOf(v)>-1?v:null}var h=fromHash(),s=null;try{s=localStorage.getItem(K)}catch(e){}if(s)s=nv(s);set(h||(s&&L.indexOf(s)>-1?s:L[0]),!!h);window.addEventListener('hashchange',function(){var v=fromHash();if(v)set(v,true)});document.addEventListener('DOMContentLoaded',function(){var W={"1": " level 1 basic l1 basic", "2": " level 1 advanced l1 advanced", "3": " level 3 l3", "4": " level 2 l2"};[].forEach.call(document.querySelectorAll('.lvonly .item'),function(el){var g=el.closest('.lvonly'),m=/\blv(\d)\b/.exec(g.className);if(m&&W[m[1]]){var q=el.getAttribute('data-q')||'';if(q.indexOf(W[m[1]].slice(1,12))<0)el.setAttribute('data-q',q+W[m[1]])}})});})();</script>
   <p class="lead">Modified Level 1 (Basic + Advanced), Level 2 and Level 3 materials for SLE students in the Agricultural Science 1 inclusion class. Students stay in the gen ed lesson and use these pieces next to it: same units, same order, same points. Level 3 is closer to the class work (readings, guided notes, quick checks). Notes, readings and quizzes have a 🔊 Read aloud version.</p>
-  <p class="jump"><a class="btn blue" href="#syllabus">📋 Syllabus</a> <a class="btn blue" href="#booklet">📘 Activity booklet</a> <a class="btn blue" href="#units">🗂️ Units</a> <a class="btn ghost" href="#teacher">👩‍🏫 Teacher resources</a></p>
+  <p class="jump"><a class="btn blue" href="#syllabus">📋 Syllabus</a> <a class="btn blue" href="#booklet">📘 Activity booklet</a> <a class="btn blue" href="#labs">🌱 Labs &amp; Projects</a> <a class="btn blue" href="#units">🗂️ Units</a> <a class="btn ghost" href="#teacher">👩‍🏫 Teacher resources</a></p>
   <div class="searchbar"><label for="q">🔎 Find something:</label><input id="q" type="search" placeholder="Type a word, like goal, rights, key, 10/26…" autocomplete="off"><span id="qn" class="note"></span></div>
 </section>
-<section class="cat" id="syllabus" aria-labelledby="h-syllabus"><h2 id="h-syllabus">📋 Ag Science 1 Syllabus</h2>
-<details class="dbd ucond" open><summary><span class="dbdh">📋 Leveled syllabi</span> <small>(3)</small></summary><div class="grid rows"><article class="card item row" data-q="Ag Science 1 level 1 syllabus 2026-27">
-  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/ag-science-1-syllabus-l1.pdf" target="_blank" rel="noopener" aria-label="Open: Ag Science 1 · Level 1 syllabus"><img src="../thumbs/incl-ag-science-1-syllabus-l1.jpg" alt="" loading="lazy" width="116" height="150"></a>
-  <div class="itxt"><span class="tpill">📋 SYLLABUS</span>
-  <h4>Ag Science 1 · Level 1 syllabus</h4>
-  <p class="meta">4 pages · PDF · 280 KB</p><p class="sub">Level 1 syllabus · 2026–27</p>
-  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/ag-science-1-syllabus-l1.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/ag-science-1-syllabus-l1.pdf" download>⬇ Download</a></div></div>
-</article>
-<article class="card item row" data-q="Ag Science 1 level 2 syllabus 2026-27">
-  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/ag-science-1-syllabus-l2.pdf" target="_blank" rel="noopener" aria-label="Open: Ag Science 1 · Level 2 syllabus"><img src="../thumbs/incl-ag-science-1-syllabus-l2.jpg" alt="" loading="lazy" width="116" height="150"></a>
-  <div class="itxt"><span class="tpill">📋 SYLLABUS</span>
-  <h4>Ag Science 1 · Level 2 syllabus</h4>
-  <p class="meta">3 pages · PDF · 223 KB</p><p class="sub">Level 2 syllabus · 2026–27</p>
-  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/ag-science-1-syllabus-l2.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/ag-science-1-syllabus-l2.pdf" download>⬇ Download</a></div></div>
-</article>
-<article class="card item row" data-q="Ag Science 1 level 3 syllabus 2026-27">
-  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/ag-science-1-syllabus-l3.pdf" target="_blank" rel="noopener" aria-label="Open: Ag Science 1 · Level 3 syllabus"><img src="../thumbs/incl-ag-science-1-syllabus-l3.jpg" alt="" loading="lazy" width="116" height="150"></a>
-  <div class="itxt"><span class="tpill">📋 SYLLABUS</span>
-  <h4>Ag Science 1 · Level 3 syllabus</h4>
-  <p class="meta">4 pages · PDF · 223 KB</p><p class="sub">Level 3 syllabus · 2026–27</p>
-  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/ag-science-1-syllabus-l3.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/ag-science-1-syllabus-l3.pdf" download>⬇ Download</a></div></div>
-</article></div>
-</details></section>
 <section class="cat" id="booklet" aria-labelledby="h-booklet"><h2 id="h-booklet">📘 Ag Science 1 Activity Booklet</h2>
 <details class="dbd ucond" open><summary><span class="dbdh">📘 Ag Science 1 Activity Booklet</span> <small>(1)</small></summary><div class="grid rows"><article class="card item row" data-q="ag science 1 activity booklet level 1 activity pages printable booklet">
   <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/ag-science-1-activity-booklet.pdf" target="_blank" rel="noopener" aria-label="Open: Ag Science 1 Activity Booklet"><img src="../thumbs/incl-ag-science-1-activity-booklet.jpg" alt="" loading="lazy" width="116" height="150"></a>
@@ -63,6 +37,675 @@
   <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/ag-science-1-activity-booklet.pdf" download>⬇ Download</a></div></div>
 </article></div>
 </details></section>
+<section class="cat labs-index" id="labs" aria-labelledby="h-labs"><h2 id="h-labs">🌱 Labs &amp; Projects</h2><p class="note">Every lab and project in this class, in unit order. The level buttons at the top still apply. If a lab only exists at another level, it stays visible and is labeled.</p><div class="labs-unit" data-unit="1"><h3><a href="#unit-1">🌾 Unit 1: Ag Words &amp; Whatcom Farms</a></h3><div class="labblock" data-lvs="1 2"><h4 class="unit"><span aria-hidden="true">🙋</span> Class Rules &amp; Safety Contract</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="class rules &amp; safety contract: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-class-rules-safety-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Class Rules &amp; Safety Contract: Level 1 Basic slides"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-class-rules-safety-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Class Rules &amp; Safety Contract</h4>
+  <p class="meta">10 slides · PDF · 539 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-class-rules-safety-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-class-rules-safety-lab-deck.pdf" download>⬇ Download</a></div></div>
+</article><article class="card game item" data-q="class rules &amp; safety contract steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🙋</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Class Rules &amp; Safety Contract</h3><p>Put the steps in order, match the words, and check what is safe.</p>
+  <a class="btn gold" href="ag-science-1/01-ag-words-whatcom/ag-science-1-l1-class-rules-safety-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="class rules &amp; safety contract: level 1 basic rules card class rules, routines, safety contract checklist printable lab card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-class-rules-safety-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Class Rules &amp; Safety Contract: Level 1 Basic rules card"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-class-rules-safety-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Class Rules &amp; Safety Contract: Level 1 Basic rules card</h4>
+  <p class="meta">2 pages · PDF · 211 KB</p><p class="sub">Class rules, routines, safety contract checklist</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-class-rules-safety-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-class-rules-safety-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="class rules &amp; safety contract: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-class-rules-safety-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Class Rules &amp; Safety Contract: Level 1 Basic prep sheet"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-class-rules-safety-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Class Rules &amp; Safety Contract: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 150 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-class-rules-safety-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-class-rules-safety-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="class rules &amp; safety contract: level 1 basic my check name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-class-rules-safety-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Class Rules &amp; Safety Contract: Level 1 Basic my check"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-class-rules-safety-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Class Rules &amp; Safety Contract: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 145 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-class-rules-safety-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-class-rules-safety-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="class rules &amp; safety contract: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-class-rules-safety-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Class Rules &amp; Safety Contract: Level 1 Advanced slides"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-class-rules-safety-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Class Rules &amp; Safety Contract</h4>
+  <p class="meta">9 slides · PDF · 511 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-class-rules-safety-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-class-rules-safety-lab-deck.pdf" download>⬇ Download</a></div></div>
+</article><article class="card game item" data-q="class rules &amp; safety contract steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🙋</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Class Rules &amp; Safety Contract</h3><p>Put the steps in order, match the words, and check what is safe.</p>
+  <a class="btn gold" href="ag-science-1/01-ag-words-whatcom/ag-science-1-l2-class-rules-safety-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="class rules &amp; safety contract: level 1 advanced rules card class rules, routines, safety contract checklist printable lab card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-class-rules-safety-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Class Rules &amp; Safety Contract: Level 1 Advanced rules card"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-class-rules-safety-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Class Rules &amp; Safety Contract: Level 1 Advanced rules card</h4>
+  <p class="meta">2 pages · PDF · 182 KB</p><p class="sub">Class rules, routines, safety contract checklist</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-class-rules-safety-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-class-rules-safety-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="class rules &amp; safety contract: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-class-rules-safety-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Class Rules &amp; Safety Contract: Level 1 Advanced prep sheet"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-class-rules-safety-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Class Rules &amp; Safety Contract: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 153 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-class-rules-safety-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-class-rules-safety-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="class rules &amp; safety contract: level 1 advanced reflection name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-class-rules-safety-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Class Rules &amp; Safety Contract: Level 1 Advanced reflection"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-class-rules-safety-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Class Rules &amp; Safety Contract: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 135 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-class-rules-safety-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-class-rules-safety-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div><div class="labblock" data-lvs="1 2"><h4 class="unit"><span aria-hidden="true">🏪</span> Whatcom Ag Business Slides</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="whatcom ag business slides: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-whatcom-ag-business-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Whatcom Ag Business Slides: Level 1 Basic slides"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-whatcom-ag-business-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Whatcom Ag Business</h4>
+  <p class="meta">10 slides · PDF · 529 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-whatcom-ag-business-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-whatcom-ag-business-lab-deck.pdf" download>⬇ Download</a></div></div>
+</article><article class="card game item" data-q="whatcom ag business slides steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🏪</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Whatcom Ag Business Slides</h3><p>Put the steps in order, match the words, and check what is safe.</p>
+  <a class="btn gold" href="ag-science-1/01-ag-words-whatcom/ag-science-1-l1-whatcom-ag-business-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="whatcom ag business slides: level 1 basic project card pick a business, slide planner printable lab card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-whatcom-ag-business-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Whatcom Ag Business Slides: Level 1 Basic project card"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-whatcom-ag-business-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Whatcom Ag Business Slides: Level 1 Basic project card</h4>
+  <p class="meta">2 pages · PDF · 221 KB</p><p class="sub">Pick a business, slide planner</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-whatcom-ag-business-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-whatcom-ag-business-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="whatcom ag business slides: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-whatcom-ag-business-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Whatcom Ag Business Slides: Level 1 Basic prep sheet"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-whatcom-ag-business-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Whatcom Ag Business Slides: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 172 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-whatcom-ag-business-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-whatcom-ag-business-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="whatcom ag business slides: level 1 basic my check name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-whatcom-ag-business-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Whatcom Ag Business Slides: Level 1 Basic my check"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-whatcom-ag-business-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Whatcom Ag Business Slides: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 165 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-whatcom-ag-business-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-whatcom-ag-business-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="whatcom ag business slides: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-whatcom-ag-business-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Whatcom Ag Business Slides: Level 1 Advanced slides"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-whatcom-ag-business-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Whatcom Ag Business</h4>
+  <p class="meta">9 slides · PDF · 507 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-whatcom-ag-business-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-whatcom-ag-business-lab-deck.pdf" download>⬇ Download</a></div></div>
+</article><article class="card game item" data-q="whatcom ag business slides steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🏪</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Whatcom Ag Business Slides</h3><p>Put the steps in order, match the words, and check what is safe.</p>
+  <a class="btn gold" href="ag-science-1/01-ag-words-whatcom/ag-science-1-l2-whatcom-ag-business-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="whatcom ag business slides: level 1 advanced project card pick a business, slide planner printable lab card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-whatcom-ag-business-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Whatcom Ag Business Slides: Level 1 Advanced project card"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-whatcom-ag-business-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Whatcom Ag Business Slides: Level 1 Advanced project card</h4>
+  <p class="meta">2 pages · PDF · 236 KB</p><p class="sub">Pick a business, slide planner</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-whatcom-ag-business-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-whatcom-ag-business-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="whatcom ag business slides: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-whatcom-ag-business-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Whatcom Ag Business Slides: Level 1 Advanced prep sheet"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-whatcom-ag-business-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Whatcom Ag Business Slides: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 165 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-whatcom-ag-business-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-whatcom-ag-business-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="whatcom ag business slides: level 1 advanced reflection name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-whatcom-ag-business-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Whatcom Ag Business Slides: Level 1 Advanced reflection"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-whatcom-ag-business-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Whatcom Ag Business Slides: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 157 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-whatcom-ag-business-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-whatcom-ag-business-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div><div class="labblock" data-lvs="1 2"><h4 class="unit"><span aria-hidden="true">🚌</span> Tour de Whatcom Field Trip</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="tour de whatcom field trip: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-tour-de-whatcom-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Tour de Whatcom Field Trip: Level 1 Basic slides"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-tour-de-whatcom-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Tour de Whatcom Field Trip</h4>
+  <p class="meta">10 slides · PDF · 551 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-tour-de-whatcom-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-tour-de-whatcom-lab-deck.pdf" download>⬇ Download</a></div></div>
+</article><article class="card game item" data-q="tour de whatcom field trip steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🚌</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Tour de Whatcom Field Trip</h3><p>Put the steps in order, match the words, and check what is safe.</p>
+  <a class="btn gold" href="ag-science-1/01-ag-words-whatcom/ag-science-1-l1-tour-de-whatcom-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="tour de whatcom field trip: level 1 basic trip card social story, scavenger hunt, makeup page printable lab card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-tour-de-whatcom-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Tour de Whatcom Field Trip: Level 1 Basic trip card"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-tour-de-whatcom-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Tour de Whatcom Field Trip: Level 1 Basic trip card</h4>
+  <p class="meta">2 pages · PDF · 255 KB</p><p class="sub">Social story, scavenger hunt, makeup page</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-tour-de-whatcom-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-tour-de-whatcom-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="tour de whatcom field trip: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-tour-de-whatcom-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Tour de Whatcom Field Trip: Level 1 Basic prep sheet"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-tour-de-whatcom-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Tour de Whatcom Field Trip: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 153 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-tour-de-whatcom-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-tour-de-whatcom-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="tour de whatcom field trip: level 1 basic my check name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-tour-de-whatcom-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Tour de Whatcom Field Trip: Level 1 Basic my check"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-tour-de-whatcom-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Tour de Whatcom Field Trip: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 154 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-tour-de-whatcom-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-tour-de-whatcom-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="tour de whatcom field trip: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-tour-de-whatcom-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Tour de Whatcom Field Trip: Level 1 Advanced slides"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-tour-de-whatcom-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Tour de Whatcom Field Trip</h4>
+  <p class="meta">9 slides · PDF · 512 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-tour-de-whatcom-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-tour-de-whatcom-lab-deck.pdf" download>⬇ Download</a></div></div>
+</article><article class="card game item" data-q="tour de whatcom field trip steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🚌</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Tour de Whatcom Field Trip</h3><p>Put the steps in order, match the words, and check what is safe.</p>
+  <a class="btn gold" href="ag-science-1/01-ag-words-whatcom/ag-science-1-l2-tour-de-whatcom-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="tour de whatcom field trip: level 1 advanced trip card social story, scavenger hunt, makeup page printable lab card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-tour-de-whatcom-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Tour de Whatcom Field Trip: Level 1 Advanced trip card"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-tour-de-whatcom-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Tour de Whatcom Field Trip: Level 1 Advanced trip card</h4>
+  <p class="meta">2 pages · PDF · 191 KB</p><p class="sub">Social story, scavenger hunt, makeup page</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-tour-de-whatcom-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-tour-de-whatcom-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="tour de whatcom field trip: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-tour-de-whatcom-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Tour de Whatcom Field Trip: Level 1 Advanced prep sheet"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-tour-de-whatcom-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Tour de Whatcom Field Trip: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 158 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-tour-de-whatcom-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-tour-de-whatcom-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="tour de whatcom field trip: level 1 advanced reflection name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-tour-de-whatcom-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Tour de Whatcom Field Trip: Level 1 Advanced reflection"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-tour-de-whatcom-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Tour de Whatcom Field Trip: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 142 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-tour-de-whatcom-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l2-tour-de-whatcom-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div></div><div class="labs-unit" data-unit="2"><h3><a href="#unit-2">🥔 Unit 2: Washington Crops: Potatoes, Wheat &amp; Apples</a></h3><div class="labblock" data-lvs="1 2"><h4 class="unit"><span aria-hidden="true">🥔</span> Potato Lab</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="potato lab: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l1-potato-lab-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Potato Lab: Level 1 Basic slides"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-potato-lab-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Potato Lab</h4>
+  <p class="meta">10 slides · PDF · 551 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l1-potato-lab-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l1-potato-lab-lab-deck.pdf" download>⬇ Download</a></div></div>
+</article><article class="card game item" data-q="potato lab steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🥔</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Potato Lab</h3><p>Put the steps in order, match the words, and check what is safe.</p>
+  <a class="btn gold" href="ag-science-1/02-wa-crops/ag-science-1-l1-potato-lab-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="potato lab: level 1 basic lab card look, cut, compare 5 potato varieties printable lab card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l1-potato-lab-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Potato Lab: Level 1 Basic lab card"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-potato-lab-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Potato Lab: Level 1 Basic</h4>
+  <p class="meta">3 pages · PDF · 167 KB</p><p class="sub">Look, cut, compare 5 potato varieties</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l1-potato-lab-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l1-potato-lab-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="potato lab: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l1-potato-lab-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Potato Lab: Level 1 Basic prep sheet"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-potato-lab-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Potato Lab: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 135 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l1-potato-lab-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l1-potato-lab-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="potato lab: level 1 basic my check name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l1-potato-lab-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Potato Lab: Level 1 Basic my check"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-potato-lab-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Potato Lab: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 130 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l1-potato-lab-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l1-potato-lab-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="potato lab: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l2-potato-lab-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Potato Lab: Level 1 Advanced slides"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-potato-lab-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Potato Lab</h4>
+  <p class="meta">10 slides · PDF · 522 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l2-potato-lab-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l2-potato-lab-lab-deck.pdf" download>⬇ Download</a></div></div>
+</article><article class="card game item" data-q="potato lab steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🥔</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Potato Lab</h3><p>Put the steps in order, match the words, and check what is safe.</p>
+  <a class="btn gold" href="ag-science-1/02-wa-crops/ag-science-1-l2-potato-lab-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="potato lab: level 1 advanced lab card look, cut, compare 5 potato varieties printable lab card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l2-potato-lab-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Potato Lab: Level 1 Advanced lab card"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-potato-lab-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Potato Lab: Level 1 Advanced</h4>
+  <p class="meta">3 pages · PDF · 171 KB</p><p class="sub">Look, cut, compare 5 potato varieties</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l2-potato-lab-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l2-potato-lab-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="potato lab: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l2-potato-lab-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Potato Lab: Level 1 Advanced prep sheet"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-potato-lab-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Potato Lab: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 122 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l2-potato-lab-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l2-potato-lab-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="potato lab: level 1 advanced reflection name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l2-potato-lab-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Potato Lab: Level 1 Advanced reflection"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-potato-lab-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Potato Lab: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 112 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l2-potato-lab-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l2-potato-lab-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div><div class="labblock" data-lvs="1 2"><h4 class="unit"><span aria-hidden="true">🍎</span> Apple Taste Lab</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="apple taste lab: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l1-apple-taste-lab-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Apple Taste Lab: Level 1 Basic slides"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-apple-taste-lab-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Apple Taste Lab</h4>
+  <p class="meta">10 slides · PDF · 533 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l1-apple-taste-lab-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l1-apple-taste-lab-lab-deck.pdf" download>⬇ Download</a></div></div>
+</article><article class="card game item" data-q="apple taste lab steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🍎</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Apple Taste Lab</h3><p>Put the steps in order, match the words, and check what is safe.</p>
+  <a class="btn gold" href="ag-science-1/02-wa-crops/ag-science-1-l1-apple-taste-lab-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="apple taste lab: level 1 basic lab card pre-lab, video, taste chart for 6 apples printable lab card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l1-apple-taste-lab-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Apple Taste Lab: Level 1 Basic lab card"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-apple-taste-lab-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Apple Taste Lab: Level 1 Basic</h4>
+  <p class="meta">3 pages · PDF · 203 KB</p><p class="sub">Pre-lab, video, taste chart for 6 apples</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l1-apple-taste-lab-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l1-apple-taste-lab-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="apple taste lab: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l1-apple-taste-lab-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Apple Taste Lab: Level 1 Basic prep sheet"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-apple-taste-lab-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Apple Taste Lab: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 134 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l1-apple-taste-lab-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l1-apple-taste-lab-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="apple taste lab: level 1 basic my check name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l1-apple-taste-lab-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Apple Taste Lab: Level 1 Basic my check"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-apple-taste-lab-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Apple Taste Lab: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 134 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l1-apple-taste-lab-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l1-apple-taste-lab-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="apple taste lab: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l2-apple-taste-lab-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Apple Taste Lab: Level 1 Advanced slides"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-apple-taste-lab-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Apple Taste Lab</h4>
+  <p class="meta">9 slides · PDF · 509 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l2-apple-taste-lab-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l2-apple-taste-lab-lab-deck.pdf" download>⬇ Download</a></div></div>
+</article><article class="card game item" data-q="apple taste lab steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🍎</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Apple Taste Lab</h3><p>Put the steps in order, match the words, and check what is safe.</p>
+  <a class="btn gold" href="ag-science-1/02-wa-crops/ag-science-1-l2-apple-taste-lab-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="apple taste lab: level 1 advanced lab card pre-lab, video, taste chart for 6 apples printable lab card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l2-apple-taste-lab-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Apple Taste Lab: Level 1 Advanced lab card"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-apple-taste-lab-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Apple Taste Lab: Level 1 Advanced</h4>
+  <p class="meta">3 pages · PDF · 178 KB</p><p class="sub">Pre-lab, video, taste chart for 6 apples</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l2-apple-taste-lab-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l2-apple-taste-lab-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="apple taste lab: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l2-apple-taste-lab-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Apple Taste Lab: Level 1 Advanced prep sheet"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-apple-taste-lab-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Apple Taste Lab: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 132 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l2-apple-taste-lab-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l2-apple-taste-lab-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="apple taste lab: level 1 advanced reflection name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l2-apple-taste-lab-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Apple Taste Lab: Level 1 Advanced reflection"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-apple-taste-lab-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Apple Taste Lab: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 122 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l2-apple-taste-lab-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/02-wa-crops/ag-science-1-l2-apple-taste-lab-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div></div><div class="labs-unit" data-unit="3"><h3><a href="#unit-3">🚜 Unit 3: U.S. Food &amp; Farm Facts</a></h3><div class="labblock" data-lvs="1 2"><h4 class="unit"><span aria-hidden="true">🎨</span> Ag Literacy Poster</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="ag literacy poster: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/03-food-farm-facts/ag-science-1-l1-ag-literacy-poster-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Ag Literacy Poster: Level 1 Basic slides"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-ag-literacy-poster-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Ag Literacy Poster</h4>
+  <p class="meta">10 slides · PDF · 522 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/03-food-farm-facts/ag-science-1-l1-ag-literacy-poster-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/03-food-farm-facts/ag-science-1-l1-ag-literacy-poster-lab-deck.pdf" download>⬇ Download</a></div></div>
+</article><article class="card game item" data-q="ag literacy poster steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🎨</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Ag Literacy Poster</h3><p>Put the steps in order, match the words, and check what is safe.</p>
+  <a class="btn gold" href="ag-science-1/03-food-farm-facts/ag-science-1-l1-ag-literacy-poster-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="ag literacy poster: level 1 basic project card topic menu, fact checker, poster planner printable lab card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/03-food-farm-facts/ag-science-1-l1-ag-literacy-poster-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Ag Literacy Poster: Level 1 Basic project card"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-ag-literacy-poster-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Ag Literacy Poster: Level 1 Basic project card</h4>
+  <p class="meta">2 pages · PDF · 189 KB</p><p class="sub">Topic menu, fact checker, poster planner</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/03-food-farm-facts/ag-science-1-l1-ag-literacy-poster-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/03-food-farm-facts/ag-science-1-l1-ag-literacy-poster-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="ag literacy poster: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/03-food-farm-facts/ag-science-1-l1-ag-literacy-poster-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Ag Literacy Poster: Level 1 Basic prep sheet"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-ag-literacy-poster-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Ag Literacy Poster: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 131 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/03-food-farm-facts/ag-science-1-l1-ag-literacy-poster-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/03-food-farm-facts/ag-science-1-l1-ag-literacy-poster-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="ag literacy poster: level 1 basic my check name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/03-food-farm-facts/ag-science-1-l1-ag-literacy-poster-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Ag Literacy Poster: Level 1 Basic my check"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-ag-literacy-poster-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Ag Literacy Poster: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 132 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/03-food-farm-facts/ag-science-1-l1-ag-literacy-poster-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/03-food-farm-facts/ag-science-1-l1-ag-literacy-poster-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="ag literacy poster: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/03-food-farm-facts/ag-science-1-l2-ag-literacy-poster-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Ag Literacy Poster: Level 1 Advanced slides"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-ag-literacy-poster-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Ag Literacy Poster</h4>
+  <p class="meta">9 slides · PDF · 500 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/03-food-farm-facts/ag-science-1-l2-ag-literacy-poster-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/03-food-farm-facts/ag-science-1-l2-ag-literacy-poster-lab-deck.pdf" download>⬇ Download</a></div></div>
+</article><article class="card game item" data-q="ag literacy poster steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🎨</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Ag Literacy Poster</h3><p>Put the steps in order, match the words, and check what is safe.</p>
+  <a class="btn gold" href="ag-science-1/03-food-farm-facts/ag-science-1-l2-ag-literacy-poster-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="ag literacy poster: level 1 advanced project card topic menu, fact checker, poster planner printable lab card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/03-food-farm-facts/ag-science-1-l2-ag-literacy-poster-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Ag Literacy Poster: Level 1 Advanced project card"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-ag-literacy-poster-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Ag Literacy Poster: Level 1 Advanced project card</h4>
+  <p class="meta">2 pages · PDF · 152 KB</p><p class="sub">Topic menu, fact checker, poster planner</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/03-food-farm-facts/ag-science-1-l2-ag-literacy-poster-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/03-food-farm-facts/ag-science-1-l2-ag-literacy-poster-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="ag literacy poster: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/03-food-farm-facts/ag-science-1-l2-ag-literacy-poster-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Ag Literacy Poster: Level 1 Advanced prep sheet"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-ag-literacy-poster-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Ag Literacy Poster: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 136 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/03-food-farm-facts/ag-science-1-l2-ag-literacy-poster-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/03-food-farm-facts/ag-science-1-l2-ag-literacy-poster-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="ag literacy poster: level 1 advanced reflection name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/03-food-farm-facts/ag-science-1-l2-ag-literacy-poster-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Ag Literacy Poster: Level 1 Advanced reflection"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-ag-literacy-poster-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Ag Literacy Poster: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 119 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/03-food-farm-facts/ag-science-1-l2-ag-literacy-poster-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/03-food-farm-facts/ag-science-1-l2-ag-literacy-poster-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div></div><div class="labs-unit" data-unit="4"><h3><a href="#unit-4">🌱 Unit 4: FFA &amp; Ag Careers</a></h3><div class="labblock" data-lvs="1 2"><h4 class="unit"><span aria-hidden="true">📜</span> FFA Creed</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="ffa creed: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/04-ffa-careers/ag-science-1-l1-ffa-creed-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: FFA Creed: Level 1 Basic slides"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-ffa-creed-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>FFA Creed</h4>
+  <p class="meta">10 slides · PDF · 540 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/04-ffa-careers/ag-science-1-l1-ffa-creed-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/04-ffa-careers/ag-science-1-l1-ffa-creed-lab-deck.pdf" download>⬇ Download</a></div></div>
+</article><article class="card game item" data-q="ffa creed steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">📜</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>FFA Creed</h3><p>Put the steps in order, match the words, and check what is safe.</p>
+  <a class="btn gold" href="ag-science-1/04-ffa-careers/ag-science-1-l1-ffa-creed-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="ffa creed: level 1 basic creed card picture-cued creed + practice steps printable lab card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/04-ffa-careers/ag-science-1-l1-ffa-creed-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: FFA Creed: Level 1 Basic creed card"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-ffa-creed-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>FFA Creed: Level 1 Basic creed card</h4>
+  <p class="meta">2 pages · PDF · 203 KB</p><p class="sub">Picture-cued creed + practice steps</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/04-ffa-careers/ag-science-1-l1-ffa-creed-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/04-ffa-careers/ag-science-1-l1-ffa-creed-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="ffa creed: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/04-ffa-careers/ag-science-1-l1-ffa-creed-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: FFA Creed: Level 1 Basic prep sheet"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-ffa-creed-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>FFA Creed: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 130 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/04-ffa-careers/ag-science-1-l1-ffa-creed-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/04-ffa-careers/ag-science-1-l1-ffa-creed-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="ffa creed: level 1 basic my check name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/04-ffa-careers/ag-science-1-l1-ffa-creed-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: FFA Creed: Level 1 Basic my check"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-ffa-creed-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>FFA Creed: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 121 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/04-ffa-careers/ag-science-1-l1-ffa-creed-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/04-ffa-careers/ag-science-1-l1-ffa-creed-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="ffa creed: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/04-ffa-careers/ag-science-1-l2-ffa-creed-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: FFA Creed: Level 1 Advanced slides"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-ffa-creed-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>FFA Creed</h4>
+  <p class="meta">9 slides · PDF · 528 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/04-ffa-careers/ag-science-1-l2-ffa-creed-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/04-ffa-careers/ag-science-1-l2-ffa-creed-lab-deck.pdf" download>⬇ Download</a></div></div>
+</article><article class="card game item" data-q="ffa creed steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">📜</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>FFA Creed</h3><p>Put the steps in order, match the words, and check what is safe.</p>
+  <a class="btn gold" href="ag-science-1/04-ffa-careers/ag-science-1-l2-ffa-creed-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="ffa creed: level 1 advanced creed card picture-cued creed + practice steps printable lab card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/04-ffa-careers/ag-science-1-l2-ffa-creed-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: FFA Creed: Level 1 Advanced creed card"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-ffa-creed-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>FFA Creed: Level 1 Advanced creed card</h4>
+  <p class="meta">2 pages · PDF · 176 KB</p><p class="sub">Picture-cued creed + practice steps</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/04-ffa-careers/ag-science-1-l2-ffa-creed-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/04-ffa-careers/ag-science-1-l2-ffa-creed-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="ffa creed: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/04-ffa-careers/ag-science-1-l2-ffa-creed-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: FFA Creed: Level 1 Advanced prep sheet"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-ffa-creed-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>FFA Creed: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 130 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/04-ffa-careers/ag-science-1-l2-ffa-creed-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/04-ffa-careers/ag-science-1-l2-ffa-creed-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="ffa creed: level 1 advanced reflection name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/04-ffa-careers/ag-science-1-l2-ffa-creed-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: FFA Creed: Level 1 Advanced reflection"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-ffa-creed-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>FFA Creed: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 104 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/04-ffa-careers/ag-science-1-l2-ffa-creed-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/04-ffa-careers/ag-science-1-l2-ffa-creed-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div></div><div class="labs-unit" data-unit="5"><h3><a href="#unit-5">📊 Unit 5: Ag Experience Project</a></h3><div class="labblock" data-lvs="1 2"><h4 class="unit"><span aria-hidden="true">📊</span> Ag Experience Project</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="ag experience project: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l1-ag-experience-project-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Ag Experience Project: Level 1 Basic slides"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-ag-experience-project-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Ag Experience Project</h4>
+  <p class="meta">10 slides · PDF · 560 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l1-ag-experience-project-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l1-ag-experience-project-lab-deck.pdf" download>⬇ Download</a></div></div>
+</article><article class="card game item" data-q="ag experience project steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">📊</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Ag Experience Project</h3><p>Put the steps in order, match the words, and check what is safe.</p>
+  <a class="btn gold" href="ag-science-1/05-ag-experience/ag-science-1-l1-ag-experience-project-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="ag experience project: level 1 basic project task card project steps, work log, slide planner, audience form printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l1-ag-experience-project-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Ag Experience Project: Level 1 Basic project task card"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-ag-experience-project-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Ag Experience Project: Level 1 Basic project</h4>
+  <p class="meta">4 pages · PDF · 282 KB</p><p class="sub">Project steps, work log, slide planner, audience form</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l1-ag-experience-project-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l1-ag-experience-project-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="ag experience project: level 1 basic picture idea menu name line · circle 1 idea · my idea box · parent/guardian ok printable idea menu">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l1-ag-experience-project-lab-idea-menu.pdf" target="_blank" rel="noopener" aria-label="Open: Ag Experience Project: Level 1 Basic picture idea menu"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-ag-experience-project-lab-idea-menu.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💡 IDEA MENU</span>
+  <h4>Ag Experience Project: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 152 KB</p><p class="sub">Name line · circle 1 idea · my idea box · parent/guardian OK</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l1-ag-experience-project-lab-idea-menu.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l1-ag-experience-project-lab-idea-menu.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="ag experience project: level 1 basic fill-in slideshow (5 slides) open the .pptx in powerpoint or upload to google drive &gt; save as google slides. sentence starters + photo boxes. pdf = preview/print. printable slides template">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l1-ag-experience-project-lab-slides-template.pdf" target="_blank" rel="noopener" aria-label="Open: Ag Experience Project: Level 1 Basic fill-in slideshow (5 slides)"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-ag-experience-project-lab-slides-template.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🖥️ SLIDES TEMPLATE</span>
+  <h4>Ag Experience Project: fill-in slideshow (5 slides)</h4>
+  <p class="meta">5 pages · PDF + PowerPoint · 437 KB</p><p class="sub">Open the .pptx in PowerPoint or upload to Google Drive &gt; Save as Google Slides. Sentence starters + photo boxes. PDF = preview/print.</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l1-ag-experience-project-lab-slides-template.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l1-ag-experience-project-lab-slides-template.pdf" download>⬇ Download</a> <a class="btn gold sm" href="ag-science-1/05-ag-experience/ag-science-1-l1-ag-experience-project-lab-slides-template.pptx" download type="application/vnd.openxmlformats-officedocument.presentationml.presentation">🖥️ Get the slideshow (.pptx)</a></div></div>
+</article><article class="card item row" data-q="ag experience project: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l1-ag-experience-project-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Ag Experience Project: Level 1 Basic prep sheet"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-ag-experience-project-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Ag Experience Project: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 171 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l1-ag-experience-project-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l1-ag-experience-project-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="ag experience project: level 1 basic my check name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l1-ag-experience-project-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Ag Experience Project: Level 1 Basic my check"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-ag-experience-project-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Ag Experience Project: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 172 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l1-ag-experience-project-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l1-ag-experience-project-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="ag experience project: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l2-ag-experience-project-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Ag Experience Project: Level 1 Advanced slides"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-ag-experience-project-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Ag Experience Project</h4>
+  <p class="meta">10 slides · PDF · 562 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l2-ag-experience-project-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l2-ag-experience-project-lab-deck.pdf" download>⬇ Download</a></div></div>
+</article><article class="card game item" data-q="ag experience project steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">📊</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Ag Experience Project</h3><p>Put the steps in order, match the words, and check what is safe.</p>
+  <a class="btn gold" href="ag-science-1/05-ag-experience/ag-science-1-l2-ag-experience-project-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="ag experience project: level 1 advanced project task card project steps, work log, slide planner, audience form printable task card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l2-ag-experience-project-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Ag Experience Project: Level 1 Advanced project task card"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-ag-experience-project-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🃏 TASK CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Ag Experience Project: Level 1 Advanced project</h4>
+  <p class="meta">3 pages · PDF · 270 KB</p><p class="sub">Project steps, work log, slide planner, audience form</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l2-ag-experience-project-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l2-ag-experience-project-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="ag experience project: level 1 advanced picture idea menu name line · circle top 3 · pick 1 · goal line · parent/guardian approval printable idea menu">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l2-ag-experience-project-lab-idea-menu.pdf" target="_blank" rel="noopener" aria-label="Open: Ag Experience Project: Level 1 Advanced picture idea menu"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-ag-experience-project-lab-idea-menu.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💡 IDEA MENU</span>
+  <h4>Ag Experience Project: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 179 KB</p><p class="sub">Name line · circle top 3 · pick 1 · goal line · parent/guardian approval</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l2-ag-experience-project-lab-idea-menu.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l2-ag-experience-project-lab-idea-menu.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="ag experience project: level 1 advanced fill-in slideshow (7 slides) 6–8 slides: sentence frames, an image box and image source line on every slide. open the .pptx in powerpoint or google slides. pdf = preview/print. printable slides template">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l2-ag-experience-project-lab-slides-template.pdf" target="_blank" rel="noopener" aria-label="Open: Ag Experience Project: Level 1 Advanced fill-in slideshow (7 slides)"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-ag-experience-project-lab-slides-template.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🖥️ SLIDES TEMPLATE</span>
+  <h4>Ag Experience Project: fill-in slideshow (7 slides)</h4>
+  <p class="meta">7 pages · PDF + PowerPoint · 415 KB</p><p class="sub">6–8 slides: sentence frames, an image box and Image source line on every slide. Open the .pptx in PowerPoint or Google Slides. PDF = preview/print.</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l2-ag-experience-project-lab-slides-template.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l2-ag-experience-project-lab-slides-template.pdf" download>⬇ Download</a> <a class="btn gold sm" href="ag-science-1/05-ag-experience/ag-science-1-l2-ag-experience-project-lab-slides-template.pptx" download type="application/vnd.openxmlformats-officedocument.presentationml.presentation">🖥️ Get the slideshow (.pptx)</a></div></div>
+</article><article class="card item row" data-q="ag experience project: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l2-ag-experience-project-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Ag Experience Project: Level 1 Advanced prep sheet"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-ag-experience-project-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Ag Experience Project: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 165 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l2-ag-experience-project-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l2-ag-experience-project-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="ag experience project: level 1 advanced reflection name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l2-ag-experience-project-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Ag Experience Project: Level 1 Advanced reflection"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-ag-experience-project-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Ag Experience Project: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 144 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l2-ag-experience-project-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/05-ag-experience/ag-science-1-l2-ag-experience-project-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div></div><div class="labs-unit" data-unit="6"><h3><a href="#unit-6">🐄 Unit 6: Dairy</a></h3><div class="labblock" data-lvs="1 2"><h4 class="unit"><span aria-hidden="true">🍦</span> Ice Cream: Steps and Key Points</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="ice cream: steps and key points: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/06-dairy/ag-science-1-l1-ice-cream-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Ice Cream: Steps and Key Points: Level 1 Basic slides"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-ice-cream-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Ice Cream: Steps and Key Points</h4>
+  <p class="meta">10 slides · PDF · 591 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/06-dairy/ag-science-1-l1-ice-cream-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/06-dairy/ag-science-1-l1-ice-cream-lab-deck.pdf" download>⬇ Download</a></div></div>
+</article><article class="card game item" data-q="ice cream: steps and key points steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🍦</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span>
+  <h3>Ice Cream: Steps and Key Points</h3><p>Put the steps in order, match the words, and check what is safe.</p>
+  <a class="btn gold" href="ag-science-1/06-dairy/ag-science-1-l1-ice-cream-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="ice cream: steps and key points: level 1 basic steps card steps card, sequence page, key points table printable lab card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/06-dairy/ag-science-1-l1-ice-cream-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Ice Cream: Steps and Key Points: Level 1 Basic steps card"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-ice-cream-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB CARD</span>
+  <h4>Ice Cream: Steps and Key Points: Level 1 Basic</h4>
+  <p class="meta">2 pages · PDF · 195 KB</p><p class="sub">Steps card, sequence page, key points table</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/06-dairy/ag-science-1-l1-ice-cream-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/06-dairy/ag-science-1-l1-ice-cream-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="ice cream: steps and key points: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/06-dairy/ag-science-1-l1-ice-cream-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Ice Cream: Steps and Key Points: Level 1 Basic prep sheet"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-ice-cream-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span>
+  <h4>Ice Cream: Steps and Key Points: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 147 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/06-dairy/ag-science-1-l1-ice-cream-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/06-dairy/ag-science-1-l1-ice-cream-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="ice cream: steps and key points: level 1 basic my check name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/06-dairy/ag-science-1-l1-ice-cream-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Ice Cream: Steps and Key Points: Level 1 Basic my check"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-ice-cream-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span>
+  <h4>Ice Cream: Steps and Key Points: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 139 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/06-dairy/ag-science-1-l1-ice-cream-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/06-dairy/ag-science-1-l1-ice-cream-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="ice cream: steps and key points: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/06-dairy/ag-science-1-l2-ice-cream-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Ice Cream: Steps and Key Points: Level 1 Advanced slides"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-ice-cream-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Ice Cream: Steps and Key Points</h4>
+  <p class="meta">10 slides · PDF · 583 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/06-dairy/ag-science-1-l2-ice-cream-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/06-dairy/ag-science-1-l2-ice-cream-lab-deck.pdf" download>⬇ Download</a></div></div>
+</article><article class="card game item" data-q="ice cream: steps and key points steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🍦</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span>
+  <h3>Ice Cream: Steps and Key Points</h3><p>Put the steps in order, match the words, and check what is safe.</p>
+  <a class="btn gold" href="ag-science-1/06-dairy/ag-science-1-l2-ice-cream-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="ice cream: steps and key points: level 1 advanced steps card steps card, sequence page, key points table printable lab card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/06-dairy/ag-science-1-l2-ice-cream-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Ice Cream: Steps and Key Points: Level 1 Advanced steps card"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-ice-cream-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB CARD</span>
+  <h4>Ice Cream: Steps and Key Points: Level 1 Advanced</h4>
+  <p class="meta">2 pages · PDF · 207 KB</p><p class="sub">Steps card, sequence page, key points table</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/06-dairy/ag-science-1-l2-ice-cream-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/06-dairy/ag-science-1-l2-ice-cream-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="ice cream: steps and key points: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/06-dairy/ag-science-1-l2-ice-cream-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Ice Cream: Steps and Key Points: Level 1 Advanced prep sheet"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-ice-cream-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span>
+  <h4>Ice Cream: Steps and Key Points: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 150 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/06-dairy/ag-science-1-l2-ice-cream-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/06-dairy/ag-science-1-l2-ice-cream-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="ice cream: steps and key points: level 1 advanced reflection name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/06-dairy/ag-science-1-l2-ice-cream-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Ice Cream: Steps and Key Points: Level 1 Advanced reflection"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-ice-cream-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span>
+  <h4>Ice Cream: Steps and Key Points: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 124 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/06-dairy/ag-science-1-l2-ice-cream-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/06-dairy/ag-science-1-l2-ice-cream-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div></div><div class="labs-unit" data-unit="7"><h3><a href="#unit-7">🐖 Unit 7: Livestock Judging</a></h3><div class="labblock" data-lvs="1 2"><h4 class="unit"><span aria-hidden="true">🐖</span> Livestock Judging Score Card</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="livestock judging score card: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/07-livestock-judging/ag-science-1-l1-livestock-judging-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Livestock Judging Score Card: Level 1 Basic slides"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-livestock-judging-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Livestock Judging Score Card</h4>
+  <p class="meta">10 slides · PDF · 533 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/07-livestock-judging/ag-science-1-l1-livestock-judging-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/07-livestock-judging/ag-science-1-l1-livestock-judging-lab-deck.pdf" download>⬇ Download</a></div></div>
+</article><article class="card game item" data-q="livestock judging score card steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🐖</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Livestock Judging Score Card</h3><p>Put the steps in order, match the words, and check what is safe.</p>
+  <a class="btn gold" href="ag-science-1/07-livestock-judging/ag-science-1-l1-livestock-judging-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="livestock judging score card: level 1 basic judging card judging steps, picture class of 4, score card printable lab card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/07-livestock-judging/ag-science-1-l1-livestock-judging-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Livestock Judging Score Card: Level 1 Basic judging card"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-livestock-judging-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Livestock Judging Score Card: Level 1 Basic judging card</h4>
+  <p class="meta">2 pages · PDF · 219 KB</p><p class="sub">Judging steps, picture class of 4, score card</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/07-livestock-judging/ag-science-1-l1-livestock-judging-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/07-livestock-judging/ag-science-1-l1-livestock-judging-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="livestock judging score card: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/07-livestock-judging/ag-science-1-l1-livestock-judging-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Livestock Judging Score Card: Level 1 Basic prep sheet"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-livestock-judging-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Livestock Judging Score Card: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 144 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/07-livestock-judging/ag-science-1-l1-livestock-judging-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/07-livestock-judging/ag-science-1-l1-livestock-judging-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="livestock judging score card: level 1 basic my check name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/07-livestock-judging/ag-science-1-l1-livestock-judging-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Livestock Judging Score Card: Level 1 Basic my check"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-livestock-judging-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Livestock Judging Score Card: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 138 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/07-livestock-judging/ag-science-1-l1-livestock-judging-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/07-livestock-judging/ag-science-1-l1-livestock-judging-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="livestock judging score card: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/07-livestock-judging/ag-science-1-l2-livestock-judging-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Livestock Judging Score Card: Level 1 Advanced slides"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-livestock-judging-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Livestock Judging Score Card</h4>
+  <p class="meta">9 slides · PDF · 514 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/07-livestock-judging/ag-science-1-l2-livestock-judging-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/07-livestock-judging/ag-science-1-l2-livestock-judging-lab-deck.pdf" download>⬇ Download</a></div></div>
+</article><article class="card game item" data-q="livestock judging score card steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🐖</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Livestock Judging Score Card</h3><p>Put the steps in order, match the words, and check what is safe.</p>
+  <a class="btn gold" href="ag-science-1/07-livestock-judging/ag-science-1-l2-livestock-judging-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="livestock judging score card: level 1 advanced judging card judging steps, picture class of 4, score card printable lab card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/07-livestock-judging/ag-science-1-l2-livestock-judging-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Livestock Judging Score Card: Level 1 Advanced judging card"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-livestock-judging-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Livestock Judging Score Card: Level 1 Advanced judging card</h4>
+  <p class="meta">2 pages · PDF · 231 KB</p><p class="sub">Judging steps, picture class of 4, score card</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/07-livestock-judging/ag-science-1-l2-livestock-judging-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/07-livestock-judging/ag-science-1-l2-livestock-judging-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="livestock judging score card: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/07-livestock-judging/ag-science-1-l2-livestock-judging-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Livestock Judging Score Card: Level 1 Advanced prep sheet"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-livestock-judging-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Livestock Judging Score Card: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 139 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/07-livestock-judging/ag-science-1-l2-livestock-judging-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/07-livestock-judging/ag-science-1-l2-livestock-judging-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="livestock judging score card: level 1 advanced reflection name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/07-livestock-judging/ag-science-1-l2-livestock-judging-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Livestock Judging Score Card: Level 1 Advanced reflection"><img src="../thumbs/incl-ag-science-1-ag-science-1-l2-livestock-judging-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Livestock Judging Score Card: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 127 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/07-livestock-judging/ag-science-1-l2-livestock-judging-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/07-livestock-judging/ag-science-1-l2-livestock-judging-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div></div></section>
 <div class="utabgroup" data-default="1"><section class="cat" id="units" aria-labelledby="h-units"><h2 id="h-units">🗂️ Units in course order</h2><p class=note>Same units and order as the gen ed class. 8 of 9 ready. <span class="utabhint">Tap a unit to show it below.</span></p><div class="utabs" role="tablist" aria-label="Units"><a class="utab" role="tab" href="#unit-1" data-unit="1" aria-selected="false" title="Unit 1: Ag Words &amp; Whatcom Farms"><span class="un">Unit 1</span><span class="ut"><span aria-hidden="true">🌾</span> Ag Words &amp; Whatcom Farms</span></a><a class="utab" role="tab" href="#unit-2" data-unit="2" aria-selected="false" title="Unit 2: Washington Crops: Potatoes, Wheat &amp; Apples"><span class="un">Unit 2</span><span class="ut"><span aria-hidden="true">🥔</span> Washington Crops</span></a><a class="utab" role="tab" href="#unit-3" data-unit="3" aria-selected="false" title="Unit 3: U.S. Food &amp; Farm Facts"><span class="un">Unit 3</span><span class="ut"><span aria-hidden="true">🚜</span> U.S. Food &amp; Farm Facts</span></a><a class="utab" role="tab" href="#unit-4" data-unit="4" aria-selected="false" title="Unit 4: FFA &amp; Ag Careers"><span class="un">Unit 4</span><span class="ut"><span aria-hidden="true">🌱</span> FFA &amp; Ag Careers</span></a><a class="utab" role="tab" href="#unit-5" data-unit="5" aria-selected="false" title="Unit 5: Ag Experience Project"><span class="un">Unit 5</span><span class="ut"><span aria-hidden="true">📊</span> Ag Experience Project</span></a><a class="utab" role="tab" href="#unit-6" data-unit="6" aria-selected="false" title="Unit 6: Dairy"><span class="un">Unit 6</span><span class="ut"><span aria-hidden="true">🐄</span> Dairy</span></a><a class="utab" role="tab" href="#unit-7" data-unit="7" aria-selected="false" title="Unit 7: Livestock Judging"><span class="un">Unit 7</span><span class="ut"><span aria-hidden="true">🐖</span> Livestock Judging</span></a><a class="utab" role="tab" href="#unit-8" data-unit="8" aria-selected="false" title="Unit 8: Final Review"><span class="un">Unit 8</span><span class="ut"><span aria-hidden="true">🍎</span> Final Review</span></a><span class="utab soon" title="Ag Issues"><span class="un">Unit 9</span><span class="ut"><span aria-hidden="true">🌍</span> Ag Issues</span><small class="ust">Coming soon</small></span></div></section><div class="unitpane" data-unit="1"><span class="uanchor" id="unit-1"></span><section class="cat" id="u1" aria-labelledby="h-u1"><h2 id="h-u1">🌾 Unit 1: Ag Words &amp; Whatcom Farms</h2><p class="note">Top ag words, what Whatcom County and Washington farms grow, local ag businesses, and the Tour de Whatcom field trip.</p><div class="lvgroup lvonly lv1"><h3 class="lvh"><span class="pill lv1">Level 1 Basic</span> 2nd-grade reading: pictures and emoji, one idea at a time</h3><div class="umat uc"><details class="dbd ucond" open><summary><span class="dbdh">📦 Unit materials</span> <small>(25)</small></summary><p class="note ucanvas"><small>Goes with the class Canvas module: “Ag Literacy (Whatcom, WA and US Agriculture): Ag Terms, Brochure, Farming for Life, Farm Bureau, Whatcom Ag Businesses, Tour de Whatcom”.</small></p><p class="printall"><a class="btn gold" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-unit1-L1-print-all.pdf" target="_blank" rel="noopener">🖨️ Print all (Level 1 Basic)</a> <small>22 files · 32 pages · 3.2 MB · staff guide, printables, then answer keys</small></p><h4 class="unit">📖 Slides</h4><div class="grid"><article class="card deck item" data-q="ag words &amp; whatcom farms: level 1 basic slides words to know, pictures, checks, recap slides">
   <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/01-ag-words-whatcom/ag-science-1-l1-u1-ag-words-whatcom-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Ag Words &amp; Whatcom Farms: Level 1 Basic slides"><img src="../thumbs/incl-ag-science-1-ag-science-1-l1-u1-ag-words-whatcom-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
   <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Ag Words &amp; Whatcom Farms</h4>
@@ -3678,6 +4321,32 @@
   <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/08-final-review/ag-science-1-l3-u8-final-review-reading-key.pdf" target="_blank" rel="noopener">📄 Open</a>
   <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/08-final-review/ag-science-1-l3-u8-final-review-reading-key.pdf" download>⬇ Download</a></div></div>
 </article></div></details></div></div></section>
+<section class="cat" id="syllabus" aria-labelledby="h-syllabus"><h2 id="h-syllabus">📋 Ag Science 1 Syllabus</h2>
+<details class="dbd ucond" open><summary><span class="dbdh">📋 Leveled syllabi</span> <small>(3)</small></summary><div class="grid rows"><article class="card item row" data-q="Ag Science 1 level 1 syllabus 2026-27">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/ag-science-1-syllabus-l1.pdf" target="_blank" rel="noopener" aria-label="Open: Ag Science 1 · Level 1 syllabus"><img src="../thumbs/incl-ag-science-1-syllabus-l1.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 SYLLABUS</span>
+  <h4>Ag Science 1 · Level 1 syllabus</h4>
+  <p class="meta">4 pages · PDF · 280 KB</p><p class="sub">Level 1 syllabus · 2026–27</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/ag-science-1-syllabus-l1.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/ag-science-1-syllabus-l1.pdf" download>⬇ Download</a></div></div>
+</article>
+<article class="card item row" data-q="Ag Science 1 level 2 syllabus 2026-27">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/ag-science-1-syllabus-l2.pdf" target="_blank" rel="noopener" aria-label="Open: Ag Science 1 · Level 2 syllabus"><img src="../thumbs/incl-ag-science-1-syllabus-l2.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 SYLLABUS</span>
+  <h4>Ag Science 1 · Level 2 syllabus</h4>
+  <p class="meta">3 pages · PDF · 223 KB</p><p class="sub">Level 2 syllabus · 2026–27</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/ag-science-1-syllabus-l2.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/ag-science-1-syllabus-l2.pdf" download>⬇ Download</a></div></div>
+</article>
+<article class="card item row" data-q="Ag Science 1 level 3 syllabus 2026-27">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/ag-science-1-syllabus-l3.pdf" target="_blank" rel="noopener" aria-label="Open: Ag Science 1 · Level 3 syllabus"><img src="../thumbs/incl-ag-science-1-syllabus-l3.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 SYLLABUS</span>
+  <h4>Ag Science 1 · Level 3 syllabus</h4>
+  <p class="meta">4 pages · PDF · 223 KB</p><p class="sub">Level 3 syllabus · 2026–27</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/ag-science-1-syllabus-l3.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/ag-science-1/ag-science-1-syllabus-l3.pdf" download>⬇ Download</a></div></div>
+</article></div>
+</details></section>
 <p class="note" id="none" hidden>Nothing matches that. Try a shorter word.</p><script>window.READ_ALOUD={"left": true, "sel": "h1,h2,h3,h4,.lead,.note,.card h3,.card h4,.card p.sub", "root": "main"};</script><script>/* Ferndale "Read aloud" button (reusable). Browser text-to-speech (Web Speech API): nothing to install; works in Chrome on Chromebooks.
    Add once per page with a script tag pointing at read_aloud.js, or inline it (read_aloud.py script_tag()).  Options (set before the script):
      window.READ_ALOUD = {sel: "CSS selector of the parts to read", root: "CSS selector of the area to read", rate: 0.9}

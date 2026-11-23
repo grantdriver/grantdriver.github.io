@@ -1,4 +1,4 @@
-(function(){window.addEventListener('beforeprint',function(){[].forEach.call(document.querySelectorAll('details.dbd'),function(d){d.open=true})})})();
+(function(){window.addEventListener('beforeprint',function(){var p=document.querySelector('.unitpane.on')||document;[].forEach.call(p.querySelectorAll('details.dbd'),function(d){d.open=true})})})();
 (function(){var q=document.getElementById('q');if(!q)return;var items=[].slice.call(document.querySelectorAll('.item'));
 var cats=[].slice.call(document.querySelectorAll('section.cat, .lesson, details.dayg'));var none=document.getElementById('none'),qn=document.getElementById('qn');
 function run(){var t=q.value.trim().toLowerCase().split(/\s+/).filter(Boolean),shown=0;[].forEach.call(document.querySelectorAll('details.dbd'),function(d){var w=d.getAttribute('data-was');if(t.length){if(w===null)d.setAttribute('data-was',d.open?'1':'0');d.open=true}else if(w!==null){d.open=w==='1';d.removeAttribute('data-was')}});

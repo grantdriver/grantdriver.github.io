@@ -24,35 +24,9 @@
   <h1><span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" style="vertical-align:-.15em" aria-hidden="true" focusable="false"><path d="M8.1 12.5h7.8l3.9 6.5a1.4 1.4 0 0 1-1.2 2.1H5.4A1.4 1.4 0 0 1 4.2 19z" fill="#2fbf71"/><circle cx="10.4" cy="16.8" r="1.05" fill="#d9fbe8"/><circle cx="13.7" cy="18.6" r=".85" fill="#d9fbe8"/><circle cx="12.6" cy="14.7" r=".65" fill="#d9fbe8"/><path d="M9.6 2.2h4.8M10.3 2.4v6.4L3.6 19.3A1.9 1.9 0 0 0 5.2 22h13.6a1.9 1.9 0 0 0 1.6-2.7L13.7 8.8V2.4" fill="none" stroke="#1d3557" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Chemistry</h1>
   <style>html[data-lv="1"] .lvonly:not(.lv1):not(.lv2){display:none}html[data-lv="4"] .lvonly:not(.lv4){display:none}html[data-lv="3"] .lvonly:not(.lv3){display:none}html[data-lv="1"] .jump.lvonly.lv2,html[data-lv="1"] main.wrap>.lvonly.lv2>.lvlead{display:none}html[data-lv="1"] .lvgroup.lvonly.lv2{margin-top:14px}html[data-lv="1"] main.wrap:has(>.lvonly.lv2){display:flex;flex-direction:column}html[data-lv="1"] main.wrap>.lvonly.lv1,html[data-lv="1"] main.wrap>.lvonly.lv2{display:contents}html[data-lv="1"] main.wrap:has(>.lvonly.lv2)>*{order:9}html[data-lv="1"] main.wrap:has(>.lvonly.lv2)>.hero{order:0}html[data-lv="1"] main.wrap>.lvonly>*{order:1}html[data-lv="1"] main.wrap>.lv1>.utabgroup{order:2}html[data-lv="1"] main.wrap>.lv2>.utabgroup{order:3}html[data-lv="1"] main.wrap>.lv1>[id^="other-"]{order:4}html[data-lv="1"] main.wrap>.lv2>[id^="other-"]{order:5}html[data-lv="1"] main.wrap>.lv1>[id^="teacher-"]{order:6}html[data-lv="1"] main.wrap>.lv2>[id^="teacher-"]{order:7}html[data-lv="1"] main.wrap>.lv2>.utabgroup,html[data-lv="1"] main.wrap>.lv2>[id^="other-"],html[data-lv="1"] main.wrap>.lv2>[id^="teacher-"]{border-top:4px dashed #f2b705;margin-top:22px;padding-top:6px}</style><div class="lvtabs" role="tablist" aria-label="Choose a level" data-v="2"><a class="lvtab lv1" role="tab" data-lv="1" href="#level1" aria-selected="false"><span><span aria-hidden="true">🔵</span> Level 1</span><small>Basic + Advanced inside</small></a><a class="lvtab lv4" role="tab" data-lv="4" href="#level4" aria-selected="false"><span><span aria-hidden="true">🟣</span> Level 2</span><small>About 5th–6th-grade reading</small></a><a class="lvtab lv3" role="tab" data-lv="3" href="#level3" aria-selected="false"><span><span aria-hidden="true">🟢</span> Level 3</span><small>Close to class · guided notes</small></a></div><p class="note lvshow">Showing <b id="lvnow">all levels</b>. Tap a button to switch.</p><script>(function(){var K='lv-chemistry',L=["1", "4", "3"],N={"1": "Level 1 (Basic + Advanced)", "3": "Level 3", "4": "Level 2"},r=document.documentElement;function nv(v){return v==='2'?'1':v}function set(v,save){v=nv(v);r.setAttribute('data-lv',v);var t=document.querySelectorAll('.lvtab');for(var i=0;i<t.length;i++){var on=t[i].getAttribute('data-lv')===v;t[i].setAttribute('aria-selected',on?'true':'false');if(on){t[i].classList.add('on')}else{t[i].classList.remove('on')}}var w=document.getElementById('lvnow');if(w)w.textContent=N[v]||('Level '+v);if(save){try{localStorage.setItem(K,v)}catch(e){}}var q=document.getElementById('q');if(q&&q.value){q.dispatchEvent(new Event('input'))}}function fromHash(){var m=/^#level(\d+)$/.exec(location.hash)||/^#[\w-]+-l(\d)$/.exec(location.hash);var v=m?nv(m[1]):null;return v&&L.indexOf(v)>-1?v:null}var h=fromHash(),s=null;try{s=localStorage.getItem(K)}catch(e){}if(s)s=nv(s);set(h||(s&&L.indexOf(s)>-1?s:L[0]),!!h);window.addEventListener('hashchange',function(){var v=fromHash();if(v)set(v,true)});document.addEventListener('DOMContentLoaded',function(){var W={"1": " level 1 basic l1 basic", "2": " level 1 advanced l1 advanced", "3": " level 3 l3", "4": " level 2 l2"};[].forEach.call(document.querySelectorAll('.lvonly .item'),function(el){var g=el.closest('.lvonly'),m=/\blv(\d)\b/.exec(g.className);if(m&&W[m[1]]){var q=el.getAttribute('data-q')||'';if(q.indexOf(W[m[1]].slice(1,12))<0)el.setAttribute('data-q',q+W[m[1]])}})});})();</script>
   <p class="lead">Modified Level 1 (Basic + Advanced), Level 2 and Level 3 materials for students in Mr. Brittle&#x27;s Chemistry class. Students stay in the gen ed lesson and use these pieces next to it: same units, same order, same points. Every notes page and reading has a 🔊 Read aloud button.</p>
-  <p class="jump"><a class="btn blue" href="#syllabus">📋 Syllabus</a> <a class="btn blue" href="#booklet">📘 Activity booklet</a> <a class="btn blue" href="#units">🗂️ Units</a> <a class="btn ghost" href="#teacher">👩‍🏫 Teacher resources</a></p>
+  <p class="jump"><a class="btn blue" href="#syllabus">📋 Syllabus</a> <a class="btn blue" href="#booklet">📘 Activity booklet</a> <a class="btn blue" href="#labs">🔬 Labs</a> <a class="btn blue" href="#units">🗂️ Units</a> <a class="btn ghost" href="#teacher">👩‍🏫 Teacher resources</a></p>
   <div class="searchbar"><label for="q">🔎 Find something:</label><input id="q" type="search" placeholder="Type a word, like goal, rights, key, 10/26…" autocomplete="off"><span id="qn" class="note"></span></div>
 </section>
-<section class="cat" id="syllabus" aria-labelledby="h-syllabus"><h2 id="h-syllabus">📋 Chemistry Syllabus</h2>
-<details class="dbd ucond" open><summary><span class="dbdh">📋 Leveled syllabi</span> <small>(3)</small></summary><div class="grid rows"><article class="card item row" data-q="Chemistry level 1 syllabus 2026-27">
-  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/chemistry-syllabus-l1.pdf" target="_blank" rel="noopener" aria-label="Open: Chemistry · Level 1 syllabus"><img src="../thumbs/incl-chemistry-syllabus-l1.jpg" alt="" loading="lazy" width="116" height="150"></a>
-  <div class="itxt"><span class="tpill">📋 SYLLABUS</span>
-  <h4>Chemistry · Level 1 syllabus</h4>
-  <p class="meta">4 pages · PDF · 338 KB</p><p class="sub">Level 1 syllabus · 2026–27</p>
-  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/chemistry-syllabus-l1.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/chemistry-syllabus-l1.pdf" download>⬇ Download</a></div></div>
-</article>
-<article class="card item row" data-q="Chemistry level 2 syllabus 2026-27">
-  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/chemistry-syllabus-l2.pdf" target="_blank" rel="noopener" aria-label="Open: Chemistry · Level 2 syllabus"><img src="../thumbs/incl-chemistry-syllabus-l2.jpg" alt="" loading="lazy" width="116" height="150"></a>
-  <div class="itxt"><span class="tpill">📋 SYLLABUS</span>
-  <h4>Chemistry · Level 2 syllabus</h4>
-  <p class="meta">4 pages · PDF · 260 KB</p><p class="sub">Level 2 syllabus · 2026–27</p>
-  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/chemistry-syllabus-l2.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/chemistry-syllabus-l2.pdf" download>⬇ Download</a></div></div>
-</article>
-<article class="card item row" data-q="Chemistry level 3 syllabus 2026-27">
-  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/chemistry-syllabus-l3.pdf" target="_blank" rel="noopener" aria-label="Open: Chemistry · Level 3 syllabus"><img src="../thumbs/incl-chemistry-syllabus-l3.jpg" alt="" loading="lazy" width="116" height="150"></a>
-  <div class="itxt"><span class="tpill">📋 SYLLABUS</span>
-  <h4>Chemistry · Level 3 syllabus</h4>
-  <p class="meta">4 pages · PDF · 269 KB</p><p class="sub">Level 3 syllabus · 2026–27</p>
-  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/chemistry-syllabus-l3.pdf" target="_blank" rel="noopener">📄 Open</a>
-  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/chemistry-syllabus-l3.pdf" download>⬇ Download</a></div></div>
-</article></div>
-</details></section>
 <section class="cat" id="booklet" aria-labelledby="h-booklet"><h2 id="h-booklet">📘 Chemistry Activity Booklet</h2>
 <details class="dbd ucond" open><summary><span class="dbdh">📘 Chemistry Activity Booklet</span> <small>(1)</small></summary><div class="grid rows"><article class="card item row" data-q="chemistry activity booklet level 1 activity pages printable booklet">
   <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/chemistry-activity-booklet.pdf" target="_blank" rel="noopener" aria-label="Open: Chemistry Activity Booklet"><img src="../thumbs/incl-chemistry-activity-booklet.jpg" alt="" loading="lazy" width="116" height="150"></a>
@@ -63,6 +37,535 @@
   <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/chemistry-activity-booklet.pdf" download>⬇ Download</a></div></div>
 </article></div>
 </details></section>
+<section class="cat labs-index" id="labs" aria-labelledby="h-labs"><h2 id="h-labs">🔬 Labs</h2><p class="note">Every lab and project in this class, in unit order. The level buttons at the top still apply. If a lab only exists at another level, it stays visible and is labeled.</p><div class="labs-unit" data-unit="1A"><h3><a href="#unit-1A">⚡ Unit 1A: Lightning 1: Charges &amp; Static</a></h3><div class="labblock" data-lvs="1 2 4 3"><h4 class="unit"><span aria-hidden="true">🎈</span> Static Electricity Stations</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="static electricity stations: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01a-charges-static/chemistry-l1-static-stations-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Static Electricity Stations: Level 1 Basic slides"><img src="../thumbs/incl-chemistry-chemistry-l1-static-stations-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Static Electricity Stations</h4>
+  <p class="meta">10 slides · PDF · 502 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01a-charges-static/chemistry-l1-static-stations-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01a-charges-static/chemistry-l1-static-stations-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="chemistry/01a-charges-static/chemistry-l1-static-stations-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="static electricity stations steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🎈</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Static Electricity Stations</h3><p>Steps, safety, and what happened in the lab.</p>
+  <a class="btn gold" href="chemistry/01a-charges-static/chemistry-l1-static-stations-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="static electricity stations: level 1 basic station card 4 stations, one picture step per box printable lab card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01a-charges-static/chemistry-l1-static-stations-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Static Electricity Stations: Level 1 Basic station card"><img src="../thumbs/incl-chemistry-chemistry-l1-static-stations-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Static Electricity Stations: Level 1 Basic station card</h4>
+  <p class="meta">2 pages · PDF · 158 KB</p><p class="sub">4 stations, one picture step per box</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01a-charges-static/chemistry-l1-static-stations-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01a-charges-static/chemistry-l1-static-stations-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="static electricity stations: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01a-charges-static/chemistry-l1-static-stations-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Static Electricity Stations: Level 1 Basic prep sheet"><img src="../thumbs/incl-chemistry-chemistry-l1-static-stations-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Static Electricity Stations: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 136 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01a-charges-static/chemistry-l1-static-stations-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01a-charges-static/chemistry-l1-static-stations-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="static electricity stations: level 1 basic my check name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01a-charges-static/chemistry-l1-static-stations-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Static Electricity Stations: Level 1 Basic my check"><img src="../thumbs/incl-chemistry-chemistry-l1-static-stations-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Static Electricity Stations: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 143 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01a-charges-static/chemistry-l1-static-stations-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01a-charges-static/chemistry-l1-static-stations-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="static electricity stations: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01a-charges-static/chemistry-l2-static-stations-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Static Electricity Stations: Level 1 Advanced slides"><img src="../thumbs/incl-chemistry-chemistry-l2-static-stations-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Static Electricity Stations</h4>
+  <p class="meta">9 slides · PDF · 499 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01a-charges-static/chemistry-l2-static-stations-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01a-charges-static/chemistry-l2-static-stations-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="chemistry/01a-charges-static/chemistry-l2-static-stations-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="static electricity stations steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🎈</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Static Electricity Stations</h3><p>Steps, safety, and what happened in the lab.</p>
+  <a class="btn gold" href="chemistry/01a-charges-static/chemistry-l2-static-stations-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="static electricity stations: level 1 advanced station card 4 stations, one picture step per box printable lab card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01a-charges-static/chemistry-l2-static-stations-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Static Electricity Stations: Level 1 Advanced station card"><img src="../thumbs/incl-chemistry-chemistry-l2-static-stations-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Static Electricity Stations: Level 1 Advanced station card</h4>
+  <p class="meta">1 page · PDF · 138 KB</p><p class="sub">4 stations, one picture step per box</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01a-charges-static/chemistry-l2-static-stations-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01a-charges-static/chemistry-l2-static-stations-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="static electricity stations: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01a-charges-static/chemistry-l2-static-stations-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Static Electricity Stations: Level 1 Advanced prep sheet"><img src="../thumbs/incl-chemistry-chemistry-l2-static-stations-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Static Electricity Stations: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 138 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01a-charges-static/chemistry-l2-static-stations-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01a-charges-static/chemistry-l2-static-stations-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="static electricity stations: level 1 advanced reflection name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01a-charges-static/chemistry-l2-static-stations-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Static Electricity Stations: Level 1 Advanced reflection"><img src="../thumbs/incl-chemistry-chemistry-l2-static-stations-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Static Electricity Stations: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 128 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01a-charges-static/chemistry-l2-static-stations-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01a-charges-static/chemistry-l2-static-stations-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="4"><div class="grid"><article class="card game page item" data-q="static electricity stations: level 2 lab sheet (read aloud) opens in the browser · read-aloud inside read aloud notes reading lab sheet">
+  <a class="thumb2" href="chemistry/01a-charges-static/chemistry-l4-static-stations-lab-sheet-page.html" target="_blank" rel="noopener" aria-label="Open: Static Electricity Stations: Level 2"><img src="../thumbs/incl-chemistry-chemistry-l4-static-stations-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="gtxt"><span class="pill lv4">Level 2</span><span class="tpill">🧪 LAB SHEET</span>
+  <h3>Static Electricity Stations: Level 2</h3><p>Opens in the browser · read-aloud inside</p>
+  <a class="btn blue" href="chemistry/01a-charges-static/chemistry-l4-static-stations-lab-sheet-page.html" target="_blank" rel="noopener">Open</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="static electricity stations: level 2 lab sheet question, prediction, checkbox steps, data table, cer with sentence starters printable lab sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01a-charges-static/chemistry-l4-static-stations-lab-sheet.pdf" target="_blank" rel="noopener" aria-label="Open: Static Electricity Stations: Level 2 lab sheet"><img src="../thumbs/incl-chemistry-chemistry-l4-static-stations-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB SHEET</span>
+  <h4>Static Electricity Stations: Level 2</h4>
+  <p class="meta">2 pages · PDF · 130 KB</p><p class="sub">Question, prediction, checkbox steps, data table, CER with sentence starters</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01a-charges-static/chemistry-l4-static-stations-lab-sheet.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01a-charges-static/chemistry-l4-static-stations-lab-sheet.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="3"><div class="grid"><article class="card game page item" data-q="static electricity stations: level 3 lab sheet (read aloud) opens in the browser · read-aloud inside read aloud notes reading lab sheet">
+  <a class="thumb2" href="chemistry/01a-charges-static/chemistry-l3-static-stations-lab-sheet-page.html" target="_blank" rel="noopener" aria-label="Open: Static Electricity Stations: Level 3"><img src="../thumbs/incl-chemistry-chemistry-l3-static-stations-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="gtxt"><span class="pill lv3">Level 3</span><span class="tpill">🧪 LAB SHEET</span>
+  <h3>Static Electricity Stations: Level 3</h3><p>Opens in the browser · read-aloud inside</p>
+  <a class="btn blue" href="chemistry/01a-charges-static/chemistry-l3-static-stations-lab-sheet-page.html" target="_blank" rel="noopener">Open</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="static electricity stations: level 3 lab sheet question, prediction, steps, data table, cer printable lab sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01a-charges-static/chemistry-l3-static-stations-lab-sheet.pdf" target="_blank" rel="noopener" aria-label="Open: Static Electricity Stations: Level 3 lab sheet"><img src="../thumbs/incl-chemistry-chemistry-l3-static-stations-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB SHEET</span>
+  <h4>Static Electricity Stations: Level 3</h4>
+  <p class="meta">2 pages · PDF · 52 KB</p><p class="sub">Question, prediction, steps, data table, CER</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01a-charges-static/chemistry-l3-static-stations-lab-sheet.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01a-charges-static/chemistry-l3-static-stations-lab-sheet.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div></div><div class="labs-unit" data-unit="1C"><h3><a href="#unit-1C">🌩️ Unit 1C: Lightning 3: The Strike &amp; Staying Safe</a></h3><div class="labblock" data-lvs="1 2 4 3"><h4 class="unit"><span aria-hidden="true">💡</span> Conductivity Lab: What Lets Electricity Through?</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="conductivity lab: what lets electricity through?: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01c-strike-safety/chemistry-l1-conductivity-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Conductivity Lab: What Lets Electricity Through?: Level 1 Basic slides"><img src="../thumbs/incl-chemistry-chemistry-l1-conductivity-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Conductivity Lab: What Lets Electricity Through?</h4>
+  <p class="meta">10 slides · PDF · 581 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01c-strike-safety/chemistry-l1-conductivity-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01c-strike-safety/chemistry-l1-conductivity-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="chemistry/01c-strike-safety/chemistry-l1-conductivity-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="conductivity lab: what lets electricity through? steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">💡</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Conductivity Lab: What Lets Electricity Through?</h3><p>Steps, safety, and what happened in the lab.</p>
+  <a class="btn gold" href="chemistry/01c-strike-safety/chemistry-l1-conductivity-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="conductivity lab: what lets electricity through?: level 1 basic lab card test each thing: does the bulb light? printable lab card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01c-strike-safety/chemistry-l1-conductivity-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Conductivity Lab: What Lets Electricity Through?: Level 1 Basic lab card"><img src="../thumbs/incl-chemistry-chemistry-l1-conductivity-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Conductivity Lab: What Lets Electricity Through?: Level 1 Basic</h4>
+  <p class="meta">2 pages · PDF · 161 KB</p><p class="sub">Test each thing: does the bulb light?</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01c-strike-safety/chemistry-l1-conductivity-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01c-strike-safety/chemistry-l1-conductivity-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="conductivity lab: what lets electricity through?: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01c-strike-safety/chemistry-l1-conductivity-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Conductivity Lab: What Lets Electricity Through?: Level 1 Basic prep sheet"><img src="../thumbs/incl-chemistry-chemistry-l1-conductivity-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Conductivity Lab: What Lets Electricity Through?: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 139 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01c-strike-safety/chemistry-l1-conductivity-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01c-strike-safety/chemistry-l1-conductivity-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="conductivity lab: what lets electricity through?: level 1 basic my check name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01c-strike-safety/chemistry-l1-conductivity-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Conductivity Lab: What Lets Electricity Through?: Level 1 Basic my check"><img src="../thumbs/incl-chemistry-chemistry-l1-conductivity-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Conductivity Lab: What Lets Electricity Through?: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 141 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01c-strike-safety/chemistry-l1-conductivity-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01c-strike-safety/chemistry-l1-conductivity-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="conductivity lab: what lets electricity through?: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01c-strike-safety/chemistry-l2-conductivity-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Conductivity Lab: What Lets Electricity Through?: Level 1 Advanced slides"><img src="../thumbs/incl-chemistry-chemistry-l2-conductivity-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Conductivity Lab: What Lets Electricity Through?</h4>
+  <p class="meta">10 slides · PDF · 576 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01c-strike-safety/chemistry-l2-conductivity-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01c-strike-safety/chemistry-l2-conductivity-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="chemistry/01c-strike-safety/chemistry-l2-conductivity-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="conductivity lab: what lets electricity through? steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">💡</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Conductivity Lab: What Lets Electricity Through?</h3><p>Steps, safety, and what happened in the lab.</p>
+  <a class="btn gold" href="chemistry/01c-strike-safety/chemistry-l2-conductivity-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="conductivity lab: what lets electricity through?: level 1 advanced lab card test each thing: does the bulb light? printable lab card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01c-strike-safety/chemistry-l2-conductivity-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Conductivity Lab: What Lets Electricity Through?: Level 1 Advanced lab card"><img src="../thumbs/incl-chemistry-chemistry-l2-conductivity-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Conductivity Lab: What Lets Electricity Through?: Level 1 Advanced</h4>
+  <p class="meta">2 pages · PDF · 167 KB</p><p class="sub">Test each thing: does the bulb light?</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01c-strike-safety/chemistry-l2-conductivity-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01c-strike-safety/chemistry-l2-conductivity-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="conductivity lab: what lets electricity through?: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01c-strike-safety/chemistry-l2-conductivity-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Conductivity Lab: What Lets Electricity Through?: Level 1 Advanced prep sheet"><img src="../thumbs/incl-chemistry-chemistry-l2-conductivity-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Conductivity Lab: What Lets Electricity Through?: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 139 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01c-strike-safety/chemistry-l2-conductivity-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01c-strike-safety/chemistry-l2-conductivity-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="conductivity lab: what lets electricity through?: level 1 advanced reflection name line · photo checklist · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01c-strike-safety/chemistry-l2-conductivity-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Conductivity Lab: What Lets Electricity Through?: Level 1 Advanced reflection"><img src="../thumbs/incl-chemistry-chemistry-l2-conductivity-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Conductivity Lab: What Lets Electricity Through?: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 119 KB</p><p class="sub">Name line · photo checklist · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01c-strike-safety/chemistry-l2-conductivity-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01c-strike-safety/chemistry-l2-conductivity-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="4"><div class="grid"><article class="card game page item" data-q="conductivity lab: what lets electricity through?: level 2 lab sheet (read aloud) opens in the browser · read-aloud inside read aloud notes reading lab sheet">
+  <a class="thumb2" href="chemistry/01c-strike-safety/chemistry-l4-conductivity-lab-sheet-page.html" target="_blank" rel="noopener" aria-label="Open: Conductivity Lab: What Lets Electricity Through?: Level 2"><img src="../thumbs/incl-chemistry-chemistry-l4-conductivity-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="gtxt"><span class="pill lv4">Level 2</span><span class="tpill">🧪 LAB SHEET</span>
+  <h3>Conductivity Lab: What Lets Electricity Through?: Level 2</h3><p>Opens in the browser · read-aloud inside</p>
+  <a class="btn blue" href="chemistry/01c-strike-safety/chemistry-l4-conductivity-lab-sheet-page.html" target="_blank" rel="noopener">Open</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="conductivity lab: what lets electricity through?: level 2 lab sheet question, prediction, checkbox steps, data table, cer with sentence starters printable lab sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01c-strike-safety/chemistry-l4-conductivity-lab-sheet.pdf" target="_blank" rel="noopener" aria-label="Open: Conductivity Lab: What Lets Electricity Through?: Level 2 lab sheet"><img src="../thumbs/incl-chemistry-chemistry-l4-conductivity-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB SHEET</span>
+  <h4>Conductivity Lab: What Lets Electricity Through?: Level 2</h4>
+  <p class="meta">2 pages · PDF · 162 KB</p><p class="sub">Question, prediction, checkbox steps, data table, CER with sentence starters</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01c-strike-safety/chemistry-l4-conductivity-lab-sheet.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01c-strike-safety/chemistry-l4-conductivity-lab-sheet.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="3"><div class="grid"><article class="card game page item" data-q="conductivity lab: what lets electricity through?: level 3 lab sheet (read aloud) opens in the browser · read-aloud inside read aloud notes reading lab sheet">
+  <a class="thumb2" href="chemistry/01c-strike-safety/chemistry-l3-conductivity-lab-sheet-page.html" target="_blank" rel="noopener" aria-label="Open: Conductivity Lab: What Lets Electricity Through?: Level 3"><img src="../thumbs/incl-chemistry-chemistry-l3-conductivity-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="gtxt"><span class="pill lv3">Level 3</span><span class="tpill">🧪 LAB SHEET</span>
+  <h3>Conductivity Lab: What Lets Electricity Through?: Level 3</h3><p>Opens in the browser · read-aloud inside</p>
+  <a class="btn blue" href="chemistry/01c-strike-safety/chemistry-l3-conductivity-lab-sheet-page.html" target="_blank" rel="noopener">Open</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="conductivity lab: what lets electricity through?: level 3 lab sheet question, prediction, steps, data table, cer printable lab sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01c-strike-safety/chemistry-l3-conductivity-lab-sheet.pdf" target="_blank" rel="noopener" aria-label="Open: Conductivity Lab: What Lets Electricity Through?: Level 3 lab sheet"><img src="../thumbs/incl-chemistry-chemistry-l3-conductivity-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB SHEET</span>
+  <h4>Conductivity Lab: What Lets Electricity Through?: Level 3</h4>
+  <p class="meta">2 pages · PDF · 59 KB</p><p class="sub">Question, prediction, steps, data table, CER</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01c-strike-safety/chemistry-l3-conductivity-lab-sheet.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/01c-strike-safety/chemistry-l3-conductivity-lab-sheet.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div></div><div class="labs-unit" data-unit="2A"><h3><a href="#unit-2A">🪐 Unit 2A: Space 1: Atoms &amp; the Periodic Table</a></h3><div class="labblock" data-lvs="1 2 4 3"><h4 class="unit"><span aria-hidden="true">🟠</span> Copper Cycle Lab · gen ed: Mon 11/16</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="copper cycle lab: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02a-atoms-periodic-table/chemistry-l1-copper-cycle-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Copper Cycle Lab: Level 1 Basic slides"><img src="../thumbs/incl-chemistry-chemistry-l1-copper-cycle-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Copper Cycle Lab</h4>
+  <p class="meta">12 slides · PDF · 620 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02a-atoms-periodic-table/chemistry-l1-copper-cycle-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02a-atoms-periodic-table/chemistry-l1-copper-cycle-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="chemistry/02a-atoms-periodic-table/chemistry-l1-copper-cycle-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="copper cycle lab steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🟠</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Copper Cycle Lab</h3><p>Steps, safety, and what happened in the lab.</p>
+  <a class="btn gold" href="chemistry/02a-atoms-periodic-table/chemistry-l1-copper-cycle-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="copper cycle lab: level 1 basic lab card one step per box · check boxes printable lab card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02a-atoms-periodic-table/chemistry-l1-copper-cycle-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Copper Cycle Lab: Level 1 Basic lab card"><img src="../thumbs/incl-chemistry-chemistry-l1-copper-cycle-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Copper Cycle Lab: Level 1 Basic</h4>
+  <p class="meta">2 pages · PDF · 116 KB</p><p class="sub">One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02a-atoms-periodic-table/chemistry-l1-copper-cycle-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02a-atoms-periodic-table/chemistry-l1-copper-cycle-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="copper cycle lab: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02a-atoms-periodic-table/chemistry-l1-copper-cycle-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Copper Cycle Lab: Level 1 Basic prep sheet"><img src="../thumbs/incl-chemistry-chemistry-l1-copper-cycle-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Copper Cycle Lab: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 137 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02a-atoms-periodic-table/chemistry-l1-copper-cycle-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02a-atoms-periodic-table/chemistry-l1-copper-cycle-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="copper cycle lab: level 1 basic my check name line · what i saw · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02a-atoms-periodic-table/chemistry-l1-copper-cycle-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Copper Cycle Lab: Level 1 Basic my check"><img src="../thumbs/incl-chemistry-chemistry-l1-copper-cycle-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Copper Cycle Lab: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 129 KB</p><p class="sub">Name line · what I saw · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02a-atoms-periodic-table/chemistry-l1-copper-cycle-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02a-atoms-periodic-table/chemistry-l1-copper-cycle-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="copper cycle lab: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02a-atoms-periodic-table/chemistry-l2-copper-cycle-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Copper Cycle Lab: Level 1 Advanced slides"><img src="../thumbs/incl-chemistry-chemistry-l2-copper-cycle-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Copper Cycle Lab</h4>
+  <p class="meta">12 slides · PDF · 640 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02a-atoms-periodic-table/chemistry-l2-copper-cycle-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02a-atoms-periodic-table/chemistry-l2-copper-cycle-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="chemistry/02a-atoms-periodic-table/chemistry-l2-copper-cycle-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="copper cycle lab steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🟠</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Copper Cycle Lab</h3><p>Steps, safety, and what happened in the lab.</p>
+  <a class="btn gold" href="chemistry/02a-atoms-periodic-table/chemistry-l2-copper-cycle-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="copper cycle lab: level 1 advanced lab card one step per box · check boxes printable lab card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02a-atoms-periodic-table/chemistry-l2-copper-cycle-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Copper Cycle Lab: Level 1 Advanced lab card"><img src="../thumbs/incl-chemistry-chemistry-l2-copper-cycle-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Copper Cycle Lab: Level 1 Advanced</h4>
+  <p class="meta">2 pages · PDF · 122 KB</p><p class="sub">One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02a-atoms-periodic-table/chemistry-l2-copper-cycle-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02a-atoms-periodic-table/chemistry-l2-copper-cycle-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="copper cycle lab: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02a-atoms-periodic-table/chemistry-l2-copper-cycle-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Copper Cycle Lab: Level 1 Advanced prep sheet"><img src="../thumbs/incl-chemistry-chemistry-l2-copper-cycle-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Copper Cycle Lab: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 142 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02a-atoms-periodic-table/chemistry-l2-copper-cycle-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02a-atoms-periodic-table/chemistry-l2-copper-cycle-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="copper cycle lab: level 1 advanced reflection name line · what i saw · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02a-atoms-periodic-table/chemistry-l2-copper-cycle-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Copper Cycle Lab: Level 1 Advanced reflection"><img src="../thumbs/incl-chemistry-chemistry-l2-copper-cycle-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Copper Cycle Lab: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 111 KB</p><p class="sub">Name line · what I saw · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02a-atoms-periodic-table/chemistry-l2-copper-cycle-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02a-atoms-periodic-table/chemistry-l2-copper-cycle-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="4"><div class="grid"><article class="card game page item" data-q="copper cycle lab: level 2 lab sheet (read aloud) opens in the browser · read-aloud inside read aloud notes reading lab sheet">
+  <a class="thumb2" href="chemistry/02a-atoms-periodic-table/chemistry-l4-copper-cycle-lab-sheet-page.html" target="_blank" rel="noopener" aria-label="Open: Copper Cycle Lab: Level 2"><img src="../thumbs/incl-chemistry-chemistry-l4-copper-cycle-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="gtxt"><span class="pill lv4">Level 2</span><span class="tpill">🧪 LAB SHEET</span>
+  <h3>Copper Cycle Lab: Level 2</h3><p>Opens in the browser · read-aloud inside</p>
+  <a class="btn blue" href="chemistry/02a-atoms-periodic-table/chemistry-l4-copper-cycle-lab-sheet-page.html" target="_blank" rel="noopener">Open</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="copper cycle lab: level 2 lab sheet question, prediction, checkbox steps, data table, cer with sentence starters printable lab sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02a-atoms-periodic-table/chemistry-l4-copper-cycle-lab-sheet.pdf" target="_blank" rel="noopener" aria-label="Open: Copper Cycle Lab: Level 2 lab sheet"><img src="../thumbs/incl-chemistry-chemistry-l4-copper-cycle-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB SHEET</span>
+  <h4>Copper Cycle Lab: Level 2</h4>
+  <p class="meta">2 pages · PDF · 168 KB</p><p class="sub">Question, prediction, checkbox steps, data table, CER with sentence starters</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02a-atoms-periodic-table/chemistry-l4-copper-cycle-lab-sheet.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02a-atoms-periodic-table/chemistry-l4-copper-cycle-lab-sheet.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="3"><div class="grid"><article class="card game page item" data-q="copper cycle lab: level 3 lab sheet (read aloud) opens in the browser · read-aloud inside read aloud notes reading lab sheet">
+  <a class="thumb2" href="chemistry/02a-atoms-periodic-table/chemistry-l3-copper-cycle-lab-sheet-page.html" target="_blank" rel="noopener" aria-label="Open: Copper Cycle Lab: Level 3"><img src="../thumbs/incl-chemistry-chemistry-l3-copper-cycle-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="gtxt"><span class="pill lv3">Level 3</span><span class="tpill">🧪 LAB SHEET</span>
+  <h3>Copper Cycle Lab: Level 3</h3><p>Opens in the browser · read-aloud inside</p>
+  <a class="btn blue" href="chemistry/02a-atoms-periodic-table/chemistry-l3-copper-cycle-lab-sheet-page.html" target="_blank" rel="noopener">Open</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="copper cycle lab: level 3 lab sheet question, prediction, steps, data table, cer printable lab sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02a-atoms-periodic-table/chemistry-l3-copper-cycle-lab-sheet.pdf" target="_blank" rel="noopener" aria-label="Open: Copper Cycle Lab: Level 3 lab sheet"><img src="../thumbs/incl-chemistry-chemistry-l3-copper-cycle-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB SHEET</span>
+  <h4>Copper Cycle Lab: Level 3</h4>
+  <p class="meta">2 pages · PDF · 58 KB</p><p class="sub">Question, prediction, steps, data table, CER</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02a-atoms-periodic-table/chemistry-l3-copper-cycle-lab-sheet.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02a-atoms-periodic-table/chemistry-l3-copper-cycle-lab-sheet.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div></div><div class="labs-unit" data-unit="2B"><h3><a href="#unit-2B">🌈 Unit 2B: Space 2: Spectra, Bonding &amp; Water</a></h3><div class="labblock" data-lvs="1 2 4 3"><h4 class="unit"><span aria-hidden="true">🔥</span> Flame Test Lab</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="flame test lab: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l1-flame-test-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Flame Test Lab: Level 1 Basic slides"><img src="../thumbs/incl-chemistry-chemistry-l1-flame-test-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Flame Test Lab</h4>
+  <p class="meta">12 slides · PDF · 641 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l1-flame-test-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l1-flame-test-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="chemistry/02b-spectra-bonding-water/chemistry-l1-flame-test-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="flame test lab steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🔥</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Flame Test Lab</h3><p>Steps, safety, and what happened in the lab.</p>
+  <a class="btn gold" href="chemistry/02b-spectra-bonding-water/chemistry-l1-flame-test-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="flame test lab: level 1 basic lab card one step per box · check boxes printable lab card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l1-flame-test-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Flame Test Lab: Level 1 Basic lab card"><img src="../thumbs/incl-chemistry-chemistry-l1-flame-test-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Flame Test Lab: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 122 KB</p><p class="sub">One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l1-flame-test-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l1-flame-test-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="flame test lab: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l1-flame-test-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Flame Test Lab: Level 1 Basic prep sheet"><img src="../thumbs/incl-chemistry-chemistry-l1-flame-test-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Flame Test Lab: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 122 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l1-flame-test-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l1-flame-test-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="flame test lab: level 1 basic my check name line · what i saw · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l1-flame-test-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Flame Test Lab: Level 1 Basic my check"><img src="../thumbs/incl-chemistry-chemistry-l1-flame-test-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Flame Test Lab: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 134 KB</p><p class="sub">Name line · what I saw · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l1-flame-test-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l1-flame-test-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="flame test lab: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l2-flame-test-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Flame Test Lab: Level 1 Advanced slides"><img src="../thumbs/incl-chemistry-chemistry-l2-flame-test-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Flame Test Lab</h4>
+  <p class="meta">12 slides · PDF · 638 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l2-flame-test-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l2-flame-test-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="chemistry/02b-spectra-bonding-water/chemistry-l2-flame-test-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="flame test lab steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">🔥</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Flame Test Lab</h3><p>Steps, safety, and what happened in the lab.</p>
+  <a class="btn gold" href="chemistry/02b-spectra-bonding-water/chemistry-l2-flame-test-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="flame test lab: level 1 advanced lab card one step per box · check boxes printable lab card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l2-flame-test-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Flame Test Lab: Level 1 Advanced lab card"><img src="../thumbs/incl-chemistry-chemistry-l2-flame-test-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Flame Test Lab: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 125 KB</p><p class="sub">One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l2-flame-test-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l2-flame-test-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="flame test lab: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l2-flame-test-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Flame Test Lab: Level 1 Advanced prep sheet"><img src="../thumbs/incl-chemistry-chemistry-l2-flame-test-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Flame Test Lab: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 127 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l2-flame-test-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l2-flame-test-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="flame test lab: level 1 advanced reflection name line · what i saw · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l2-flame-test-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Flame Test Lab: Level 1 Advanced reflection"><img src="../thumbs/incl-chemistry-chemistry-l2-flame-test-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Flame Test Lab: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 120 KB</p><p class="sub">Name line · what I saw · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l2-flame-test-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l2-flame-test-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="4"><div class="grid"><article class="card game page item" data-q="flame test lab: level 2 lab sheet (read aloud) opens in the browser · read-aloud inside read aloud notes reading lab sheet">
+  <a class="thumb2" href="chemistry/02b-spectra-bonding-water/chemistry-l4-flame-test-lab-sheet-page.html" target="_blank" rel="noopener" aria-label="Open: Flame Test Lab: Level 2"><img src="../thumbs/incl-chemistry-chemistry-l4-flame-test-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="gtxt"><span class="pill lv4">Level 2</span><span class="tpill">🧪 LAB SHEET</span>
+  <h3>Flame Test Lab: Level 2</h3><p>Opens in the browser · read-aloud inside</p>
+  <a class="btn blue" href="chemistry/02b-spectra-bonding-water/chemistry-l4-flame-test-lab-sheet-page.html" target="_blank" rel="noopener">Open</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="flame test lab: level 2 lab sheet question, prediction, checkbox steps, data table, cer with sentence starters printable lab sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l4-flame-test-lab-sheet.pdf" target="_blank" rel="noopener" aria-label="Open: Flame Test Lab: Level 2 lab sheet"><img src="../thumbs/incl-chemistry-chemistry-l4-flame-test-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB SHEET</span>
+  <h4>Flame Test Lab: Level 2</h4>
+  <p class="meta">2 pages · PDF · 162 KB</p><p class="sub">Question, prediction, checkbox steps, data table, CER with sentence starters</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l4-flame-test-lab-sheet.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l4-flame-test-lab-sheet.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="3"><div class="grid"><article class="card game page item" data-q="flame test lab: level 3 lab sheet (read aloud) opens in the browser · read-aloud inside read aloud notes reading lab sheet">
+  <a class="thumb2" href="chemistry/02b-spectra-bonding-water/chemistry-l3-flame-test-lab-sheet-page.html" target="_blank" rel="noopener" aria-label="Open: Flame Test Lab: Level 3"><img src="../thumbs/incl-chemistry-chemistry-l3-flame-test-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="gtxt"><span class="pill lv3">Level 3</span><span class="tpill">🧪 LAB SHEET</span>
+  <h3>Flame Test Lab: Level 3</h3><p>Opens in the browser · read-aloud inside</p>
+  <a class="btn blue" href="chemistry/02b-spectra-bonding-water/chemistry-l3-flame-test-lab-sheet-page.html" target="_blank" rel="noopener">Open</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="flame test lab: level 3 lab sheet question, prediction, steps, data table, cer printable lab sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l3-flame-test-lab-sheet.pdf" target="_blank" rel="noopener" aria-label="Open: Flame Test Lab: Level 3 lab sheet"><img src="../thumbs/incl-chemistry-chemistry-l3-flame-test-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB SHEET</span>
+  <h4>Flame Test Lab: Level 3</h4>
+  <p class="meta">2 pages · PDF · 52 KB</p><p class="sub">Question, prediction, steps, data table, CER</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l3-flame-test-lab-sheet.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l3-flame-test-lab-sheet.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div><div class="labblock" data-lvs="1 2 4 3"><h4 class="unit"><span aria-hidden="true">💧</span> Water Stations Lab</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="water stations lab: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l1-water-stations-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Water Stations Lab: Level 1 Basic slides"><img src="../thumbs/incl-chemistry-chemistry-l1-water-stations-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Water Stations Lab</h4>
+  <p class="meta">12 slides · PDF · 639 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l1-water-stations-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l1-water-stations-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="chemistry/02b-spectra-bonding-water/chemistry-l1-water-stations-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="water stations lab steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">💧</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Water Stations Lab</h3><p>Steps, safety, and what happened in the lab.</p>
+  <a class="btn gold" href="chemistry/02b-spectra-bonding-water/chemistry-l1-water-stations-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="water stations lab: level 1 basic lab card one step per box · check boxes printable lab card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l1-water-stations-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Water Stations Lab: Level 1 Basic lab card"><img src="../thumbs/incl-chemistry-chemistry-l1-water-stations-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Water Stations Lab: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 107 KB</p><p class="sub">One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l1-water-stations-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l1-water-stations-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="water stations lab: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l1-water-stations-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Water Stations Lab: Level 1 Basic prep sheet"><img src="../thumbs/incl-chemistry-chemistry-l1-water-stations-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Water Stations Lab: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 109 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l1-water-stations-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l1-water-stations-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="water stations lab: level 1 basic my check name line · what i saw · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l1-water-stations-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Water Stations Lab: Level 1 Basic my check"><img src="../thumbs/incl-chemistry-chemistry-l1-water-stations-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Water Stations Lab: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 132 KB</p><p class="sub">Name line · what I saw · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l1-water-stations-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l1-water-stations-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="water stations lab: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l2-water-stations-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Water Stations Lab: Level 1 Advanced slides"><img src="../thumbs/incl-chemistry-chemistry-l2-water-stations-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Water Stations Lab</h4>
+  <p class="meta">11 slides · PDF · 618 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l2-water-stations-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l2-water-stations-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="chemistry/02b-spectra-bonding-water/chemistry-l2-water-stations-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="water stations lab steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">💧</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Water Stations Lab</h3><p>Steps, safety, and what happened in the lab.</p>
+  <a class="btn gold" href="chemistry/02b-spectra-bonding-water/chemistry-l2-water-stations-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="water stations lab: level 1 advanced lab card one step per box · check boxes printable lab card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l2-water-stations-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Water Stations Lab: Level 1 Advanced lab card"><img src="../thumbs/incl-chemistry-chemistry-l2-water-stations-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Water Stations Lab: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 110 KB</p><p class="sub">One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l2-water-stations-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l2-water-stations-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="water stations lab: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l2-water-stations-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Water Stations Lab: Level 1 Advanced prep sheet"><img src="../thumbs/incl-chemistry-chemistry-l2-water-stations-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Water Stations Lab: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 114 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l2-water-stations-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l2-water-stations-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="water stations lab: level 1 advanced reflection name line · what i saw · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l2-water-stations-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Water Stations Lab: Level 1 Advanced reflection"><img src="../thumbs/incl-chemistry-chemistry-l2-water-stations-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Water Stations Lab: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 114 KB</p><p class="sub">Name line · what I saw · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l2-water-stations-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l2-water-stations-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="4"><div class="grid"><article class="card game page item" data-q="water stations lab: level 2 lab sheet (read aloud) opens in the browser · read-aloud inside read aloud notes reading lab sheet">
+  <a class="thumb2" href="chemistry/02b-spectra-bonding-water/chemistry-l4-water-stations-lab-sheet-page.html" target="_blank" rel="noopener" aria-label="Open: Water Stations Lab: Level 2"><img src="../thumbs/incl-chemistry-chemistry-l4-water-stations-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="gtxt"><span class="pill lv4">Level 2</span><span class="tpill">🧪 LAB SHEET</span>
+  <h3>Water Stations Lab: Level 2</h3><p>Opens in the browser · read-aloud inside</p>
+  <a class="btn blue" href="chemistry/02b-spectra-bonding-water/chemistry-l4-water-stations-lab-sheet-page.html" target="_blank" rel="noopener">Open</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="water stations lab: level 2 lab sheet question, prediction, checkbox steps, data table, cer with sentence starters printable lab sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l4-water-stations-lab-sheet.pdf" target="_blank" rel="noopener" aria-label="Open: Water Stations Lab: Level 2 lab sheet"><img src="../thumbs/incl-chemistry-chemistry-l4-water-stations-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB SHEET</span>
+  <h4>Water Stations Lab: Level 2</h4>
+  <p class="meta">2 pages · PDF · 154 KB</p><p class="sub">Question, prediction, checkbox steps, data table, CER with sentence starters</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l4-water-stations-lab-sheet.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l4-water-stations-lab-sheet.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="3"><div class="grid"><article class="card game page item" data-q="water stations lab: level 3 lab sheet (read aloud) opens in the browser · read-aloud inside read aloud notes reading lab sheet">
+  <a class="thumb2" href="chemistry/02b-spectra-bonding-water/chemistry-l3-water-stations-lab-sheet-page.html" target="_blank" rel="noopener" aria-label="Open: Water Stations Lab: Level 3"><img src="../thumbs/incl-chemistry-chemistry-l3-water-stations-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="gtxt"><span class="pill lv3">Level 3</span><span class="tpill">🧪 LAB SHEET</span>
+  <h3>Water Stations Lab: Level 3</h3><p>Opens in the browser · read-aloud inside</p>
+  <a class="btn blue" href="chemistry/02b-spectra-bonding-water/chemistry-l3-water-stations-lab-sheet-page.html" target="_blank" rel="noopener">Open</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="water stations lab: level 3 lab sheet question, prediction, steps, data table, cer printable lab sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l3-water-stations-lab-sheet.pdf" target="_blank" rel="noopener" aria-label="Open: Water Stations Lab: Level 3 lab sheet"><img src="../thumbs/incl-chemistry-chemistry-l3-water-stations-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB SHEET</span>
+  <h4>Water Stations Lab: Level 3</h4>
+  <p class="meta">2 pages · PDF · 49 KB</p><p class="sub">Question, prediction, steps, data table, CER</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l3-water-stations-lab-sheet.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02b-spectra-bonding-water/chemistry-l3-water-stations-lab-sheet.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div></div><div class="labs-unit" data-unit="2C"><h3><a href="#unit-2C">⚗️ Unit 2C: Space 3: Formulas &amp; Reactions</a></h3><div class="labblock" data-lvs="1 2 4 3"><h4 class="unit"><span aria-hidden="true">⚗️</span> Chemical Reactions Lab</h4><div class="lab-lv" data-lv="1"><div class="grid"><article class="card deck item" data-q="chemical reactions lab: level 1 basic slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02c-formulas-reactions/chemistry-l1-chemical-reactions-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Chemical Reactions Lab: Level 1 Basic slides"><img src="../thumbs/incl-chemistry-chemistry-l1-chemical-reactions-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Chemical Reactions Lab</h4>
+  <p class="meta">12 slides · PDF · 668 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02c-formulas-reactions/chemistry-l1-chemical-reactions-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02c-formulas-reactions/chemistry-l1-chemical-reactions-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="chemistry/02c-formulas-reactions/chemistry-l1-chemical-reactions-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="chemical reactions lab steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">⚗️</div>
+  <div class="gtxt"><span class="pill lv1">Level 1 Basic game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Chemical Reactions Lab</h3><p>Steps, safety, and what happened in the lab.</p>
+  <a class="btn gold" href="chemistry/02c-formulas-reactions/chemistry-l1-chemical-reactions-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="chemical reactions lab: level 1 basic lab card one step per box · check boxes printable lab card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02c-formulas-reactions/chemistry-l1-chemical-reactions-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Chemical Reactions Lab: Level 1 Basic lab card"><img src="../thumbs/incl-chemistry-chemistry-l1-chemical-reactions-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Chemical Reactions Lab: Level 1 Basic</h4>
+  <p class="meta">2 pages · PDF · 134 KB</p><p class="sub">One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02c-formulas-reactions/chemistry-l1-chemical-reactions-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02c-formulas-reactions/chemistry-l1-chemical-reactions-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="chemical reactions lab: level 1 basic prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02c-formulas-reactions/chemistry-l1-chemical-reactions-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Chemical Reactions Lab: Level 1 Basic prep sheet"><img src="../thumbs/incl-chemistry-chemistry-l1-chemical-reactions-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Chemical Reactions Lab: Level 1 Basic</h4>
+  <p class="meta">2 pages · PDF · 152 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02c-formulas-reactions/chemistry-l1-chemical-reactions-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02c-formulas-reactions/chemistry-l1-chemical-reactions-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="chemical reactions lab: level 1 basic my check name line · what i saw · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02c-formulas-reactions/chemistry-l1-chemical-reactions-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Chemical Reactions Lab: Level 1 Basic my check"><img src="../thumbs/incl-chemistry-chemistry-l1-chemical-reactions-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Chemical Reactions Lab: Level 1 Basic</h4>
+  <p class="meta">1 page · PDF · 134 KB</p><p class="sub">Name line · what I saw · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02c-formulas-reactions/chemistry-l1-chemical-reactions-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02c-formulas-reactions/chemistry-l1-chemical-reactions-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="2"><div class="grid"><article class="card deck item" data-q="chemical reactions lab: level 1 advanced slides jobs, safety, steps, checks slides">
+  <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02c-formulas-reactions/chemistry-l2-chemical-reactions-lab-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Chemical Reactions Lab: Level 1 Advanced slides"><img src="../thumbs/incl-chemistry-chemistry-l2-chemical-reactions-lab-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
+  <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Chemical Reactions Lab</h4>
+  <p class="meta">12 slides · PDF · 641 KB</p><p class="sub">Jobs, safety, steps, checks</p>
+  <div class="btns"><a class="btn blue" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02c-formulas-reactions/chemistry-l2-chemical-reactions-lab-deck.pdf" target="_blank" rel="noopener">📖 Open slides</a>
+  <a class="btn ghost" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02c-formulas-reactions/chemistry-l2-chemical-reactions-lab-deck.pdf" download>⬇ Download</a> <a class="btn gold" href="chemistry/02c-formulas-reactions/chemistry-l2-chemical-reactions-lab-deck.pptx" download>🖥️ PowerPoint (.pptx)</a></div></div>
+</article><article class="card game item" data-q="chemical reactions lab steps, words, and safety. game lab review game">
+  <div class="gicon" aria-hidden="true">⚗️</div>
+  <div class="gtxt"><span class="pill lv2">Level 1 Advanced game</span><span class="tpill">🎮 REVIEW GAME</span><span class="apill modified">Modified (S grade)</span>
+  <h3>Chemical Reactions Lab</h3><p>Steps, safety, and what happened in the lab.</p>
+  <a class="btn gold" href="chemistry/02c-formulas-reactions/chemistry-l2-chemical-reactions-lab-game.html" target="_blank" rel="noopener">▶ Play</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="chemical reactions lab: level 1 advanced lab card one step per box · check boxes printable lab card">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02c-formulas-reactions/chemistry-l2-chemical-reactions-lab-card.pdf" target="_blank" rel="noopener" aria-label="Open: Chemical Reactions Lab: Level 1 Advanced lab card"><img src="../thumbs/incl-chemistry-chemistry-l2-chemical-reactions-lab-card.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB CARD</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Chemical Reactions Lab: Level 1 Advanced</h4>
+  <p class="meta">2 pages · PDF · 131 KB</p><p class="sub">One step per box · check boxes</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02c-formulas-reactions/chemistry-l2-chemical-reactions-lab-card.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02c-formulas-reactions/chemistry-l2-chemical-reactions-lab-card.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="chemical reactions lab: level 1 advanced prep sheet jobs, tools checklist, safety printable prep sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02c-formulas-reactions/chemistry-l2-chemical-reactions-lab-prep.pdf" target="_blank" rel="noopener" aria-label="Open: Chemical Reactions Lab: Level 1 Advanced prep sheet"><img src="../thumbs/incl-chemistry-chemistry-l2-chemical-reactions-lab-prep.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 PREP SHEET</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Chemical Reactions Lab: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 150 KB</p><p class="sub">Jobs, tools checklist, safety</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02c-formulas-reactions/chemistry-l2-chemical-reactions-lab-prep.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02c-formulas-reactions/chemistry-l2-chemical-reactions-lab-prep.pdf" download>⬇ Download</a></div></div>
+</article><article class="card item row" data-q="chemical reactions lab: level 1 advanced reflection name line · what i saw · self-check printable reflection">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02c-formulas-reactions/chemistry-l2-chemical-reactions-lab-reflection.pdf" target="_blank" rel="noopener" aria-label="Open: Chemical Reactions Lab: Level 1 Advanced reflection"><img src="../thumbs/incl-chemistry-chemistry-l2-chemical-reactions-lab-reflection.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">💭 REFLECTION</span><span class="apill modified">Modified (S grade)</span>
+  <h4>Chemical Reactions Lab: Level 1 Advanced</h4>
+  <p class="meta">1 page · PDF · 121 KB</p><p class="sub">Name line · what I saw · self-check</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02c-formulas-reactions/chemistry-l2-chemical-reactions-lab-reflection.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02c-formulas-reactions/chemistry-l2-chemical-reactions-lab-reflection.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="4"><div class="grid"><article class="card game page item" data-q="chemical reactions lab: level 2 lab sheet (read aloud) opens in the browser · read-aloud inside read aloud notes reading lab sheet">
+  <a class="thumb2" href="chemistry/02c-formulas-reactions/chemistry-l4-chemical-reactions-lab-sheet-page.html" target="_blank" rel="noopener" aria-label="Open: Chemical Reactions Lab: Level 2"><img src="../thumbs/incl-chemistry-chemistry-l4-chemical-reactions-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="gtxt"><span class="pill lv4">Level 2</span><span class="tpill">🧪 LAB SHEET</span>
+  <h3>Chemical Reactions Lab: Level 2</h3><p>Opens in the browser · read-aloud inside</p>
+  <a class="btn blue" href="chemistry/02c-formulas-reactions/chemistry-l4-chemical-reactions-lab-sheet-page.html" target="_blank" rel="noopener">Open</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="chemical reactions lab: level 2 lab sheet question, prediction, checkbox steps, data table, cer with sentence starters printable lab sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02c-formulas-reactions/chemistry-l4-chemical-reactions-lab-sheet.pdf" target="_blank" rel="noopener" aria-label="Open: Chemical Reactions Lab: Level 2 lab sheet"><img src="../thumbs/incl-chemistry-chemistry-l4-chemical-reactions-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB SHEET</span>
+  <h4>Chemical Reactions Lab: Level 2</h4>
+  <p class="meta">2 pages · PDF · 175 KB</p><p class="sub">Question, prediction, checkbox steps, data table, CER with sentence starters</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02c-formulas-reactions/chemistry-l4-chemical-reactions-lab-sheet.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02c-formulas-reactions/chemistry-l4-chemical-reactions-lab-sheet.pdf" download>⬇ Download</a></div></div>
+</article></div></div><div class="lab-lv" data-lv="3"><div class="grid"><article class="card game page item" data-q="chemical reactions lab: level 3 lab sheet (read aloud) opens in the browser · read-aloud inside read aloud notes reading lab sheet">
+  <a class="thumb2" href="chemistry/02c-formulas-reactions/chemistry-l3-chemical-reactions-lab-sheet-page.html" target="_blank" rel="noopener" aria-label="Open: Chemical Reactions Lab: Level 3"><img src="../thumbs/incl-chemistry-chemistry-l3-chemical-reactions-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="gtxt"><span class="pill lv3">Level 3</span><span class="tpill">🧪 LAB SHEET</span>
+  <h3>Chemical Reactions Lab: Level 3</h3><p>Opens in the browser · read-aloud inside</p>
+  <a class="btn blue" href="chemistry/02c-formulas-reactions/chemistry-l3-chemical-reactions-lab-sheet-page.html" target="_blank" rel="noopener">Open</a></div>
+</article></div><div class="grid rows"><article class="card item row" data-q="chemical reactions lab: level 3 lab sheet question, prediction, steps, data table, cer printable lab sheet">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02c-formulas-reactions/chemistry-l3-chemical-reactions-lab-sheet.pdf" target="_blank" rel="noopener" aria-label="Open: Chemical Reactions Lab: Level 3 lab sheet"><img src="../thumbs/incl-chemistry-chemistry-l3-chemical-reactions-lab-sheet.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">🧪 LAB SHEET</span>
+  <h4>Chemical Reactions Lab: Level 3</h4>
+  <p class="meta">2 pages · PDF · 54 KB</p><p class="sub">Question, prediction, steps, data table, CER</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02c-formulas-reactions/chemistry-l3-chemical-reactions-lab-sheet.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/02c-formulas-reactions/chemistry-l3-chemical-reactions-lab-sheet.pdf" download>⬇ Download</a></div></div>
+</article></div></div></div></div></section>
 <div class="utabgroup" data-default="2A"><section class="cat" id="units" aria-labelledby="h-units"><h2 id="h-units">🗂️ Units in course order</h2><p class=note>Same units and order as the gen ed class. 9 of 10 ready. <span class="utabhint">Tap a unit to show it below.</span></p><div class="utabs" role="tablist" aria-label="Units"><a class="utab" role="tab" href="#unit-0" data-unit="0" aria-selected="false" title="Unit 0: Lab Safety &amp; Equipment"><span class="un">Unit 0</span><span class="ut"><span aria-hidden="true">🥽</span> Lab Safety &amp; Equipment</span></a><a class="utab" role="tab" href="#unit-1A" data-unit="1A" aria-selected="false" title="Unit 1A: Lightning 1: Charges &amp; Static"><span class="un">Unit 1A</span><span class="ut"><span aria-hidden="true">⚡</span> Lightning 1</span></a><a class="utab" role="tab" href="#unit-1B" data-unit="1B" aria-selected="false" title="Unit 1B: Lightning 2: Electric Forces"><span class="un">Unit 1B</span><span class="ut"><span aria-hidden="true">🧲</span> Lightning 2: Electric Forces</span></a><a class="utab" role="tab" href="#unit-1C" data-unit="1C" aria-selected="false" title="Unit 1C: Lightning 3: The Strike &amp; Staying Safe"><span class="un">Unit 1C</span><span class="ut"><span aria-hidden="true">🌩️</span> Lightning 3</span></a><a class="utab now" role="tab" href="#unit-2A" data-unit="2A" aria-selected="false" title="Unit 2A: Space 1: Atoms &amp; the Periodic Table"><span class="un">Unit 2A</span><span class="ut"><span aria-hidden="true">🪐</span> Space 1</span></a><a class="utab" role="tab" href="#unit-2B" data-unit="2B" aria-selected="false" title="Unit 2B: Space 2: Spectra, Bonding &amp; Water"><span class="un">Unit 2B</span><span class="ut"><span aria-hidden="true">🌈</span> Space 2</span></a><a class="utab" role="tab" href="#unit-2C" data-unit="2C" aria-selected="false" title="Unit 2C: Space 3: Formulas &amp; Reactions"><span class="un">Unit 2C</span><span class="ut"><span aria-hidden="true">⚗️</span> Space 3</span></a><a class="utab" role="tab" href="#unit-3" data-unit="3" aria-selected="false" title="Unit 3: Oysters"><span class="un">Unit 3</span><span class="ut"><span aria-hidden="true">🦪</span> Oysters</span><small class="ust">🔜 Upcoming</small></a><a class="utab" role="tab" href="#unit-4" data-unit="4" aria-selected="false" title="Unit 4: Polar Ice"><span class="un">Unit 4</span><span class="ut"><span aria-hidden="true">🧊</span> Polar Ice</span><small class="ust">🔜 Upcoming</small></a><a class="utab" role="tab" href="#unit-5" data-unit="5" aria-selected="false" title="Unit 5: Energy"><span class="un">Unit 5</span><span class="ut"><span aria-hidden="true">🔋</span> Energy</span><small class="ust">🚧 Under construction</small></a></div></section><div class="unitpane" data-unit="0"><span class="uanchor" id="unit-0"></span><section class="cat" id="u0" aria-labelledby="h-u0"><h2 id="h-u0">🥽 Unit 0: Lab Safety &amp; Equipment</h2><p class="note">Goggles on, no food, tell the teacher, yell “Code one” if someone is hurt. Lab tools: beaker, graduated cylinder, balance, test tube. Hazard symbols.</p><div class="lvgroup lvonly lv1"><h3 class="lvh"><span class="pill lv1">Level 1 Basic</span> 2nd-grade reading: pictures and emoji, one idea at a time</h3><div class="umat uc"><details class="dbd ucond" open><summary><span class="dbdh">📦 Unit materials</span> <small>(7)</small></summary><p class="note ucanvas"><small>Goes with the class Canvas module: “Start of year: Syllabus &amp; Safety Contract, Safety Presentation, L0.1 Lab Equipment Activity, L0.2 Elements Reacting, L0.3 Equipment Practice”.</small></p><p class="printall"><a class="btn gold" href="https://files.ferndaleinclusion.com/inclusion/chemistry/00-lab-safety/chemistry-unit0-L1-print-all.pdf" target="_blank" rel="noopener">🖨️ Print all (Level 1 Basic)</a> <small>8 files · 13 pages · 1.4 MB · staff guide, printables, then answer keys</small></p><h4 class="unit">📖 Slides</h4><div class="grid"><article class="card deck item" data-q="lab safety &amp; equipment: level 1 basic slides words to know, pictures, checks, recap slides">
   <a class="thumb" href="https://files.ferndaleinclusion.com/inclusion/chemistry/00-lab-safety/chemistry-l1-u0-lab-safety-deck.pdf" target="_blank" rel="noopener" aria-label="Open slides: Lab Safety &amp; Equipment: Level 1 Basic slides"><img src="../thumbs/incl-chemistry-chemistry-l1-u0-lab-safety-deck.jpg" alt="" loading="lazy" width="320" height="180"></a>
   <div class="dtxt"><span class="tpill">🖥️ SLIDES</span><h4>Lab Safety &amp; Equipment</h4>
@@ -4930,6 +5433,32 @@
   <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/04-polar-ice/chemistry-l3-u4-ln4-5-ice-design-solutions-lesson-notes-key.pdf" target="_blank" rel="noopener">📄 Open</a>
   <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/04-polar-ice/chemistry-l3-u4-ln4-5-ice-design-solutions-lesson-notes-key.pdf" download>⬇ Download</a></div></div>
 </article></div></details></div></div></section>
+<section class="cat" id="syllabus" aria-labelledby="h-syllabus"><h2 id="h-syllabus">📋 Chemistry Syllabus</h2>
+<details class="dbd ucond" open><summary><span class="dbdh">📋 Leveled syllabi</span> <small>(3)</small></summary><div class="grid rows"><article class="card item row" data-q="Chemistry level 1 syllabus 2026-27">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/chemistry-syllabus-l1.pdf" target="_blank" rel="noopener" aria-label="Open: Chemistry · Level 1 syllabus"><img src="../thumbs/incl-chemistry-syllabus-l1.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 SYLLABUS</span>
+  <h4>Chemistry · Level 1 syllabus</h4>
+  <p class="meta">4 pages · PDF · 338 KB</p><p class="sub">Level 1 syllabus · 2026–27</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/chemistry-syllabus-l1.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/chemistry-syllabus-l1.pdf" download>⬇ Download</a></div></div>
+</article>
+<article class="card item row" data-q="Chemistry level 2 syllabus 2026-27">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/chemistry-syllabus-l2.pdf" target="_blank" rel="noopener" aria-label="Open: Chemistry · Level 2 syllabus"><img src="../thumbs/incl-chemistry-syllabus-l2.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 SYLLABUS</span>
+  <h4>Chemistry · Level 2 syllabus</h4>
+  <p class="meta">4 pages · PDF · 260 KB</p><p class="sub">Level 2 syllabus · 2026–27</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/chemistry-syllabus-l2.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/chemistry-syllabus-l2.pdf" download>⬇ Download</a></div></div>
+</article>
+<article class="card item row" data-q="Chemistry level 3 syllabus 2026-27">
+  <a class="thumb2" href="https://files.ferndaleinclusion.com/inclusion/chemistry/chemistry-syllabus-l3.pdf" target="_blank" rel="noopener" aria-label="Open: Chemistry · Level 3 syllabus"><img src="../thumbs/incl-chemistry-syllabus-l3.jpg" alt="" loading="lazy" width="116" height="150"></a>
+  <div class="itxt"><span class="tpill">📋 SYLLABUS</span>
+  <h4>Chemistry · Level 3 syllabus</h4>
+  <p class="meta">4 pages · PDF · 269 KB</p><p class="sub">Level 3 syllabus · 2026–27</p>
+  <div class="btns"><a class="btn blue sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/chemistry-syllabus-l3.pdf" target="_blank" rel="noopener">📄 Open</a>
+  <a class="btn ghost sm" href="https://files.ferndaleinclusion.com/inclusion/chemistry/chemistry-syllabus-l3.pdf" download>⬇ Download</a></div></div>
+</article></div>
+</details></section>
 <p class="note" id="none" hidden>Nothing matches that. Try a shorter word.</p><script>window.READ_ALOUD={"left": true, "sel": "h1,h2,h3,h4,.lead,.note,.card h3,.card h4,.card p.sub", "root": "main"};</script><script>/* Ferndale "Read aloud" button (reusable). Browser text-to-speech (Web Speech API): nothing to install; works in Chrome on Chromebooks.
    Add once per page with a script tag pointing at read_aloud.js, or inline it (read_aloud.py script_tag()).  Options (set before the script):
      window.READ_ALOUD = {sel: "CSS selector of the parts to read", root: "CSS selector of the area to read", rate: 0.9}

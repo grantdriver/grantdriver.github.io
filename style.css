@@ -125,7 +125,7 @@ section#teacher h2{color:#fff;background:var(--navy);border-radius:16px;padding:
 html.tabs-on:not(.searching) .unitpane:not(.on){display:none}
 html.tabs-on:not(.searching) .tunit:not(.on){display:none}
 html:not(.tabs-on) .tfor,html.searching .tfor{display:none}
-@media print{html.tabs-on .tunit{display:block!important}}
+/* tunit print rule moved into the 2026-11-23 print block */
 html:not(.tabs-on) .utabhint{display:none}
 .dbd.dbdall{border:3px solid var(--bb);border-radius:16px;padding:6px 12px;margin:.6em 0;background:#fbfcff}
 .dbd>summary{cursor:pointer;font-weight:800;min-height:44px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;list-style-position:inside}
@@ -136,7 +136,20 @@ html:not(.tabs-on) .utabhint{display:none}
 .totop:focus-visible{outline:4px solid var(--gold);outline-offset:3px}
 @media(max-width:640px){.utab{flex:1 1 140px;min-width:0;padding:8px 12px}.utab .ut{font-size:17px}.totop{right:10px;bottom:10px;font-size:16px;min-height:46px}}
 @media(max-width:640px){.searchbar input{flex:1 1 100%;min-width:0;width:100%;box-sizing:border-box}}
-@media print{.utabs,.totop,.paneend{display:none}html.tabs-on .unitpane{display:block!important}}
+/* 2026-11-23 Grant: labs index (all units); print only the open unit */
+.labs-index .labs-unit{margin:1.2em 0 1.6em}
+.labs-index .labs-unit>h3{margin:.2em 0 .4em;font-size:22px}
+html[data-lv="1"] .labs-index .labblock[data-lvs~="1"] .lab-lv:not([data-lv="1"]){display:none}
+html[data-lv="2"] .labs-index .labblock[data-lvs~="2"] .lab-lv:not([data-lv="2"]){display:none}
+html[data-lv="3"] .labs-index .labblock[data-lvs~="3"] .lab-lv:not([data-lv="3"]){display:none}
+html[data-lv="4"] .labs-index .labblock[data-lvs~="4"] .lab-lv:not([data-lv="4"]){display:none}
+@media print{
+  .lvtabs,.searchbar,.crumb,.jump,.card .btns,.utabs,.totop,.paneend{display:none!important}
+  .card.item{break-inside:avoid;page-break-inside:avoid}
+  html.tabs-on .unitpane,html.tabs-on .tunit{display:none!important}
+  html.tabs-on .unitpane.on,html.tabs-on .tunit.on{display:block!important}
+  #labs,#syllabus,#booklet,#teacher,[id^="teacher-"],[id^="other-"]{display:none!important}
+}
 .pill.lv3{background:#2e9d5b;color:#fff}.lvgroup.lv3{border-color:#2e9d5b}.lvonly.lv3 .lesson{border-color:#2e9d5b}
 .lvtab.lv3{border-color:#2e9d5b;box-shadow:0 5px 0 #2e9d5b}.lvtab.lv3.on{background:#2e9d5b;color:#fff}
 /* new Level 2 = key 4 (purple), 2026-11-09 sample */
